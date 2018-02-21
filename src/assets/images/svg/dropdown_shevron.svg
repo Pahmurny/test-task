@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="feedback_dropdown" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-127.000000, -13.000000)">
+        <g id="feedback_subheader" fill="#5F5864">
+            <g id="header">
+                <g id="button_settings">
+                    <path d="M131.301175,18.7009323 C131.500523,18.9062278 131.750411,19.0006604 131.999969,18.9999965 C132.249527,19.0006604 132.49925,18.9063937 132.688689,18.7160349 C132.693148,18.7115539 136.716956,14.6632335 136.716956,14.6632335 C137.094348,14.2840095 137.094348,13.6634761 136.716956,13.284418 C136.339564,12.90536 135.722029,12.905194 135.344802,13.284418 L131.999804,16.6453222 L128.655136,13.284418 C128.277744,12.905194 127.660209,12.905194 127.282982,13.284418 C126.905755,13.6636421 126.90559,14.2841754 127.282982,14.6632335 L131.301175,18.7009323 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

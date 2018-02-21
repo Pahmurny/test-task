@@ -1,0 +1,71 @@
+@import "~styles/fonts";
+
+@mixin border() {
+  border: 1px solid #5f5864;
+}
+
+.dropdown {
+  font-family: $fontLatoRegular;
+  color: #5f5864;
+  font-size: 14px;
+  display: inline-block;
+  position: relative;
+
+  &__trigger {
+    @include border;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.34) inset;
+    width: 144px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    cursor: pointer;
+    padding-left: 13px;
+    box-sizing: border-box;
+
+    &:after {
+      content: '';
+      display: block;
+      background-image: url("~assets/images/svg/dropdown_shevron.svg");
+      position: absolute;
+      width: 10px;
+      height: 6px;
+      top: 13px;
+      right: 13px;
+    }
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 29px;
+    right: 0;
+    background-color: #fcfcfc;
+    @include border;
+
+    .dropdown-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .dropdown-item {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        padding-left: 13px;
+        box-sizing: border-box;
+
+        &.active, &:hover {
+          background-color: rgba(95, 88, 100, 0.3);
+        }
+      }
+    }
+  }
+
+  &--active {
+    .dropdown__content {
+      display: block;
+    }
+  }
+}
