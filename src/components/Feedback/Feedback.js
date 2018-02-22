@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import m from 'moment'
 import GreyBlock from 'components/Shared/GreyBlock'
-import './feedback.scss'
 import LockIcon from 'components/Icons/LockIcon'
 import UserPic from 'components/Shared/UserPic'
 import HashButton from 'components/Buttons/HashButton'
+import './feedback.scss'
+
 
 const Feedback = ({ locked, date, user, content, children, tags }) => <GreyBlock className={'feedback-block'}>
     <div className="feedback-block__header">
@@ -16,7 +17,7 @@ const Feedback = ({ locked, date, user, content, children, tags }) => <GreyBlock
         <div className="feedback-block__date">
             {locked && <LockIcon style={{ marginRight: 6 }}/>}
             {locked && <span style={{ marginRight: 6 }}> Private | </span>}
-            {m(date).format('MMM MM, YYYY')}
+            {m(date).format('MMM DD, YYYY')}
         </div>
     </div>
     <div className="feedback-block__content">

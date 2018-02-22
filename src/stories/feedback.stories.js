@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import m from 'moment'
 import { number, withKnobs, date, text, boolean, array } from '@storybook/addon-knobs/react'
 import DropDown from 'components/Dropdown/Dropdown'
 import DateFilter from 'components/DateFilter/DateFilter'
@@ -21,7 +22,7 @@ const dropdownItems = (() => {
 })()
 
 const SelectDates = GetDates()
-const defaultDate = new Date('Jan 20 2017')
+const defaultDate = new Date()
 
 
 const stories = storiesOf('Feedback', module)
