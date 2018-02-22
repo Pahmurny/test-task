@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import m from 'moment'
 import cn from 'classnames'
 import './dateFilter.scss'
+import PlusButton from 'components/Buttons/PlusButton'
 
 
 const PAGE_SIZE = 20
@@ -18,7 +19,7 @@ export default class DateFilter extends Component {
         activeItem: PropTypes.shape({
             startDate: PropTypes.oneOfType([
                 PropTypes.number,
-                PropTypes.string
+                PropTypes.string,
             ]).isRequired,
         }),
         onClick: PropTypes.func,
@@ -64,6 +65,7 @@ export default class DateFilter extends Component {
             text = SHOW_ALL_TEXT
         }
         return <div className="show-more" onClick={() => this.setState(state => ({ page: state.page + 1 }))}>
+            <PlusButton style={{ marginRight: 6 }}/>
             {text}
         </div>
     }
@@ -79,7 +81,7 @@ export default class DateFilter extends Component {
                             const { startDate, endDate } = data
                             return <li
                                 key={key}
-                                onClick={()=> onClick(data)}
+                                onClick={() => onClick(data)}
                                 className={cn('date-filter__container-item', { active: m(activeItem.startDate).toISOString() === m(startDate).toISOString() })}>
                                 {m(startDate).format('MMM DD')} - {m(endDate).format('MMM DD')}
                             </li>
