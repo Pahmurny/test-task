@@ -4,12 +4,17 @@
   border: 1px solid #5f5864;
 }
 
+@mixin shadow(){
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
 .dropdown {
   font-family: $fontLatoRegular;
   color: #5f5864;
   font-size: 14px;
   display: inline-block;
   position: relative;
+  @include shadow;
 
   &__trigger {
     @include border;
@@ -42,6 +47,7 @@
     right: 0;
     background-color: #fcfcfc;
     @include border;
+    @include shadow;
 
     .dropdown-items {
       list-style: none;
