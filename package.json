@@ -60,7 +60,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "NODE_PATH=src start-storybook -p 6006",
-    "static": "NODE_PATH=src build-storybook -c .storybook -o .out && zip storybook.zip .out/ -r",
+    "static": "rm -rf storybook.zip && NODE_PATH=src build-storybook -c .storybook -o storybook && zip storybook.zip storybook/ -r && rm -rf storybook/",
     "build-storybook": "build-storybook"
   },
   "jest": {
