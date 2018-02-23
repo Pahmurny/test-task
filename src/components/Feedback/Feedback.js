@@ -12,7 +12,7 @@ const Feedback = ({ locked, date, user, content, children, tags }) => <GreyBlock
     <div className="feedback-block__header">
         <div className="feedback-block__header-user">
             <UserPic image={user.image} style={{ marginRight: 10 }}/>
-            Dinesh Chugtai
+            {user.name}
         </div>
         <div className="feedback-block__date">
             {locked && <LockIcon style={{ marginRight: 6 }}/>}
@@ -21,7 +21,7 @@ const Feedback = ({ locked, date, user, content, children, tags }) => <GreyBlock
         </div>
     </div>
     <div className="feedback-block__content">
-        {children}
+        {children || content}
     </div>
     <div className="feedback-block__tags">
         {tags.map((tag, key) => <HashButton className={'hash-item'} key={key}>#{tag}</HashButton>)}
@@ -31,12 +31,16 @@ const Feedback = ({ locked, date, user, content, children, tags }) => <GreyBlock
 
 Feedback.propTypes = {
     locked: PropTypes.bool,
-    date: PropTypes.number.isRequired,
+    date: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.instanceOf(Date)
+    ]).isRequired,
     user: PropTypes.shape({
         image: PropTypes.string.isRequired,
     }),
     children: PropTypes.any,
     tags: PropTypes.arrayOf(PropTypes.string),
+    content: PropTypes.string
 }
 
 

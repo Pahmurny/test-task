@@ -1,13 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import m from 'moment'
 import { number, withKnobs, date, text, boolean, array } from '@storybook/addon-knobs/react'
 import DropDown from 'components/Dropdown/Dropdown'
 import DateFilter from 'components/DateFilter/DateFilter'
 import { GetDates } from 'stories/helpers/dates'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import Feedback from 'components/Feedback/Feedback'
+import { GenerateFeedbacks } from 'stories/helpers/feedbacks'
+import FeedbacksList from 'components/FeedbacksList/FeedbacksList'
 
 
 const dropdownItems = (() => {
@@ -23,6 +24,7 @@ const dropdownItems = (() => {
 
 const SelectDates = GetDates()
 const defaultDate = new Date()
+const feedbacks = GenerateFeedbacks()
 
 
 const stories = storiesOf('Feedback', module)
@@ -50,8 +52,15 @@ stories.add('Add Feedback Button', () => <DefaultButton
 stories.add('Feedback Block', () => <Feedback
     locked={boolean('Private', false)}
     date={date('Date', defaultDate)}
-    user={{ image: text('User Pic', 'http://dev.powersteeringsoftware.com/wp-content/uploads/2013/04/005_McDonald_BrendaLaddPHOTO_5x7SQUARE1-300x300.jpg') }}
+    user={{
+        image: text('User Pic', 'http://dev.powersteeringsoftware.com/wp-content/uploads/2013/04/005_McDonald_BrendaLaddPHOTO_5x7SQUARE1-300x300.jpg'),
+        name: text('UserName', 'Dinesh Chugtai'),
+    }}
     tags={array('Tags', ['teamplayer', 'sometag', 'another tag', 'reactjs'])}
 >{text('Feedback Text', 'Thanks for covering for me on running the sprint mtg, I really appreciate it!')}</Feedback>)
 
 
+stories.add('FeedbacksList', () => <FeedbacksList scrollOptions={{
+    width: `${number('Width %', 80)}%`,
+    height: `${number('Height px', 300)}px`
+}} feedbacks={feedbacks}/>)
