@@ -21,7 +21,7 @@ class App extends Component {
                         <HeaderMenu/>
                     </PageHeader>
                     <div className="bottom">
-                        <Sidebar/>
+                        <Sidebar></Sidebar>
                         <Content>
                             <Switch>
                                 <Route exact path={url.main()} component={FeedbackModule}/>

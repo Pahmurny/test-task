@@ -7,6 +7,7 @@ import PageTitle from 'components/Shared/PageTitle'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import FeedbacksList from 'components/FeedbacksList/FeedbacksList'
 import './feedback.scss'
+import Dropdown from 'components/Dropdown/Dropdown'
 
 
 class FeedbackContainer extends Component {
@@ -49,7 +50,7 @@ class FeedbackContainer extends Component {
                 </PageTitle>
                 <div className="feedback-body">
                     <div className="feedback-body__sidebar">
-
+                        <Dropdown items={[{ id: 1, title: 'some' }]}/>
                     </div>
                     <div className="feedback-body__content">
                         <div className="feedback-body__actions">

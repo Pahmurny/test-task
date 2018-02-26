@@ -15,8 +15,10 @@ const Drop = ({ items, onClick, activeItem = { id: -1 } }) => <Dropdown ref={dro
                     className={cn('dropdown-item', { active: item.id === activeItem.id })}
                     key={key}
                     onClick={() => {
-                        onClick(item)
-                        dd.hide()
+                        if(onClick) {
+                            onClick(item)
+                            dd.hide()
+                        }
                     }}
                 >{item.title}</li>
             })}

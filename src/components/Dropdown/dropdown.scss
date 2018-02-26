@@ -14,12 +14,12 @@
   font-size: 14px;
   display: inline-block;
   position: relative;
+  width: 144px;
   @include shadow;
 
   &__trigger {
     @include border;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.34) inset;
-    width: 144px;
     height: 30px;
     line-height: 30px;
     display: block;
