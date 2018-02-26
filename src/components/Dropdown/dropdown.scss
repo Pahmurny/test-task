@@ -72,6 +72,7 @@
   &--active {
     .dropdown__content {
       display: block;
+      z-index: 999;
     }
   }
 }

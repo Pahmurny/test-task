@@ -8,6 +8,8 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 import FeedbacksList from 'components/FeedbacksList/FeedbacksList'
 import './feedback.scss'
 import Dropdown from 'components/Dropdown/Dropdown'
+import DateFilter from 'components/DateFilter/DateFilter'
+import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 
 
 class FeedbackContainer extends Component {
@@ -51,6 +53,46 @@ class FeedbackContainer extends Component {
                 <div className="feedback-body">
                     <div className="feedback-body__sidebar">
                         <Dropdown items={[{ id: 1, title: 'some' }]}/>
+                        <ScrollBlock style={{ height: listHeight }}>
+                            <div className="filtered-dates">
+                                <DateFilter dates={[{ startDate: '111', endDate: '222' },
+                                    {
+                                        startDate: '111',
+                                        endDate: '222',
+                                    },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '111', endDate: '222' },
+                                ]}/>
+                            </div>
+                        </ScrollBlock>
                     </div>
                     <div className="feedback-body__content">
                         <div className="feedback-body__actions">

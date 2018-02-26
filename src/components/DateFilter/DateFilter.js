@@ -81,7 +81,7 @@ export default class DateFilter extends Component {
                             const { startDate, endDate } = data
                             return <li
                                 key={key}
-                                onClick={() => onClick(data)}
+                                onClick={() => onClick && onClick(data)}
                                 className={cn('date-filter__container-item', { active: m(activeItem.startDate).toISOString() === m(startDate).toISOString() })}>
                                 {m(startDate).format('MMM DD')} - {m(endDate).format('MMM DD')}
                             </li>
