@@ -21,6 +21,7 @@ FeedbacksList.propTypes = {
         date: PropTypes.oneOfType([
             PropTypes.number,
             PropTypes.instanceOf(Date),
+            PropTypes.string
         ]).isRequired,
         user: PropTypes.shape({
             name: PropTypes.string.isRequired,
@@ -31,6 +32,11 @@ FeedbacksList.propTypes = {
     })),
     scrollOptions: PropTypes.object,
     className: PropTypes.string,
+}
+
+
+FeedbacksList.defaultProps = {
+    feedbacks: []
 }
 
 export default FeedbacksList

@@ -33,7 +33,8 @@ Feedback.propTypes = {
     locked: PropTypes.bool,
     date: PropTypes.oneOfType([
         PropTypes.number,
-        PropTypes.instanceOf(Date)
+        PropTypes.instanceOf(Date),
+        PropTypes.string
     ]).isRequired,
     user: PropTypes.shape({
         image: PropTypes.string.isRequired,

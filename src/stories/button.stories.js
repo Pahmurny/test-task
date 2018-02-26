@@ -5,6 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs/react'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import PlusButton from 'components/Buttons/PlusButton'
 import HashButton from 'components/Buttons/HashButton'
+import LogoIcon from 'components/Icons/LogoIcon'
 
 
 const stories = storiesOf('Buttons', module)
@@ -21,5 +22,7 @@ stories.add('Hash Button', () => <HashButton
 
 
 stories.add('Plus Button', () => <PlusButton onClick={action('Plus Btn clicked')} style={{
-    cursor: 'pointer'
+    cursor: 'pointer',
 }}/>)
+
+stories.add('Logo Icon', () => <LogoIcon/>)
