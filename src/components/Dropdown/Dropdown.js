@@ -14,7 +14,7 @@ const GetItem = (items, id, title = 'Select') => {
     return { title }
 }
 
-const Drop = ({ items, onClick, activeItem = { id: -1 } }) => <Dropdown ref={dropdown => dd = dropdown}>
+const Drop = ({ items, onClick, activeItem = { id: -1 }, style }) => <Dropdown style={style} ref={dropdown => dd = dropdown}>
     <DropdownTrigger>{GetItem(items, activeItem.id).title}</DropdownTrigger>
     <DropdownContent>
         <ul className={'dropdown-items'}>

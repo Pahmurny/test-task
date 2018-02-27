@@ -11,7 +11,7 @@ const initialState = {
     feedbacks: feedbacks,
     modalWindow: false,
     feedback: {
-        type: 0,
+        type: 2,
     },
 }
 

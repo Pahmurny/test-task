@@ -60,7 +60,7 @@ class FeedbackContainer extends Component {
         const {
             feedbacks, toggleModal, modalWindow,
             feedback,
-            feedbackType
+            feedbackType,
         } = this.props
         return (
             <Page flex>
@@ -128,7 +128,28 @@ class FeedbackContainer extends Component {
                                 },
 
                             ]}/>
-                            <DefaultButton onClick={() => toggleModal(OPEN_MODAL)}>
+                            <Dropdown
+                                style={{ marginLeft: 10, minWidth: 170 }}
+                                items={[
+                                    {
+                                        id: 1,
+                                        title: `Team member received`,
+                                    },
+                                    {
+                                        id: 2,
+                                        title: `Team member given`,
+                                    },
+                                    {
+                                        id: 3,
+                                        title: `Note to self`,
+                                    },
+
+                                ]}/>
+                            <DefaultButton
+                                style={{
+                                    marginLeft: 'auto',
+                                }}
+                                onClick={() => toggleModal(OPEN_MODAL)}>
                                 + Feedback
                             </DefaultButton>
                         </div>
