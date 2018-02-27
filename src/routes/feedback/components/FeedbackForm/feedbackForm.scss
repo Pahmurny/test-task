@@ -1,0 +1,28 @@
+
+.feedback-form {
+  position: absolute;
+  z-index: 9999999;
+  width: 864px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #fcfcfc;
+  box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
+  border-radius: 5px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 47px;
+    border-bottom: 1px solid #c9c7cb;
+    padding: 0 25px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 29px;
+  }
+}

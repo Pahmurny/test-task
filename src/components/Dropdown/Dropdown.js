@@ -6,8 +6,16 @@ import './dropdown.scss'
 
 let dd
 
+const GetItem = (items, id, title = 'Select') => {
+    const filtered = items.filter(item => item.id === id)
+    if (filtered.length > 0) {
+        return filtered[0]
+    }
+    return { title }
+}
+
 const Drop = ({ items, onClick, activeItem = { id: -1 } }) => <Dropdown ref={dropdown => dd = dropdown}>
-    <DropdownTrigger>Dropdown</DropdownTrigger>
+    <DropdownTrigger>{GetItem(items, activeItem.id).title}</DropdownTrigger>
     <DropdownContent>
         <ul className={'dropdown-items'}>
             {items.map((item, key) => {
@@ -15,7 +23,7 @@ const Drop = ({ items, onClick, activeItem = { id: -1 } }) => <Dropdown ref={dro
                     className={cn('dropdown-item', { active: item.id === activeItem.id })}
                     key={key}
                     onClick={() => {
-                        if(onClick) {
+                        if (onClick) {
                             onClick(item)
                             dd.hide()
                         }

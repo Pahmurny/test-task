@@ -9,6 +9,7 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 import Feedback from 'components/Feedback/Feedback'
 import { GenerateFeedbacks } from 'stories/helpers/feedbacks'
 import FeedbacksList from 'components/FeedbacksList/FeedbacksList'
+import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
 
 
 const dropdownItems = (() => {
@@ -62,5 +63,20 @@ stories.add('Feedback Block', () => <Feedback
 
 stories.add('FeedbacksList', () => <FeedbacksList scrollOptions={{
     width: `${number('Width %', 80)}%`,
-    height: `${number('Height px', 300)}px`
+    height: `${number('Height px', 300)}px`,
 }} feedbacks={feedbacks}/>)
+
+stories.add('Feedback type', () => <FeedbackType items={[
+    {
+        id: 1,
+        title: 'Give feedback',
+    },
+    {
+        id: 2,
+        title: 'Give feedback',
+    },
+    {
+        id: 3,
+        title: 'Give feedback',
+    },
+]} activeItem={{ id: 2 }}/>)

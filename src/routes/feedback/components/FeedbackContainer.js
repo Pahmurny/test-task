@@ -10,10 +10,23 @@ import './feedback.scss'
 import Dropdown from 'components/Dropdown/Dropdown'
 import DateFilter from 'components/DateFilter/DateFilter'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
+import Modal from 'components/Shared/Modal'
+import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
+import toggleModal from 'routes/feedback/actions/toggleModal'
+import { CLOSE_MODAL, OPEN_MODAL } from 'routes/feedback/feedbackReducer'
+import feedbackType from 'routes/feedback/actions/feedbackType'
 
 
 class FeedbackContainer extends Component {
 
+
+    static propTypes = {
+        toggleModal: PropTypes.func,
+        feedbackType: PropTypes.func,
+        modalWindow: PropTypes.bool.isRequired,
+        feedbacks: PropTypes.array,
+        feedback: PropTypes.object,
+    }
 
     state = {
         listHeight: 0,
@@ -44,7 +57,11 @@ class FeedbackContainer extends Component {
 
     render() {
         const { listHeight } = this.state
-        const { feedbacks } = this.props
+        const {
+            feedbacks, toggleModal, modalWindow,
+            feedback,
+            feedbackType
+        } = this.props
         return (
             <Page flex>
                 <PageTitle>
@@ -55,48 +72,63 @@ class FeedbackContainer extends Component {
                         <Dropdown items={[{ id: 1, title: 'some' }]}/>
                         <ScrollBlock style={{ height: listHeight }}>
                             <div className="filtered-dates">
-                                <DateFilter dates={[{ startDate: '111', endDate: '222' },
+                                <DateFilter dates={[
                                     {
-                                        startDate: '111',
-                                        endDate: '222',
+                                        startDate: '2018-08-26T00:55:06.576Z',
+                                        endDate: '2018-08-26T00:55:06.576Z',
                                     },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
-                                    { startDate: '111', endDate: '222' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
+                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
                                 ]}/>
                             </div>
                         </ScrollBlock>
                     </div>
                     <div className="feedback-body__content">
                         <div className="feedback-body__actions">
-                            <DefaultButton>
+                            <Dropdown items={[
+                                {
+                                    id: 1,
+                                    title: `You've received`,
+                                },
+                                {
+                                    id: 2,
+                                    title: `You've given`,
+                                },
+                                {
+                                    id: 3,
+                                    title: `Note to self`,
+                                },
+
+                            ]}/>
+                            <DefaultButton onClick={() => toggleModal(OPEN_MODAL)}>
                                 + Feedback
                             </DefaultButton>
                         </div>
@@ -110,10 +142,20 @@ class FeedbackContainer extends Component {
                         </div>
                     </div>
                 </div>
+                {modalWindow && <Modal closeForm={() => toggleModal(CLOSE_MODAL)}>
+                    <FeedbackForm
+                        feedBack={feedback} onClose={toggleModal}
+                        onChangeType={feedbackType}
+                    />
+                </Modal>}
             </Page>
         )
     }
 }
 
 
-export default connect(({ feedbacks: { feedbacks } }) => ({ feedbacks }))(FeedbackContainer)
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback } }) => ({
+    feedbacks,
+    modalWindow,
+    feedback,
+}), { toggleModal, feedbackType })(FeedbackContainer)

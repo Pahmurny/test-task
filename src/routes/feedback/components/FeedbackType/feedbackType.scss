@@ -1,0 +1,35 @@
+@import "~styles/constants";
+
+.feedback-type {
+  display: flex;
+
+  &__item {
+    display: block;
+    width: 216px;
+    line-height: 36px;
+    height: 36px;
+    text-align: center;
+    background-color: #d0cfd2;
+    box-shadow: 0 0 0 1px #a7a5a9;
+    cursor: pointer;
+    position: relative;
+    font-family: $fontLatoBold, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.active {
+      box-shadow: 0 0 0 1px #6a8c43;
+      z-index: 100;
+      background-color: #a9c18e;
+      color: #417505;
+    }
+  }
+}

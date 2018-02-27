@@ -1,11 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, number } from '@storybook/addon-knobs/react'
+import { withKnobs, text, number, color } from '@storybook/addon-knobs/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import GreyBlock from 'components/Shared/GreyBlock'
 import UserPic from 'components/Shared/UserPic'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import HeaderMenu from 'components/HeaderMenu/HeaderMenu'
+import Fade from 'components/Shared/Fade'
 
 
 const userpic = 'http://dev.powersteeringsoftware.com/wp-content/uploads/2013/04/005_McDonald_BrendaLaddPHOTO_5x7SQUARE1-300x300.jpg'
@@ -18,8 +19,8 @@ stories.add('Grey Block', () => <GreyBlock>{text('Block Text', 'Some content her
 stories.add('Userpic', () => <UserPic image={userpic}/>)
 stories.add('Scroll Block', () => <ScrollBlock
     style={{
-    width: `${number('Width in percent', 100)}%`,
-}}>{text('Fake Test', 'Habena prareres, tanquam rusticus heuretes.' +
+        width: `${number('Width in percent', 100)}%`,
+    }}>{text('Fake Test', 'Habena prareres, tanquam rusticus heuretes.' +
     ' The sinner loves. Totality doesn’t sincerely discover any believer —' +
     ' but the body is what travels. Habena prareres, tanquam rusticus heuretes. The sinner ' +
     'loves. Totality doesn’t sincerely discover any believer — but the body is what travels.Habena' +
@@ -57,9 +58,12 @@ stories.add('Scroll Block', () => <ScrollBlock
 
 stories.add('Menu', () => <Router>
     <div style={{
-        padding:'5em',
-        backgroundColor:'#23182d'
+        padding: '5em',
+        backgroundColor: '#23182d',
     }}>
         <HeaderMenu/>
     </div>
 </Router>)
+
+
+stories.add('Fade Block', () => <Fade backgroundColor={color('Color', 'rgba(155,155,155,0.80)')}/>)
