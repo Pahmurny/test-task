@@ -10,6 +10,9 @@ import Feedback from 'components/Feedback/Feedback'
 import { GenerateFeedbacks } from 'stories/helpers/feedbacks'
 import FeedbacksList from 'components/FeedbacksList/FeedbacksList'
 import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
+import TagsField from 'components/Form/TagsField/TagsField'
+import RoundedBlock from 'components/Shared/RoundedBlock'
+import RoundedTopBlock from 'components/Shared/RoundedTopBlock'
 
 
 const dropdownItems = (() => {
@@ -80,3 +83,9 @@ stories.add('Feedback type', () => <FeedbackType items={[
         title: 'Give feedback',
     },
 ]} activeItem={{ id: 2 }}/>)
+
+
+stories.add('Tags', () => <RoundedTopBlock>
+        <TagsField/>
+    </RoundedTopBlock>,
+)
