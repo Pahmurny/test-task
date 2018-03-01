@@ -11,6 +11,8 @@ First run:
 
 and then:
 
+``yarn fake``
+
 ``yarn start``
 
 
