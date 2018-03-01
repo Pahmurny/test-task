@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PageLoader from 'components/Shared/PageLoader'
+import store, { injectAsyncReducer } from 'store'
 
 
 export default class FeedbackModule extends Component {
@@ -10,9 +11,12 @@ export default class FeedbackModule extends Component {
     }
 
     async componentDidMount() {
-        const { Feedback } = await import(/* webpackChunkName: "Feedback_Index" */ './module')
-        this.Feedback = Feedback
-        this.setState({ loaded: true })
+        const { Feedback, feedbackReducer } = await import(/* webpackChunkName: "Feedback_Index" */ './module')
+        setTimeout(()=>{
+            this.Feedback = Feedback
+            injectAsyncReducer(store, 'feedbacks', feedbackReducer)
+            this.setState({ loaded: true })
+        }, 500)
     }
 
 

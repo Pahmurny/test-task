@@ -1,0 +1,10 @@
+@import "~styles/constants";
+
+.newfeedback-container {
+  .field-title {
+    span {
+      font-family: $fontLatoRegular, sans-serif;
+      font-size: 14px
+    }
+  }
+}

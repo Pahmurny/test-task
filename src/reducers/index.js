@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 import common from './common'
-import feedbacks from 'routes/feedback/feedbackReducer'
 
 
-export default combineReducers({ common, feedbacks })
+const createReducer = (asyncReducers) => combineReducers({ common, ...asyncReducers })
+
+export default createReducer
+

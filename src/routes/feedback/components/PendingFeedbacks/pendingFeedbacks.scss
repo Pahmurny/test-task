@@ -1,0 +1,40 @@
+@import "~styles/constants";
+
+.pending-feedback {
+  margin-bottom: 10px;
+
+  &__header {
+    display: flex;
+
+    &-pic {
+      margin-right: 10px;
+    }
+
+    &-date {
+      display: block;
+    }
+
+    &-name {
+      font-family: $fontLatoBold, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+    }
+
+    &-date-text {
+      font-family: $fontLatoRegular, sans-serif;
+      font-size: 14px;
+      color: #9f9ba2;
+    }
+
+    &-close {
+      margin-left: auto;
+    }
+  }
+
+  &__content {
+    padding-top: 10px;
+    font-family: $fontLatoRegular;
+    font-size: 14px;
+    color: #4a4a4a;
+  }
+}
