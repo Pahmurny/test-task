@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
 
@@ -12,6 +11,10 @@ const TextArea = styled.textarea`
     font-family: ${fontLatoRegular}, sans-serif;
     font-size: 14px;
     color: #9F9BA2;
+    
+    &:active, &:focus {
+        background-color: #efefef;
+    }
 `
 
 export default TextArea

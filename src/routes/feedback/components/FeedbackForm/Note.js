@@ -7,11 +7,11 @@ import RoundedTopBlock from 'components/Shared/RoundedTopBlock'
 import RoundedBlock from 'components/Shared/RoundedBlock'
 import TextArea from 'components/Form/TextArea'
 import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
-import WhiteButton from 'components/Buttons/WhiteButton'
 import TagsField from 'components/Form/TagsField/TagsField'
 import addPeople from 'routes/feedback/actions/addPeople'
 import deletePeople from 'routes/feedback/actions/deletePeople'
 import changeNoteText from 'routes/feedback/actions/changeNoteText'
+import RequestButton from 'components/Buttons/RequestButton'
 
 
 class Note extends Component {
@@ -65,9 +65,9 @@ class Note extends Component {
                 </RoundedBlock>
 
                 <ActionsBlock>
-                    <WhiteButton>
+                    <RequestButton>
                         Save Note
-                    </WhiteButton>
+                    </RequestButton>
                 </ActionsBlock>
             </Content>
         )

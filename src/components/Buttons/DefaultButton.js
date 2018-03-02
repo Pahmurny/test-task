@@ -1,12 +1,12 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import 'styles/fonts.scss'
+import { fontLatoBlack } from 'styles/constants.scss'
+
 
 const DefaultButton = styled.div`
   background-color: #5f5864;
   color: #fcfcfc;
-  font-family: LatoBold, sans-serif;
+  font-family: ${fontLatoBlack}, sans-serif;
   font-size: 14px;
   min-width: 10px;
   height: 30px;

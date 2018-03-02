@@ -11,12 +11,12 @@ export default class FeedbackModule extends Component {
     }
 
     async componentDidMount() {
-        const { Feedback, feedbackReducer } = await import(/* webpackChunkName: "Feedback_Index" */ './module')
+        const { Feedback, feedbackReducer } = await import(/* webpackChunkName: "Feedback_Module" */ './module')
         setTimeout(()=>{
             this.Feedback = Feedback
             injectAsyncReducer(store, 'feedbacks', feedbackReducer)
             this.setState({ loaded: true })
-        }, 500)
+        }, 0)
     }
 
 

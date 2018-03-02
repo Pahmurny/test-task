@@ -1,8 +1,9 @@
-import React from 'react'
 import styled from 'styled-components'
 import lockedSvg from 'assets/images/svg/lock-icon.svg'
 
-
+/**
+ *  Lock Icon
+ */
 const LockIcon = styled.div`
   background-image: url(${lockedSvg});
   display: block;

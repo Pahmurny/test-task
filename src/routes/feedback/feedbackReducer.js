@@ -7,11 +7,15 @@ import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 export const OPEN_MODAL = 'Feedback.OPEN_MODAL'
 export const CLOSE_MODAL = 'Feedback.CLOSE_MODAL'
 export const FEEDBACK_TYPE = 'Feedback.FEEDBACK_TYPE'
+
 export const SET_NOTE_PEOPLE = 'Feedback.SET_NOTE_PEOPLE'
 export const SET_GIVE_PEOPLE = 'Feedback.SET_GIVE_PEOPLE'
+export const SET_REQUEST_PEOPLE = 'Feedback.SET_REQUEST_PEOPLE'
+
 export const CHANGE_NOTE_TEXT = 'Feedback.CHANGE_NOTE_TEXT'
 export const CHANGE_FEEDBACK_CONTENT = 'Feedback.CHANGE_FEEDBACK_CONTENT'
 export const SET_FEEDBACK_GIVE_TYPE = 'Feedback.SET_FEEDBACK_GIVE_TYPE'
+export const SET_WHAT_REQUEST = 'Feedback.SET_WHAT_REQUEST'
 
 
 export const START_GETTING_PENDING_FEEDBACKS = 'Feedback.START_GETTING_PENDING_FEEDBACK'
@@ -33,7 +37,7 @@ const defaultGiveFeedBack = {
 
 const initialState = {
     feedbacks: feedbacks,
-    modalWindow: false,
+    modalWindow: true,
     feedback: {
         type: 0,
     },
@@ -58,6 +62,18 @@ const initialState = {
 
     },
     give: { ...defaultGiveFeedBack },
+    request: {
+        people: [
+            { id: 1, name: 'Apples' },
+            { id: 2, name: 'Pears' },
+            { id: 3, name: 'Bananas' },
+            { id: 4, name: 'Mangos' },
+            { id: 5, name: 'Lemons' },
+            { id: 6, name: 'Apricots' },
+        ],
+        content: '',
+        what: 0,
+    },
 }
 
 
@@ -111,5 +127,11 @@ export default createReducer(initialState, {
                 pendingFeedbacks: state[feedbackType].pendingFeedbacks,
             },
         }
+    },
+    [SET_REQUEST_PEOPLE](state, { people }) {
+        return { ...state, request: { ...state.request, people } }
+    },
+    [SET_WHAT_REQUEST](state, { what }) {
+        return { ...state, request: { ...state.request, what } }
     },
 })

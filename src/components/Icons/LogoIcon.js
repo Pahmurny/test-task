@@ -1,8 +1,9 @@
-import React from 'react'
 import styled from 'styled-components'
 import png from 'assets/images/svg/careerlark-logo.png'
 
-
+/**
+ *  Logo icon
+ */
 const LogoIcon = styled.div`
     background-image: url(${png});
     width:32px;

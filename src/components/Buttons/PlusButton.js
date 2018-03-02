@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import svg from 'assets/images/svg/show_more_plus.svg'
 import 'styles/fonts.scss'

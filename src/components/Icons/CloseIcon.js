@@ -1,8 +1,9 @@
-import React from 'react'
 import styled from 'styled-components'
 import svg from 'assets/images/svg/close.svg'
 
-
+/**
+ *  Default close icon
+ */
 const CloseIcon = styled.div`
     display: inline-block;
     width: 16px;

@@ -1,10 +1,12 @@
 import setNotePeople from 'routes/feedback/actions/setNotePeople'
 import setGivePeople from 'routes/feedback/actions/setGivePeople'
+import setRequestPeople from 'routes/feedback/actions/setRequestPeople'
 
 
 export const setActions = {
     note: setNotePeople,
-    give: setGivePeople
+    give: setGivePeople,
+    request: setRequestPeople
 }
 
 

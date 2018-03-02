@@ -3,6 +3,11 @@ import { NavLink as Link } from 'react-router-dom'
 import { url } from 'helpers/url'
 import './headerMenu.scss'
 
+/**
+ * Menu in the app header
+ * @returns {*}
+ * @constructor
+ */
 const HeaderMenu = () => <div className="header-menu">
     <Link
         exact
