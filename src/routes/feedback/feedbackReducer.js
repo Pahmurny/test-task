@@ -1,6 +1,8 @@
 import { createReducer } from 'redux-create-reducer'
-import feedbacks from '_fake/feedbacks'
-import { FEEDBACK_ANY_TYPE, FEEDBACK_REPLY_TYPE } from 'routes/feedback/feedbackTypes'
+import {
+    FEEDBACK_ANY_TYPE, FEEDBACK_FROM_ME, FEEDBACK_NOTE, FEEDBACK_REPLY_TYPE,
+    FEEDBACK_TO_ME,
+} from 'routes/feedback/feedbackTypes'
 import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 
 
@@ -51,7 +53,21 @@ const initialState = {
     filter: {
         dateType: 0,
         dates: [],
-        feedbackType: GIVE_FEEDBACK_TYPE,
+        feedbackType: { id: FEEDBACK_TO_ME },
+        feedbackTypes: [
+            {
+                id: FEEDBACK_TO_ME,
+                title: `You've received`,
+            },
+            {
+                id: FEEDBACK_FROM_ME,
+                title: `You've given`,
+            },
+            {
+                id: FEEDBACK_NOTE,
+                title: `Note to self`,
+            },
+        ],
     },
     modalWindow: false,
     feedback: {
@@ -160,5 +176,5 @@ export default createReducer(initialState, {
     },
     [SET_FEEDBACK_FILTER](state, { filter }) {
         return { ...state, filter: { ...state.filter, ...filter } }
-    }
+    },
 })

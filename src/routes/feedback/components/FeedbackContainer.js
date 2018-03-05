@@ -20,6 +20,7 @@ import initializeFilters from 'routes/feedback/actions/initializeFilters'
 import setDateType from 'routes/feedback/actions/setDateType'
 import setDate from 'routes/feedback/actions/setDate'
 import PageLoader from 'components/Shared/PageLoader'
+import setFilterFeedbackType from 'routes/feedback/actions/setFilterFeedbackType'
 
 
 const DateFilterItems = [
@@ -45,6 +46,7 @@ class FeedbackContainer extends Component {
         initializeFilters: PropTypes.func.isRequired,
         setDateType: PropTypes.func.isRequired,
         setDate: PropTypes.func.isRequired,
+        setFilterFeedbackType: PropTypes.func.isRequired,
     }
 
     state = {
@@ -89,10 +91,11 @@ class FeedbackContainer extends Component {
             filter,
             setDateType,
             setDate,
-            feedbackLoading
+            feedbackLoading,
+            setFilterFeedbackType
         } = this.props
 
-        const { dates, selectedDate, dateType } = filter
+        const { dates, selectedDate, dateType, feedbackTypes, feedbackType:ft } = filter
 
         return (
             <Page flex>
@@ -118,22 +121,12 @@ class FeedbackContainer extends Component {
                     </div>
                     <div className="feedback-body__content">
                         <div className="feedback-body__actions">
-                            <Dropdown items={[
-                                {
-                                    id: 1,
-                                    title: `You've received`,
-                                },
-                                {
-                                    id: 2,
-                                    title: `You've given`,
-                                },
-                                {
-                                    id: 3,
-                                    title: `Note to self`,
-                                },
-
-                            ]}/>
                             <Dropdown
+                                items={feedbackTypes}
+                                activeItem={ft}
+                                onClick={setFilterFeedbackType}
+                            />
+                            {/* <Dropdown
                                 style={{ marginLeft: 10, minWidth: 170 }}
                                 items={[
                                     {
@@ -149,7 +142,7 @@ class FeedbackContainer extends Component {
                                         title: `Note to self`,
                                     },
 
-                                ]}/>
+                                ]}/>*/}
                             <DefaultButton
                                 style={{
                                     marginLeft: 'auto',
@@ -186,12 +179,13 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     modalWindow,
     feedback,
     filter,
-    feedbackLoading
+    feedbackLoading,
 }), {
     toggleModal,
     feedbackType,
     getFeedbacks,
     initializeFilters,
     setDateType,
-    setDate
+    setDate,
+    setFilterFeedbackType
 })(FeedbackContainer)

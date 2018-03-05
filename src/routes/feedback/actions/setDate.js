@@ -1,9 +1,9 @@
 import { SET_FEEDBACK_FILTER } from 'routes/feedback/feedbackReducer'
 import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
+import setFilter from 'routes/feedback/actions/setFilter'
 
 const setDate = (selectedDate, dispatch) => {
-    const filter = { selectedDate }
-    dispatch({ type: SET_FEEDBACK_FILTER, filter })
+    dispatch(setFilter({ selectedDate }))
     dispatch(getFeedbacks())
 }
 

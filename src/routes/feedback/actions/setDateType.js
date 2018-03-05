@@ -1,6 +1,7 @@
 import { SET_FEEDBACK_FILTER } from 'routes/feedback/feedbackReducer'
 import { MonthlyDates, Quarters, TwoWeeksDates, WeeklyDates } from 'helpers/dates'
 import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
+import setFilter from 'routes/feedback/actions/setFilter'
 
 const DatesHelpers = [
     WeeklyDates,
@@ -11,9 +12,8 @@ const DatesHelpers = [
 
 const setDateType = (dateType, dispatch) => {
     const dates = DatesHelpers[dateType]()
-    const filter = { dateType, dates, selectedDate: dates[0] }
 
-    dispatch({ type: SET_FEEDBACK_FILTER, filter })
+    dispatch(setFilter({ dateType, dates, selectedDate: dates[0] }))
     dispatch(getFeedbacks())
 }
 
