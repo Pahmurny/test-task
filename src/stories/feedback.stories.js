@@ -13,6 +13,7 @@ import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
 import TagsField from 'components/Form/TagsField/TagsField'
 import RoundedBlock from 'components/Shared/RoundedBlock'
 import RoundedTopBlock from 'components/Shared/RoundedTopBlock'
+import ToggleField from 'components/Form/Toggle/ToggleField'
 
 
 const dropdownItems = (() => {
@@ -89,3 +90,9 @@ stories.add('Tags', () => <RoundedTopBlock>
         <TagsField/>
     </RoundedTopBlock>,
 )
+
+stories.add('Toggle', () => <ToggleField
+    leftLabel={'Public'}
+    rightLabel={'Private'}
+    label={'Only you and Richard can view this'}
+/>)

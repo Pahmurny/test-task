@@ -15,6 +15,19 @@ import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import toggleModal from 'routes/feedback/actions/toggleModal'
 import { CLOSE_MODAL, OPEN_MODAL } from 'routes/feedback/feedbackReducer'
 import feedbackType from 'routes/feedback/actions/feedbackType'
+import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
+import initializeFilters from 'routes/feedback/actions/initializeFilters'
+import setDateType from 'routes/feedback/actions/setDateType'
+import setDate from 'routes/feedback/actions/setDate'
+import PageLoader from 'components/Shared/PageLoader'
+
+
+const DateFilterItems = [
+    { id: 0, title: 'Weekly' },
+    { id: 1, title: 'Every Two weeks' },
+    { id: 2, title: 'Monthly' },
+    { id: 3, title: 'Quarterly' },
+]
 
 
 class FeedbackContainer extends Component {
@@ -23,9 +36,15 @@ class FeedbackContainer extends Component {
     static propTypes = {
         toggleModal: PropTypes.func,
         feedbackType: PropTypes.func,
+        getFeedbacks: PropTypes.func.isRequired,
         modalWindow: PropTypes.bool.isRequired,
+        feedbackLoading: PropTypes.bool.isRequired,
         feedbacks: PropTypes.array,
         feedback: PropTypes.object,
+        filter: PropTypes.object,
+        initializeFilters: PropTypes.func.isRequired,
+        setDateType: PropTypes.func.isRequired,
+        setDate: PropTypes.func.isRequired,
     }
 
     state = {
@@ -33,9 +52,13 @@ class FeedbackContainer extends Component {
     }
 
     componentDidMount() {
+        const { getFeedbacks, initializeFilters } = this.props
         setTimeout(() => {
             this.calculateListHeight()
         }, 0)
+        initializeFilters()
+        getFeedbacks()
+
 
         window.addEventListener('resize', this.onResize, false)
     }
@@ -58,10 +81,19 @@ class FeedbackContainer extends Component {
     render() {
         const { listHeight } = this.state
         const {
-            feedbacks, toggleModal, modalWindow,
+            feedbacks,
+            toggleModal,
+            modalWindow,
             feedback,
             feedbackType,
+            filter,
+            setDateType,
+            setDate,
+            feedbackLoading
         } = this.props
+
+        const { dates, selectedDate, dateType } = filter
+
         return (
             <Page flex>
                 <PageTitle>
@@ -69,45 +101,18 @@ class FeedbackContainer extends Component {
                 </PageTitle>
                 <div className="feedback-body">
                     <div className="feedback-body__sidebar">
-                        <Dropdown items={[{ id: 1, title: 'some' }]}/>
+                        <Dropdown
+                            items={DateFilterItems}
+                            onClick={(item) => setDateType(item.id)}
+                            activeItem={{ id: dateType }}
+                        />
                         <ScrollBlock style={{ height: listHeight }}>
                             <div className="filtered-dates">
-                                <DateFilter dates={[
-                                    {
-                                        startDate: '2018-08-26T00:55:06.576Z',
-                                        endDate: '2018-08-26T00:55:06.576Z',
-                                    },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                    { startDate: '2018-08-26T00:55:06.576Z', endDate: '2018-08-26T00:55:06.576Z' },
-                                ]}/>
+                                <DateFilter
+                                    dates={dates}
+                                    activeItem={selectedDate}
+                                    onClick={setDate}
+                                />
                             </div>
                         </ScrollBlock>
                     </div>
@@ -156,10 +161,11 @@ class FeedbackContainer extends Component {
                         <div className="feedback-body__list"
                              ref={feedbackContent => this.feedbackContent = feedbackContent}
                         >
-                            <FeedbacksList
+                            {feedbackLoading && <PageLoader/>}
+                            {!feedbackLoading && <FeedbacksList
                                 scrollOptions={{ height: listHeight - 10 }}
                                 feedbacks={feedbacks}
-                            />
+                            />}
                         </div>
                     </div>
                 </div>
@@ -175,8 +181,17 @@ class FeedbackContainer extends Component {
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback } }) => ({
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading } }) => ({
     feedbacks,
     modalWindow,
     feedback,
-}), { toggleModal, feedbackType })(FeedbackContainer)
+    filter,
+    feedbackLoading
+}), {
+    toggleModal,
+    feedbackType,
+    getFeedbacks,
+    initializeFilters,
+    setDateType,
+    setDate
+})(FeedbackContainer)

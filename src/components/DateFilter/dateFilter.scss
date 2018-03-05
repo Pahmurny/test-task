@@ -11,7 +11,8 @@
     margin: 0;
     padding: 0;
 
-    &-item{
+    &-item {
+      cursor: pointer;
       &.active {
         font-family: $fontLatoBold;
       }

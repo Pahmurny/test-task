@@ -11,11 +11,15 @@ import { FEEDBACK_ANY_TYPE, FEEDBACK_NEW_TYPE, FEEDBACK_REPLY_TYPE } from 'route
 import giveType from 'routes/feedback/actions/giveType'
 import PendingFeedbacks from 'routes/feedback/components/PendingFeedbacks/PendingFeedbacks'
 import getPendingRequests from 'routes/feedback/actions/getPendingRequests'
-import YellowBlock from 'components/Shared/YelowBlock'
 import PageLoader from 'components/Shared/PageLoader'
 import PendingFeedback from 'routes/feedback/components/PendingFeedbacks/PendingFeedback'
 import NewFeedback from 'routes/feedback/components/NewFeedback/NewFeedback'
 import selectFeedback from 'routes/feedback/actions/selectFeedback'
+import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
+import RequestButton from 'components/Buttons/RequestButton'
+import ToggleField from 'components/Form/Toggle/ToggleField'
+import togglePublic from 'routes/feedback/actions/togglePublic'
+import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
 
 
 class FeedbackGive extends Component {
@@ -28,6 +32,8 @@ class FeedbackGive extends Component {
         giveType: PropTypes.func.isRequired,
         getPendingRequests: PropTypes.func.isRequired,
         selectFeedback: PropTypes.func.isRequired,
+        togglePublic: PropTypes.func.isRequired,
+        toggleAnonymous: PropTypes.func.isRequired,
     }
 
     componentDidMount() {
@@ -47,6 +53,15 @@ class FeedbackGive extends Component {
         if (deletePeople) {
             deletePeople(idx, GIVE_FEEDBACK_TYPE)
         }
+    }
+
+    getReceiverName = () => {
+        const { give: { replyTo, people } } = this.props
+        if (replyTo) {
+            const { user: { name } } = replyTo
+            return `Only you and ${name} can view this`
+        }
+        return `Only you and ${people.length} people can view this`
     }
 
 
@@ -76,8 +91,10 @@ class FeedbackGive extends Component {
     render() {
 
         const {
-            give: { people, feedbackType, replyTo },
+            give: { people, feedbackType, isPublic, isAnonymous },
             allPeople,
+            togglePublic,
+            toggleAnonymous,
         } = this.props
 
         return (
@@ -95,6 +112,32 @@ class FeedbackGive extends Component {
                 </RoundedTopBlock>}
                 {(feedbackType !== FEEDBACK_NEW_TYPE && feedbackType !== FEEDBACK_REPLY_TYPE) && this.renderPending()}
                 {(feedbackType === FEEDBACK_NEW_TYPE || feedbackType === FEEDBACK_REPLY_TYPE) && <NewFeedback/>}
+                {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock style={{
+                    justifyContent: 'space-between',
+                    margin: '0 -24px',
+                    alignItems: 'center',
+                    padding: '24px',
+                    background: '#E6E4E7',
+                }}>
+                    <div className="private-block">
+                        <ToggleField
+                            onClick={togglePublic}
+                            leftLabel={'Public'} rightLabel={'Private'}
+                            label={this.getReceiverName()}
+                            toggle={isPublic}
+                        />
+                        {!isPublic && <ToggleField
+                            onClick={toggleAnonymous}
+                            leftLabel={'With Name'}
+                            rightLabel={'Anonymous'}
+                            label={!isAnonymous ? '' : 'This feedback will be sent with your name as given'}
+                            toggle={isAnonymous}
+                        />}
+                    </div>
+                    <RequestButton>
+                        Give feedback
+                    </RequestButton>
+                </ActionsBlock>}
             </Content>
         )
     }
@@ -107,4 +150,6 @@ export default connect(({ feedbacks: { give, allPeople } }) => ({ give, allPeopl
     giveType,
     getPendingRequests,
     selectFeedback,
+    togglePublic,
+    toggleAnonymous,
 })(FeedbackGive)

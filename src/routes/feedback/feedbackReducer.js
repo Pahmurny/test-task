@@ -8,6 +8,8 @@ export const OPEN_MODAL = 'Feedback.OPEN_MODAL'
 export const CLOSE_MODAL = 'Feedback.CLOSE_MODAL'
 export const FEEDBACK_TYPE = 'Feedback.FEEDBACK_TYPE'
 
+export const SET_FEEDBACK_FILTER = 'Feedback.SET_FEEDBACK_FILTER'
+
 export const SET_NOTE_PEOPLE = 'Feedback.SET_NOTE_PEOPLE'
 export const SET_GIVE_PEOPLE = 'Feedback.SET_GIVE_PEOPLE'
 export const SET_REQUEST_PEOPLE = 'Feedback.SET_REQUEST_PEOPLE'
@@ -15,12 +17,18 @@ export const SET_REQUEST_PEOPLE = 'Feedback.SET_REQUEST_PEOPLE'
 export const CHANGE_NOTE_TEXT = 'Feedback.CHANGE_NOTE_TEXT'
 export const CHANGE_FEEDBACK_CONTENT = 'Feedback.CHANGE_FEEDBACK_CONTENT'
 export const SET_FEEDBACK_GIVE_TYPE = 'Feedback.SET_FEEDBACK_GIVE_TYPE'
+export const TOGGLE_PUBLIC_GIVE_TYPE = 'Feedback.TOGGLE_PUBLIC_GIVE_TYPE'
+export const TOGGLE_ANONYMOUS_GIVE_TYPE = 'Feedback.TOGGLE_ANONYMOUS_GIVE_TYPE'
 export const SET_WHAT_REQUEST = 'Feedback.SET_WHAT_REQUEST'
 
 
 export const START_GETTING_PENDING_FEEDBACKS = 'Feedback.START_GETTING_PENDING_FEEDBACK'
 export const END_GETTING_PENDING_FEEDBACKS = 'Feedback.END_GETTING_PENDING_FEEDBACK'
 export const FAILED_GETTING_PENDING_FEEDBACKS = 'Feedback.FAILED_GETTING_PENDING_FEEDBACK'
+
+export const START_GETTING_FEEDBACKS = 'Feedback.START_GETTING_FEEDBACKS'
+export const END_GETTING_FEEDBACKS = 'Feedback.END_GETTING_FEEDBACKS'
+export const FAILED_GETTING_FEEDBACKS = 'Feedback.FAILED_GETTING_FEEDBACKS'
 
 
 export const CLEAR_FEEDBACK = 'Feedback.CLEAR_FEEDBACK'
@@ -33,11 +41,19 @@ const defaultGiveFeedBack = {
     pendingFeedbacks: [],
     content: '',
     pendingLoading: false,
+    isPublic: true,
+    isAnonymous: false,
 }
 
 const initialState = {
-    feedbacks: feedbacks,
-    modalWindow: true,
+    feedbacks: [],
+    feedbackLoading: false,
+    filter: {
+        dateType: 0,
+        dates: [],
+        feedbackType: GIVE_FEEDBACK_TYPE,
+    },
+    modalWindow: false,
     feedback: {
         type: 0,
     },
@@ -63,14 +79,7 @@ const initialState = {
     },
     give: { ...defaultGiveFeedBack },
     request: {
-        people: [
-            { id: 1, name: 'Apples' },
-            { id: 2, name: 'Pears' },
-            { id: 3, name: 'Bananas' },
-            { id: 4, name: 'Mangos' },
-            { id: 5, name: 'Lemons' },
-            { id: 6, name: 'Apricots' },
-        ],
+        people: [],
         content: '',
         what: 0,
     },
@@ -134,4 +143,22 @@ export default createReducer(initialState, {
     [SET_WHAT_REQUEST](state, { what }) {
         return { ...state, request: { ...state.request, what } }
     },
+    [START_GETTING_FEEDBACKS](state) {
+        return { ...state, feedbackLoading: true, feedbacks: [] }
+    },
+    [END_GETTING_FEEDBACKS](state, { feedbacks }) {
+        return { ...state, feedbackLoading: false, feedbacks }
+    },
+    [FAILED_GETTING_FEEDBACKS](state, { error }) {
+        return { ...state, feedbackError: error }
+    },
+    [TOGGLE_PUBLIC_GIVE_TYPE](state, { isPublic }) {
+        return { ...state, give: { ...state.give, isPublic } }
+    },
+    [TOGGLE_ANONYMOUS_GIVE_TYPE](state, { isAnonymous }) {
+        return { ...state, give: { ...state.give, isAnonymous } }
+    },
+    [SET_FEEDBACK_FILTER](state, { filter }) {
+        return { ...state, filter: { ...state.filter, ...filter } }
+    }
 })
