@@ -56,12 +56,12 @@ class FeedbackGive extends Component {
     }
 
     getReceiverName = () => {
-        const { give: { replyTo, people } } = this.props
+        const { give: { replyTo, people, isPublic } } = this.props
         if (replyTo) {
             const { user: { name } } = replyTo
-            return `Only you and ${name} can view this`
+            return isPublic ? '' : `Only you and ${name} can view this`
         }
-        return `Only you and ${people.length} people can view this`
+        return isPublic ? '' : `Only you and ${people.length} people can view this`
     }
 
 
