@@ -7,7 +7,6 @@ import {
 } from 'routes/feedback/feedbackReducer'
 
 const getFeedbacks = debounce(async (dispatch, { feedbacks }) => {
-    const { filter } = feedbacks
     dispatch({
         type: START_GETTING_FEEDBACKS,
     })

@@ -1,5 +1,4 @@
 import { createReducer } from 'redux-create-reducer'
-import { combineReducers } from 'redux'
 import {
     FEEDBACK_ANY_TYPE, FEEDBACK_FROM_ME, FEEDBACK_NOTE, FEEDBACK_REPLY_TYPE,
     FEEDBACK_TO_ME,

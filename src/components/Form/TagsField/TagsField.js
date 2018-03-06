@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import ReactTags from 'react-tag-autocomplete'
+import ReactTags from '../Autocomplete/ReactTags'
 import './tagsField.scss'
 
 

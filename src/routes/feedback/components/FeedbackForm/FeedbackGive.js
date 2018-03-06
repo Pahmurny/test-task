@@ -21,8 +21,10 @@ import togglePublic from 'routes/feedback/actions/togglePublic'
 import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
 import RoundedBlock from 'components/Shared/RoundedBlock'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
+import PersonalEmail from 'components/Form/PersonalEmail'
 
 const RoundedFocused = withFocus(RoundedBlock)
+
 
 class FeedbackGive extends Component {
 
@@ -100,14 +102,17 @@ class FeedbackGive extends Component {
         } = this.props
 
         return (
-            <Content className="give-export__view" style={{paddingBottom:0}}>
+            <Content className="give-export__view" style={{ paddingBottom: 0 }}>
                 <FieldTitle>
                     Who are you giving feedback to?
                 </FieldTitle>
                 {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused style={{ marginTop: 17 }}>
                     <TagsField
                         tags={people}
-                        suggestions={allPeople.map(person => ({...person, name:`${person.name} ${person.email}`}))}
+                        suggestions={allPeople.map(person => ({
+                            ...person, name: `${person.name}`,
+                            component: <PersonalEmail>{person.email}</PersonalEmail>,
+                        }))}
                         onAdd={this.onAddPeople}
                         onDelete={this.onDeletePeople}
                     />

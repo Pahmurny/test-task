@@ -1,4 +1,3 @@
-import { SET_FEEDBACK_FILTER } from 'routes/feedback/feedbackReducer'
 import { MonthlyDates, Quarters, TwoWeeksDates, WeeklyDates } from 'helpers/dates'
 import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
 import setFilter from 'routes/feedback/actions/setFilter'

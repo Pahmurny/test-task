@@ -51,7 +51,6 @@ export default class DateFilter extends Component {
 
     get isMore() {
         const { dates } = this.props
-        const { page } = this.state
         return (dates.length - this.toShow) >= PAGE_SIZE
     }
 

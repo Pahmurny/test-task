@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, BrowserRouter as Router, NavLink as Link } from 'react-router-dom'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 import Sidebar from 'components/Sidebar/Sidebar'
 import Content from 'components/Content/Content'
 import FeedbackModule from 'routes/feedback/FeedbackModule'

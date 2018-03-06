@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Content from 'routes/feedback/components/FeedbackForm/shared/Content'
 import { FieldTitle } from 'routes/feedback/components/FeedbackForm/shared/FieldTitle'
-import RoundedTopBlock from 'components/Shared/RoundedTopBlock'
 import RoundedBlock from 'components/Shared/RoundedBlock'
 import TextArea from 'components/Form/TextArea'
 import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
@@ -13,6 +12,7 @@ import deletePeople from 'routes/feedback/actions/deletePeople'
 import changeNoteText from 'routes/feedback/actions/changeNoteText'
 import RequestButton from 'components/Buttons/RequestButton'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
+import PersonalEmail from 'components/Form/PersonalEmail'
 
 const RoundedFocused = withFocus(RoundedBlock)
 
@@ -55,7 +55,7 @@ class Note extends Component {
                         tags={people}
                         onAdd={addPeople}
                         onDelete={deletePeople}
-                        suggestions={allPeople.map(person => ({...person, name:`${person.name} ${person.email}`}))}
+                        suggestions={allPeople.map(person => ({...person, name:`${person.name}`, component: <PersonalEmail>{person.email}</PersonalEmail>}))}
                     />
                 </RoundedFocused>
 
