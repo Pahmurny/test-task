@@ -21,6 +21,7 @@ import setDateType from 'routes/feedback/actions/setDateType'
 import setDate from 'routes/feedback/actions/setDate'
 import PageLoader from 'components/Shared/PageLoader'
 import setFilterFeedbackType from 'routes/feedback/actions/setFilterFeedbackType'
+import loadSuggestions from 'routes/feedback/actions/loadSuggestions'
 
 
 const DateFilterItems = [
@@ -47,6 +48,7 @@ class FeedbackContainer extends Component {
         setDateType: PropTypes.func.isRequired,
         setDate: PropTypes.func.isRequired,
         setFilterFeedbackType: PropTypes.func.isRequired,
+        loadSuggestions: PropTypes.func.isRequired,
     }
 
     state = {
@@ -54,13 +56,13 @@ class FeedbackContainer extends Component {
     }
 
     componentDidMount() {
-        const { getFeedbacks, initializeFilters } = this.props
+        const { getFeedbacks, initializeFilters, loadSuggestions } = this.props
         setTimeout(() => {
             this.calculateListHeight()
         }, 0)
         initializeFilters()
         getFeedbacks()
-
+        loadSuggestions()
 
         window.addEventListener('resize', this.onResize, false)
     }
@@ -187,5 +189,6 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     initializeFilters,
     setDateType,
     setDate,
-    setFilterFeedbackType
+    setFilterFeedbackType,
+    loadSuggestions
 })(FeedbackContainer)

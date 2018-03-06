@@ -74,9 +74,9 @@ class FeedbackGive extends Component {
         }
         return <React.Fragment>
             <FieldTitle style={{ marginTop: 25, marginBottom: 10 }}>
-                Pending requests({pendingFeedbacks.length})
+                Pending requests ({pendingFeedbacks.length})
             </FieldTitle>
-            <PendingFeedbacks style={{ height: 270 }}>
+            <PendingFeedbacks style={{ height: 300 }}>
                 <PendingFeedbacks>
                     {
                         pendingFeedbacks.map((feedback, key) => <PendingFeedback
@@ -100,14 +100,14 @@ class FeedbackGive extends Component {
         } = this.props
 
         return (
-            <Content className="give-export__view">
+            <Content className="give-export__view" style={{paddingBottom:0}}>
                 <FieldTitle>
                     Who are you giving feedback to?
                 </FieldTitle>
                 {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused style={{ marginTop: 17 }}>
                     <TagsField
                         tags={people}
-                        suggestions={allPeople}
+                        suggestions={allPeople.map(person => ({...person, name:`${person.name} ${person.email}`}))}
                         onAdd={this.onAddPeople}
                         onDelete={this.onDeletePeople}
                     />

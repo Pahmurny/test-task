@@ -13,6 +13,8 @@
 
     &-item {
       cursor: pointer;
+       margin-bottom: 2px;
+
       &.active {
         font-family: $fontLatoBold;
       }

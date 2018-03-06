@@ -5,13 +5,17 @@ import { FEEDBACK_NEW_TYPE, FEEDBACK_REPLY_TYPE } from 'routes/feedback/feedback
 import { FieldTitle } from 'routes/feedback/components/FeedbackForm/shared/FieldTitle'
 import TextArea from 'components/Form/TextArea'
 import RoundedBlock from 'components/Shared/RoundedBlock'
-import './newfeedback.scss'
 import PendingFeedback from 'routes/feedback/components/PendingFeedbacks/PendingFeedback'
 import clearFeedback from 'routes/feedback/actions/clearFeedback'
 import changeFeedbackContent from 'routes/feedback/actions/changeFeedbackContent'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
+import EmbodyButton from 'components/Buttons/EmbodyButton'
+import './newfeedback.scss'
+import setEmbodyValue from 'routes/feedback/actions/setEmbodyValue'
+
 
 const RoundedFocused = withFocus(RoundedBlock)
+
 
 class NewFeedback extends Component {
 
@@ -20,7 +24,10 @@ class NewFeedback extends Component {
         content: PropTypes.string.isRequired,
         replyTo: PropTypes.object,
         clearFeedback: PropTypes.func.isRequired,
+        setEmbodyValue: PropTypes.func.isRequired,
         changeFeedbackContent: PropTypes.func.isRequired,
+        embodyValues: PropTypes.array.isRequired,
+        embodyValue: PropTypes.number.isRequired,
     }
 
     onChangeText = (e) => {
@@ -30,7 +37,7 @@ class NewFeedback extends Component {
     }
 
     render() {
-        const { replyTo, clearFeedback, content } = this.props
+        const { replyTo, clearFeedback, content, embodyValues, embodyValue, setEmbodyValue } = this.props
         return <div className="newfeedback-container" style={{ paddingTop: 20 }}>
             {replyTo && <PendingFeedback onClose={clearFeedback} feedback={replyTo}/>}
             <FieldTitle style={{ marginTop: 20, marginBottom: 20 }}>
@@ -42,14 +49,26 @@ class NewFeedback extends Component {
             <FieldTitle style={{ marginTop: 20 }} className="field-title">
                 Which values did they embody? <span>View descriptions</span>
             </FieldTitle>
+            <div className="embody-values">
+                {
+                    embodyValues.map((embody, key) => <EmbodyButton
+                        className={'embody-values__button'}
+                        active={key === embodyValue}
+                        key={key}
+                        onClick={() => setEmbodyValue(key)}
+                    >{embody}</EmbodyButton>)
+                }
+            </div>
         </div>
     }
 }
 
 
-export default connect(({ feedbacks: { give: { replyTo, feedbackType, content } } }) => ({
+export default connect(({ feedbacks: { give: { replyTo, feedbackType, content, embodyValues, embodyValue } } }) => ({
     replyTo,
     feedbackType,
     content,
-}), { clearFeedback, changeFeedbackContent })(NewFeedback)
+    embodyValues,
+    embodyValue,
+}), { clearFeedback, changeFeedbackContent, setEmbodyValue })(NewFeedback)
 

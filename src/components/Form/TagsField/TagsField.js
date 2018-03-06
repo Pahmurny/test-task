@@ -48,12 +48,21 @@ export default class TagsField extends Component {
         }
     }
 
+    preformatTag = (tag) => {
+        const { name, email } = tag
+        if(email){
+            const tagName = name.replace(email, '')
+            return {...tag, name: tagName}
+        }
+        return tag
+    }
+
     render() {
         const { tags, suggestions } = this.props
         return (
             <ReactTags
                 classNames={classConfig}
-                tags={tags}
+                tags={tags.map(this.preformatTag)}
                 suggestions={suggestions}
                 handleDelete={this.handleDelete}
                 handleAddition={this.handleAddition}

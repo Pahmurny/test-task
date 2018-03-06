@@ -1,4 +1,5 @@
 import { createReducer } from 'redux-create-reducer'
+import { combineReducers } from 'redux'
 import {
     FEEDBACK_ANY_TYPE, FEEDBACK_FROM_ME, FEEDBACK_NOTE, FEEDBACK_REPLY_TYPE,
     FEEDBACK_TO_ME,
@@ -16,6 +17,8 @@ export const SET_NOTE_PEOPLE = 'Feedback.SET_NOTE_PEOPLE'
 export const SET_GIVE_PEOPLE = 'Feedback.SET_GIVE_PEOPLE'
 export const SET_REQUEST_PEOPLE = 'Feedback.SET_REQUEST_PEOPLE'
 
+export const SET_EMBODY_VALUE = 'Feedback.SET_EMBODY_VALUE'
+
 export const CHANGE_NOTE_TEXT = 'Feedback.CHANGE_NOTE_TEXT'
 export const CHANGE_FEEDBACK_CONTENT = 'Feedback.CHANGE_FEEDBACK_CONTENT'
 export const SET_FEEDBACK_GIVE_TYPE = 'Feedback.SET_FEEDBACK_GIVE_TYPE'
@@ -27,6 +30,11 @@ export const SET_WHAT_REQUEST = 'Feedback.SET_WHAT_REQUEST'
 export const START_GETTING_PENDING_FEEDBACKS = 'Feedback.START_GETTING_PENDING_FEEDBACK'
 export const END_GETTING_PENDING_FEEDBACKS = 'Feedback.END_GETTING_PENDING_FEEDBACK'
 export const FAILED_GETTING_PENDING_FEEDBACKS = 'Feedback.FAILED_GETTING_PENDING_FEEDBACK'
+
+export const START_GETTING_SUGGESTIONS_FEEDBACKS = 'Feedback.START_GETTING_SUGGESTIONS_FEEDBACK'
+export const END_GETTING_SUGGESTIONS_FEEDBACKS = 'Feedback.END_GETTING_SUGGESTIONS_FEEDBACK'
+export const FAILED_GETTING_SUGGESTIONS_FEEDBACKS = 'Feedback.FAILED_GETTING_SUGGESTIONS_FEEDBACK'
+
 
 export const START_GETTING_FEEDBACKS = 'Feedback.START_GETTING_FEEDBACKS'
 export const END_GETTING_FEEDBACKS = 'Feedback.END_GETTING_FEEDBACKS'
@@ -45,6 +53,13 @@ const defaultGiveFeedBack = {
     pendingLoading: false,
     isPublic: true,
     isAnonymous: false,
+    embodyValues: [
+        'Go to extra mile',
+        'Team player',
+        'Be an owner',
+        'Some other value',
+    ],
+    embodyValue: 0,
 }
 
 const initialState = {
@@ -73,14 +88,7 @@ const initialState = {
     feedback: {
         type: 0,
     },
-    allPeople: [
-        { id: 1, name: 'Apples' },
-        { id: 2, name: 'Pears' },
-        { id: 3, name: 'Bananas' },
-        { id: 4, name: 'Mangos' },
-        { id: 5, name: 'Lemons' },
-        { id: 6, name: 'Apricots' },
-    ],
+    allPeople: [],
     note: {
         people: [
             { id: 1, name: 'Apples' },
@@ -176,5 +184,17 @@ export default createReducer(initialState, {
     },
     [SET_FEEDBACK_FILTER](state, { filter }) {
         return { ...state, filter: { ...state.filter, ...filter } }
+    },
+    [START_GETTING_SUGGESTIONS_FEEDBACKS](state) {
+        return { ...state, suggestionPending: true, suggestionPendingError: undefined }
+    },
+    [END_GETTING_SUGGESTIONS_FEEDBACKS](state, { people: allPeople }) {
+        return { ...state, suggestionPending: false, allPeople }
+    },
+    [FAILED_GETTING_SUGGESTIONS_FEEDBACKS](state, { error }) {
+        return { ...state, suggestionPending: false, suggestionPendingError: error }
+    },
+    [SET_EMBODY_VALUE](state, { embodyValue }) {
+        return { ...state, give: { ...state.give, embodyValue } }
     },
 })

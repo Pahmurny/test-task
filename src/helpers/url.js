@@ -14,5 +14,6 @@ export const url = {
 export const endpoint = {
     feedbacks: () => `${ENDPOINT_URL}/feedbacks`,
     pending: () => `${ENDPOINT_URL}/pending`,
+    people: () => `${ENDPOINT_URL}/people`,
 
 }

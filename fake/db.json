@@ -333,12 +333,36 @@
       ]
     }
   ],
-  "people":[
-    { "id": 1, "name": "Apples" },
-    { "id": 2, "name": "Pears" },
-    { "id": 3, "name": "Bananas" },
-    { "id": 4, "name": "Mangos" },
-    { "id": 5, "name": "Lemons" },
-    { "id": 6, "name": "Apricots" }
+  "people": [
+    {
+      "id": 1,
+      "name": "Apples Dearressuch",
+      "email": "Dearressuch@fleckens.hu"
+    },
+    {
+      "id": 2,
+      "name": "Pears Aforeg",
+      "email": "Aforeg@cuvox.de"
+    },
+    {
+      "id": 3,
+      "name": "Bananas Whate1928",
+      "email": "Whate1928@fleckens.hu"
+    },
+    {
+      "id": 4,
+      "name": "Mangos Herithen43",
+      "email": "Herithen43@gustr.com"
+    },
+    {
+      "id": 5,
+      "name": "Kneince1933 Lemons",
+      "email": "Kneince1933@einrot.com"
+    },
+    {
+      "id": 6,
+      "name": "Wervelf Apricots",
+      "email": "Wervelf@fleckens.hu"
+    }
   ]
 }

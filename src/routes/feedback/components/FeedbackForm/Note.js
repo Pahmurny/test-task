@@ -55,7 +55,7 @@ class Note extends Component {
                         tags={people}
                         onAdd={addPeople}
                         onDelete={deletePeople}
-                        suggestions={allPeople}
+                        suggestions={allPeople.map(person => ({...person, name:`${person.name} ${person.email}`}))}
                     />
                 </RoundedFocused>
 
