@@ -1,0 +1,10 @@
+.focus-area {
+  $fa: &;
+
+  &.focused {
+    #{$fa}__wrapped {
+      box-shadow: 0 0 0 2px #417505;
+      border-color: transparent;
+    }
+  }
+}

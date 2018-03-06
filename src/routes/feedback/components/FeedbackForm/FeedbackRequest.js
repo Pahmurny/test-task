@@ -15,7 +15,10 @@ import RoundedBlock from 'components/Shared/RoundedBlock'
 import changeFeedbackContent from 'routes/feedback/actions/changeFeedbackContent'
 import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
 import RequestButton from 'components/Buttons/RequestButton'
+import withFocus from 'components/Shared/HOC/focused/withFocus'
 
+
+const RoundedFocused = withFocus(RoundedBlock)
 
 const whatItems = [
     'Do you have any feedback for me?',
@@ -62,14 +65,14 @@ class FeedbackRequest extends Component {
                 <FieldTitle>
                     Who do you want request from?
                 </FieldTitle>
-                <RoundedTopBlock style={{ marginTop: 17, marginBottom: 17 }}>
+                <RoundedFocused style={{ marginTop: 17, marginBottom: 17 }}>
                     <TagsField
                         tags={people}
                         suggestions={allPeople}
                         onAdd={this.onAddPeople}
                         onDelete={this.onDeletePeople}
                     />
-                </RoundedTopBlock>
+                </RoundedFocused>
                 <FieldTitle style={{ marginBottom: 17 }}>
                     What do you want to ask them?
                 </FieldTitle>
@@ -79,13 +82,13 @@ class FeedbackRequest extends Component {
                         onClick={() => setWhatRequest(key)}
                     >{w}</Radio>)
                 }
-                <RoundedBlock>
+                <RoundedFocused>
                     <TextArea
                         style={{ height: 160 }}
                         value={content}
                         onChange={this.onChangeText}
                     />
-                </RoundedBlock>
+                </RoundedFocused>
                 <ActionsBlock>
                     <RequestButton>
                         Request Feedback

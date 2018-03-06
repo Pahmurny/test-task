@@ -12,7 +12,9 @@ import addPeople from 'routes/feedback/actions/addPeople'
 import deletePeople from 'routes/feedback/actions/deletePeople'
 import changeNoteText from 'routes/feedback/actions/changeNoteText'
 import RequestButton from 'components/Buttons/RequestButton'
+import withFocus from 'components/Shared/HOC/focused/withFocus'
 
+const RoundedFocused = withFocus(RoundedBlock)
 
 class Note extends Component {
 
@@ -48,21 +50,21 @@ class Note extends Component {
                 <FieldTitle>
                     Who's the note about
                 </FieldTitle>
-                <RoundedTopBlock style={{ marginTop: 17 }}>
+                <RoundedFocused style={{ marginTop: 17 }}>
                     <TagsField
                         tags={people}
                         onAdd={addPeople}
                         onDelete={deletePeople}
                         suggestions={allPeople}
                     />
-                </RoundedTopBlock>
+                </RoundedFocused>
 
                 <FieldTitle style={{ marginTop: 26 }}>
                     What do you want to remember for later?
                 </FieldTitle>
-                <RoundedBlock style={{ marginTop: 17 }}>
+                <RoundedFocused style={{ marginTop: 17 }}>
                     <TextArea value={text} onChange={this.onChangeText}/>
-                </RoundedBlock>
+                </RoundedFocused>
 
                 <ActionsBlock>
                     <RequestButton>

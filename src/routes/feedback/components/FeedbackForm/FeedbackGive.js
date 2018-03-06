@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Content from 'routes/feedback/components/FeedbackForm/shared/Content'
 import { FieldTitle } from 'routes/feedback/components/FeedbackForm/shared/FieldTitle'
-import RoundedTopBlock from 'components/Shared/RoundedTopBlock'
 import TagsField from 'components/Form/TagsField/TagsField'
 import addPeople, { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 import deletePeople from 'routes/feedback/actions/deletePeople'
@@ -20,7 +19,10 @@ import RequestButton from 'components/Buttons/RequestButton'
 import ToggleField from 'components/Form/Toggle/ToggleField'
 import togglePublic from 'routes/feedback/actions/togglePublic'
 import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
+import RoundedBlock from 'components/Shared/RoundedBlock'
+import withFocus from 'components/Shared/HOC/focused/withFocus'
 
+const RoundedFocused = withFocus(RoundedBlock)
 
 class FeedbackGive extends Component {
 
@@ -102,14 +104,14 @@ class FeedbackGive extends Component {
                 <FieldTitle>
                     Who are you giving feedback to?
                 </FieldTitle>
-                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedTopBlock style={{ marginTop: 17 }}>
+                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused style={{ marginTop: 17 }}>
                     <TagsField
                         tags={people}
                         suggestions={allPeople}
                         onAdd={this.onAddPeople}
                         onDelete={this.onDeletePeople}
                     />
-                </RoundedTopBlock>}
+                </RoundedFocused>}
                 {(feedbackType !== FEEDBACK_NEW_TYPE && feedbackType !== FEEDBACK_REPLY_TYPE) && this.renderPending()}
                 {(feedbackType === FEEDBACK_NEW_TYPE || feedbackType === FEEDBACK_REPLY_TYPE) && <NewFeedback/>}
                 {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock style={{

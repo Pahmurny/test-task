@@ -11,10 +11,6 @@ const TextArea = styled.textarea`
     font-family: ${fontLatoRegular}, sans-serif;
     font-size: 14px;
     color: #9F9BA2;
-    
-    &:active, &:focus {
-        background-color: #efefef;
-    }
 `
 
 export default TextArea

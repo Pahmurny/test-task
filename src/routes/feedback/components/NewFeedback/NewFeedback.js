@@ -9,7 +9,9 @@ import './newfeedback.scss'
 import PendingFeedback from 'routes/feedback/components/PendingFeedbacks/PendingFeedback'
 import clearFeedback from 'routes/feedback/actions/clearFeedback'
 import changeFeedbackContent from 'routes/feedback/actions/changeFeedbackContent'
+import withFocus from 'components/Shared/HOC/focused/withFocus'
 
+const RoundedFocused = withFocus(RoundedBlock)
 
 class NewFeedback extends Component {
 
@@ -34,9 +36,9 @@ class NewFeedback extends Component {
             <FieldTitle style={{ marginTop: 20, marginBottom: 20 }}>
                 What is your feedback?
             </FieldTitle>
-            <RoundedBlock>
+            <RoundedFocused>
                 <TextArea onChange={this.onChangeText} value={content} style={{ height: 170 }}/>
-            </RoundedBlock>
+            </RoundedFocused>
             <FieldTitle style={{ marginTop: 20 }} className="field-title">
                 Which values did they embody? <span>View descriptions</span>
             </FieldTitle>
