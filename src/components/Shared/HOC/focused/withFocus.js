@@ -18,7 +18,6 @@ const withFocus = (WrappedComponent) => {
         }
 
         mouseClick = (e) => {
-            console.log(e)
             if (this.div && !this.div.contains(e.target)) {
                 this.setState({ active: false })
             }
