@@ -2,29 +2,29 @@
   display: flex;
   flex: 1;
   position: relative;
-  padding-right: 72px;
+  padding-right: 48px;
   padding-top: 84px;
   box-sizing: border-box;
 
 
   &__sidebar {
-    display: flex;
-    flex-direction: column;
-    flex: 25;
-    align-items: center;
+    display: block;
+    align-items: left;
+    padding-right: 48px;
+    padding-left: 48px;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    flex: 70;
-    min-width: 400px;
+    flex: 72;
+    min-width: 390px;
   }
 
   &__actions{
     display: flex;
     justify-content: flex-start;
-    padding-bottom: 20px;
+    padding-bottom: 24px;
   }
 
   &__list {
@@ -34,7 +34,6 @@
 
   .filtered-dates {
     display: block;
-    padding-left: 75px;
     padding-top: 20px;
   }
 }
