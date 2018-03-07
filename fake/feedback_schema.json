@@ -1,0 +1,197 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$id": "/properties/id",
+      "type": "integer",
+      "title": "The Id Schema ",
+      "default": 0,
+      "examples": [
+        12345678
+      ]
+    },
+    "created": {
+      "$id": "/properties/created",
+      "type": "string",
+      "title": "The Created Schema ",
+      "default": "",
+      "examples": [
+        "2018-12-05T10:19:11.076Z"
+      ]
+    },
+    "created_by": {
+      "$id": "/properties/created_by",
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "$id": "/properties/created_by/properties/user_id",
+          "type": "integer",
+          "title": "The User_id Schema ",
+          "default": 0,
+          "examples": [
+            100
+          ]
+        },
+        "name": {
+          "$id": "/properties/created_by/properties/name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+          "examples": [
+            "Samara Stoltenberg"
+          ]
+        },
+        "image": {
+          "$id": "/properties/created_by/properties/image",
+          "type": "string",
+          "title": "The Image Schema ",
+          "default": "",
+          "examples": [
+            "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
+          ]
+        }
+      }
+    },
+    "question": {
+      "$id": "/properties/question",
+      "type": "string",
+      "title": "The Question Schema ",
+      "default": "",
+      "examples": [
+        "Sit ad eum nobis.\nVitae excepturi fuga vel vitae."
+      ]
+    },
+    "responses_anonymous": {
+      "$id": "/properties/responses_anonymous",
+      "type": "boolean",
+      "title": "The Responses_anonymous Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "goes_to_type": {
+      "$id": "/properties/goes_to_type",
+      "type": "string",
+      "title": "The Goes_to_type Schema ",
+      "default": "",
+      "examples": [
+        "MANAGER"
+      ]
+    },
+    "private": {
+      "$id": "/properties/private",
+      "type": "boolean",
+      "title": "The Private Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "reviewers": {
+      "$id": "/properties/reviewers",
+      "type": "array",
+      "items": {
+        "$id": "/properties/reviewers/items",
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "$id": "/properties/reviewers/items/properties/user_id",
+            "type": "integer",
+            "title": "The User_id Schema ",
+            "default": 0,
+            "examples": [
+              100
+            ]
+          },
+          "name": {
+            "$id": "/properties/reviewers/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema ",
+            "default": "",
+            "examples": [
+              "Samara Stoltenberg"
+            ]
+          },
+          "image": {
+            "$id": "/properties/reviewers/items/properties/image",
+            "type": "string",
+            "title": "The Image Schema ",
+            "default": "",
+            "examples": [
+              "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
+            ]
+          }
+        }
+      }
+    },
+    "feedback_subject": {
+      "$id": "/properties/feedback_subject",
+      "type": "string",
+      "title": "The Feedback_subject Schema ",
+      "default": "",
+      "examples": [
+        "Feedback Subject"
+      ]
+    },
+    "receivers": {
+      "$id": "/properties/receivers",
+      "type": "array",
+      "items": {
+        "$id": "/properties/receivers/items",
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "$id": "/properties/receivers/items/properties/user_id",
+            "type": "integer",
+            "title": "The User_id Schema ",
+            "default": 0,
+            "examples": [
+              100
+            ]
+          },
+          "name": {
+            "$id": "/properties/receivers/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema ",
+            "default": "",
+            "examples": [
+              "Samara Stoltenberg"
+            ]
+          },
+          "image": {
+            "$id": "/properties/receivers/items/properties/image",
+            "type": "string",
+            "title": "The Image Schema ",
+            "default": "",
+            "examples": [
+              "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
+            ]
+          }
+        }
+      }
+    },
+    "replies": {
+      "$id": "/properties/replies",
+      "type": "array"
+    },
+    "tags": {
+      "$id": "/properties/tags",
+      "type": "array",
+      "items": {
+        "$id": "/properties/tags/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "qui",
+          "repudiandae",
+          "dolorem",
+          "qui",
+          "unde"
+        ]
+      }
+    }
+  }
+}

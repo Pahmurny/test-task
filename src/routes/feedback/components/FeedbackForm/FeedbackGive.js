@@ -24,7 +24,8 @@ import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 
 const RoundedFocused = withFocus(RoundedBlock)
-
+const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
+const PUBLIC_TEXT = 'This feedback will be sent with your name as the giver.'
 
 class FeedbackGive extends Component {
 
@@ -63,7 +64,7 @@ class FeedbackGive extends Component {
         const { give: { replyTo, people, isPublic } } = this.props
         if (replyTo) {
             const { user: { name } } = replyTo
-            return isPublic ? '' : `Only you and ${name} can view this`
+            return isPublic ? 'Everyone at [x] can read this.' : `Only you and ${name} can view this`
         }
         return isPublic ? '' : `Only you and ${people.length} people can view this`
     }
@@ -137,7 +138,9 @@ class FeedbackGive extends Component {
                             onClick={toggleAnonymous}
                             leftLabel={'With Name'}
                             rightLabel={'Anonymous'}
-                            label={!isAnonymous ? '' : 'This feedback will be sent with your name as given'}
+                            label={!isAnonymous ? ANONYMOUS_TEXT
+                                : PUBLIC_TEXT
+                            }
                             toggle={isAnonymous}
                         />}
                     </div>

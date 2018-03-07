@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown'
 import './dropdown.scss'
 
-let dd
-
 const GetItem = (items, id, title = 'Select') => {
     const filtered = items.filter(item => item.id === id)
     if (filtered.length > 0) {
@@ -14,25 +12,28 @@ const GetItem = (items, id, title = 'Select') => {
     return { title }
 }
 
-const Drop = ({ items, onClick, activeItem = { id: -1 }, style }) => <Dropdown style={style} ref={dropdown => dd = dropdown}>
-    <DropdownTrigger>{GetItem(items, activeItem.id).title}</DropdownTrigger>
-    <DropdownContent>
-        <ul className={'dropdown-items'}>
-            {items.map((item, key) => {
-                return <li
-                    className={cn('dropdown-item', { active: item.id === activeItem.id })}
-                    key={key}
-                    onClick={() => {
-                        if (onClick) {
-                            onClick(item)
-                            dd.hide()
-                        }
-                    }}
-                >{item.title}</li>
-            })}
-        </ul>
-    </DropdownContent>
-</Dropdown>
+const Drop = ({ items, onClick, activeItem = { id: -1 }, style }) => {
+    let DropDownRef
+    return <Dropdown style={style} ref={dropdown => DropDownRef = dropdown}>
+        <DropdownTrigger>{GetItem(items, activeItem.id).title}</DropdownTrigger>
+        <DropdownContent>
+            <ul className={'dropdown-items'}>
+                {items.map((item, key) => {
+                    return <li
+                        className={cn('dropdown-item', { active: item.id === activeItem.id })}
+                        key={key}
+                        onClick={() => {
+                            if (onClick) {
+                                DropDownRef.hide()
+                                onClick(item)
+                            }
+                        }}
+                    >{item.title}</li>
+                })}
+            </ul>
+        </DropdownContent>
+    </Dropdown>
+}
 
 
 Drop.propTypes = {
