@@ -10,7 +10,7 @@ const DatesHelpers = [
 ]
 
 const setDateType = (dateType, dispatch) => {
-    const dates = DatesHelpers[dateType]()
+    const dates = [...DatesHelpers[dateType](2017),...DatesHelpers[dateType]()]
 
     dispatch(setFilter({ dateType, dates, selectedDate: dates[0] }))
     dispatch(getFeedbacks())

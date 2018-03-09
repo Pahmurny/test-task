@@ -69,6 +69,14 @@ export default class DateFilter extends Component {
         </div>
     }
 
+    renderEndDate = (date) => {
+        const currentYear = m().format('YYYY')
+        const dateYear = m(date).format('YYYY')
+        if (currentYear !== dateYear) {
+            return ` (${dateYear})`
+        }
+    }
+
     render() {
         const { activeItem, onClick } = this.props
         const moreBtn = this.renderMoreBtn()
@@ -83,6 +91,7 @@ export default class DateFilter extends Component {
                                 onClick={() => onClick && onClick(data)}
                                 className={cn('date-filter__container-item', { active: m(activeItem.startDate).toISOString() === m(startDate).toISOString() })}>
                                 {m(startDate).format('MMM DD')} - {m(endDate).format('MMM DD')}
+                                {this.renderEndDate(endDate)}
                             </li>
                         })
                     }
