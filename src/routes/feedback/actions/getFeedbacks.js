@@ -17,7 +17,7 @@ const getFeedbacks = debounce(async (dispatch, { feedbacks }) => {
                 type: END_GETTING_FEEDBACKS,
                 feedbacks,
             })
-        }, 500)
+        }, 0)
     } catch (e) {
         dispatch({ type: FAILED_GETTING_FEEDBACKS, error: e })
     }

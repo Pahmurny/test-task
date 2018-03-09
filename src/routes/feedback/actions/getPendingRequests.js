@@ -12,7 +12,7 @@ const getPendingRequests = async (dispatch) => {
         const fakeFeedbacks = await GET(endpoint.pending())
         setTimeout(() => {
             dispatch({ type: END_GETTING_PENDING_FEEDBACKS, pendingFeedbacks: fakeFeedbacks.data })
-        }, 1500)
+        }, 0)
     } catch (e) {
         dispatch({ type: FAILED_GETTING_PENDING_FEEDBACKS, error: e })
     }
