@@ -11,7 +11,7 @@ const deleteFeedback = async (feedback, dispatch) => {
     dispatch({ type: START_DELETING_PENDING_FEEDBACKS })
     try {
 
-        const result = await DELETE(`${endpoint.pending()}/${id}`, {
+            await DELETE(`${endpoint.pending()}/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
             },
