@@ -14,7 +14,7 @@
   font-size: 14px;
   display: inline-block;
   position: relative;
-  width: 144px;
+  width: 150px;
   @include shadow;
 
   &__trigger {
@@ -62,7 +62,7 @@
         padding-left: 13px;
         box-sizing: border-box;
 
-        &.active, &:hover {
+        &.active {
           background-color: rgba(95, 88, 100, 0.3);
         }
       }

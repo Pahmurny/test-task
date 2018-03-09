@@ -8,6 +8,7 @@ import './feedbackForm.scss'
 import FeedbackGive from 'routes/feedback/components/FeedbackForm/FeedbackGive'
 import FeedbackRequest from 'routes/feedback/components/FeedbackForm/FeedbackRequest'
 import Note from 'routes/feedback/components/FeedbackForm/Note'
+import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 
 
 const views = {
@@ -57,7 +58,9 @@ export default class FeedbackForm extends Component {
                 />
             </div>
             <div className="feedback-form__view">
-                <View/>
+                <ScrollBlock style={{ height: 500 }}>
+                    <View/>
+                </ScrollBlock>
             </div>
         </div>
 

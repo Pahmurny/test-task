@@ -22,6 +22,7 @@ import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
 import RoundedBlock from 'components/Shared/RoundedBlock'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
+import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
 
 const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
@@ -39,6 +40,7 @@ class FeedbackGive extends Component {
         selectFeedback: PropTypes.func.isRequired,
         togglePublic: PropTypes.func.isRequired,
         toggleAnonymous: PropTypes.func.isRequired,
+        deleteFeedback: PropTypes.func.isRequired,
     }
 
     componentDidMount() {
@@ -71,7 +73,7 @@ class FeedbackGive extends Component {
 
 
     renderPending = () => {
-        const { give: { pendingLoading, pendingFeedbacks }, selectFeedback } = this.props
+        const { give: { pendingLoading, pendingFeedbacks }, selectFeedback, deleteFeedback } = this.props
         if (pendingLoading) {
             return <PageLoader/>
         }
@@ -86,6 +88,7 @@ class FeedbackGive extends Component {
                             key={key}
                             feedback={feedback}
                             onSelect={selectFeedback}
+                            onClose={deleteFeedback}
                         />)
                     }
                 </PendingFeedbacks>
@@ -162,4 +165,5 @@ export default connect(({ feedbacks: { give, allPeople } }) => ({ give, allPeopl
     selectFeedback,
     togglePublic,
     toggleAnonymous,
+    deleteFeedback
 })(FeedbackGive)

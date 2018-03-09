@@ -30,7 +30,7 @@ const PendingFeedback = ({ feedback, onClose, onSelect }) => <YellowBlock
             onClick={(e) => {
                 e.stopPropagation()
                 if (onClose) {
-                    onClose()
+                    onClose(feedback)
                 }
             }}/>
     </div>

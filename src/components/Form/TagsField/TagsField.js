@@ -67,6 +67,7 @@ export default class TagsField extends Component {
                 handleDelete={this.handleDelete}
                 handleAddition={this.handleAddition}
                 placeholder={''}
+                delimiters={[]}
             />
 
         )
