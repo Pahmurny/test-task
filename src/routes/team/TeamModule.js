@@ -3,7 +3,7 @@ import PageLoader from 'components/Shared/PageLoader'
 import store, { injectAsyncReducer, injectSaga } from 'store'
 
 
-export default class FeedbackModule extends Component {
+export default class TeamModule extends Component {
 
 
     state = {
@@ -11,9 +11,9 @@ export default class FeedbackModule extends Component {
     }
 
     async componentDidMount() {
-        const { Feedback, feedbackReducer, rootSaga } = await import(/* webpackChunkName: "Feedback_Module" */ './module')
+        const { TeamContainer, feedbackReducer, rootSaga } = await import(/* webpackChunkName: "Feedback_Module" */ './module')
         setTimeout(() => {
-            this.Feedback = Feedback
+            this.TeamContainer = TeamContainer
             injectAsyncReducer(store, 'feedbacks', feedbackReducer)
             injectSaga(store, 'feedbacksSaga', rootSaga)
             this.setState({ loaded: true })
@@ -27,8 +27,8 @@ export default class FeedbackModule extends Component {
         if (!loaded) {
             return null
         }
-        const { Feedback } = this
-        return <Feedback pathname={location.pathname}/>
+        const { TeamContainer } = this
+        return <TeamContainer pathname={location.pathname}/>
     }
 
 }

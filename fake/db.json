@@ -163,57 +163,6 @@
   ],
   "pending": [
     {
-      "id": 1,
-      "locked": true,
-      "date": "2018-12-05T10:19:11.076Z",
-      "user": {
-        "name": "Samara Stoltenberg",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
-      },
-      "content": "Sit ad eum nobis.\nVitae excepturi fuga vel vitae.",
-      "tags": [
-        "qui",
-        "repudiandae",
-        "dolorem",
-        "qui",
-        "unde"
-      ]
-    },
-    {
-      "id": 2,
-      "locked": true,
-      "date": "2018-08-26T00:55:06.576Z",
-      "user": {
-        "name": "Amber Auer",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/bistrianiosip/128.jpg"
-      },
-      "content": "Atque quisquam quo nemo eos nihil explicabo officia tempora itaque.\nDeleniti asperiores sint iusto est magni ad velit officia cumque.\nPerferendis sint eos explicabo.\nRerum iusto velit facilis.\nAliquam aut doloribus quam velit itaque sint et tempore.",
-      "tags": [
-        "maxime",
-        "nihil",
-        "aut",
-        "aut",
-        "placeat"
-      ]
-    },
-    {
-      "id": 3,
-      "locked": true,
-      "date": "2018-11-09T06:48:56.731Z",
-      "user": {
-        "name": "Sigurd Watsica",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/ponchomendivil/128.jpg"
-      },
-      "content": "Voluptatibus eaque rerum voluptas enim voluptatum dolore temporibus beatae exercitationem.\nIpsam est odit.",
-      "tags": [
-        "rerum",
-        "ut",
-        "repudiandae",
-        "voluptas",
-        "velit"
-      ]
-    },
-    {
       "id": 4,
       "locked": true,
       "date": "2018-12-29T04:04:19.845Z",

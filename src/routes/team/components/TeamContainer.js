@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import toggleModal from 'routes/feedback/actions/toggleModal'
-import feedbackType from 'routes/feedback/actions/feedbackType'
-import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
+import FeedbackPage from 'routes/feedback/components/FeedbackPage'
 import initializeFilters from 'routes/feedback/actions/initializeFilters'
+import feedbackType from 'routes/feedback/actions/feedbackType'
+import { connect } from 'react-redux'
+import loadSuggestions from 'routes/feedback/actions/loadSuggestions'
 import setDateType from 'routes/feedback/actions/setDateType'
 import setDate from 'routes/feedback/actions/setDate'
+import toggleModal from 'routes/feedback/actions/toggleModal'
 import setFilterFeedbackType from 'routes/feedback/actions/setFilterFeedbackType'
-import loadSuggestions from 'routes/feedback/actions/loadSuggestions'
-import FeedbackPage from 'routes/feedback/components/FeedbackPage'
+import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
+import setTeamView from 'routes/team/actions/setTeamView'
+import setTeamFeedbackType from 'routes/team/actions/setTeamFeedbackType'
 
 
-
-class FeedbackContainer extends Component {
-
+class TeamContainer extends Component {
 
     static propTypes = {
         toggleModal: PropTypes.func,
@@ -30,24 +30,31 @@ class FeedbackContainer extends Component {
         setDate: PropTypes.func.isRequired,
         setFilterFeedbackType: PropTypes.func.isRequired,
         loadSuggestions: PropTypes.func.isRequired,
+        setTeamView: PropTypes.func.isRequired,
+        setTeamFeedbackType: PropTypes.func.isRequired,
     }
+
 
     componentDidMount() {
         this.initializeFeedback()
     }
 
     initializeFeedback = () => {
-        const { getFeedbacks, initializeFilters, loadSuggestions } = this.props
+        const { getFeedbacks, initializeFilters, loadSuggestions, setTeamView } = this.props
         initializeFilters()
         getFeedbacks()
         loadSuggestions()
+        setTeamView()
+
     }
 
-    render() {
-        return (
-            <FeedbackPage {...this.props} />
-        )
+
+    componentWillUnmount() {
+        const { setTeamView } = this.props
+        setTeamView(false)
     }
+
+    render = () => <FeedbackPage {...this.props} isTeamView/>
 }
 
 
@@ -66,4 +73,6 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     setDate,
     setFilterFeedbackType,
     loadSuggestions,
-})(FeedbackContainer)
+    setTeamView,
+    setTeamFeedbackType
+})(TeamContainer)

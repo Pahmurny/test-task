@@ -57,6 +57,7 @@
     "react-spinners": "^0.2.6",
     "redux": "^3.7.2",
     "redux-create-reducer": "^1.1.1",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "reset-css": "^2.2.1",
     "sass-loader": "^6.0.6",

@@ -3,6 +3,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 import Sidebar from 'components/Sidebar/Sidebar'
 import Content from 'components/Content/Content'
 import FeedbackModule from 'routes/feedback/FeedbackModule'
+import TeamModule from 'routes/team/TeamModule'
 import PageHeader from 'components/Shared/PageHeader'
 import LogoIcon from 'components/Icons/LogoIcon'
 import 'reset-css/_reset.scss'
@@ -77,6 +78,7 @@ class App extends Component {
                         <Content>
                             <Switch>
                                 <Route exact path={url.main()} component={FeedbackModule}/>
+                                <Route exact path={url.team()} component={TeamModule}/>
                                 <Route path={url.admin()} component={() => <div>admin</div>}/>
                             </Switch>
                         </Content>

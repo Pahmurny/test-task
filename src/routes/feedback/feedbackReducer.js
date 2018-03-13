@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-create-reducer'
 import {
     FEEDBACK_ANY_TYPE, FEEDBACK_FROM_ME, FEEDBACK_NOTE, FEEDBACK_REPLY_TYPE,
-    FEEDBACK_TO_ME,
+    FEEDBACK_TO_ME, TEAM_TYPE_GIVEN, TEAM_TYPE_NOTE, TEAM_TYPE_RECEIVED,
 } from 'routes/feedback/feedbackTypes'
 import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 
@@ -71,6 +71,21 @@ const initialState = {
     filter: {
         dateType: 0,
         dates: [],
+        teamType: { id: TEAM_TYPE_RECEIVED },
+        teamTypes: [
+            {
+                id: TEAM_TYPE_RECEIVED,
+                title: `Team member received`,
+            },
+            {
+                id: TEAM_TYPE_GIVEN,
+                title: `Team member given`,
+            },
+            {
+                id: TEAM_TYPE_NOTE,
+                title: `Note to self`,
+            },
+        ],
         feedbackType: { id: FEEDBACK_TO_ME },
         feedbackTypes: [
             {
@@ -86,6 +101,7 @@ const initialState = {
                 title: `Note to self`,
             },
         ],
+        isTeamView: false,
     },
     modalWindow: false,
     feedback: {
