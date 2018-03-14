@@ -101,6 +101,29 @@ const initialState = {
                 title: `Note to self`,
             },
         ],
+        feedbackTo: { id: 0 },
+        feedbackToItems: [
+            {
+                id: 0,
+                title: 'Everyone reporting to me',
+            },
+            {
+                id: 1,
+                title: 'All my direct reports',
+            },
+            {
+                id: 2,
+                title: 'Monica Hall',
+            },
+            {
+                id: 3,
+                title: 'Russ Hanneman',
+            },
+            {
+                id: 4,
+                title: 'Carla Walton',
+            },
+        ],
         isTeamView: false,
     },
     modalWindow: false,

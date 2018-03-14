@@ -12,6 +12,7 @@ import setFilterFeedbackType from 'routes/feedback/actions/setFilterFeedbackType
 import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
 import setTeamView from 'routes/team/actions/setTeamView'
 import setTeamFeedbackType from 'routes/team/actions/setTeamFeedbackType'
+import setFilterFeedbackTo from 'routes/team/actions/setFilterFeedbackTo'
 
 
 class TeamContainer extends Component {
@@ -32,6 +33,7 @@ class TeamContainer extends Component {
         loadSuggestions: PropTypes.func.isRequired,
         setTeamView: PropTypes.func.isRequired,
         setTeamFeedbackType: PropTypes.func.isRequired,
+        setFilterFeedbackTo: PropTypes.func.isRequired,
     }
 
 
@@ -74,5 +76,6 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     setFilterFeedbackType,
     loadSuggestions,
     setTeamView,
-    setTeamFeedbackType
+    setTeamFeedbackType,
+    setFilterFeedbackTo
 })(TeamContainer)

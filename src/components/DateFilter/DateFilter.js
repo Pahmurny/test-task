@@ -36,6 +36,20 @@ export default class DateFilter extends Component {
     }
 
 
+    componentDidMount() {
+        this.setState({
+            mounted: true,
+        })
+    }
+
+    componentWillReceiveProps() {
+        const { mounted } = this.state
+        if (mounted) {
+            this.setState({ page: 1 })
+        }
+    }
+
+
     get Dates() {
         const { page } = this.state
         const { dates } = this.props

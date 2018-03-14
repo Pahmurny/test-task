@@ -22,6 +22,37 @@ const DateFilterItems = [
 ]
 
 
+const dropdownViews = {
+    defaultView: ({ setFilterFeedbackType, filter }) => {
+        const { feedbackTypes, feedbackType: ft } = filter
+        return <React.Fragment>
+            <Dropdown
+                items={feedbackTypes}
+                activeItem={ft}
+                onClick={setFilterFeedbackType}
+            />
+        </React.Fragment>
+    },
+    isTeamView: ({ setFilterFeedbackType, setTeamFeedbackType, filter, setFilterFeedbackTo }) => {
+        const { teamTypes, teamType, feedbackToItems, feedbackTo } = filter
+        return <React.Fragment>
+            <Dropdown
+                style={{ minWidth: 200 }}
+                items={feedbackToItems}
+                activeItem={feedbackTo}
+                onClick={setFilterFeedbackTo}
+            />
+            <Dropdown
+                style={{ marginLeft: 10, minWidth: 190 }}
+                activeItem={teamType}
+                onClick={setTeamFeedbackType}
+                items={teamTypes}
+            />
+        </React.Fragment>
+    },
+}
+
+
 const FeedbackPage = ({
                           feedbacks,
                           toggleModal,
@@ -34,9 +65,10 @@ const FeedbackPage = ({
                           feedbackLoading,
                           setFilterFeedbackType, isTeamView,
                           setTeamFeedbackType,
+                          setFilterFeedbackTo,
                       }) => {
 
-    const { dates, selectedDate, dateType, feedbackTypes, feedbackType: ft, teamTypes, teamType } = filter
+    const { dates, selectedDate, dateType } = filter
 
     return <Page flex>
         <PageTitle>
@@ -49,7 +81,7 @@ const FeedbackPage = ({
                     onClick={(item) => setDateType(item.id)}
                     activeItem={{ id: dateType }}
                 />
-                <ScrollBlock style={{ minHeight: 0 }}>
+                <ScrollBlock style={{ minHeight: 0, maxHeight: '90%' }}>
                     <div className="filtered-dates">
                         <DateFilter
                             dates={dates}
@@ -61,16 +93,13 @@ const FeedbackPage = ({
             </div>
             <div className="feedback-body__content">
                 <div className="feedback-body__actions">
-                    <Dropdown
-                        items={feedbackTypes}
-                        activeItem={ft}
-                        onClick={setFilterFeedbackType}
-                    />
-                    {isTeamView && <Dropdown
-                        style={{ marginLeft: 10, minWidth: 190 }}
-                        activeItem={teamType}
-                        onClick={setTeamFeedbackType}
-                        items={teamTypes}/>}
+                    {!isTeamView && dropdownViews['defaultView']({ setFilterFeedbackType, filter })}
+                    {isTeamView && dropdownViews['isTeamView']({
+                        setFilterFeedbackType,
+                        setTeamFeedbackType,
+                        filter,
+                        setFilterFeedbackTo,
+                    })}
                     <DefaultButton
                         style={{
                             marginLeft: 'auto',
