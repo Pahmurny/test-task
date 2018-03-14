@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import PageLoader from 'components/Shared/PageLoader'
 import store, { injectAsyncReducer, injectSaga } from 'store'
 
 
-export default class TeamModule extends Component {
+export default class CompanyModule extends Component {
 
 
     state = {
@@ -11,9 +10,9 @@ export default class TeamModule extends Component {
     }
 
     async componentDidMount() {
-        const { TeamContainer, feedbackReducer, rootSaga } = await import(/* webpackChunkName: "Team_Module" */ './module')
+        const { CompanyContainer, feedbackReducer, rootSaga } = await import(/* webpackChunkName: "Company_Module" */ './module')
         setTimeout(() => {
-            this.TeamContainer = TeamContainer
+            this.CompanyContainer = CompanyContainer
             injectAsyncReducer(store, 'feedbacks', feedbackReducer)
             injectSaga(store, 'feedbacksSaga', rootSaga)
             this.setState({ loaded: true })
@@ -27,8 +26,8 @@ export default class TeamModule extends Component {
         if (!loaded) {
             return null
         }
-        const { TeamContainer } = this
-        return <TeamContainer pathname={location.pathname}/>
+        const { CompanyContainer } = this
+        return <CompanyContainer pathname={location.pathname}/>
     }
 
 }

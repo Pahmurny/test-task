@@ -70,7 +70,7 @@ const FeedbackPage = ({
 
     const { dates, selectedDate, dateType } = filter
 
-    return <Page flex>
+    return <React.Fragment>
         <PageTitle>
             Feedback
         </PageTitle>
@@ -125,7 +125,7 @@ const FeedbackPage = ({
                 onChangeType={feedbackType}
             />
         </Modal>}
-    </Page>
+    </React.Fragment>
 }
 
 

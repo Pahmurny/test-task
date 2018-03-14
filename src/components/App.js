@@ -11,6 +11,9 @@ import './App.scss'
 import HeaderMenu from 'components/HeaderMenu/HeaderMenu'
 import { url } from 'helpers/url'
 import SidebarNavigation from 'components/Sidebar/SidebarNavigation'
+import CompanyModule from 'routes/company/CompanyModule'
+import AdminModule from 'routes/admin/AdminModule'
+import Page from 'components/Content/Page'
 
 
 const sidebarNavigation2 = [
@@ -41,7 +44,7 @@ const sidebarNavigation1 = [
     {
         title: '1:1s',
         url: '#1:1',
-        badge: 2
+        badge: 2,
     },
     {
         title: 'Feedback',
@@ -77,9 +80,12 @@ class App extends Component {
                         </Sidebar>
                         <Content>
                             <Switch>
-                                <Route exact path={url.main()} component={FeedbackModule}/>
-                                <Route exact path={url.team()} component={TeamModule}/>
-                                <Route path={url.admin()} component={() => <div>admin</div>}/>
+                                <Page flex>
+                                    <Route exact path={url.main()} component={FeedbackModule}/>
+                                    <Route exact path={url.team()} component={TeamModule}/>
+                                    <Route exact path={url.company()} component={CompanyModule}/>
+                                    <Route path={url.admin()} component={AdminModule}/>
+                                </Page>
                             </Switch>
                         </Content>
                     </div>
