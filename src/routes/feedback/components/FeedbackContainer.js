@@ -9,7 +9,9 @@ import setDateType from 'routes/feedback/actions/setDateType'
 import setDate from 'routes/feedback/actions/setDate'
 import setFilterFeedbackType from 'routes/feedback/actions/setFilterFeedbackType'
 import loadSuggestions from 'routes/feedback/actions/loadSuggestions'
-import FeedbackPage from 'routes/feedback/components/FeedbackPage'
+import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
+import { MODULE_VIEW_FEEDBACK, MODULE_VIEW_TEAM } from 'routes/feedback/feedbackTypes'
+import setTeamView from 'routes/team/actions/setTeamView'
 
 
 
@@ -30,6 +32,7 @@ class FeedbackContainer extends Component {
         setDate: PropTypes.func.isRequired,
         setFilterFeedbackType: PropTypes.func.isRequired,
         loadSuggestions: PropTypes.func.isRequired,
+        setTeamView: PropTypes.func.isRequired,
     }
 
     componentDidMount() {
@@ -37,10 +40,11 @@ class FeedbackContainer extends Component {
     }
 
     initializeFeedback = () => {
-        const { getFeedbacks, initializeFilters, loadSuggestions } = this.props
+        const { getFeedbacks, initializeFilters, loadSuggestions, setTeamView } = this.props
         initializeFilters()
         getFeedbacks()
         loadSuggestions()
+        setTeamView(MODULE_VIEW_FEEDBACK)
     }
 
     render() {
@@ -66,4 +70,5 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     setDate,
     setFilterFeedbackType,
     loadSuggestions,
+    setTeamView
 })(FeedbackContainer)

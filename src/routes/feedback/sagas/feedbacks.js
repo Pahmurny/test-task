@@ -13,7 +13,7 @@ export function* fetchFeedbacks() {
     try {
         const { data: feedbacks } = yield GET(endpoint.feedbacks())
 
-        yield delay(1500)
+            //yield delay(1500)
 
         yield put({
             type: END_GETTING_FEEDBACKS,

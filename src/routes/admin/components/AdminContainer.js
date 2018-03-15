@@ -13,10 +13,15 @@ import setTeamView from 'routes/team/actions/setTeamView'
 import setTeamFeedbackType from 'routes/team/actions/setTeamFeedbackType'
 import setFilterFeedbackTo from 'routes/team/actions/setFilterFeedbackTo'
 import { PageTitle } from 'components/Shared/PageTitle'
+import { MODULE_VIEW_ADMIN } from 'routes/feedback/feedbackTypes'
 
 
 class AdminContainer extends Component {
 
+    componentDidMount(){
+        const { setTeamView } = this.props
+        setTeamView(MODULE_VIEW_ADMIN)
+    }
 
     render = () => <React.Fragment>
         <PageTitle>

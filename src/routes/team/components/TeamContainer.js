@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import FeedbackPage from 'routes/feedback/components/FeedbackPage'
+import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
 import initializeFilters from 'routes/feedback/actions/initializeFilters'
 import feedbackType from 'routes/feedback/actions/feedbackType'
 import { connect } from 'react-redux'
@@ -13,6 +13,7 @@ import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
 import setTeamView from 'routes/team/actions/setTeamView'
 import setTeamFeedbackType from 'routes/team/actions/setTeamFeedbackType'
 import setFilterFeedbackTo from 'routes/team/actions/setFilterFeedbackTo'
+import { MODULE_VIEW_TEAM } from 'routes/feedback/feedbackTypes'
 
 
 class TeamContainer extends Component {
@@ -38,7 +39,10 @@ class TeamContainer extends Component {
 
 
     componentDidMount() {
+        const { setTeamView } = this.props
+        setTeamView(MODULE_VIEW_TEAM)
         this.initializeFeedback()
+
     }
 
     initializeFeedback = () => {
@@ -46,17 +50,10 @@ class TeamContainer extends Component {
         initializeFilters()
         getFeedbacks()
         loadSuggestions()
-        setTeamView()
-
     }
 
 
-    componentWillUnmount() {
-        const { setTeamView } = this.props
-        setTeamView(false)
-    }
-
-    render = () => <FeedbackPage {...this.props} isTeamView/>
+    render = () => <FeedbackPage {...this.props}/>
 }
 
 

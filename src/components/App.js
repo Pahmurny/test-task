@@ -1,67 +1,18 @@
 import React, { Component } from 'react'
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
-import Sidebar from 'components/Sidebar/Sidebar'
 import Content from 'components/Content/Content'
 import FeedbackModule from 'routes/feedback/FeedbackModule'
 import TeamModule from 'routes/team/TeamModule'
 import PageHeader from 'components/Shared/PageHeader'
 import LogoIcon from 'components/Icons/LogoIcon'
 import 'reset-css/_reset.scss'
-import './App.scss'
 import HeaderMenu from 'components/HeaderMenu/HeaderMenu'
 import { url } from 'helpers/url'
-import SidebarNavigation from 'components/Sidebar/SidebarNavigation'
 import CompanyModule from 'routes/company/CompanyModule'
 import AdminModule from 'routes/admin/AdminModule'
 import Page from 'components/Content/Page'
-
-
-const sidebarNavigation2 = [
-    {
-        title: '1:1s',
-        url: '#1:1',
-    },
-    {
-        title: 'Feedback',
-        url: url.main(),
-    },
-    {
-        title: 'Goals',
-        url: '#goals',
-    },
-    {
-        title: 'Help',
-        url: '#help',
-    },
-    {
-        title: 'Documents',
-        url: '#documents',
-    },
-
-
-]
-const sidebarNavigation1 = [
-    {
-        title: '1:1s',
-        url: '#1:1',
-        badge: 2,
-    },
-    {
-        title: 'Feedback',
-        url: url.main(),
-    },
-    {
-        title: 'Goals',
-        url: '#goals',
-    },
-    {
-        title: 'Help',
-        url: '#help',
-    },
-    {
-        title: 'Documents',
-        url: '#documents',
-    },]
+import SidebarContainer from 'containers/SidebarContainer'
+import './App.scss'
 
 
 class App extends Component {
@@ -74,10 +25,7 @@ class App extends Component {
                         <HeaderMenu/>
                     </PageHeader>
                     <div className="bottom">
-                        <Sidebar className={'sidebar'}>
-                            <SidebarNavigation items={sidebarNavigation1}/>
-                            <SidebarNavigation items={sidebarNavigation2}/>
-                        </Sidebar>
+                        <SidebarContainer/>
                         <Content>
                             <Switch>
                                 <Page flex>

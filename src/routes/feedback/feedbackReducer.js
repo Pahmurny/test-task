@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-create-reducer'
 import {
     FEEDBACK_ANY_TYPE, FEEDBACK_FROM_ME, FEEDBACK_NOTE, FEEDBACK_REPLY_TYPE,
-    FEEDBACK_TO_ME, TEAM_TYPE_GIVEN, TEAM_TYPE_NOTE, TEAM_TYPE_RECEIVED,
+    FEEDBACK_TO_ME, MODULE_VIEW_FEEDBACK, TEAM_TYPE_GIVEN, TEAM_TYPE_NOTE, TEAM_TYPE_RECEIVED,
 } from 'routes/feedback/feedbackTypes'
 import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 
@@ -124,7 +124,7 @@ const initialState = {
                 title: 'Carla Walton',
             },
         ],
-        isTeamView: false,
+        moduleView: MODULE_VIEW_FEEDBACK,
     },
     modalWindow: false,
     feedback: {

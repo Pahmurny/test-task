@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CLOSE_MODAL, OPEN_MODAL } from 'routes/feedback/feedbackReducer'
-import Page from 'components/Content/Page'
 import { PageTitle } from 'components/Shared/PageTitle'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import Modal from 'components/Shared/Modal'
@@ -11,7 +10,9 @@ import FeedbacksList from 'components/FeedbacksList/FeedbacksList'
 import Dropdown from 'components/Dropdown/Dropdown'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import DateFilter from 'components/DateFilter/DateFilter'
-import './feedback.scss'
+import { dropdownViews, titles } from 'routes/feedback/components/Page/pageView'
+import '../feedback.scss'
+
 
 
 const DateFilterItems = [
@@ -22,57 +23,27 @@ const DateFilterItems = [
 ]
 
 
-const dropdownViews = {
-    defaultView: ({ setFilterFeedbackType, filter }) => {
-        const { feedbackTypes, feedbackType: ft } = filter
-        return <React.Fragment>
-            <Dropdown
-                items={feedbackTypes}
-                activeItem={ft}
-                onClick={setFilterFeedbackType}
-            />
-        </React.Fragment>
-    },
-    isTeamView: ({ setFilterFeedbackType, setTeamFeedbackType, filter, setFilterFeedbackTo }) => {
-        const { teamTypes, teamType, feedbackToItems, feedbackTo } = filter
-        return <React.Fragment>
-            <Dropdown
-                style={{ minWidth: 200 }}
-                items={feedbackToItems}
-                activeItem={feedbackTo}
-                onClick={setFilterFeedbackTo}
-            />
-            <Dropdown
-                style={{ marginLeft: 10, minWidth: 190 }}
-                activeItem={teamType}
-                onClick={setTeamFeedbackType}
-                items={teamTypes}
-            />
-        </React.Fragment>
-    },
-}
+
+const FeedbackPage = (props) => {
 
 
-const FeedbackPage = ({
-                          feedbacks,
-                          toggleModal,
-                          modalWindow,
-                          feedback,
-                          feedbackType,
-                          filter,
-                          setDateType,
-                          setDate,
-                          feedbackLoading,
-                          setFilterFeedbackType, isTeamView,
-                          setTeamFeedbackType,
-                          setFilterFeedbackTo,
-                      }) => {
+    const {
+        feedbacks,
+        toggleModal,
+        modalWindow,
+        feedback,
+        feedbackType,
+        filter,
+        setDateType,
+        setDate,
+        feedbackLoading,
+    } = props
+    const { dates, selectedDate, dateType, moduleView } = filter
 
-    const { dates, selectedDate, dateType } = filter
 
     return <React.Fragment>
         <PageTitle>
-            Feedback
+            {titles[moduleView]}
         </PageTitle>
         <div className="feedback-body">
             <div className="feedback-body__sidebar">
@@ -93,13 +64,7 @@ const FeedbackPage = ({
             </div>
             <div className="feedback-body__content">
                 <div className="feedback-body__actions">
-                    {!isTeamView && dropdownViews['defaultView']({ setFilterFeedbackType, filter })}
-                    {isTeamView && dropdownViews['isTeamView']({
-                        setFilterFeedbackType,
-                        setTeamFeedbackType,
-                        filter,
-                        setFilterFeedbackTo,
-                    })}
+                    {dropdownViews[moduleView] && dropdownViews[moduleView]({ ...props, filter })}
                     <DefaultButton
                         style={{
                             marginLeft: 'auto',

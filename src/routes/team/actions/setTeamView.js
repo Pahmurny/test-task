@@ -1,12 +1,13 @@
 import setFilter from 'routes/feedback/actions/setFilter'
 import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
+import { MODULE_VIEW_FEEDBACK } from 'routes/feedback/feedbackTypes'
 
-const setTeamView = (isTeamView, dispatch) => {
+const setTeamView = (moduleView, dispatch) => {
     const filter = {
-        isTeamView
+        moduleView
     }
     dispatch(setFilter(filter))
     dispatch(getFeedbacks())
 }
 
-export default (isTeamView = true) => dispatch => setTeamView(isTeamView, dispatch)
+export default (moduleView = MODULE_VIEW_FEEDBACK) => dispatch => setTeamView(moduleView, dispatch)
