@@ -1,0 +1,44 @@
+.admin__search-block {
+  display: flex;
+  padding: 83px 48px 21px;
+
+  &-fulltext {
+    margin-right: auto;
+    width: 384px;
+    height: 30px;
+    line-height: 30px;
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    border-radius: 3px 3px 3px 0;
+    outline: none;
+    //font-family: Lato-Regular;
+    font-size: 14px;
+    color: #9f9ba2;
+    text-align: left;
+    text-indent: 10px;
+
+    &:focus {
+      box-shadow: 0 0 0 2px #417505;
+      border-color: transparent;
+    }
+  }
+
+  .tags-field {
+    width: 288px;
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    margin-right: 20px;
+    border-radius: 3px 3px 3px 0;
+    height: 30px;
+
+    &__search-input {
+      input {
+        height: 30px;
+      }
+    }
+
+    &__selected-tag {
+      height: 30px;
+    }
+  }
+}

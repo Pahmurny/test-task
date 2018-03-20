@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import initializeFilters from 'routes/feedback/actions/initializeFilters'
 import feedbackType from 'routes/feedback/actions/feedbackType'
 import { connect } from 'react-redux'
@@ -12,31 +11,31 @@ import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
 import setTeamView from 'routes/team/actions/setTeamView'
 import setTeamFeedbackType from 'routes/team/actions/setTeamFeedbackType'
 import setFilterFeedbackTo from 'routes/team/actions/setFilterFeedbackTo'
-import { PageTitle } from 'components/Shared/PageTitle'
 import { MODULE_VIEW_ADMIN } from 'routes/feedback/feedbackTypes'
+import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
+import SearchBlock from 'routes/admin/components/SearchBlock/SearchBlock'
 
 
 class AdminContainer extends Component {
 
-    componentDidMount(){
-        const { setTeamView } = this.props
+    componentDidMount() {
+        const { setTeamView, getFeedbacks, initializeFilters } = this.props
+        initializeFilters()
         setTeamView(MODULE_VIEW_ADMIN)
+        getFeedbacks()
     }
 
-    render = () => <React.Fragment>
-        <PageTitle>
-            Admin Module
-        </PageTitle>
-    </React.Fragment>
+    render = () => <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>} />
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading } }) => ({
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople } }) => ({
     feedbacks,
     modalWindow,
     feedback,
     filter,
     feedbackLoading,
+    allPeople
 }), {
     toggleModal,
     feedbackType,
@@ -48,5 +47,5 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     loadSuggestions,
     setTeamView,
     setTeamFeedbackType,
-    setFilterFeedbackTo
+    setFilterFeedbackTo,
 })(AdminContainer)

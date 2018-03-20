@@ -1,0 +1,29 @@
+@import "~styles/constants";
+
+$lastItemWidth: 10%;
+$itemWidth: (100% - $lastItemWidth)/4;
+
+.admin-feedback-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &__header {
+    display: flex;
+
+    &-item {
+      flex: 0 0 $itemWidth;
+      border-bottom: 2px solid #23182d;
+      font-family: $fontLatoBold, sans-serif;
+      font-size: 18px;
+
+      &.last {
+        flex: 0 0 $lastItemWidth;
+      }
+    }
+  }
+
+  &__data {
+    flex: 1;
+  }
+}

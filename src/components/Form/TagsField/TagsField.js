@@ -30,6 +30,7 @@ export default class TagsField extends Component {
         suggestions: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.any.isRequired,
             name: PropTypes.string.isRequired,
+            component: PropTypes.any
         })),
     }
 

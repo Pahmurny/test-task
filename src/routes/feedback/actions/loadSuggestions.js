@@ -4,7 +4,6 @@ import {
 } from 'routes/feedback/feedbackReducer'
 import { GET } from 'helpers/request'
 import { endpoint } from 'helpers/url'
-import deb from 'lodash/debounce'
 
 const loadSuggestions = async (dispatch) => {
     try {

@@ -1,0 +1,42 @@
+@import "../../FeedbacksList/admin/adminfeedbacklist";
+
+.short-feedback {
+  display: flex;
+  border-bottom: 1px solid #9f9ba2;
+  align-items: center;
+  min-height: 46px;
+
+  &.last {
+    border-bottom: none;
+  }
+
+  &__item {
+    width: $itemWidth;
+    display: flex;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    align-items: center;
+
+    &-date {
+      font-family: $fontLatoRegular, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+
+      &-time {
+        color: #a7a3aa;
+        margin-top: 4px;
+      }
+    }
+
+    &-name {
+      font-family: $fontLatoRegular, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+      margin-left: 10px;
+    }
+
+    &.last {
+      width: $lastItemWidth;
+    }
+  }
+}

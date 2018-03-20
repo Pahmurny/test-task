@@ -5,7 +5,7 @@
   padding-right: 48px;
   padding-top: 84px;
   box-sizing: border-box;
-
+  $feedbackBody: &;
 
   &__sidebar {
     display: block;
@@ -23,14 +23,23 @@
     min-width: 390px;
   }
 
-  &__actions{
+  &.admin {
+    padding-top: 0;
+
+    #{$feedbackBody}__actions {
+      display: none;
+    }
+  }
+
+  &__actions {
     display: flex;
     justify-content: flex-start;
     padding-bottom: 24px;
   }
 
   &__list {
-    display: block;
+    display: flex;
+    flex-direction: column;
     flex: 1;
   }
 

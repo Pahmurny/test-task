@@ -124,6 +124,8 @@ const initialState = {
                 title: 'Carla Walton',
             },
         ],
+        fulltextSearch: '',
+        searchPeople: [],
         moduleView: MODULE_VIEW_FEEDBACK,
     },
     modalWindow: false,

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import { CLOSE_MODAL, OPEN_MODAL } from 'routes/feedback/feedbackReducer'
 import { PageTitle } from 'components/Shared/PageTitle'
 import DefaultButton from 'components/Buttons/DefaultButton'
@@ -11,6 +12,8 @@ import Dropdown from 'components/Dropdown/Dropdown'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import DateFilter from 'components/DateFilter/DateFilter'
 import { dropdownViews, titles } from 'routes/feedback/components/Page/pageView'
+import { MODULE_VIEW_ADMIN } from 'routes/feedback/feedbackTypes'
+import AdminFeedbackList from 'components/FeedbacksList/admin/AdminFeedbackList'
 import '../feedback.scss'
 
 
@@ -22,6 +25,10 @@ const DateFilterItems = [
     { id: 3, title: 'Quarterly' },
 ]
 
+
+const ListView = {
+    [MODULE_VIEW_ADMIN]: AdminFeedbackList
+}
 
 
 const FeedbackPage = (props) => {
@@ -37,15 +44,18 @@ const FeedbackPage = (props) => {
         setDateType,
         setDate,
         feedbackLoading,
+        beforeBody
     } = props
     const { dates, selectedDate, dateType, moduleView } = filter
 
+    const ListComponent = ListView[moduleView] || FeedbacksList
 
     return <React.Fragment>
         <PageTitle>
             {titles[moduleView]}
         </PageTitle>
-        <div className="feedback-body">
+        {beforeBody && beforeBody(props)}
+        <div className={cn('feedback-body', moduleView)}>
             <div className="feedback-body__sidebar">
                 <Dropdown
                     items={DateFilterItems}
@@ -77,7 +87,7 @@ const FeedbackPage = (props) => {
                      ref={feedbackContent => this.feedbackContent = feedbackContent}
                 >
                     {feedbackLoading && <PageLoader/>}
-                    {!feedbackLoading && <FeedbacksList
+                    {!feedbackLoading && <ListComponent
                         scrollOptions={{ minHeight: 10 }}
                         feedbacks={feedbacks}
                     />}
@@ -108,6 +118,7 @@ FeedbackPage.propTypes = {
     setDate: PropTypes.func.isRequired,
     setFilterFeedbackType: PropTypes.func.isRequired,
     loadSuggestions: PropTypes.func.isRequired,
+    beforeBody: PropTypes.func,
     isTeamView: PropTypes.bool,
 }
 

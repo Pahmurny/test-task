@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import m from 'moment'
 import cn from 'classnames'
@@ -9,7 +9,7 @@ import PlusButton from 'components/Buttons/PlusButton'
 const PAGE_SIZE = 20
 const SHOW_ALL_TEXT = 'Show all'
 
-export default class DateFilter extends Component {
+export default class DateFilter extends PureComponent {
 
     static propTypes = {
         dates: PropTypes.arrayOf(PropTypes.shape({
@@ -45,7 +45,7 @@ export default class DateFilter extends Component {
     componentWillReceiveProps() {
         const { mounted } = this.state
         if (mounted) {
-            this.setState({ page: 1 })
+         //   this.setState({ page: 1 })
         }
     }
 
