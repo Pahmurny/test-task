@@ -1,0 +1,20 @@
+@import "~styles/constants";
+
+.from-title {
+  display: flex;
+  align-items: center;
+  font-family: $fontLatoBold, sans-serif;
+  font-size: 18px;
+  color: #23182D;
+  text-align: left;
+  line-height: 24px;
+
+  &__user-name {
+    margin: 0 10px;
+  }
+
+  &__to {
+    margin-right: 10px;
+
+  }
+}

@@ -1,0 +1,34 @@
+@import "~styles/constants";
+
+.feedback-data {
+  display: block;
+  padding: 1em;
+
+  &__content {
+    display: block;
+    font-family: $fontLatoRegular, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+    text-align: left;
+  }
+
+  &__data {
+    display: block;
+    padding-top: 31px;
+    font-family: $fontLatoRegular, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+    text-align: left;
+  }
+
+  &__response {
+    margin-top: 30px;
+
+    &-title {
+      padding: 1em 0;
+      border-bottom: 1px solid #9f9ba2;
+      border-top: 1px solid #9f9ba2;
+      margin-bottom: 30px;
+    }
+  }
+}

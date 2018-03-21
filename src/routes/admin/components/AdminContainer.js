@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import initializeFilters from 'routes/feedback/actions/initializeFilters'
 import feedbackType from 'routes/feedback/actions/feedbackType'
 import { connect } from 'react-redux'
@@ -14,38 +15,66 @@ import setFilterFeedbackTo from 'routes/team/actions/setFilterFeedbackTo'
 import { MODULE_VIEW_ADMIN } from 'routes/feedback/feedbackTypes'
 import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
 import SearchBlock from 'routes/admin/components/SearchBlock/SearchBlock'
+import Modal from 'components/Shared/Modal'
+import setValue from 'routes/feedback/actions/setValue'
+import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
+import FromToTitle from 'routes/admin/components/FromToTitle/FromToTitle'
+import FeedbackData from 'routes/admin/components/FeedbackData/FeedbackData'
 
 
 class AdminContainer extends Component {
 
-    componentDidMount() {
-        const { setTeamView, getFeedbacks, initializeFilters } = this.props
-        initializeFilters()
-        setTeamView(MODULE_VIEW_ADMIN)
-        getFeedbacks()
-    }
+  static propTypes = {
+    setValue: PropTypes.func.isRequired,
+  }
 
-    render = () => <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>} />
+  componentDidMount() {
+    const { setTeamView, getFeedbacks, initializeFilters } = this.props
+    initializeFilters()
+    setTeamView(MODULE_VIEW_ADMIN)
+    getFeedbacks()
+  }
+
+  render() {
+    const { feedbackInfo, setValue } = this.props
+
+    return (
+        <React.Fragment>
+          <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>}/>
+          {feedbackInfo && <Modal closeForm={() => setValue('feedbackInfo', false)}>
+            <FeedbackForm
+                onClose={() => setValue('feedbackInfo', false)}
+                title={<FromToTitle {...feedbackInfo}/>}
+                style={{ minHeight: 50 }}
+            >
+              <FeedbackData feedbackInfo={feedbackInfo}/>
+            </FeedbackForm>
+          </Modal>}
+        </React.Fragment>
+    )
+  }
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople } }) => ({
-    feedbacks,
-    modalWindow,
-    feedback,
-    filter,
-    feedbackLoading,
-    allPeople
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople, feedbackInfo } }) => ({
+  feedbacks,
+  modalWindow,
+  feedback,
+  filter,
+  feedbackLoading,
+  allPeople,
+  feedbackInfo,
 }), {
-    toggleModal,
-    feedbackType,
-    getFeedbacks,
-    initializeFilters,
-    setDateType,
-    setDate,
-    setFilterFeedbackType,
-    loadSuggestions,
-    setTeamView,
-    setTeamFeedbackType,
-    setFilterFeedbackTo,
+  toggleModal,
+  feedbackType,
+  getFeedbacks,
+  initializeFilters,
+  setDateType,
+  setDate,
+  setFilterFeedbackType,
+  loadSuggestions,
+  setTeamView,
+  setTeamFeedbackType,
+  setFilterFeedbackTo,
+  setValue,
 })(AdminContainer)

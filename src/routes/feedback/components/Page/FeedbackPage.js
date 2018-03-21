@@ -15,6 +15,10 @@ import { dropdownViews, titles } from 'routes/feedback/components/Page/pageView'
 import { MODULE_VIEW_ADMIN } from 'routes/feedback/feedbackTypes'
 import AdminFeedbackList from 'components/FeedbacksList/admin/AdminFeedbackList'
 import '../feedback.scss'
+import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
+import FeedbackRequest from 'routes/feedback/components/FeedbackForm/FeedbackRequest'
+import Note from 'routes/feedback/components/FeedbackForm/Note'
+import FeedbackGive from 'routes/feedback/components/FeedbackForm/FeedbackGive'
 
 
 
@@ -25,6 +29,11 @@ const DateFilterItems = [
     { id: 3, title: 'Quarterly' },
 ]
 
+const views = {
+  0: <FeedbackGive/>,
+  1: <FeedbackRequest/>,
+  2: <Note/>,
+}
 
 const ListView = {
     [MODULE_VIEW_ADMIN]: AdminFeedbackList
@@ -96,9 +105,36 @@ const FeedbackPage = (props) => {
         </div>
         {modalWindow && <Modal closeForm={() => toggleModal(CLOSE_MODAL)}>
             <FeedbackForm
-                feedBack={feedback} onClose={toggleModal}
+                feedBack={feedback}
+                onClose={toggleModal}
                 onChangeType={feedbackType}
-            />
+            >
+              <div className="feedback-form__actions">
+                <FeedbackType
+                    items={[
+                      {
+                        id: 0,
+                        title: 'Give feedback',
+                      },
+                      {
+                        id: 1,
+                        title: 'Request feedback',
+                      },
+                      {
+                        id: 2,
+                        title: 'Note to Self',
+                      },
+                    ]}
+                    activeItem={{ id: feedback.type }}
+                    onChange={feedbackType}
+                />
+              </div>
+              <div className="feedback-form__view">
+                <ScrollBlock style={{ height: 500 }}>
+                  {views[feedback.type]}
+                </ScrollBlock>
+              </div>
+            </FeedbackForm>
         </Modal>}
     </React.Fragment>
 }
