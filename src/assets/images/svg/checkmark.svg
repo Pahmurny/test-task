@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>checkmark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Admin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-457.000000, -17905.000000)" fill="#545454" id="FEEDBACK">
+            <g transform="translate(0.000000, 10656.000000)">
+                <g id="admin_settings" transform="translate(0.000000, 6912.000000)">
+                    <g id="Group-4" transform="translate(432.000000, 216.000000)">
+                        <g id="checkbox-movetolatest-CHECKED" transform="translate(24.000000, 108.000000)">
+                            <g id="checkmark" transform="translate(0.000000, 12.000000)">
+                                <path d="M14.1724242,3.74097138 L7.67546168,16.8305442 C7.22138516,17.7462887 6.1524536,18.0981097 5.2883567,17.6170446 C4.8781608,17.3896048 4.59293686,17.0130946 4.44953504,16.5849616 L1.05668658,10.5344266 C0.806918167,10.0898341 1.28556782,9.30183745 2.12474053,8.77513472 C2.96426428,8.24674864 3.84661551,8.17885336 4.09568183,8.62419399 L6.03748641,12.0857307 L11.0425083,2.0005705 C11.4967604,1.08482598 12.5651654,0.733192054 13.4292623,1.21425719 C14.2937102,1.69363897 14.6261497,2.82522686 14.1724242,3.74097138 L14.1724242,3.74097138 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

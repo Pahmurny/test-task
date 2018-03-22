@@ -1,0 +1,28 @@
+@import "~styles/fonts";
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-family: $fontLatoRegular, sans-serif;
+  font-size: 14px;
+  color: #545454;
+  text-align: left;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &__mark {
+    position: relative;
+    margin-right: 10px;
+    background-image: url("~assets/images/svg/unchecked.svg");
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+
+
+    .ischecked {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}

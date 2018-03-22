@@ -6,6 +6,7 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 import PlusButton from 'components/Buttons/PlusButton'
 import HashButton from 'components/Buttons/HashButton'
 import LogoIcon from 'components/Icons/LogoIcon'
+import Checkbox from 'components/Form/Checkbox/Checkbox'
 
 
 const stories = storiesOf('Buttons', module)
@@ -26,3 +27,8 @@ stories.add('Plus Button', () => <PlusButton onClick={action('Plus Btn clicked')
 }}/>)
 
 stories.add('Logo Icon', () => <LogoIcon/>)
+
+stories.add('Checkbox', () => <div>
+  <Checkbox checked>The self handles freedom which is not simple. <br/> test </Checkbox>
+  <Checkbox checked>The self handles freedom which is not simple. <br/> test </Checkbox>
+</div>)

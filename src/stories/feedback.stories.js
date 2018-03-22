@@ -93,6 +93,7 @@ stories.add('Tags', () => <RoundedTopBlock>
 
 stories.add('Toggle', () => <ToggleField
     leftLabel={'Public'}
+    left={boolean('Left Label', false)}
     rightLabel={'Private'}
     label={'Only you and Richard can view this'}
 />)

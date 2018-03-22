@@ -1,8 +1,8 @@
-const React = require('react')
-const PropTypes = require('prop-types')
-const Tag = require('./Tag')
-const Input = require('./Input')
-const Suggestions = require('./Suggestions')
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Tag from 'components/Form/Autocomplete/Tag'
+import Input from 'components/Form/Autocomplete/Input'
+import Suggestions from 'components/Form/Autocomplete/Suggestions'
 
 const KEYS = {
   ENTER: 13,
@@ -25,7 +25,7 @@ const CLASS_NAMES = {
   suggestionDisabled: 'is-disabled'
 }
 
-class ReactTags extends React.Component {
+class ReactTags extends Component {
   constructor (props) {
     super(props)
 
@@ -232,4 +232,4 @@ ReactTags.propTypes = {
   ])
 }
 
-module.exports = ReactTags
+export default ReactTags

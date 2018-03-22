@@ -93,6 +93,28 @@
         }
       },
       "content": "Voluptatibus eaque rerum voluptas enim voluptatum dolore temporibus beatae exercitationem.\nIpsam est odit.",
+      "response": {
+        "locked": true,
+        "date": "2018-03-03T07:30:58.325Z",
+        "user": {
+          "name": "Amber Auer",
+          "image": "https://s3.amazonaws.com/uifaces/faces/twitter/bistrianiosip/128.jpg"
+        },
+        "to": {
+          "user": {
+            "name": "Samara Stoltenberg",
+            "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
+          }
+        },
+        "content": "Illo ut eos repellat omnis assumenda.",
+        "tags": [
+          "inventore",
+          "consequatur",
+          "error",
+          "qui",
+          "nulla"
+        ]
+      },
       "tags": [
         "rerum",
         "ut",
@@ -715,5 +737,10 @@
       "name": "Wervelf Apricots",
       "email": "Wervelf@fleckens.hu"
     }
-  ]
+  ],
+  "admin": {
+    "allowManagers": false,
+    "enableAnonymous": false,
+    "aAnonymous": false
+  }
 }

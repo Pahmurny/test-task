@@ -1,4 +1,4 @@
-const React = require('react')
+import React, { Component } from 'react'
 
 const SIZER_STYLES = {
   position: 'absolute',
@@ -6,7 +6,7 @@ const SIZER_STYLES = {
   height: 0,
   visibility: 'hidden',
   overflow: 'scroll',
-  whiteSpace: 'pre'
+  whiteSpace: 'pre',
 }
 
 const STYLE_PROPS = [
@@ -14,16 +14,17 @@ const STYLE_PROPS = [
   'fontFamily',
   'fontWeight',
   'fontStyle',
-  'letterSpacing'
+  'letterSpacing',
 ]
 
-class Input extends React.Component {
-  constructor (props) {
+
+class Input extends Component {
+  constructor(props) {
     super(props)
     this.state = { inputWidth: null }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (this.props.autoresize) {
       this.copyInputStyles()
       this.updateInputWidth()
@@ -34,17 +35,17 @@ class Input extends React.Component {
     }
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     this.updateInputWidth()
   }
 
-  componentWillReceiveProps (newProps) {
+  componentWillReceiveProps(newProps) {
     if (this.input.value !== newProps.query) {
       this.input.value = newProps.query
     }
   }
 
-  copyInputStyles () {
+  copyInputStyles() {
     const inputStyle = window.getComputedStyle(this.input)
 
     STYLE_PROPS.forEach((prop) => {
@@ -52,7 +53,7 @@ class Input extends React.Component {
     })
   }
 
-  updateInputWidth () {
+  updateInputWidth() {
     let inputWidth
 
     if (this.props.autoresize) {
@@ -66,26 +67,31 @@ class Input extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const { query, placeholder, expandable, listboxId, selectedIndex } = this.props
 
     return (
-      <div className={this.props.classNames.searchInput}>
-        <input
-          ref={(c) => { this.input = c }}
-          value={query}
-          placeholder={placeholder}
-          role='combobox' //eslint-disable-line
-          aria-autocomplete='list'
-          aria-label={placeholder}
-          aria-owns={listboxId}
-          aria-activedescendant={selectedIndex > -1 ? `${listboxId}-${selectedIndex}` : null}
-          aria-expanded={expandable}
-          style={{ width: this.state.inputWidth }} />
-        <div ref={(c) => { this.sizer = c }} style={SIZER_STYLES}>{query || placeholder}</div>
-      </div>
+        <div className={this.props.classNames.searchInput}>
+          <input
+              ref={(c) => {
+                this.input = c
+              }}
+              value={query}
+              placeholder={placeholder}
+              role='combobox' //eslint-disable-line
+              aria-autocomplete='list'
+              aria-label={placeholder}
+              aria-owns={listboxId}
+              aria-activedescendant={selectedIndex > -1 ? `${listboxId}-${selectedIndex}` : null}
+              aria-expanded={expandable}
+              style={{ width: this.state.inputWidth }}/>
+          <div ref={(c) => {
+            this.sizer = c
+          }} style={SIZER_STYLES}>{query || placeholder}</div>
+        </div>
     )
   }
 }
 
-module.exports = Input
+
+export default Input

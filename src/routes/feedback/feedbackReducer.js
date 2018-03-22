@@ -154,6 +154,11 @@ const initialState = {
     what: 0,
   },
   feedbackInfo: false,
+  adminSettings: {
+    allowManagers: false,
+    enableAnonymous: false,
+    aAnonymous: false,
+  },
 }
 
 

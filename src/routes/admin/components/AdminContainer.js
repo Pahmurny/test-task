@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import initializeFilters from 'routes/feedback/actions/initializeFilters'
 import feedbackType from 'routes/feedback/actions/feedbackType'
@@ -20,9 +20,11 @@ import setValue from 'routes/feedback/actions/setValue'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import FromToTitle from 'routes/admin/components/FromToTitle/FromToTitle'
 import FeedbackData from 'routes/admin/components/FeedbackData/FeedbackData'
+import { PageTitle } from 'components/Shared/PageTitle'
+import AdminSettings from 'routes/admin/components/AdminSettings/AdminSettings'
 
 
-class AdminContainer extends Component {
+class AdminContainer extends PureComponent {
 
   static propTypes = {
     setValue: PropTypes.func.isRequired,
@@ -36,11 +38,12 @@ class AdminContainer extends Component {
   }
 
   render() {
-    const { feedbackInfo, setValue } = this.props
+    const { feedbackInfo, setValue, showAdminSettings } = this.props
 
     return (
         <React.Fragment>
           <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>}/>
+
           {feedbackInfo && <Modal closeForm={() => setValue('feedbackInfo', false)}>
             <FeedbackForm
                 onClose={() => setValue('feedbackInfo', false)}
@@ -50,13 +53,28 @@ class AdminContainer extends Component {
               <FeedbackData feedbackInfo={feedbackInfo}/>
             </FeedbackForm>
           </Modal>}
+
+          {showAdminSettings && <Modal closeForm={() => setValue('showAdminSettings', false)}>
+            <FeedbackForm
+                onClose={() => setValue('showAdminSettings', false)}
+                title={<PageTitle>Settings</PageTitle>}
+                style={{ minHeight: 50 }}
+            >
+              <AdminSettings/>
+            </FeedbackForm>
+          </Modal>}
         </React.Fragment>
     )
   }
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople, feedbackInfo } }) => ({
+export default connect(({
+                          feedbacks: {
+                            feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople,
+                            feedbackInfo, showAdminSettings, adminSettings,
+                          },
+                        }) => ({
   feedbacks,
   modalWindow,
   feedback,
@@ -64,6 +82,8 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
   feedbackLoading,
   allPeople,
   feedbackInfo,
+  showAdminSettings,
+  adminSettings,
 }), {
   toggleModal,
   feedbackType,
@@ -76,5 +96,5 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
   setTeamView,
   setTeamFeedbackType,
   setFilterFeedbackTo,
-  setValue,
+  setValue
 })(AdminContainer)
