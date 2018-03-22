@@ -21,6 +21,7 @@ import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import FromToTitle from 'routes/admin/components/FromToTitle/FromToTitle'
 import FeedbackData from 'routes/admin/components/FeedbackData/FeedbackData'
 import { PageTitle } from 'components/Shared/PageTitle'
+import { ScaleLoader } from 'react-spinners'
 import AdminSettings from 'routes/admin/components/AdminSettings/AdminSettings'
 
 
@@ -38,7 +39,7 @@ class AdminContainer extends PureComponent {
   }
 
   render() {
-    const { feedbackInfo, setValue, showAdminSettings } = this.props
+    const { feedbackInfo, setValue, showAdminSettings, savingAdminSettings } = this.props
 
     return (
         <React.Fragment>
@@ -57,7 +58,8 @@ class AdminContainer extends PureComponent {
           {showAdminSettings && <Modal closeForm={() => setValue('showAdminSettings', false)}>
             <FeedbackForm
                 onClose={() => setValue('showAdminSettings', false)}
-                title={<PageTitle>Settings</PageTitle>}
+                title={<PageTitle style={{ display: 'flex', alignItems: 'center' }}>Settings {savingAdminSettings &&
+                <ScaleLoader height={15}/>}</PageTitle>}
                 style={{ minHeight: 50 }}
             >
               <AdminSettings/>
@@ -73,6 +75,7 @@ export default connect(({
                           feedbacks: {
                             feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople,
                             feedbackInfo, showAdminSettings, adminSettings,
+                            savingAdminSettings,
                           },
                         }) => ({
   feedbacks,
@@ -84,6 +87,7 @@ export default connect(({
   feedbackInfo,
   showAdminSettings,
   adminSettings,
+  savingAdminSettings,
 }), {
   toggleModal,
   feedbackType,
@@ -96,5 +100,5 @@ export default connect(({
   setTeamView,
   setTeamFeedbackType,
   setFilterFeedbackTo,
-  setValue
+  setValue,
 })(AdminContainer)

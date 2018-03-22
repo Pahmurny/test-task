@@ -739,7 +739,7 @@
     }
   ],
   "admin": {
-    "allowManagers": false,
+    "allowManagers": true,
     "enableAnonymous": false,
     "aAnonymous": false
   }

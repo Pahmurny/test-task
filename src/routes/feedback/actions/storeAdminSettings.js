@@ -12,7 +12,10 @@ const storeAdminSettings = async (key, value, dispatch, { feedbacks }) => {
     dispatch(setValue('savingAdminSettings', true))
     dispatch(setValue(key, value))
     await PUT(endpoint.admin(), value)
-    dispatch(setValue('savingAdminSettings', false))
+    // TODO to show the progress
+    setTimeout(()=>{
+      dispatch(setValue('savingAdminSettings', false))
+    }, 1000)
   } catch (e) {
     dispatch(setValue('savingAdminSettings', false))
   }
