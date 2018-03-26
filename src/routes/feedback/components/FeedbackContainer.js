@@ -12,6 +12,7 @@ import loadSuggestions from 'routes/feedback/actions/loadSuggestions'
 import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
 import { MODULE_VIEW_FEEDBACK, MODULE_VIEW_TEAM } from 'routes/feedback/feedbackTypes'
 import setTeamView from 'routes/team/actions/setTeamView'
+import Page from 'components/Content/Page'
 
 
 
@@ -49,7 +50,7 @@ class FeedbackContainer extends Component {
 
     render() {
         return (
-            <FeedbackPage {...this.props} />
+            <Page flex><FeedbackPage {...this.props} /></Page>
         )
     }
 }

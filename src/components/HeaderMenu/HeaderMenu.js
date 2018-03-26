@@ -28,7 +28,6 @@ const HeaderMenu = () => <div className="header-menu">
         to={url.company()}
     >Company</Link>
     <Link
-        exact
         activeClassName={'active'}
         className={'header-menu__link'}
         to={url.admin()}

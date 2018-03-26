@@ -1,0 +1,52 @@
+// @import "~styles/constants.scss";
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &__tabs-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__tabs {
+    display: flex;
+    padding-left: 12px;
+  }
+
+  &__tab {
+    display: block;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    font-family: Lato-Bold, sans-serif;
+    font-size: 24px;
+    color: #9f9ba2;
+    background: #e6e4e7;
+    border-radius: 8px 8px 0 0;
+    padding: 0 49px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+
+  &__tab--selected {
+    background-color: #fcfcfc;
+    color: #23182d;
+  }
+
+  &__tabs-content {
+    flex: 1;
+    background-color: #fcfcfc;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &__header {
+    font-family: sans-serif;
+    font-size: 36px;
+    color: #23182d;
+    text-align: center;
+    margin-bottom: 72px;
+  }
+}

@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import common from './common'
 
 /**
@@ -6,7 +7,7 @@ import common from './common'
  * @param asyncReducers
  * @returns {Reducer<any>}
  */
-const createReducer = (asyncReducers) => combineReducers({ common, ...asyncReducers })
+const createReducer = (asyncReducers) => combineReducers({ common, ...asyncReducers, form: formReducer })
 
 export default createReducer
 

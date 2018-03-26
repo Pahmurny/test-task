@@ -8,6 +8,7 @@ export const url = {
     team: () => '/team',
     company: () => '/company',
     admin: () => '/admin',
+    adminSettings: () => '/admin/settings'
 }
 
 

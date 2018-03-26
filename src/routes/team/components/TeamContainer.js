@@ -14,6 +14,7 @@ import setTeamView from 'routes/team/actions/setTeamView'
 import setTeamFeedbackType from 'routes/team/actions/setTeamFeedbackType'
 import setFilterFeedbackTo from 'routes/team/actions/setFilterFeedbackTo'
 import { MODULE_VIEW_TEAM } from 'routes/feedback/feedbackTypes'
+import Page from 'components/Content/Page'
 
 
 class TeamContainer extends Component {
@@ -53,7 +54,7 @@ class TeamContainer extends Component {
     }
 
 
-    render = () => <FeedbackPage {...this.props}/>
+    render = () => <Page flex><FeedbackPage {...this.props}/></Page>
 }
 
 

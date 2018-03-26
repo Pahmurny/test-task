@@ -36,7 +36,7 @@ class CompanyContainer extends Component {
     }
 
 
-    render = () => <FeedbackPage {...this.props} />
+    render = () => <Page flex><FeedbackPage {...this.props} /></Page>
 }
 
 

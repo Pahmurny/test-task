@@ -10,6 +10,7 @@ import HeaderMenu from 'components/HeaderMenu/HeaderMenu'
 import { url } from 'helpers/url'
 import CompanyModule from 'routes/company/CompanyModule'
 import AdminModule from 'routes/admin/AdminModule'
+import SettingsModule from 'routes/adminSettings/SettingsModule'
 import Page from 'components/Content/Page'
 import SidebarContainer from 'containers/SidebarContainer'
 import './App.scss'
@@ -28,12 +29,11 @@ class App extends Component {
                         <SidebarContainer/>
                         <Content>
                             <Switch>
-                                <Page flex>
                                     <Route exact path={url.main()} component={FeedbackModule}/>
                                     <Route exact path={url.team()} component={TeamModule}/>
                                     <Route exact path={url.company()} component={CompanyModule}/>
-                                    <Route path={url.admin()} component={AdminModule}/>
-                                </Page>
+                                    <Route exact path={url.admin()} component={AdminModule}/>
+                                    <Route path={url.adminSettings()} component={SettingsModule}/>
                             </Switch>
                         </Content>
                     </div>

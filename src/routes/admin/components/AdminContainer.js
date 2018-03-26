@@ -23,82 +23,86 @@ import FeedbackData from 'routes/admin/components/FeedbackData/FeedbackData'
 import { PageTitle } from 'components/Shared/PageTitle'
 import { ScaleLoader } from 'react-spinners'
 import AdminSettings from 'routes/admin/components/AdminSettings/AdminSettings'
+import Page from 'components/Content/Page'
 
 
 class AdminContainer extends PureComponent {
 
-  static propTypes = {
-    setValue: PropTypes.func.isRequired,
-  }
+    static propTypes = {
+        setValue: PropTypes.func.isRequired,
+    }
 
-  componentDidMount() {
-    const { setTeamView, getFeedbacks, initializeFilters } = this.props
-    initializeFilters()
-    setTeamView(MODULE_VIEW_ADMIN)
-    getFeedbacks()
-  }
+    componentDidMount() {
+        const { setTeamView, getFeedbacks, initializeFilters } = this.props
+        initializeFilters()
+        setTeamView(MODULE_VIEW_ADMIN)
+        getFeedbacks()
+    }
 
-  render() {
-    const { feedbackInfo, setValue, showAdminSettings, savingAdminSettings } = this.props
+    render() {
+        const { feedbackInfo, setValue, showAdminSettings, savingAdminSettings } = this.props
 
-    return (
-        <React.Fragment>
-          <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>}/>
+        return (
+            <React.Fragment>
+                <Page flex>
+                    <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>}/>
 
-          {feedbackInfo && <Modal closeForm={() => setValue('feedbackInfo', false)}>
-            <FeedbackForm
-                onClose={() => setValue('feedbackInfo', false)}
-                title={<FromToTitle {...feedbackInfo}/>}
-                style={{ minHeight: 50 }}
-            >
-              <FeedbackData feedbackInfo={feedbackInfo}/>
-            </FeedbackForm>
-          </Modal>}
+                    {feedbackInfo && <Modal closeForm={() => setValue('feedbackInfo', false)}>
+                        <FeedbackForm
+                            onClose={() => setValue('feedbackInfo', false)}
+                            title={<FromToTitle {...feedbackInfo}/>}
+                            style={{ minHeight: 50 }}
+                        >
+                            <FeedbackData feedbackInfo={feedbackInfo}/>
+                        </FeedbackForm>
+                    </Modal>}
 
-          {showAdminSettings && <Modal closeForm={() => setValue('showAdminSettings', false)}>
-            <FeedbackForm
-                onClose={() => setValue('showAdminSettings', false)}
-                title={<PageTitle style={{ display: 'flex', alignItems: 'center' }}>Settings {savingAdminSettings &&
-                <ScaleLoader height={15}/>}</PageTitle>}
-                style={{ minHeight: 50 }}
-            >
-              <AdminSettings/>
-            </FeedbackForm>
-          </Modal>}
-        </React.Fragment>
-    )
-  }
+                    {showAdminSettings && <Modal closeForm={() => setValue('showAdminSettings', false)}>
+                        <FeedbackForm
+                            onClose={() => setValue('showAdminSettings', false)}
+                            title={<PageTitle
+                                style={{ display: 'flex', alignItems: 'center' }}>Settings {savingAdminSettings &&
+                            <ScaleLoader height={15}/>}</PageTitle>}
+                            style={{ minHeight: 50 }}
+                        >
+                            <AdminSettings/>
+                        </FeedbackForm>
+                    </Modal>}
+                </Page>
+            </React.Fragment>
+        )
+    }
 }
 
 
 export default connect(({
-                          feedbacks: {
-                            feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople,
-                            feedbackInfo, showAdminSettings, adminSettings,
-                            savingAdminSettings,
-                          },
+                            feedbacks: {
+                                feedbacks, modalWindow, feedback, filter, feedbackLoading, allPeople,
+                                feedbackInfo, showAdminSettings, adminSettings,
+                                savingAdminSettings,
+                            },
                         }) => ({
-  feedbacks,
-  modalWindow,
-  feedback,
-  filter,
-  feedbackLoading,
-  allPeople,
-  feedbackInfo,
-  showAdminSettings,
-  adminSettings,
-  savingAdminSettings,
+    feedbacks,
+    modalWindow,
+    feedback,
+    filter,
+    feedbackLoading,
+    allPeople,
+    feedbackInfo,
+    showAdminSettings,
+    adminSettings,
+    savingAdminSettings,
 }), {
-  toggleModal,
-  feedbackType,
-  getFeedbacks,
-  initializeFilters,
-  setDateType,
-  setDate,
-  setFilterFeedbackType,
-  loadSuggestions,
-  setTeamView,
-  setTeamFeedbackType,
-  setFilterFeedbackTo,
-  setValue,
+    toggleModal,
+    feedbackType,
+    getFeedbacks,
+    initializeFilters,
+    setDateType,
+    setDate,
+    setFilterFeedbackType,
+    loadSuggestions,
+    setTeamView,
+    setTeamFeedbackType,
+    setFilterFeedbackTo,
+    setValue,
 })(AdminContainer)

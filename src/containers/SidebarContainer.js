@@ -3,8 +3,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SidebarNavigation from 'components/Sidebar/SidebarNavigation'
 import { url } from 'helpers/url'
-import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
+import {
+    MODULE_VIEW_ADMIN, MODULE_VIEW_ADMIN_SETTINGS, MODULE_VIEW_COMPANY,
+    MODULE_VIEW_FEEDBACK,
+} from 'routes/feedback/feedbackTypes'
 import CompanySidebar from 'containers/CompanySidebar'
+import AdminSidebar from 'containers/AdminSidebar'
 import Sidebar from 'components/Sidebar/Sidebar'
 
 const sidebarNavigation2 = [
@@ -56,7 +60,13 @@ const sidebarNavigation1 = [
 
 
 const sidebarView = {
+    [MODULE_VIEW_FEEDBACK]: () => <React.Fragment>
+        <SidebarNavigation items={sidebarNavigation1}/>
+        <SidebarNavigation items={sidebarNavigation2}/>
+    </React.Fragment>,
     [MODULE_VIEW_COMPANY]: CompanySidebar,
+    [MODULE_VIEW_ADMIN]: AdminSidebar,
+    [MODULE_VIEW_ADMIN_SETTINGS]: AdminSidebar,
 }
 
 
@@ -69,10 +79,7 @@ class SidebarContainer extends Component {
         if (filter) {
             moduleView = filter.moduleView
         }
-        return sidebarView[moduleView] ? sidebarView[moduleView](this.props) : <React.Fragment>
-            <SidebarNavigation items={sidebarNavigation1}/>
-            <SidebarNavigation items={sidebarNavigation2}/>
-        </React.Fragment>
+        return sidebarView[moduleView] ? sidebarView[moduleView](this.props) : null
     }
 
     render() {
