@@ -56,6 +56,7 @@
     "react-simple-dropdown": "^3.2.0",
     "react-spinners": "^0.2.6",
     "react-tabs": "^2.2.1",
+    "react-timezone": "^1.0.5",
     "redux": "^3.7.2",
     "redux-create-reducer": "^1.1.1",
     "redux-form": "^7.3.0",

@@ -4,6 +4,10 @@ import {
   FEEDBACK_TO_ME, MODULE_VIEW_FEEDBACK, TEAM_TYPE_GIVEN, TEAM_TYPE_NOTE, TEAM_TYPE_RECEIVED,
 } from 'routes/feedback/feedbackTypes'
 import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
+import {
+    LIMIT_INVITES, NON_ADMINS, SELF_REGISTRATION,
+    VALUES_FIELD,
+} from 'routes/adminSettings/components/SettingsForm/inputNames'
 
 
 export const OPEN_MODAL = 'Feedback.OPEN_MODAL'
@@ -154,11 +158,12 @@ const initialState = {
     what: 0,
   },
   feedbackInfo: false,
-  adminSettings: {
-    allowManagers: false,
-    enableAnonymous: false,
-    aAnonymous: false,
-  },
+  adminSettings:{
+      [NON_ADMINS]: false,
+      [SELF_REGISTRATION]: false,
+      [LIMIT_INVITES]: true,
+      [VALUES_FIELD]: []
+  }
 }
 
 

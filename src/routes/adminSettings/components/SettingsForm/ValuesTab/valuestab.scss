@@ -1,0 +1,71 @@
+.values-tab {
+  display: block;
+  padding: 10px 48px 48px;
+
+  &__header {
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #23182d;
+    padding: 20px;
+  }
+
+  &__field-group {
+    min-height: 228px;
+    padding: 12px 24px;
+    margin-bottom: 24px;
+
+    &--close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+
+    }
+
+    &--textarea {
+      background: #fcfcfc;
+      border: 1px solid #9f9ba2;
+      border-radius: 3px;
+      outline: none;
+      display: block;
+      resize: none;
+      margin-top: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 72px;
+      margin-bottom: 24px;
+    }
+
+    &--textfield {
+      background: #fcfcfc;
+      border: 1px solid #9f9ba2;
+      border-radius: 3px;
+      outline: none;
+      display: block;
+      margin-top: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 24px;
+      line-height: 36px;
+      font-family: Lato-Regular, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #5f5864;
+
+    .btn {
+      margin-right: 12px;
+    }
+
+    .add-value {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

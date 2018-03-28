@@ -1,11 +1,19 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
+import { connect } from 'react-redux'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
-import { reduxForm, Field } from 'redux-form'
+import { reduxForm } from 'redux-form'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
+import ProfileTab from 'routes/adminSettings/components/SettingsForm/ProfileTab/ProfileTab'
+import TabContent from 'routes/adminSettings/components/SettingsForm/TabContent'
+import {
+    LIMIT_INVITES, NON_ADMINS, SELF_REGISTRATION,
+    VALUES_FIELD,
+} from 'routes/adminSettings/components/SettingsForm/inputNames'
+import formSubmit from 'routes/adminSettings/actions/formSubmit'
+import ValuesTab from 'routes/adminSettings/components/SettingsForm/ValuesTab/ValuesTab'
 
-const SettingsForm = ({ handleSubmit }) =>
-    <Tabs className={'settings-container__tabs-container'}>
+const SettingsForm = () => {
+    return (<Tabs className={'settings-container__tabs-container'}>
         <TabList className={'settings-container__tabs'}>
 
             <Tab
@@ -28,12 +36,14 @@ const SettingsForm = ({ handleSubmit }) =>
         </TabList>
         <div className="settings-container__tabs-content">
             <ScrollBlock style={{ minHeight: 0 }}>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <TabPanel>
-                        <Field type={'text'} name={'lastName'} component={'input'}/>
+                        <TabContent>
+                            <ProfileTab/>
+                        </TabContent>
                     </TabPanel>
                     <TabPanel>
-                        Values settings
+                        <ValuesTab/>
                     </TabPanel>
                     <TabPanel>
                         Tags settings
@@ -47,9 +57,15 @@ const SettingsForm = ({ handleSubmit }) =>
                 </form>
             </ScrollBlock>
         </div>
-    </Tabs>
+    </Tabs>)
+}
 
 
-export default reduxForm({
-    form: 'adminSettings'
+const settingsForm = reduxForm({
+    form: 'adminSettings',
+    onSubmit: formSubmit
 })(SettingsForm)
+
+export default connect(({ feedbacks: { adminSettings } }) => ({
+    initialValues: adminSettings,
+}))(settingsForm)

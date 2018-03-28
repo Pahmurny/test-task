@@ -1,0 +1,84 @@
+.profile-tab {
+  display: block;
+
+  &.top {
+    display: flex;
+  }
+
+  &__logo {
+    display: block;
+    width: 300px;
+  }
+
+  &__form {
+    display: block;
+    flex: 1;
+
+    &--textfield-block {
+      display: flex;
+
+      .col {
+        flex: 1;
+      }
+
+      .text-f-container {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .checkbox-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    &__mark {
+
+    }
+
+    &__label {
+      font-family: Lato-Bold, sans-serif;
+      font-size: 18px;
+      color: #545454;
+      text-align: left;
+    }
+
+    &__description {
+      font-family: Lato-Regular, sans-serif;
+      font-size: 14px;
+      color: #9f9ba2;
+      text-align: left;
+      flex: 0 0 100%;
+
+      .link {
+        color: #5f5864;
+      }
+    }
+  }
+
+  .textarea-field {
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    border-radius: 3px;
+    outline: none;
+    display: block;
+    resize: none;
+    margin-top: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 72px;
+    margin-bottom: 24px;
+  }
+
+  .actions {
+    text-align: right;
+  }
+
+  .timezone-picker{
+    width: 100%;
+    border: 1px solid #9f9ba2;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+}

@@ -7285,6 +7285,13 @@ react-textarea-autosize@^5.2.1:
   dependencies:
     prop-types "^15.6.0"
 
+react-timezone:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-timezone/-/react-timezone-1.0.5.tgz#74ba4c9b2235ad8de3bb1303b66f70e6889337e8"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+
 react-transition-group@^1.1.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.1.tgz#e11f72b257f921b213229a774df46612346c7ca6"
