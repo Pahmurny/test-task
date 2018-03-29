@@ -11,3 +11,4 @@ export const MISSION_STATEMENTS = 'missionStatements'
 export const DEFAULT_TIME_ZONE = 'defaultTimeZone'
 
 export const VALUES_FIELD = 'values'
+export const TAGS_FIELD = 'tags'

@@ -5,15 +5,12 @@ import { reduxForm } from 'redux-form'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import ProfileTab from 'routes/adminSettings/components/SettingsForm/ProfileTab/ProfileTab'
 import TabContent from 'routes/adminSettings/components/SettingsForm/TabContent'
-import {
-    LIMIT_INVITES, NON_ADMINS, SELF_REGISTRATION,
-    VALUES_FIELD,
-} from 'routes/adminSettings/components/SettingsForm/inputNames'
 import formSubmit from 'routes/adminSettings/actions/formSubmit'
 import ValuesTab from 'routes/adminSettings/components/SettingsForm/ValuesTab/ValuesTab'
+import TagsTab from 'routes/adminSettings/components/SettingsForm/TagsTab/TagsTab'
 
 const SettingsForm = () => {
-    return (<Tabs className={'settings-container__tabs-container'}>
+    return (<Tabs className={'settings-container__tabs-container'} defaultIndex={2}>
         <TabList className={'settings-container__tabs'}>
 
             <Tab
@@ -46,7 +43,7 @@ const SettingsForm = () => {
                         <ValuesTab/>
                     </TabPanel>
                     <TabPanel>
-                        Tags settings
+                        <TagsTab/>
                     </TabPanel>
                     <TabPanel>
                         Billing settings

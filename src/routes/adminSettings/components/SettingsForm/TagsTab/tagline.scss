@@ -1,0 +1,110 @@
+.tag-line {
+  display: flex;
+  border-bottom: 1px solid #9f9ba2;
+  height: 49px;
+  align-items: center;
+
+  &__delete {
+    &--title {
+      font-family: Lato-Bold, sans-serif;
+      font-size: 24px;
+      color: #23182d;
+      text-align: left;
+    }
+
+    &--confirm {
+      font-family: Lato-Regular, sans-serif;
+      font-size: 18px;
+      color: #23182D;
+      padding: 24px;
+    }
+
+    &--actions {
+      display: flex;
+      justify-content: flex-end;
+      font-family: Lato-Bold, sans-serif;
+      font-size: 14px;
+      color: #5F5864;
+      text-align: center;
+      align-items: center;
+      height: 50px;
+      padding-right: 24px;
+      padding-bottom: 20px;
+    }
+
+    &--action {
+      cursor: pointer;
+
+      &:last-child{
+        margin-left: 24px;
+        color: #C37A83;
+      }
+    }
+  }
+
+  &__col {
+    flex: 1;
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #23182d;
+    display: flex;
+  }
+
+  .edit-block {
+    border: 1px solid #5f5864;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 24px;
+    margin-left: auto;
+    margin-right: 24px;
+    position: relative;
+
+  }
+
+  &__edit-field {
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    border-radius: 3px;
+    padding: 1px;
+    box-sizing: border-box;
+
+    &--input {
+      line-height: 36px;
+      font-family: Lato-Regular, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+      outline: none;
+      border: 0;
+    }
+  }
+
+  &__popup {
+    display: block;
+    position: absolute;
+    width: 96px;
+    height: 60px;
+    background: #f0eff1;
+    border: 1px solid #9f9ba2;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: Lato-Bold, sans-serif;
+    font-size: 14px;
+    color: #5f5864;
+    text-align: left;
+
+    &--action {
+      line-height: 30px;
+      display: block;
+      cursor: pointer;
+
+      &.delete {
+        color: #c37a83;
+      }
+    }
+  }
+}
+

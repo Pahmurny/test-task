@@ -1,0 +1,38 @@
+.tag-lines{
+
+
+
+  .actions {
+    display: flex;
+    align-items: center;
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #5f5864;
+    padding: 17px 0;
+
+    &__handler {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .plusbtn{
+        margin-right: 12px;
+      }
+    }
+
+    .new-field-name {
+      background: #FCFCFC;
+      border: 1px solid #9F9BA2;
+      border-radius: 3px;
+      margin-right: 12px;
+      height: 36px;
+      line-height: 36px;
+      box-sizing: border-box;
+      outline: none;
+      width: 288px;
+      font-family: Lato-Regular, sans-serif;
+      font-size: 14px;
+      color: #9F9BA2;
+    }
+  }
+}
