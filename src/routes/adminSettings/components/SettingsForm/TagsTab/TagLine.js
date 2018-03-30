@@ -58,6 +58,11 @@ class TagLine extends Component {
     editState = (edit) => {
         this.setState({
             edit,
+        }, () => {
+            if (edit) {
+                const inputField = this.editField.getRenderedComponent()
+                inputField.focus()
+            }
         })
     }
 
@@ -102,6 +107,7 @@ class TagLine extends Component {
                             onKeyDown={this.onKeyDown}
                             ref={editField => this.editField = editField}
                             className="tag-line__edit-field--input"
+                            withRef
                         /></div>}
                 </div>
                 <div className="tag-line__col">
@@ -151,7 +157,8 @@ class TagLine extends Component {
                             <div
                                 className="tag-line__delete--action"
                                 onClick={() => this.setState({ onDelete: false })}
-                            >Cancel</div>
+                            >Cancel
+                            </div>
                             <div
                                 className="tag-line__delete--action"
                                 onClick={this.onRemove}

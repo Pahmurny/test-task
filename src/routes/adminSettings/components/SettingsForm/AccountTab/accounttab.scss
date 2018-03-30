@@ -1,0 +1,88 @@
+.account-tab {
+  display: block;
+  padding: 50px;
+
+  &__title {
+    text-align: left;
+    font-family: Lato-Bold, sans-serif;
+    font-size: 24px;
+    color: #23182d;
+  }
+
+  &__details {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 24px;
+    margin-bottom: 54px;
+  }
+
+  &__card-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+    padding-right: 24px;
+
+    .card-image {
+      width: 24px;
+      height: 16px;
+    }
+  }
+
+  &__input {
+    &--email {
+      background: #fcfcfc;
+      border: 1px solid #9f9ba2;
+      border-radius: 3px;
+      line-height: 36px;
+      box-sizing: border-box;
+      height: 36px;
+      margin-top: 13px;
+      font-family: Lato-Regular, sans-serif;
+      font-size: 14px;
+      color: #9f9ba2;
+      outline: none;
+      padding-left: 10px;
+
+      &::placeholder {
+        color: #9f9ba2;
+      }
+    }
+  }
+
+  &__text {
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+    padding: 10px 0;
+
+    a{
+      &[href*=mailto]{
+        color: #4F4657;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 60px;
+
+    &--title {
+      font-family: Lato-Bold, sans-serif;
+      font-size: 18px;
+      color: #23182d;
+    }
+
+    &.last {
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding-right: 30px;
+    }
+  }
+}

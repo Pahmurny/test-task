@@ -8,9 +8,11 @@ import TabContent from 'routes/adminSettings/components/SettingsForm/TabContent'
 import formSubmit from 'routes/adminSettings/actions/formSubmit'
 import ValuesTab from 'routes/adminSettings/components/SettingsForm/ValuesTab/ValuesTab'
 import TagsTab from 'routes/adminSettings/components/SettingsForm/TagsTab/TagsTab'
+import AccountTab from 'routes/adminSettings/components/SettingsForm/AccountTab/AccountTab'
+import IntegrationsTab from 'routes/adminSettings/components/SettingsForm/IntegrationsTab/IntegrationsTab'
 
 const SettingsForm = () => {
-    return (<Tabs className={'settings-container__tabs-container'} defaultIndex={2}>
+    return (<Tabs className={'settings-container__tabs-container'} defaultIndex={3}>
         <TabList className={'settings-container__tabs'}>
 
             <Tab
@@ -26,7 +28,7 @@ const SettingsForm = () => {
             >Tags</Tab>
             <Tab className={'settings-container__tab'}
                  selectedClassName={'settings-container__tab--selected'}
-            >Billing</Tab>
+            >Account</Tab>
             <Tab className={'settings-container__tab'}
                  selectedClassName={'settings-container__tab--selected'}
             >Integrations</Tab>
@@ -46,10 +48,10 @@ const SettingsForm = () => {
                         <TagsTab/>
                     </TabPanel>
                     <TabPanel>
-                        Billing settings
+                        <AccountTab/>
                     </TabPanel>
                     <TabPanel>
-                        Integrations settings
+                        <IntegrationsTab/>
                     </TabPanel>
                 </form>
             </ScrollBlock>

@@ -12,3 +12,4 @@ export const DEFAULT_TIME_ZONE = 'defaultTimeZone'
 
 export const VALUES_FIELD = 'values'
 export const TAGS_FIELD = 'tags'
+export const BILLING_EMAIL = 'billing_email'

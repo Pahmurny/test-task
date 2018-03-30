@@ -1,0 +1,18 @@
+.integrations-tab{
+  padding: 50px;
+
+  &__title {
+    font-family: Lato-Bold, sans-serif;
+    font-size: 18px;
+    color: #23182D;
+  }
+
+  &__text {
+    font-family: Lato-Regular, sans-serif;
+    font-size: 14px;
+    color: #9F9BA2;
+    width: 80%;
+    padding: 24px 0;
+  }
+
+}
