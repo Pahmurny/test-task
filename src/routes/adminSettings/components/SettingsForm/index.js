@@ -12,7 +12,7 @@ import AccountTab from 'routes/adminSettings/components/SettingsForm/AccountTab/
 import IntegrationsTab from 'routes/adminSettings/components/SettingsForm/IntegrationsTab/IntegrationsTab'
 
 const SettingsForm = () => {
-    return (<Tabs className={'settings-container__tabs-container'} defaultIndex={3}>
+    return (<Tabs className={'settings-container__tabs-container'}>
         <TabList className={'settings-container__tabs'}>
 
             <Tab
