@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Portal } from 'react-portal'
 import TextField from 'components/Form/TextField'
 import {
     COMPANY_EMAIL,
@@ -12,11 +13,34 @@ import { Field, submit } from 'redux-form'
 import RequestButton from 'components/Buttons/RequestButton'
 import TimezoneField from 'components/Form/TmezoneField/TimezoneField'
 import './profileTab.scss'
+import InfoIcon from 'components/Icons/InfoIcon'
+import InfoBlock from 'components/Shared/InfoBlock'
 
 
 class ProfileTab extends Component {
+
+    state = {
+        info: false,
+    }
+
+    onInfoMove = (text, e) => {
+        const { clientX, clientY } = e
+        this.setState({
+            info: {
+                styles: {
+                    top: clientY,
+                    left: clientX,
+                    position: 'absolute'
+                },
+                text,
+            },
+        })
+    }
+
     render() {
-        const { submit } = this.props
+        const { submit, logo } = this.props
+        const { info } = this.state
+
         return (<div className="profile-tab">
             <div className={'profile-tab top'}>
                 <div className="profile-tab__logo">
@@ -24,8 +48,18 @@ class ProfileTab extends Component {
                         className={'profile-tab__logo--upload'}
                         acceptClassName={'hovered'}
                     >
-                        <img src={`${process.env.PUBLIC_URL}/images/Bitmap.jpg`} alt=""/>
-                        <div className="info">upload</div>
+                        {logo && <React.Fragment>
+                            <img src={`${process.env.PUBLIC_URL}/images/Bitmap.jpg`} alt=""/>
+                            <div className="info">upload</div>
+                        </React.Fragment>}
+                        {!logo && <React.Fragment>
+                            <div className="empty-block">
+                                Click or drag <br/> to upload <br/> company <br/> logo
+                            </div>
+                            <div className="empty-block-info">
+                                Drop image <br/> here
+                            </div>
+                        </React.Fragment>}
                     </Dropzone>
                 </div>
                 <div className="profile-tab__form">
@@ -41,16 +75,24 @@ class ProfileTab extends Component {
                                 tabIndex={4}
                                 label={'Company email'}
                                 name={COMPANY_EMAIL}
-                                className={'text-f-container'}
+                                className={'text-f-container company-email'}
                             />
                         </div>
                         <div className="col col1">
                             <TextField
                                 tabIndex={2}
-                                label={'Company nickname'}
+                                label={<span>Company nickname <InfoIcon
+                                    onMouseOver={(e) => this.onInfoMove('This is how we’ll reference the company in employee communications.', e)}
+                                    onMouseLeave={() => this.setState({ info: false })}
+                                    ref="infoIcon"/></span>}
                                 name={COMPANY_NICK}
                                 className={'text-f-container'}
                             />
+                            {info !== false && <Portal>
+                                <InfoBlock style={info.styles}>
+                                    {info.text}
+                                </InfoBlock>
+                            </Portal>}
                             <TextField
                                 tabIndex={5}
                                 label={'Company phone number'}
@@ -140,5 +182,9 @@ class ProfileTab extends Component {
     }
 }
 
+
+ProfileTab.defaultProps = {
+    logo: false,
+}
 
 export default connect(null, { submit })(ProfileTab)

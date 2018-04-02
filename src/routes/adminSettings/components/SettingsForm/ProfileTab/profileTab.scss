@@ -38,8 +38,41 @@
         text-transform: capitalize;
       }
 
+      .empty-block {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        position: absolute;
+        font-family: Lato-Bold, sans-serif;
+        font-size: 24px;
+        color: #4f4657;
+        background: rgba(216, 216, 216, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.5em;
+      }
+
+      .empty-block-info {
+        @extend .empty-block;
+        display: none;
+      }
+
       &.hovered {
         .info {
+          display: flex;
+        }
+
+        .empty-block {
+          display: none;
+        }
+
+        .empty-block-info {
+          background: rgba(169, 193, 142, 0.75);
+          border: 4px solid #417505;
+          border-style: dashed;
           display: flex;
         }
       }
@@ -59,6 +92,31 @@
 
       .text-f-container {
         margin-bottom: 24px;
+
+        &.company-email {
+          position: relative;
+
+          &:before {
+            content: '@';
+            position: absolute;
+            border-right: 1px solid #9F9BA2;
+            top: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            border-radius: 0 3px 3px 0;
+            font-family: LatoBold, sans-serif;
+            font-size: 14px;
+            color: #9F9BA2;
+            text-align: center;
+          }
+          input[type=text] {
+            padding-left: 30px;
+
+          }
+        }
       }
     }
   }

@@ -10,35 +10,13 @@ import RequestButton from 'components/Buttons/RequestButton'
 
 const AccountTab = () => <div className="account-tab">
     <PageTitle className={'account-tab__title'}>Billing</PageTitle>
-    <div className="account-tab__details">
-        <div className="account-tab__col">
-            <h2 className="account-tab__col--title">Card Details</h2>
-            <div className="account-tab__card-details">
-                <img src={cardPng} alt="card" className="card-image"/>
-                <span>
-                    XXXX XXXX XXXX XXXX
-                </span>
-                <span>
-                    MM / YY
-                </span>
-                <span>
-                    CVV
-                </span>
-            </div>
-        </div>
-        <div className="account-tab__col">
-            <h2 className="account-tab__col--title">Billing Email</h2>
-            <Field
-                name={BILLING_EMAIL}
-                component={'input'}
-                type={'text'}
-                className={'account-tab__input--email'}
-                placeholder={'Provide email address'}
-            />
-        </div>
-        <div className="account-tab__col last">
-            <RequestButton>Update</RequestButton>
-        </div>
+    <div
+        className="account-tab__text"
+        style={{
+            marginBottom:30
+        }}
+    >
+        Please reach out to <a href="mailto:letstalk@careerlark.com">letstalk@careerlark.com</a> for upgrading to our premium product.
     </div>
 
     <PageTitle className={'account-tab__title'}>Status</PageTitle>

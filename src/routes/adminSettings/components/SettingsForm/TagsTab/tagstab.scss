@@ -2,4 +2,24 @@
   display: block;
   flex: 1;
   padding: 10px 48px 48px;
+
+  &__tags-title {
+    display: flex;
+    border-bottom: 2px solid #23182D;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    &--column {
+      display: flex;
+      flex: 1;
+      font-family: LatoBold, sans-serif;
+      font-size: 18px;
+      color: #23182d;
+      text-align: left;
+
+      .info-icon{
+        margin-left: 10px;
+      }
+    }
+  }
 }

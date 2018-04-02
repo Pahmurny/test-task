@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>button-info</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Admin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-956.000000, -36029.000000)" id="SETTINGS">
+            <g transform="translate(0.000000, 27648.000000)">
+                <g id="admin_company_profile_3.4" transform="translate(0.000000, 8064.000000)">
+                    <g id="company-nickname" transform="translate(792.000000, 312.000000)">
+                        <g id="button-info" transform="translate(164.000000, 5.000000)">
+                            <circle id="Oval" fill="#9F9BA2" fill-rule="evenodd" cx="7" cy="7" r="7"></circle>
+                            <text id="i" font-family="CenturySchoolbook-Italic, Century Schoolbook" font-size="14" font-style="italic" font-weight="normal" fill="#FCFCFC">
+                                <tspan x="4.66894531" y="14">i</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
