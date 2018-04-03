@@ -8,7 +8,7 @@ const AdminSidebar = () => <div>
     <SidebarNavigation items={[
         {
             title: 'People',
-            url: '#',
+            url: url.adminPeople(),
         },
         {
             title: 'Settings',

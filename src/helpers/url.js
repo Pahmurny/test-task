@@ -8,7 +8,8 @@ export const url = {
     team: () => '/team',
     company: () => '/company',
     admin: () => '/admin',
-    adminSettings: () => '/admin/settings'
+    adminSettings: () => '/admin/settings',
+    adminPeople: () => '/admin/people'
 }
 
 
@@ -16,6 +17,6 @@ export const endpoint = {
     feedbacks: () => `${ENDPOINT_URL}/feedbacks`,
     pending: () => `${ENDPOINT_URL}/pending`,
     people: () => `${ENDPOINT_URL}/people`,
+    peoples: () => `${ENDPOINT_URL}/peoples`,
     admin: () => `${ENDPOINT_URL}/admin`,
-
 }

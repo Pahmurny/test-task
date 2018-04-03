@@ -11,9 +11,11 @@ import { url } from 'helpers/url'
 import CompanyModule from 'routes/company/CompanyModule'
 import AdminModule from 'routes/admin/AdminModule'
 import SettingsModule from 'routes/adminSettings/SettingsModule'
-import Page from 'components/Content/Page'
 import SidebarContainer from 'containers/SidebarContainer'
 import './App.scss'
+import PeopleModule from 'routes/adminPeople/PeopleModule'
+import PeopleContainer from 'routes/adminPeople/components/PeopleContainer'
+import NotificationComponent from 'components/Notification/NotificationComponent'
 
 
 class App extends Component {
@@ -33,10 +35,12 @@ class App extends Component {
                                     <Route exact path={url.team()} component={TeamModule}/>
                                     <Route exact path={url.company()} component={CompanyModule}/>
                                     <Route exact path={url.admin()} component={AdminModule}/>
-                                    <Route path={url.adminSettings()} component={SettingsModule}/>
+                                    <Route exact path={url.adminSettings()} component={SettingsModule}/>
+                                    <Route exact path={url.adminPeople()} component={PeopleContainer}/>
                             </Switch>
                         </Content>
                     </div>
+                    <NotificationComponent/>
                 </div>
             </Router>
         )

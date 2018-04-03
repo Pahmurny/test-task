@@ -1,0 +1,35 @@
+.people-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 96px 30px;
+
+  &__filter {
+    display: flex;
+  }
+
+  &__title {
+    display: flex;
+    border-bottom: 2px solid #23182d;
+    padding: 5px 0;
+    font-family: LatoBold, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+  }
+
+  &__grid {
+    display: block;
+  }
+
+  &__col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__edit-btn {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+}

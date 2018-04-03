@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SidebarNavigation from 'components/Sidebar/SidebarNavigation'
 import { url } from 'helpers/url'
 import {
-    MODULE_VIEW_ADMIN, MODULE_VIEW_ADMIN_SETTINGS, MODULE_VIEW_COMPANY,
+    MODULE_VIEW_ADMIN, MODULE_VIEW_ADMIN_PEOPLE, MODULE_VIEW_ADMIN_SETTINGS, MODULE_VIEW_COMPANY,
     MODULE_VIEW_FEEDBACK,
 } from 'routes/feedback/feedbackTypes'
 import CompanySidebar from 'containers/CompanySidebar'
@@ -67,6 +67,7 @@ const sidebarView = {
     [MODULE_VIEW_COMPANY]: CompanySidebar,
     [MODULE_VIEW_ADMIN]: AdminSidebar,
     [MODULE_VIEW_ADMIN_SETTINGS]: AdminSidebar,
+    [MODULE_VIEW_ADMIN_PEOPLE]: AdminSidebar,
 }
 
 
@@ -74,10 +75,9 @@ class SidebarContainer extends Component {
 
 
     getSideBar = () => {
-        const { filter } = this.props
-        let moduleView = -1
-        if (filter) {
-            moduleView = filter.moduleView
+        const { moduleView } = this.props
+        if (!moduleView) {
+            return null
         }
         return sidebarView[moduleView] ? sidebarView[moduleView](this.props) : null
     }
@@ -95,4 +95,4 @@ class SidebarContainer extends Component {
 }
 
 
-export default connect(({ feedbacks }) => ({ ...feedbacks }))(SidebarContainer)
+export default connect(({ common }) => ({ ...common }))(SidebarContainer)

@@ -17,14 +17,15 @@ import Content from 'components/Content/Content'
 import { PageTitle } from 'components/Shared/PageTitle'
 import { MODULE_VIEW_COMPANY, MODULE_VIEW_FEEDBACK, MODULE_VIEW_TEAM } from 'routes/feedback/feedbackTypes'
 import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
+import setModuleView from 'actions/setModuleView'
 
 
 class CompanyContainer extends Component {
 
 
     componentDidMount(){
-        const { setTeamView } = this.props
-        setTeamView(MODULE_VIEW_COMPANY)
+        const { setModuleView } = this.props
+        setModuleView(MODULE_VIEW_COMPANY)
         this.initializeFeedback()
     }
 
@@ -57,5 +58,6 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     loadSuggestions,
     setTeamView,
     setTeamFeedbackType,
-    setFilterFeedbackTo
+    setFilterFeedbackTo,
+    setModuleView
 })(CompanyContainer)

@@ -742,5 +742,81 @@
     "allowManagers": true,
     "enableAnonymous": false,
     "aAnonymous": false
-  }
+  },
+  "peoples": [
+    {
+      "id": 1,
+      "name": "Nia Leuschke",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/taybenlor/128.jpg",
+      "title": "CEO",
+      "team": [
+        "Engineering",
+        "Project Babel"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jena Oberbrunner",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+      "title": "CEO",
+      "manager": {
+        "id": 6,
+        "name": "Jena Oberbrunner",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+        "title": "CEO"
+      },
+      "team": [
+        "Engineering",
+        "Project Babel"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jena Oberbrunner",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+      "title": "CEO",
+      "manager": {
+        "id": 7,
+        "name": "Jena Oberbrunner",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+        "title": "CEO"
+      },
+      "team": [
+        "Engineering",
+        "Project Babel"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Rosario Bartoletti",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/tur8le/128.jpg",
+      "title": "CEO",
+      "manager": {
+        "id": 8,
+        "name": "Jena Oberbrunner",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+        "title": "CEO"
+      },
+      "team": [
+        "Engineering",
+        "Project Babel"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sydni Reynolds",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/adamsxu/128.jpg",
+      "title": "CEO",
+      "manager": {
+        "id": 9,
+        "name": "Jena Oberbrunner",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+        "title": "CEO"
+      },
+      "team": [
+        "Engineering",
+        "Project Babel"
+      ]
+    }
+  ]
 }

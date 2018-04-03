@@ -24,6 +24,7 @@ import { PageTitle } from 'components/Shared/PageTitle'
 import { ScaleLoader } from 'react-spinners'
 import AdminSettings from 'routes/admin/components/AdminSettings/AdminSettings'
 import Page from 'components/Content/Page'
+import setModuleView from 'actions/setModuleView'
 
 
 class AdminContainer extends PureComponent {
@@ -33,9 +34,9 @@ class AdminContainer extends PureComponent {
     }
 
     componentDidMount() {
-        const { setTeamView, getFeedbacks, initializeFilters } = this.props
+        const { getFeedbacks, initializeFilters, setModuleView } = this.props
         initializeFilters()
-        setTeamView(MODULE_VIEW_ADMIN)
+        setModuleView(MODULE_VIEW_ADMIN)
         getFeedbacks()
     }
 
@@ -105,4 +106,5 @@ export default connect(({
     setTeamFeedbackType,
     setFilterFeedbackTo,
     setValue,
+    setModuleView
 })(AdminContainer)

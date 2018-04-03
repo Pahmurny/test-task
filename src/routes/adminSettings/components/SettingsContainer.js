@@ -6,6 +6,7 @@ import {
 } from 'routes/feedback/feedbackTypes'
 import './settingsContainer.scss'
 import SettingsForm from 'routes/adminSettings/components/SettingsForm'
+import setModuleView from 'actions/setModuleView'
 
 
 
@@ -13,8 +14,8 @@ class SettingsContainer extends Component {
 
 
     componentDidMount() {
-        const { setTeamView } = this.props
-        setTeamView(MODULE_VIEW_ADMIN_SETTINGS)
+        const { setModuleView } = this.props
+        setModuleView(MODULE_VIEW_ADMIN_SETTINGS)
     }
 
 
@@ -29,4 +30,5 @@ class SettingsContainer extends Component {
 
 export default connect(null, {
     setTeamView,
+    setModuleView
 })(SettingsContainer)
