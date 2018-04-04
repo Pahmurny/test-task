@@ -1,6 +1,6 @@
 .admin__search-block {
   display: flex;
-  padding: 83px 48px 21px;
+  padding: 83px 48px 24px;
 
   &-fulltext {
     margin-right: auto;
@@ -9,11 +9,11 @@
     line-height: 30px;
     background: #fcfcfc;
     border: 1px solid #9f9ba2;
-    border-radius: 3px 3px 3px 0;
+    border-radius: 3px;
     outline: none;
     //font-family: Lato-Regular;
     font-size: 14px;
-    color: #9f9ba2;
+    color: #23182d;
     text-align: left;
     text-indent: 10px;
 
@@ -28,12 +28,16 @@
     background: #fcfcfc;
     border: 1px solid #9f9ba2;
     margin-right: 20px;
-    border-radius: 3px 3px 3px 0;
+    border-radius: 3px;
     height: 30px;
 
     &__search-input {
       input {
         height: 30px;
+        font-family: Lato-Regular, sans-serif;
+        font-size: 14px;
+        font-color: #23182D;
+        padding: 0px 6px;
       }
     }
 
