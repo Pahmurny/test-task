@@ -16,10 +16,15 @@ const DefaultButton = styled.div`
   text-align: center;
   padding: 0 20px;
   cursor: pointer;
+  border-radius: ${props => props.round? props.round : 0};
 `
 
 DefaultButton.propTypes = {
     onClick: PropTypes.func,
+    round: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ])
 }
 
 export default DefaultButton

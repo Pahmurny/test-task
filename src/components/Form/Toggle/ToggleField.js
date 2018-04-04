@@ -4,8 +4,8 @@ import cn from 'classnames'
 import ToggleButton from 'components/Buttons/ToggleButton'
 import './toggleField.scss'
 
-const ToggleField = ({ leftLabel, rightLabel, toggle, label, onClick, left = false }) => <div
-    className={cn('toggle-field', { left })}>
+const ToggleField = ({ leftLabel, rightLabel, toggle, label, onClick, left = false, className }) => <div
+    className={cn(className, 'toggle-field', { left })}>
   {left && <span className={'toggle-field__label'}>{label}</span>}
   <ToggleButton
       className={'toggle-field__left'}
@@ -35,6 +35,7 @@ ToggleField.propTypes = {
   toggle: PropTypes.bool,
   left: PropTypes.bool,
   label: PropTypes.string,
+  className: PropTypes.string,
   onClick: PropTypes.func,
 }
 

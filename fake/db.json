@@ -747,16 +747,28 @@
     {
       "id": 1,
       "name": "Nia Leuschke",
+      "preferred_name": "Nia",
+      "first_name": "Nia",
+      "job_title": "Head of Biz Dev",
+      "last_name": "Leuschke",
+      "email": "nia@fake.com",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/taybenlor/128.jpg",
       "title": "CEO",
       "team": [
         "Engineering",
         "Project Babel"
-      ]
+      ],
+      "active": false,
+      "isAdmin": true
     },
     {
       "id": 2,
       "name": "Jena Oberbrunner",
+      "preferred_name": "Jena",
+      "job_title": "Head of Biz Dev",
+      "email": "jena@fake.com",
+      "first_name": "Jena",
+      "last_name": "Oberbrunner",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
       "title": "CEO",
       "manager": {
@@ -768,11 +780,17 @@
       "team": [
         "Engineering",
         "Project Babel"
-      ]
+      ],
+      "active": true
     },
     {
       "id": 3,
       "name": "Jena Oberbrunner",
+      "preferred_name": "Jena",
+      "job_title": "Head of Biz Dev",
+      "email": "jena@fake.com",
+      "first_name": "Jena",
+      "last_name": "Oberbrunner",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
       "title": "CEO",
       "manager": {
@@ -784,11 +802,17 @@
       "team": [
         "Engineering",
         "Project Babel"
-      ]
+      ],
+      "active": true
     },
     {
       "id": 4,
       "name": "Rosario Bartoletti",
+      "preferred_name": "Rosario",
+      "email": "rosario@fake.com",
+      "job_title": "Head of Biz Dev",
+      "first_name": "Rosario",
+      "last_name": "Bartoletti",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/tur8le/128.jpg",
       "title": "CEO",
       "manager": {
@@ -800,11 +824,17 @@
       "team": [
         "Engineering",
         "Project Babel"
-      ]
+      ],
+      "active": false
     },
     {
       "id": 5,
       "name": "Sydni Reynolds",
+      "preferred_name": "Sydni",
+      "email": "sydni@fake.com",
+      "first_name": "Sydni",
+      "job_title": "Head of Biz Dev",
+      "last_name": "Reynolds",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/adamsxu/128.jpg",
       "title": "CEO",
       "manager": {
@@ -816,7 +846,8 @@
       "team": [
         "Engineering",
         "Project Babel"
-      ]
+      ],
+      "active": true
     }
   ]
 }

@@ -46,7 +46,10 @@ class AdminContainer extends PureComponent {
         return (
             <React.Fragment>
                 <Page flex>
-                    <FeedbackPage {...this.props} beforeBody={props => <SearchBlock {...props}/>}/>
+                    <FeedbackPage
+                        {...this.props}
+                        beforeBody={props => <SearchBlock {...props}/>}
+                    />
 
                     {feedbackInfo && <Modal closeForm={() => setValue('feedbackInfo', false)}>
                         <FeedbackForm

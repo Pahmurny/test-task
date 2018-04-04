@@ -7,15 +7,15 @@ import PropTypes from 'prop-types'
 const UserPic = styled.div`
     background-image: url(${props => props.image});
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: ${props => props.width || '24px'};
+    height: ${props => props.width || '24px'};
     background-repeat: no-repeat;
-    background-size: 24px 24px;
-    border-radius: 24px;
+    background-size: ${props => props.width || '24px'} ${props => props.width || '24px'};
+    border-radius: ${props => props.width || '24px'};
 `
 
 UserPic.propTypes = {
-    image: PropTypes.string.isRequired
+    image: PropTypes.string
 }
 
 
