@@ -1,6 +1,6 @@
 import React from 'react'
 import Dp from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import './datePIcker.scss'
 import m from 'moment'
 import styled from 'styled-components'
 
