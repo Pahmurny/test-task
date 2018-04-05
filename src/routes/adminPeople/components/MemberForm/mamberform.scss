@@ -11,6 +11,20 @@
     }
   }
 
+  &__date-field{
+    margin-left: 10px;
+    background: #FCFCFC;
+    border: 1px solid #9F9BA2;
+    border-radius: 3px;
+    outline: none;
+    line-height: 24px;
+    font-family: LatoRegular,sans-serif;
+    font-size: 14px;
+    color: #23182D;
+    width: 168px;
+    padding-left: 10px;
+  }
+
   &__content {
     flex: 1;
     display: flex;

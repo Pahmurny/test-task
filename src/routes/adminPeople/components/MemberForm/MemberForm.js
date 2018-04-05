@@ -8,6 +8,7 @@ import ToggleFormField from 'components/Form/Toggle/ToggleFormField'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import UserPic from 'components/Shared/UserPic'
 import TextFieldLabel from 'components/Form/TextField/TextFieldLabel'
+import DatePicker from 'components/Form/Datepicker/DatePicker'
 
 
 const ActivateField = ({ input: { value, onChange } }) => {
@@ -70,6 +71,14 @@ const MemberForm = ({ formValues }) => {
                     name={'preferred_name'}
                     className={'member-form__text-field'}
                 />
+
+                <Field
+                    component={DatePicker}
+                    label={'Start Date'}
+                    name={'start_date'}
+                    className={'member-form__date-field'}
+                />
+
             </div>
         </div>
         <div className="member-form__actions">

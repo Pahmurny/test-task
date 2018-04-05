@@ -6516,6 +6516,10 @@ pluralize@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
+popper.js@^1.14.1:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -7102,6 +7106,15 @@ react-custom-scrollbars:
     prop-types "^15.5.10"
     raf "^3.1.0"
 
+react-datepicker:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-1.4.0.tgz#3043afe7c1b65640e75c86d67fe3d5fbe844e413"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+    react-onclickoutside "^6.7.1"
+    react-popper "^0.9.1"
+
 react-datetime@^2.11.1:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-2.14.0.tgz#c7859c5b765275d7980f1cca27c03a727ff9ccef"
@@ -7227,7 +7240,7 @@ react-notifications:
     prop-types "^15.5.10"
     react-transition-group "^1.2.0"
 
-react-onclickoutside@^6.5.0:
+react-onclickoutside@^6.5.0, react-onclickoutside@^6.7.1:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
 
@@ -7241,6 +7254,13 @@ react-overlays@^0.8.3:
     prop-types-extra "^1.0.1"
     react-transition-group "^2.2.0"
     warning "^3.0.0"
+
+react-popper@^0.9.1:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.9.2.tgz#27a198e421e45e53261734dca28c6e57dd2c1604"
+  dependencies:
+    popper.js "^1.14.1"
+    prop-types "^15.6.1"
 
 react-portal:
   version "4.1.2"
