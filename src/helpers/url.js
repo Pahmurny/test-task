@@ -19,4 +19,6 @@ export const endpoint = {
     people: () => `${ENDPOINT_URL}/people`,
     peoples: () => `${ENDPOINT_URL}/peoples`,
     admin: () => `${ENDPOINT_URL}/admin`,
+    tags: () => `${ENDPOINT_URL}/tags`,
+    managers: () => `${ENDPOINT_URL}/managers`
 }

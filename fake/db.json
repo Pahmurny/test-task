@@ -751,20 +751,36 @@
       "first_name": "Nia",
       "job_title": "Head of Biz Dev",
       "start_date": 1517773110,
+      "phone_number": "650-555-8014",
       "last_name": "Leuschke",
       "email": "nia@fake.com",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/taybenlor/128.jpg",
       "title": "CEO",
-      "team": [
-        "Engineering",
-        "Project Babel"
+      "team_tags": [
+        {
+          "label": "Project Babel",
+          "value": "Project Babel"
+        },
+        {
+          "label": "Project Title",
+          "value": "Project Title"
+        },
+        {
+          "label": "Paris",
+          "value": "paris"
+        }
       ],
       "active": false,
-      "isAdmin": true
+      "isAdmin": true,
+      "manager": {
+        "label": "Jena Oberbrunner",
+        "value": 8
+      }
     },
     {
       "id": 2,
       "name": "Jena Oberbrunner",
+      "phone_number": "650-555-8014",
       "preferred_name": "Jena",
       "job_title": "Head of Biz Dev",
       "email": "jena@fake.com",
@@ -778,15 +794,22 @@
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
         "title": "CEO"
       },
-      "team": [
-        "Engineering",
-        "Project Babel"
+      "team_tags": [
+        {
+          "label": "Engineering",
+          "value": "Engineering"
+        },
+        {
+          "label": "Project Babel",
+          "value": "Project Babel"
+        }
       ],
       "active": true
     },
     {
       "id": 3,
       "name": "Jena Oberbrunner",
+      "phone_number": "650-555-8014",
       "preferred_name": "Jena",
       "job_title": "Head of Biz Dev",
       "email": "jena@fake.com",
@@ -800,15 +823,22 @@
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
         "title": "CEO"
       },
-      "team": [
-        "Engineering",
-        "Project Babel"
+      "team_tags": [
+        {
+          "label": "Engineering",
+          "value": "Engineering"
+        },
+        {
+          "label": "Project Babel",
+          "value": "Project Babel"
+        }
       ],
       "active": true
     },
     {
       "id": 4,
       "name": "Rosario Bartoletti",
+      "phone_number": "650-555-8014",
       "preferred_name": "Rosario",
       "email": "rosario@fake.com",
       "job_title": "Head of Biz Dev",
@@ -822,9 +852,15 @@
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
         "title": "CEO"
       },
-      "team": [
-        "Engineering",
-        "Project Babel"
+      "team_tags": [
+        {
+          "label": "Engineering",
+          "value": "Engineering"
+        },
+        {
+          "label": "Project Babel",
+          "value": "Project Babel"
+        }
       ],
       "active": false
     },
@@ -832,6 +868,7 @@
       "id": 5,
       "name": "Sydni Reynolds",
       "preferred_name": "Sydni",
+      "phone_number": "650-555-8014",
       "email": "sydni@fake.com",
       "first_name": "Sydni",
       "job_title": "Head of Biz Dev",
@@ -844,11 +881,59 @@
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
         "title": "CEO"
       },
-      "team": [
-        "Engineering",
-        "Project Babel"
+      "team_tags": [
+        {
+          "label": "Engineering",
+          "value": "Engineering"
+        },
+        {
+          "label": "Project Babel",
+          "value": "Project Babel"
+        }
       ],
       "active": true
+    }
+  ],
+  "tags": [
+    {
+      "label": "Engineering",
+      "value": "Engineering"
+    },
+    {
+      "label": "Project Babel",
+      "value": "Project Babel"
+    },
+    {
+      "label": "Project Title",
+      "value": "Project Title"
+    },
+    {
+      "label": "New York",
+      "value": "ny"
+    },
+    {
+      "label": "Paris",
+      "value": "paris"
+    }
+  ],
+  "managers": [
+    {
+      "id": 8,
+      "name": "Jena Oberbrunner",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+      "title": "CEO"
+    },
+    {
+      "id": 10,
+      "name": "Tolerare Patienter",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+      "title": "CEO"
+    },
+    {
+      "id": 11,
+      "name": "Lapsuss Unda",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+      "title": "Manager"
     }
   ]
 }

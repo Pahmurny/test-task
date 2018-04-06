@@ -54,7 +54,7 @@ class PeopleList extends Component {
                     </React.Fragment> : 'N/A'
                 }</div>
                 <div className="people-list__col">
-                    <span style={{ flex: 1 }}>{person.team ? person.team.join(', ') : 'N/A'}</span>
+                    <span style={{ flex: 1 }}>{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
                     <span style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
                         {(person.id === userForm && loadingPerson) && <CircleLoader/> }
                             <EditIcon

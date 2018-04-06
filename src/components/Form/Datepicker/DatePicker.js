@@ -11,11 +11,12 @@ const SDp = styled(Dp)``
 
 const DatePicker = ({ input: { value, onChange }, label, className }) => {
     let val = value
+
     if (Number.isInteger(value)) {
         val = m.unix(value)
     }
 
-    if (typeof value === 'undefined') {
+    if (value === '') {
         val = m()
     }
 

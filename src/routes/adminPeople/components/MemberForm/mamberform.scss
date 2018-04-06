@@ -3,7 +3,6 @@
   flex-direction: column;
   min-height: 437px;
 
-
   &__text-field {
 
     &.job-title {
@@ -11,18 +10,70 @@
     }
   }
 
-  &__date-field{
+  &__date-field {
     margin-left: 10px;
-    background: #FCFCFC;
-    border: 1px solid #9F9BA2;
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
     border-radius: 3px;
     outline: none;
     line-height: 24px;
-    font-family: LatoRegular,sans-serif;
+    font-family: LatoRegular, sans-serif;
     font-size: 14px;
-    color: #23182D;
+    color: #23182d;
     width: 168px;
     padding-left: 10px;
+  }
+
+  &__tags-field {
+    width: 181px;
+    margin-left: 10px;
+
+    .Select-control {
+      box-shadow: none !important;
+      border-color: #9f9ba2 !important;
+      height: 29px;
+    }
+
+    &.is-focused {
+      .Select-control {
+        border-color: #9f9ba2 !important;
+      }
+    }
+
+    .Select-placeholder{
+      line-height: 1.7em !important;
+    }
+
+    .Select-value {
+      color: #4a4a4a !important;
+      display: inline-flex !important;
+      flex-direction: row-reverse;
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+      line-height: 2em !important;
+      border-radius: 2em !important;
+      background-color: #e6e4e7 !important;
+      border-color: transparent !important;
+
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .Select-value-icon {
+        border-right: 0 !important;
+      }
+    }
+
+    .Select-input {
+      height: 27px;
+      display: inline-flex !important;
+      align-items: center;
+    }
+
+    .Select-value-icon {
+      color: #a09ca2;
+    }
   }
 
   &__content {
@@ -43,7 +94,7 @@
         padding-top: 0;
       }
 
-      &:last-child{
+      &:last-child {
         padding-right: 48px;
       }
     }
@@ -55,7 +106,7 @@
       flex-direction: column;
       padding-top: 20px;
 
-      h3{
+      h3 {
         margin-bottom: 10px;
       }
     }
