@@ -1,12 +1,12 @@
 .values-tab {
   display: block;
-  padding: 10px 48px 48px;
+  padding: 0px 48px 48px;
 
   &__header {
-    font-family: Lato-Regular, sans-serif;
+    font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
-    color: #23182d;
-    padding: 20px;
+    color: #9F9BA2;
+    padding: 24px;
   }
 
   &__field-group {
@@ -46,15 +46,17 @@
       box-sizing: border-box;
       margin-bottom: 24px;
       line-height: 36px;
-      font-family: Lato-Regular, sans-serif;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
+      padding: 0px 6px;
       color: #23182d;
     }
+
   }
 
   &__actions {
     display: flex;
-    font-family: Lato-Regular, sans-serif;
+    font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
     color: #5f5864;
 

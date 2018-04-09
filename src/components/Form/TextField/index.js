@@ -21,6 +21,7 @@ const StyledField = styled(Field)`
     width: 240px;
     outline: none;
     box-sizing: border-box;
+    
 `
 
 const TextField = ({ label, name, ...props }) => {

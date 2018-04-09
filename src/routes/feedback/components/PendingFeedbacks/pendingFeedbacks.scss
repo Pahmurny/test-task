@@ -1,13 +1,13 @@
 @import "~styles/constants";
 
 .pending-feedback {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 
   &__header {
     display: flex;
 
     &-pic {
-      margin-right: 10px;
+      margin-right: 12px;
     }
 
     &-date {
@@ -24,6 +24,7 @@
       font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
       color: #9f9ba2;
+      margin-top: 3px;
     }
 
     &-close {
@@ -32,9 +33,9 @@
   }
 
   &__content {
-    padding-top: 10px;
+    padding-top: 12px;
     font-family: $fontLatoRegular;
-    font-size: 14px;
-    color: #4a4a4a;
+    font-size: 16px;
+    color: #23182D;
   }
 }

@@ -13,7 +13,7 @@
 
   &__tabs {
     display: flex;
-    padding-left: 12px;
+    padding-left: 24px;
   }
 
   &__tab {
@@ -21,7 +21,7 @@
     height: 48px;
     text-align: center;
     line-height: 48px;
-    font-family: Lato-Bold, sans-serif;
+    font-family: $fontLatoBold, sans-serif;
     font-size: 24px;
     color: #9f9ba2;
     background: #e6e4e7;
@@ -43,10 +43,11 @@
   }
 
   &__header {
-    font-family: sans-serif;
+    font-family: $fontLatoBold, sans-serif;
     font-size: 36px;
     color: #23182d;
     text-align: center;
     margin-bottom: 72px;
+    margin-top: 48px;
   }
 }

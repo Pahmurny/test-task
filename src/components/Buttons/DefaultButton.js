@@ -11,6 +11,7 @@ const DefaultButton = styled.div`
   min-width: 10px;
   height: 30px;
   line-height: 30px;
+  border-radius: 5px;
   display: inline-block;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   text-align: center;

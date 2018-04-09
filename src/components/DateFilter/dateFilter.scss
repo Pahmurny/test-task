@@ -10,10 +10,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: auto;
+    min-width: 168px;
 
     &-item {
       cursor: pointer;
-       margin-bottom: 2px;
+       margin-bottom: 6px;
 
       &.active {
         font-family: $fontLatoBold;
@@ -25,7 +27,8 @@
 
   .more-block {
     display: block;
-    padding-top: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     .show-more {
       cursor: pointer;

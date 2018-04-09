@@ -7,12 +7,15 @@
 
   &__logo {
     display: block;
-    width: 300px;
+    width: 192px;
+    height: 192px;
+    cursor: pointer;
+    margin-right: 48px;
 
     &--upload {
       display: block;
-      width: 200px;
-      height: 200px;
+      width: 192px;
+      height: 192px;
       margin: 0 auto;
       position: relative;
 
@@ -31,7 +34,7 @@
         justify-content: center;
         align-items: center;
         background: rgba(216, 216, 216, 0.75);
-        font-family: Lato-Bold, sans-serif;
+        font-family: $fontLatoBold, sans-serif;
         font-size: 24px;
         color: #5f5864;
         text-align: center;
@@ -44,7 +47,7 @@
         bottom: 0;
         top: 0;
         position: absolute;
-        font-family: Lato-Bold, sans-serif;
+        font-family: $fontLatoBold, sans-serif;
         font-size: 24px;
         color: #4f4657;
         background: rgba(216, 216, 216, 0.75);
@@ -107,7 +110,7 @@
             justify-content: center;
             width: 24px;
             border-radius: 0 3px 3px 0;
-            font-family: LatoBold, sans-serif;
+            font-family: $fontLatoBold, sans-serif;
             font-size: 14px;
             color: #9F9BA2;
             text-align: center;
@@ -127,21 +130,21 @@
     margin-bottom: 24px;
 
     &__mark {
-
     }
 
     &__label {
-      font-family: Lato-Bold, sans-serif;
+      font-family: $fontLatoBold, sans-serif;
       font-size: 18px;
-      color: #545454;
+      color: #23182D;
       text-align: left;
     }
 
     &__description {
-      font-family: Lato-Regular, sans-serif;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
       color: #9f9ba2;
       text-align: left;
+      margin-bottom: 6px;
       flex: 0 0 100%;
 
       .link {
@@ -162,6 +165,12 @@
     box-sizing: border-box;
     min-height: 72px;
     margin-bottom: 24px;
+  } 
+
+  input[type=text] {
+      padding: 6px;
+      font-size: 14px;
+      font-family: $fontLatoRegular, sans-serif;
   }
 
   .actions {
@@ -170,6 +179,8 @@
 
   .timezone-picker {
     width: 100%;
+    font-family: $fontLatoRegular, sans-serif;
+    font-size: 14px;
     border: 1px solid #9f9ba2;
     border-radius: 3px;
     margin-bottom: 12px;
