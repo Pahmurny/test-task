@@ -18,15 +18,25 @@ const ActivateField = ({ input: { value, onChange } }) => {
     const isTrue = !!value
 
     return (<div
-        onClick={() => onChange(!value)}
+        onClick={() => {
+            if (isTrue) {
+                if (window.confirm('Deactivate?') === true) {
+                    onChange(!value)
+                }
+            } else {
+                onChange(!value)
+            }
+
+        }}
         className={cn('btn deactivate', { active: !isTrue })}
     >{isTrue ? 'Deactivate' : 'Activate'}</div>)
 }
 
 
-const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submit, updatePerson }) => {
+const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submit, updatePerson, initialValues: { company } }) => {
 
     const { isAdmin, active, image } = formValues
+    const { name, logo } = company
 
     return (
         <Form onSubmit={handleSubmit(updatePerson)} className={'member-form'}>
@@ -37,7 +47,12 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         <UserPic image={image} width={'72px'}/>
                     </div>
                     <div className="member-form__content--companylogo">
-
+                        <h3>{name}</h3>
+                        <img
+                            src={logo}
+                            alt={name}
+                            style={{ width: 72, height: 72 }}
+                        />
                     </div>
                 </div>
                 <div className="member-form__content--col">
@@ -110,6 +125,17 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         style={{ marginTop: 50 }}
                         options={managers.map(manager => ({ label: manager.name, value: manager.id }))}
                         optionComponent={TagsFormFieldOption}
+                        valueMapper={value => value.id}
+                        valueUnmapper={v => {
+                            if (!v) {
+                                return {}
+                            }
+                            const filtered = managers.filter(m => m.id === v.value)
+                            if (filtered.length === 1) {
+                                return filtered[0]
+                            }
+                            return {}
+                        }}
                     />
 
                 </div>
@@ -128,7 +154,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                     <Field component={ActivateField} name={'active'}/>
                     <DefaultButton
                         round={3}
-                        onClick={()=> submit()}
+                        onClick={() => submit()}
                     >Save</DefaultButton>
 
                 </div>
@@ -151,4 +177,4 @@ export default connect(state => ({
     iniValues: getFormInitialValues('memberForm')(state),
     tags: state.common.tags || [],
     managers: state.common.managers || [],
-}), {updatePerson})(form)
+}), { updatePerson })(form)

@@ -13,14 +13,19 @@ const TagsFormField = ({
                            optionComponent,
                            multi = false,
                            style,
+                           valueMapper,
+                           valueUnmapper
                        }) => {
 
     return <FormLabel style={style}>
         {label}
         <Select
             className={className}
-            value={multi ? value.map(v => v.value) : value}
-            onChange={onChange}
+            value={multi ? value.map(v => v.value) : (valueMapper ? valueMapper(value) : value)}
+            onChange={valueUnmapper ? (v) => {
+                const unmapValue  = valueUnmapper(v)
+                onChange(unmapValue)
+            } : onChange}
             options={options}
             removeSelected={false}
             optionComponent={optionComponent}
@@ -34,6 +39,8 @@ TagsFormField.propTypes = {
     optionComponent: PropTypes.any,
     options: PropTypes.array,
     label: PropTypes.string,
+    valueMapper: PropTypes.func,
+    valueUnmapper: PropTypes.func,
 }
 
 export default TagsFormField

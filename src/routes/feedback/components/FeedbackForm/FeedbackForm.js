@@ -23,7 +23,7 @@ export default class FeedbackForm extends Component {
     return <div className={cn('feedback-form')} style={style}>
       <div className="feedback-form__header">
         {title || <PageTitle style={{ fontSize: 24 }}>Feedback</PageTitle>}
-        <CloseIcon onClick={() => onClose(CLOSE_MODAL)}/>
+        <CloseIcon onClick={() => onClose && onClose(CLOSE_MODAL)}/>
       </div>
       <React.Fragment>
         {children}

@@ -1,0 +1,75 @@
+.upload-cv-form {
+  display: flex;
+  flex-direction: column;
+
+  &__title-block {
+    display: flex;
+    margin-top: 23px;
+    margin-bottom: 10px;
+    align-items: center;
+    padding-left: 24px;
+  }
+
+  &__title {
+    font-family: LatoRegular, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+    margin-right: 17px;
+  }
+
+  &__download-btn {
+    display: flex;
+    border-radius: 5px;
+    position: relative;
+    align-items: center;
+    padding-right: 5px;
+    min-width: 163px;
+
+    .icon {
+      margin-left: auto;
+    }
+  }
+
+  &__download-area {
+    position: relative;
+  }
+
+  &__download-options {
+    background: #fcfcfc;
+    border: 1px solid #5f5864;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26px;
+
+  }
+
+  &__download-option {
+    display: block;
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    color: #5f5864;
+    line-height: 30px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(187, 185, 189, 0.50);
+    }
+  }
+
+  &__upload-btn {
+    border-radius: 5px;
+  }
+
+  &__text {
+    font-family: LatoRegular, sans-serif;
+    font-size: 12px;
+    color: #9f9ba2;
+    display: block;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 15px;
+    line-height: 15px;
+  }
+}

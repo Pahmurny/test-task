@@ -752,7 +752,7 @@
       "job_title": "Head of Biz Dev",
       "start_date": 1517773110,
       "phone_number": "650-555-8014",
-      "last_name": "Leuschke",
+      "last_name": "LeuschkeTTT",
       "email": "nia@fake.com",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/taybenlor/128.jpg",
       "title": "CEO",
@@ -770,11 +770,17 @@
           "value": "paris"
         }
       ],
-      "active": false,
+      "active": true,
       "isAdmin": true,
       "manager": {
-        "label": "Jena Oberbrunner",
-        "value": 8
+        "id": 10,
+        "name": "Tolerare Patienter",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
+        "title": "CEO"
+      },
+      "company": {
+        "name": "Pied Piper",
+        "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png"
       }
     },
     {
@@ -789,7 +795,7 @@
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
       "title": "CEO",
       "manager": {
-        "id": 6,
+        "id": 9,
         "name": "Jena Oberbrunner",
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
         "title": "CEO"
@@ -804,7 +810,12 @@
           "value": "Project Babel"
         }
       ],
-      "active": true
+      "active": true,
+      "isAdmin": true,
+      "company": {
+        "name": "Pied Piper",
+        "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png"
+      }
     },
     {
       "id": 3,
@@ -833,7 +844,11 @@
           "value": "Project Babel"
         }
       ],
-      "active": true
+      "active": true,
+      "company": {
+        "name": "Pied Piper",
+        "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png"
+      }
     },
     {
       "id": 4,
@@ -862,7 +877,11 @@
           "value": "Project Babel"
         }
       ],
-      "active": false
+      "active": false,
+      "company": {
+        "name": "Pied Piper",
+        "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png"
+      }
     },
     {
       "id": 5,
@@ -891,7 +910,12 @@
           "value": "Project Babel"
         }
       ],
-      "active": true
+      "active": false,
+      "company": {
+        "name": "Pied Piper",
+        "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png"
+      },
+      "isAdmin": true
     }
   ],
   "tags": [
@@ -918,7 +942,7 @@
   ],
   "managers": [
     {
-      "id": 8,
+      "id": 9,
       "name": "Jena Oberbrunner",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/frankiefreesbie/128.jpg",
       "title": "CEO"

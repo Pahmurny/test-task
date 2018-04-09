@@ -19,6 +19,7 @@ import { PageTitle } from 'components/Shared/PageTitle'
 import getUser from 'routes/adminPeople/actions/getUser'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import MemberForm from 'routes/adminPeople/components/MemberForm/MemberForm'
+import UploadForm from 'routes/adminPeople/components/UploadForm/UploadForm'
 
 
 class PeopleList extends Component {
@@ -41,7 +42,7 @@ class PeopleList extends Component {
             {people.map((person, key) => <PeopleRow key={key}>
                 <div className="people-list__col">
                     <UserPic image={person.image}/>
-                    <span style={{ marginLeft: 10 }}>{person.name}</span>
+                    <span style={{ marginLeft: 10 }}>{`${person.first_name} ${person.last_name}`}</span>
                     {person.isAdmin && <span className="people-list__admin-badge">Admin</span>}
                 </div>
                 <div className="people-list__col">
@@ -54,13 +55,14 @@ class PeopleList extends Component {
                     </React.Fragment> : 'N/A'
                 }</div>
                 <div className="people-list__col">
-                    <span style={{ flex: 1 }}>{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
+                    <span
+                        style={{ flex: 1 }}>{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
                     <span style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-                        {(person.id === userForm && loadingPerson) && <CircleLoader/> }
-                            <EditIcon
-                                className={'people-list__edit-btn'}
-                                onClick={() => getUser(person.id)}
-                            />
+                        {(person.id === userForm && loadingPerson) && <CircleLoader/>}
+                        <EditIcon
+                            className={'people-list__edit-btn'}
+                            onClick={() => getUser(person.id)}
+                        />
                     </span>
                 </div>
             </PeopleRow>)}
@@ -79,7 +81,7 @@ class PeopleList extends Component {
     }
 
     render() {
-        const { memberData, updatePeopleValue } = this.props
+        const { memberData, updatePeopleValue, uploadForm } = this.props
 
         return (
             <div className="people-list">
@@ -106,6 +108,7 @@ class PeopleList extends Component {
                             Active only
                             <DefaultButton
                                 className="download-btn"
+                                onClick={() => updatePeopleValue('uploadForm', true)}
                             >Upload CSV</DefaultButton>
                         </div>
                     </form>
@@ -127,15 +130,25 @@ class PeopleList extends Component {
                 </div>
 
                 {this.renderPeopleGrid()}
+                {uploadForm && <Modal closeForm={() => updatePeopleValue('uploadForm', false)}>
+                    <FeedbackForm
+                        title={<PageTitle>Upload your employees</PageTitle>}
+                        onClose={() => updatePeopleValue('uploadForm', false)}
+                        style={{ minHeight: 0, width: 577 }}
+                    >
+                        <UploadForm/>
+                    </FeedbackForm>
+                </Modal>}
+
                 {memberData && <Modal closeForm={() => updatePeopleValue('memberData', undefined)}>
                     <FeedbackForm
                         onClose={() => updatePeopleValue('memberData', undefined)}
                         title={<PageTitle>{memberData.name}</PageTitle>}
                         style={{
-                            minHeight: 0
+                            minHeight: 0,
                         }}
                     >
-                       <MemberForm/>
+                        <MemberForm/>
                     </FeedbackForm>
                 </Modal>}
             </div>

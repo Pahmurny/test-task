@@ -68,4 +68,4 @@ FeedbacksList.defaultProps = {
     feedbacks: [],
 }
 
-export default connect(({ feedbacks: { filter: { moduleView } } }) => ({ moduleView }))(FeedbacksList)
+export default connect(({ common: { moduleView } }) => ({ moduleView }))(FeedbacksList)
