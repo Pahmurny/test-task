@@ -9,10 +9,10 @@ import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
 import UserPic from 'components/Shared/UserPic'
 
 
-const defaultView = ({ user }) => <React.Fragment>
+const defaultView = ({ user }) => <Fragment>
     <UserPic image={user.image} style={{ marginRight: 10 }}/>
     {user.name}
-</React.Fragment>
+</Fragment>
 
 const feedbackHeader = {
     [MODULE_VIEW_COMPANY]: ({ user, to }) => {
