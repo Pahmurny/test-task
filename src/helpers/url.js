@@ -7,6 +7,7 @@ export const url = {
     main: () => '/',
     team: () => '/team',
     company: () => '/company',
+    companyPeople: () => '/company/people',
     admin: () => '/admin',
     adminSettings: () => '/admin/settings',
     adminPeople: () => '/admin/people'
