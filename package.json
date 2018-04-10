@@ -85,7 +85,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "NODE_PATH=src start-storybook -p 6006",
     "static": "rm -rf storybook.zip && NODE_PATH=src build-storybook -c .storybook -o storybook && zip storybook.zip storybook/ -r && rm -rf storybook/",
-    "fake": "./node_modules/.bin/json-server --watch fake/db.json --port 3004"
+    "fake": "./node_modules/.bin/json-server --watch fake/db.json --routes fake/routes.json --port 3004"
   },
   "jest": {
     "collectCoverageFrom": [

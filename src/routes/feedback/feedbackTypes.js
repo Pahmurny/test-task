@@ -15,6 +15,7 @@ export const TEAM_TYPE_NOTE = 2
 export const MODULE_VIEW_FEEDBACK = 'feedback'
 export const MODULE_VIEW_TEAM = 'team'
 export const MODULE_VIEW_COMPANY = 'company'
+export const MODULE_VIEW_COMPANY_PEOPLE = 'companyPeople'
 export const MODULE_VIEW_ADMIN = 'admin'
 export const MODULE_VIEW_ADMIN_SETTINGS = 'adminSettings'
 export const MODULE_VIEW_ADMIN_PEOPLE = 'adminPeople'

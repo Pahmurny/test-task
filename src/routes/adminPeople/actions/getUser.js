@@ -5,7 +5,7 @@ import { Notify } from 'components/Notification/NotificationComponent'
 
 const getUser = async (id, dispatch, { people: { loadingPerson } }) => {
 
-    const url = `${endpoint.peoples()}/${id}`
+    const url = `${endpoint.people()}/${id}`
 
     if (loadingPerson) {
         return

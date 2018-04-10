@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { url } from 'helpers/url'
 import SidebarNavigation from 'components/Sidebar/SidebarNavigation'
 
@@ -7,7 +8,7 @@ const CompanySidebar = () => <div>
         {
             title: 'People',
             url: url.companyPeople(),
-        }
+        },
     ]}/>
 
     <SidebarNavigation items={[

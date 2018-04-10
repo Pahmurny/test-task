@@ -8,7 +8,7 @@ import { Notify } from 'components/Notification/NotificationComponent'
 const getPeople = async (dispatch, form) => {
 
     try {
-        let url = endpoint.peoples()
+        let url = endpoint.people()
 
         if (form) {
             if (form.active === false) {

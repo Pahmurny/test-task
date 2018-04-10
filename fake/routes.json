@@ -1,0 +1,4 @@
+{
+  "/people":"/peoples/?_expand=company&_expand=manager",
+  "/people/:id":"/peoples/1/?_expand=company&_expand=manager"
+}

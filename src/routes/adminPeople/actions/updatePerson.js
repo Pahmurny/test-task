@@ -7,9 +7,10 @@ import getPeople from 'routes/adminPeople/actions/getPeople'
 const updatePerson = async (values, dispatch) => {
     const { id } = values
 
+    console.log(values)
     try {
 
-        await PUT(`${endpoint.peoples()}/${id}`, values)
+       // await PUT(`${endpoint.people()}/${id}`, values)
         dispatch(updatePeopleValue('memberData', false))
         dispatch(getPeople())
 

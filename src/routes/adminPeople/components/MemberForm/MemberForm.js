@@ -120,22 +120,12 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                     <Field
                         component={TagsFormField}
                         label={'Manager'}
-                        name={'manager'}
+                        name={'managerId'}
                         className={'member-form__tags-field'}
                         style={{ marginTop: 50 }}
                         options={managers.map(manager => ({ label: manager.name, value: manager.id }))}
                         optionComponent={TagsFormFieldOption}
-                        valueMapper={value => value.id}
-                        valueUnmapper={v => {
-                            if (!v) {
-                                return {}
-                            }
-                            const filtered = managers.filter(m => m.id === v.value)
-                            if (filtered.length === 1) {
-                                return filtered[0]
-                            }
-                            return {}
-                        }}
+                        valueUnmapper={v => v.value}
                     />
 
                 </div>

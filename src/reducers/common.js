@@ -8,6 +8,7 @@ const initialState = {
     user: {
         id: 1,
         name: 'John Doe',
+        companyId: 1,
     },
 }
 
