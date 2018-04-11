@@ -30,7 +30,6 @@ class SearchBlock extends Component {
         const { filter: { searchPeople }, updateFilter } = this.props
         delete person.component
         const sPeople = [...searchPeople, person]
-        //console.log(sPeople)
         updateFilter('searchPeople', sPeople)
 
     }

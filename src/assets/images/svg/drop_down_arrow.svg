@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>drop_down_arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Company" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1296.000000, -2688.000000)" id="company_1.2">
+            <g transform="translate(0.000000, 2304.000000)">
+                <g id="engineering" transform="translate(240.000000, 360.000000)">
+                    <g id="drop_down_arrow" transform="translate(1068.000000, 36.000000) scale(1, -1) translate(-1068.000000, -36.000000) translate(1056.000000, 24.000000)">
+                        <g id="drop_dpwn_arrow">
+                            <circle id="Oval" fill="#5F5864" cx="12" cy="12" r="12"></circle>
+                            <path d="M12.0126248,16 C12.2651216,16 12.5176183,15.8969909 12.694366,15.716725 L18.880536,9.79370248 C19.2845308,9.4074184 19.3097804,8.76361161 18.9310353,8.32582299 C18.5522902,7.91378664 17.9210484,7.88803437 17.491804,8.27431844 L12.0126248,13.5535342 L6.50819604,8.30007071 C6.10420127,7.91378664 5.47295944,7.93953891 5.06896466,8.35157526 C4.69021956,8.76361161 4.71546923,9.4074184 5.11946401,9.81945475 L11.305634,15.7424773 C11.5076314,15.8969909 11.7601281,16 12.0126248,16 Z" id="Shape" fill="#FCFCFC" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -677,7 +677,7 @@
     "enableAnonymous": false,
     "aAnonymous": false
   },
-  "peoples": [
+  "people": [
     {
       "id": 1,
       "name": "Nia Leuschke",
@@ -812,6 +812,13 @@
       "isAdmin": true
     }
   ],
+  "people-tags": [
+    {
+      "id": 1,
+      "peopleId": 1,
+      "teamId": 1
+    }
+  ],
   "tags": [
     {
       "label": "Engineering",
@@ -858,7 +865,24 @@
     }
   ],
   "teams": [
-
+    {
+      "id": 1,
+      "name": "Engineering",
+      "companyId": 1,
+      "membersCount": 3
+    },
+    {
+      "id": 2,
+      "name": "Ops",
+      "companyId": 1,
+      "membersCount": 3
+    },
+    {
+      "id": 3,
+      "name": "Customer Success",
+      "companyId": 1,
+      "membersCount": 4
+    }
   ],
   "companies": [
     {

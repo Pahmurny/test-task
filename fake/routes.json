@@ -1,4 +1,6 @@
 {
-  "/people":"/peoples/?_expand=company&_expand=manager",
-  "/people/:id":"/peoples/1/?_expand=company&_expand=manager"
+  "/people": "/people/?_expand=company&_expand=manager",
+  "/people/:id": "/people/:id/?_expand=company&_expand=manager",
+  "/companies/:id/teams": "/companies/:id/?_embed=teams",
+  "/teams/:id/tags":"/people-tags/?_expand=people&teamId=:id"
 }

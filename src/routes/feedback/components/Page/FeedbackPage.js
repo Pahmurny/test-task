@@ -85,6 +85,7 @@ const FeedbackPage = (props) => {
                 <div className="feedback-body__actions">
                     {dropdownViews[moduleView] && dropdownViews[moduleView]({ ...props, filter })}
                     <DefaultButton
+                        round={'5px'}
                         style={{
                             marginLeft: 'auto',
                         }}
