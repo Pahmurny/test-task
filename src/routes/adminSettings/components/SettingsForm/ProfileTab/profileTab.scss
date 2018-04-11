@@ -90,6 +90,7 @@
 
     &--textfield-block {
       display: flex;
+      margin-bottom: 18px;
 
       .col {
         flex: 1;
@@ -97,6 +98,7 @@
 
       .text-f-container {
         margin-bottom: 24px;
+        margin-right: 24px;
 
         &.company-email {
           position: relative;
@@ -159,6 +161,8 @@
     background: #fcfcfc;
     border: 1px solid #9f9ba2;
     border-radius: 3px;
+    font-size: 14px;
+    font-family: $fontLatoRegular, sans-serif;
     outline: none;
     display: block;
     resize: none;
@@ -167,6 +171,7 @@
     box-sizing: border-box;
     min-height: 72px;
     margin-bottom: 24px;
+    margin-top: 18px;
   } 
 
   input[type=text] {
@@ -186,6 +191,6 @@
     border: 1px solid #9f9ba2;
     border-radius: 3px;
     margin-bottom: 12px;
-    margin-top: 12px;
+    margin-top: 18px;
   }
 }
