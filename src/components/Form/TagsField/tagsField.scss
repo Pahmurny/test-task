@@ -3,6 +3,7 @@
 .tags-field {
   display: flex;
   justify-content: flex-start;
+  margin-left: 24px;
 
   &__search {
     flex: 1;
@@ -74,7 +75,7 @@
         border: 1px solid #9f9ba2;
         border-radius: 0 0 1px 1px;
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 6px 12px;
 
         &:not(:last-child) {
           border-bottom: 0;
