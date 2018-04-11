@@ -585,93 +585,7 @@
       ]
     }
   ],
-  "pending": [
-    {
-      "id": 6,
-      "locked": true,
-      "date": "2018-03-03T07:30:58.325Z",
-      "user": {
-        "name": "Rosario Bartoletti",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/tur8le/128.jpg"
-      },
-      "content": "Illo ut eos repellat omnis assumenda.",
-      "tags": [
-        "inventore",
-        "consequatur",
-        "error",
-        "qui",
-        "nulla"
-      ]
-    },
-    {
-      "id": 7,
-      "locked": true,
-      "date": "2018-03-28T06:36:53.055Z",
-      "user": {
-        "name": "Sydni Reynolds",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/adamsxu/128.jpg"
-      },
-      "content": "Facilis non autem iusto mollitia.\nMaxime corrupti ad qui et aut aperiam.\nIpsam quia et at aut.\nPariatur soluta nostrum aspernatur eum qui.",
-      "tags": [
-        "omnis",
-        "est",
-        "dolores",
-        "laborum",
-        "vel"
-      ]
-    },
-    {
-      "id": 8,
-      "locked": true,
-      "date": "2018-05-04T13:11:01.231Z",
-      "user": {
-        "name": "Jaleel McLaughlin",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/carlfairclough/128.jpg"
-      },
-      "content": "Maxime dicta dolorum ducimus quia ut accusantium ut dolores non.",
-      "tags": [
-        "nemo",
-        "reprehenderit",
-        "alias",
-        "qui",
-        "numquam"
-      ]
-    },
-    {
-      "id": 9,
-      "locked": false,
-      "date": "2018-11-30T13:51:38.988Z",
-      "user": {
-        "name": "Aletha Shanahan",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/nfedoroff/128.jpg"
-      },
-      "content": "Aut consequuntur placeat.\nAnimi est vel vel ut.",
-      "tags": [
-        "soluta",
-        "molestiae",
-        "quisquam",
-        "omnis",
-        "non"
-      ]
-    },
-    {
-      "id": 10,
-      "locked": true,
-      "date": "2018-12-27T20:50:50.246Z",
-      "user": {
-        "name": "Lilian Rogahn",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/devinhalladay/128.jpg"
-      },
-      "content": "Ducimus blanditiis cumque.\nMinus ea voluptatem et.",
-      "tags": [
-        "a",
-        "labore",
-        "incidunt",
-        "quam",
-        "aut"
-      ]
-    }
-  ],
+  "pending": [],
   "people": [
     {
       "id": 1,
@@ -718,7 +632,7 @@
       "job_title": "Head of Biz Dev",
       "start_date": 1517773110,
       "phone_number": "650-555-8014",
-      "last_name": "LeuschkeTTT",
+      "last_name": "Leuschke",
       "email": "nia@fake.com",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/taybenlor/128.jpg",
       "title": "CEO",

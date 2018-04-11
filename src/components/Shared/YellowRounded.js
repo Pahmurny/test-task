@@ -6,7 +6,6 @@ const YellowRounded = RoundedBlock.extend`
     border-radius: 8px;
     border: 0;
     position: relative;
-
 `
 
 export default YellowRounded
