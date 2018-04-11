@@ -2,7 +2,7 @@
 
 .feedback-block {
   font-family: $fontLatoRegular;
-  font-size: 16px;
+  font-size: 14px;
   color: #23182d;
 
   &__date {
@@ -15,7 +15,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
 
     &-user {
       display: flex;

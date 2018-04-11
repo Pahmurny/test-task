@@ -49,7 +49,7 @@ class SearchBlock extends Component {
             <div className="admin__search-block">
                 <input
                     type="text" className="admin__search-block-fulltext"
-                    placeholder={'Search for feedback...'}
+                    placeholder={'Search feedback'}
                     value={fulltextSearch}
                     onChange={this.handleChangeFullText}
                 />
