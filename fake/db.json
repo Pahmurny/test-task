@@ -812,7 +812,7 @@
       "isAdmin": true
     }
   ],
-  "people-tags": [
+  "teams_people": [
     {
       "id": 1,
       "peopleId": 1,

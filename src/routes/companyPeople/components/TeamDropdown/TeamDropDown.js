@@ -3,13 +3,28 @@ import PropTypes from 'prop-types'
 import './teamdropdown.scss'
 import DropdownArrow from 'components/Icons/DropdownArrow'
 
+
 class TeamDropDown extends Component {
 
 
-    render(){
+    static propTypes = {
+        onGetData: PropTypes.func.isRequired,
+    }
+
+
+    onClickHandler = (e) => {
+        const { id, onGetData } = this.props
+        onGetData(id)
+    }
+
+
+    render() {
         const { name, membersCount } = this.props
         return (
-            <div className="team-dropdown">
+            <div
+                className="team-dropdown"
+                onClick={this.onClickHandler}
+            >
                 <div className="team-dropdown__title">
                     <span>{name}</span>
                     <span className="team-dropdown__members-count">{membersCount} members</span>
