@@ -111,7 +111,9 @@ class TagLine extends Component {
                         /></div>}
                 </div>
                 <div className="tag-line__col">
+                    <div className="toggle">
                     <Field name={`${tag}.active`} component={ToggleExField} some={1}/>
+                    </div>
                 </div>
                 <div className="tag-line__col">
                     <div className="edit-block">

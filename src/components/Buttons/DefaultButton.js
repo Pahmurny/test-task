@@ -15,7 +15,7 @@ const DefaultButton = styled.div`
   display: inline-block;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   text-align: center;
-  padding: 0 20px;
+  padding: 0 24px;
   cursor: pointer;
   border-radius: ${props => props.round? props.round : 0};
 `

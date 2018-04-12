@@ -1,11 +1,11 @@
 .account-tab {
   display: block;
-  padding: 50px;
+  padding: 24px 48px;
 
   &__title {
     text-align: left;
     font-family: Lato-Bold, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     color: #23182d;
   }
 
@@ -13,7 +13,7 @@
     display: flex;
     align-items: flex-end;
     padding-top: 24px;
-    margin-bottom: 54px;
+    margin-bottom: 48px;
   }
 
   &__card-details {
@@ -56,7 +56,7 @@
     font-family: Lato-Regular, sans-serif;
     font-size: 14px;
     color: #9f9ba2;
-    padding: 10px 0;
+    padding: 18px 0;
 
     a{
       &[href*=mailto]{

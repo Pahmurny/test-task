@@ -16,6 +16,7 @@
   position: relative;
   width: 150px;
   margin-bottom: 12px;
+  margin-right: 12px;
   @include shadow;
 
   &__trigger {

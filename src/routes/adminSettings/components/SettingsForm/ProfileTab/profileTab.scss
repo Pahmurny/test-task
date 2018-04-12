@@ -13,7 +13,7 @@
     height: 192px;
     cursor: pointer;
     margin-right: 48px;
-
+    
     &--upload {
       display: block;
       width: 192px;
@@ -134,6 +134,8 @@
     margin-bottom: 24px;
 
     &__mark {
+      margin-bottom: 18px;
+      margin-top: 2px;
     }
 
     &__label {
@@ -173,12 +175,6 @@
     margin-bottom: 24px;
     margin-top: 18px;
   } 
-
-  input[type=text] {
-      padding: 6px;
-      font-size: 14px;
-      font-family: $fontLatoRegular, sans-serif;
-  }
 
   .actions {
     text-align: right;

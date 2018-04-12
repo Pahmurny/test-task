@@ -1,13 +1,13 @@
 .tags-tab {
   display: block;
   flex: 1;
-  padding: 10px 48px 48px;
+  padding: 0px 48px 48px;
 
   &__tags-title {
     display: flex;
     border-bottom: 2px solid #23182D;
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 6px;
+    padding-top: 24px;
 
     &--column {
       display: flex;
@@ -18,7 +18,8 @@
       text-align: left;
 
       .info-icon{
-        margin-left: 10px;
+        margin-left: 6px;
+        margin-top: 2px;
       }
     }
   }

@@ -1,7 +1,7 @@
 .tag-line {
   display: flex;
   border-bottom: 1px solid #9f9ba2;
-  height: 49px;
+  height: 48px;
   align-items: center;
 
   &__delete {
@@ -49,6 +49,12 @@
     font-size: 14px;
     color: #23182d;
     display: flex;
+  }
+
+  .toggle {
+    flex: 1;
+    display: flex;
+    margin-left: 44px;
   }
 
   .edit-block {

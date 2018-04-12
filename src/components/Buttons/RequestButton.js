@@ -7,4 +7,5 @@ export default WhiteButton.extend`
   padding-left: 17px;
   padding-right: 17px;
   border: none;
+  border-radius: 5px;
 `
