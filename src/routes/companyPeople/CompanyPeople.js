@@ -19,6 +19,7 @@ import PeopleList from 'routes/companyPeople/components/PeopleList/PeopleList'
 import getTagsData from 'routes/companyPeople/actions/getTagsData'
 import updateTeamValue from 'routes/companyPeople/actions/updateTeamValue'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
+import PageLoader from 'components/Shared/PageLoader'
 
 
 class CompanyPeople extends Component {
@@ -54,7 +55,7 @@ class CompanyPeople extends Component {
 
     render() {
         const { viewTab } = this.state
-        const { getTagsData } = this.props
+        const { getTagsData, loadingTeams } = this.props
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
@@ -85,23 +86,30 @@ class CompanyPeople extends Component {
             </div>
 
 
-            <div className="company-people__content">
-                <ScrollBlock style={{ minHeight: 10 }}>
-                    <div style={{ paddingLeft: 30, paddingRight: 30 }}>
-                        {(viewTab === 0) && <DropdownContainer>
-                            {pathOr([], ['company', 'teams'], this.props).map((team, key) =>
-                                <TeamDropDown
-                                    key={key}
-                                    {...team}
-                                    onGetData={getTagsData}
-                                    onClose={this.onCloseTag}
-                                />)}
-                        </DropdownContainer>}
+            {loadingTeams ? <PageLoader/> : <React.Fragment>
 
-                        {(viewTab === 1) && <PeopleList/>}
-                    </div>
-                </ScrollBlock>
-            </div>
+                <div className="company-people__content">
+                    <ScrollBlock style={{ minHeight: 10 }}>
+                        <div style={{ paddingLeft: 30, paddingRight: 30 }}>
+                            {(viewTab === 0) && <DropdownContainer>
+                                {pathOr([], ['company', 'teams'], this.props).map((team, key) =>
+                                    <TeamDropDown
+                                        key={key}
+                                        {...team}
+                                        onGetData={getTagsData}
+                                        onClose={this.onCloseTag}
+                                    />)}
+                            </DropdownContainer>}
+
+                            {(viewTab === 1) && <PeopleList/>}
+                        </div>
+                    </ScrollBlock>
+
+                </div>
+                {(viewTab === 1) && <div style={{ height: 50, flex: '0 0 50px' }}>
+                    Pagination
+                </div>}
+            </React.Fragment>}
         </Page>
     }
 }

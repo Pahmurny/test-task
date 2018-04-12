@@ -2,5 +2,6 @@
   "/people": "/people/?_expand=company&_expand=manager",
   "/people/:id": "/people/:id/?_expand=company&_expand=manager",
   "/companies/:id/teams": "/companies/:id/?_embed=teams",
+  "/companies/:id/people": "/people?companyId=:id",
   "/tags/:id/data":"/teams-tags?teamId=:id&_expand=team"
 }

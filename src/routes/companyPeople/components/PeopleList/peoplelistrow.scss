@@ -1,0 +1,23 @@
+.people-list-row {
+  display: flex;
+  border-bottom: 1px solid #9f9ba2;
+  align-items: center;
+  height: 49px;
+  font-family: LatoRegular, sans-serif;
+  font-size: 14px;
+  color: #23182D;
+
+  &__col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    &:last-child{
+      justify-content: flex-end;
+    }
+  }
+
+  &__user-image {
+    margin-right: 10px;
+  }
+}
