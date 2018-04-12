@@ -10,6 +10,7 @@
   &__search-tabs {
     display: flex;
     justify-content: space-between;
+    padding: 0 30px;
   }
 
   &__search-name {
@@ -43,5 +44,7 @@
 
   &__content{
     padding-top: 42px;
+    flex: 1;
+
   }
 }

@@ -3,16 +3,16 @@ import { endpoint } from 'helpers/url'
 import updateTeamValue from 'routes/companyPeople/actions/updateTeamValue'
 
 
-const getTeamPeople = async (id, dispatch, { companyPeople }) => {
+const getTagsData = async (id, dispatch, { companyPeople }) => {
 
     try {
         dispatch(updateTeamValue(id, 'loading', true))
-        const { data } = await GET(`${endpoint.teams()}/${id}/tags`)
+        const { data } = await GET(`${endpoint.tags()}/${id}/data`)
         dispatch(updateTeamValue(id, 'loading', false))
-        dispatch(updateTeamValue(id, 'people', data))
+        dispatch(updateTeamValue(id, 'blocks', data[0].data))
     } catch (e) {
         dispatch(updateTeamValue(id, 'loading', false))
     }
 }
 
-export default (id) => (dispatch, getState) => getTeamPeople(id, dispatch, getState())
+export default (id) => (dispatch, getState) => getTagsData(id, dispatch, getState())

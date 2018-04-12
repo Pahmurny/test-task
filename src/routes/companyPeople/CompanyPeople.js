@@ -15,11 +15,19 @@ import './companypeople.scss'
 import ToggleButton from 'components/Buttons/ToggleButton'
 import DropdownContainer from 'routes/companyPeople/components/DropdownContainer/DropdownContainer'
 import TeamDropDown from 'routes/companyPeople/components/TeamDropdown/TeamDropDown'
-import getTeamPeople from 'routes/companyPeople/actions/getTeamPeople'
 import PeopleList from 'routes/companyPeople/components/PeopleList/PeopleList'
+import getTagsData from 'routes/companyPeople/actions/getTagsData'
+import updateTeamValue from 'routes/companyPeople/actions/updateTeamValue'
+import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 
 
 class CompanyPeople extends Component {
+
+    static propTypes = {
+        getTagsData: PropTypes.func,
+        getTeams: PropTypes.func,
+        updateTeamValue: PropTypes.func,
+    }
 
 
     state = {
@@ -38,9 +46,15 @@ class CompanyPeople extends Component {
         return pathOr('--', ['company', 'name'], this.props)
     }
 
+
+    onCloseTag = (id) => {
+        const { updateTeamValue } = this.props
+        updateTeamValue(id, 'blocks', false)
+    }
+
     render() {
         const { viewTab } = this.state
-        const { getTeamPeople } = this.props
+        const { getTagsData } = this.props
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
@@ -72,16 +86,21 @@ class CompanyPeople extends Component {
 
 
             <div className="company-people__content">
-                {(viewTab === 0) && <DropdownContainer>
-                    {pathOr([], ['company', 'teams'], this.props).map((team, key) =>
-                        <TeamDropDown
-                            key={key}
-                            {...team}
-                            onGetData={getTeamPeople}
-                        />)}
-                </DropdownContainer>}
+                <ScrollBlock style={{ minHeight: 10 }}>
+                    <div style={{ paddingLeft: 30, paddingRight: 30 }}>
+                        {(viewTab === 0) && <DropdownContainer>
+                            {pathOr([], ['company', 'teams'], this.props).map((team, key) =>
+                                <TeamDropDown
+                                    key={key}
+                                    {...team}
+                                    onGetData={getTagsData}
+                                    onClose={this.onCloseTag}
+                                />)}
+                        </DropdownContainer>}
 
-                {(viewTab === 1) && <PeopleList/>}
+                        {(viewTab === 1) && <PeopleList/>}
+                    </div>
+                </ScrollBlock>
             </div>
         </Page>
     }
@@ -92,4 +111,8 @@ const rForm = reduxForm({
     form: 'companyPeople',
 })(CompanyPeople)
 
-export default connect(({ companyPeople }) => ({ ...companyPeople }), { setModuleView, getTeams, getTeamPeople })(rForm)
+export default connect(({ companyPeople }) => ({ ...companyPeople }),
+    {
+        setModuleView, getTeams, getTagsData,
+        updateTeamValue,
+    })(rForm)
