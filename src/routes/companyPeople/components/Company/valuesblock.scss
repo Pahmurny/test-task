@@ -1,0 +1,42 @@
+.values-block {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-family: LatoBold, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+    margin-bottom: 12px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(230, 228, 231, 0.50);
+    box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
+    border-radius: 5px;
+    margin-bottom: 24px;
+    padding: 24px;
+
+    &-title {
+      font-family: LatoBold, sans-serif;
+      font-size: 16px;
+      color: #23182d;
+      margin-bottom: 12px;
+
+      &.blank {
+        margin-bottom: 0;
+      }
+    }
+
+    &-content {
+      font-family: LatoRegular, sans-serif;
+      font-size: 14px;
+      color: #4a4a4a;
+    }
+  }
+
+}

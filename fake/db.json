@@ -1306,7 +1306,42 @@
     {
       "id": 1,
       "name": "Pied Piper",
-      "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png"
+      "logo": "https://pbs.twimg.com/profile_images/453002109768589313/dFwynoZy_400x400.png",
+      "address": [
+        "5230 Newell Road",
+        "Palo Alto, CA 94301"
+      ]
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "name": "Be simple.",
+      "description": "Totality doesn’t cheerfully reject any visitor — but the doer is what lures. Everything we do is connected with extend: life, truth, mineral, music.",
+      "companyId": 1
+    },
+    {
+      "id": 2,
+      "name": "Pess peregrinationes! ",
+      "description": "Not zion or chaos, gain the zen.As i have avoided you, so you must hear one another.",
+      "companyId": 1
+    },
+    {
+      "id": 3,
+      "name": "Be small.",
+      "companyId": 1
+    },
+    {
+      "id": 4,
+      "name": "Be abstruse!",
+      "description": "History is not occult in over there, the heavens of career, or nirvana, but everywhere. One further mind i give you: hurt each other. Be celestine for whoever shines, because each has been absorbed with joy.",
+      "companyId": 1
+    },
+    {
+      "id": 5,
+      "name": "Be holy!",
+      "description": "Gooey, dried pudding is best enamelled with aromatic rice vinegar.",
+      "companyId": 1
     }
   ]
 }

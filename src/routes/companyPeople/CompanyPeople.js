@@ -20,6 +20,12 @@ import getTagsData from 'routes/companyPeople/actions/getTagsData'
 import updateTeamValue from 'routes/companyPeople/actions/updateTeamValue'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import PageLoader from 'components/Shared/PageLoader'
+import getCompanyValues from 'routes/companyPeople/actions/getCompanyValues'
+import Modal from 'components/Shared/Modal'
+import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
+import updateCompanyPeopleValue from 'routes/companyPeople/actions/updateCompanyPeopleValue'
+import CompanyInfo from 'routes/companyPeople/components/Company/CompanyInfo'
+import ValuesBlock from 'routes/companyPeople/components/Company/ValuesBlock'
 
 
 class CompanyPeople extends Component {
@@ -28,6 +34,7 @@ class CompanyPeople extends Component {
         getTagsData: PropTypes.func,
         getTeams: PropTypes.func,
         updateTeamValue: PropTypes.func,
+        getCompanyValues: PropTypes.func,
     }
 
 
@@ -36,10 +43,10 @@ class CompanyPeople extends Component {
     }
 
     componentDidMount() {
-        const { setModuleView, getTeams } = this.props
+        const { setModuleView, getTeams, getCompanyValues } = this.props
         setModuleView(MODULE_VIEW_COMPANY_PEOPLE)
         getTeams()
-
+        getCompanyValues()
     }
 
 
@@ -53,13 +60,22 @@ class CompanyPeople extends Component {
         updateTeamValue(id, 'blocks', false)
     }
 
+    onCloseValues = () => {
+        const { updateCompanyPeopleValue } = this.props
+        updateCompanyPeopleValue('showValues', false)
+    }
+
     render() {
         const { viewTab } = this.state
-        const { getTagsData, loadingTeams } = this.props
+        const {
+            getTagsData, loadingTeams, showValues, updateCompanyPeopleValue, company,
+            companyValues,
+        } = this.props
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
-                People at {this.companyTitle()} <ThreeDotsIcon/>
+                People at {this.companyTitle()} <ThreeDotsIcon
+                onClick={() => updateCompanyPeopleValue('showValues', true)}/>
             </PageTitle>
 
             <div className="company-people__search-tabs">
@@ -84,6 +100,21 @@ class CompanyPeople extends Component {
                     >People</ToggleButton>
                 </div>
             </div>
+
+            {showValues && <Modal closeForm={this.onCloseValues}>
+                <FeedbackForm
+                    onClose={this.onCloseValues}
+                    title={<PageTitle>Company Profile</PageTitle>}
+                    style={{
+                        width: 672,
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
+                >
+                    <CompanyInfo {...company}/>
+                    <ValuesBlock values={companyValues}/>
+                </FeedbackForm>
+            </Modal>}
 
 
             {loadingTeams ? <PageLoader/> : <React.Fragment>
@@ -123,4 +154,6 @@ export default connect(({ companyPeople }) => ({ ...companyPeople }),
     {
         setModuleView, getTeams, getTagsData,
         updateTeamValue,
+        getCompanyValues,
+        updateCompanyPeopleValue,
     })(rForm)
