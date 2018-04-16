@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
     <title>icon_feedback</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Admin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1295.000000, -11051.000000)">
-        <g id="FEEDBACK" transform="translate(0.000000, 10656.000000)">
-            <g id="admin_feedback">
-                <g id="table" transform="translate(456.000000, 360.000000)">
-                    <g id="row1" transform="translate(0.000000, 24.000000)">
-                        <g id="icon_feedback" transform="translate(840.000000, 12.000000)">
-                            <g id="ellipse" transform="translate(4.800000, 9.600000)" fill="#5F5864">
-                                <ellipse id="Oval" cx="2.13333333" cy="2.44897959" rx="1.33333333" ry="1.30612245"></ellipse>
-                                <ellipse id="Oval" cx="7.2" cy="2.44897959" rx="1.33333333" ry="1.30612245"></ellipse>
-                                <ellipse id="Oval" cx="12" cy="2.44897959" rx="1.33333333" ry="1.30612245"></ellipse>
-                            </g>
-                            <circle id="Oval" stroke="#5F5864" cx="12" cy="12" r="12"></circle>
-                        </g>
-                    </g>
-                </g>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_feedback" transform="translate(1.000000, 1.000000)">
+            <g id="ellipse" transform="translate(4.800000, 10.600000)" fill="#207D94" fill-rule="nonzero">
+                <ellipse id="Oval" cx="2.13333333" cy="1.44897959" rx="1.33333333" ry="1.30612245"></ellipse>
+                <ellipse id="Oval" cx="7.2" cy="1.44897959" rx="1.33333333" ry="1.30612245"></ellipse>
+                <ellipse id="Oval" cx="12" cy="1.44897959" rx="1.33333333" ry="1.30612245"></ellipse>
             </g>
+            <circle id="Oval" stroke="#207D94" cx="12" cy="12" r="12"></circle>
         </g>
     </g>
 </svg>

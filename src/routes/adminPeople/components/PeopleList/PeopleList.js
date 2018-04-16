@@ -54,7 +54,7 @@ class PeopleList extends Component {
                         <span style={{ marginLeft: 10 }}>{person.manager.name}</span>
                     </React.Fragment> : 'N/A'
                 }</div>
-                <div className="people-list__col">
+                <div className="people-list__col-team">
                     <span
                         style={{ flex: 1 }}>{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
                     <span style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>

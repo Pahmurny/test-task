@@ -4,7 +4,7 @@ import { fontLatoBlack } from 'styles/constants.scss'
 
 
 const DefaultButton = styled.div`
-  background-color: #5f5864;
+  background-color: #207D94;
   color: #fcfcfc;
   font-family: ${fontLatoBlack}, sans-serif;
   font-size: 14px;

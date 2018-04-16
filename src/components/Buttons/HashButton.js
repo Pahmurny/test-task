@@ -2,7 +2,7 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 
 
 const HashButton = DefaultButton.extend`
-        background: rgba(95,88,100,0.30);
+        background: rgba(230,228,231,1.00);
         border-radius: 3px;
         font-size: 14px;
         color: #23182D;
