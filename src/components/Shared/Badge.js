@@ -1,17 +1,18 @@
 import styled from 'styled-components'
-import { fontLatoHeavy } from 'styles/constants.scss'
+import { fontLatoBold } from 'styles/constants.scss'
 
 
 const Badge = styled.div`
-            background: #A9C18E;
-            border: 1px solid #417505;
-            width: 24px;
-            height: 24px;
+            background: #207D94;
+            border: 1px solid #207D94;
+            width: 18px;
+            height: 18px;
             text-align: center;
-            line-height: 24px;
-            font-size: 16px;
-            color: #417505;
-            font-family: ${fontLatoHeavy};
+            vertical-align: center;
+            line-height: 18px;
+            font-size: 14px;
+            color: #fcfcfc;
+            font-family: ${fontLatoBold};
             border-radius: 24px;
             
 `

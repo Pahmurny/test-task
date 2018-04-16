@@ -4,6 +4,12 @@
   border: 1px solid #9F9BA2;
 }
 
+@mixin border-dropdown() {
+  border-bottom: 1px solid #9F9BA2;
+  border-left: 1px solid #9F9BA2;
+  border-right: 1px solid #9F9BA2;
+}
+
 @mixin shadow(){
   box-shadow: 0 1px 4px 0 rgba(159, 155, 162, 0.5);
 }
@@ -48,7 +54,7 @@
     top: 30px;
     right: 0;
     background-color: #fcfcfc;
-    @include border;
+    @include border-dropdown;
     @include shadow;
 
     .dropdown-items {

@@ -11,11 +11,12 @@ import CompanySidebar from 'containers/CompanySidebar'
 import AdminSidebar from 'containers/AdminSidebar'
 import Sidebar from 'components/Sidebar/Sidebar'
 
-const sidebarNavigation2 = [
-    {
+ const sidebarNavigation2 = [
+/*    {
         title: '1:1s',
         url: '#1:1',
     },
+
     {
         title: 'Feedback',
         url: url.main(),
@@ -32,20 +33,22 @@ const sidebarNavigation2 = [
         title: 'Documents',
         url: '#documents',
     },
+*/
 
+] 
 
-]
 const sidebarNavigation1 = [
     {
-        title: '1:1s',
+        title: 'Dashboard',
         url: '#1:1',
-        badge: 2,
+        badge: 4,
     },
     {
         title: 'Feedback',
         url: url.main(),
+
     },
-    {
+/*    {
         title: 'Goals',
         url: '#goals',
     },
@@ -56,7 +59,8 @@ const sidebarNavigation1 = [
     {
         title: 'Documents',
         url: '#documents',
-    },]
+    }, */
+    ]
 
 
 const sidebarView = {
