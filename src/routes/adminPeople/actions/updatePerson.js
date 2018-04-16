@@ -4,13 +4,19 @@ import { Notify } from 'components/Notification/NotificationComponent'
 import updatePeopleValue from 'routes/adminPeople/actions/updatePeopleValue'
 import getPeople from 'routes/adminPeople/actions/getPeople'
 
+
+/**
+ * Update person data
+ * @param values
+ * @param dispatch
+ * @returns {Promise<void>}
+ */
 const updatePerson = async (values, dispatch) => {
     const { id } = values
 
-    console.log(values)
     try {
 
-       // await PUT(`${endpoint.people()}/${id}`, values)
+       await PUT(`${endpoint.people()}/${id}`, values)
         dispatch(updatePeopleValue('memberData', false))
         dispatch(getPeople())
 

@@ -34,4 +34,7 @@ class PeopleContainer extends Component {
 }
 
 
+/**
+ * Connect with store and actions
+ */
 export default connect(null, { getPeople, setModuleView, getTags, getManagers })(PeopleContainer)

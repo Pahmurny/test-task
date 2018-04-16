@@ -6,7 +6,7 @@ import FeedbackIcon from 'components/Icons/FeedbackIcon'
 
 
 const PersonRow = props => {
-    const { image, first_name, last_name, job_title, team_tags } = props
+    const { image, first_name, last_name, job_title, team_tags, onClick } = props
     return (<div className="person-row">
         <div className="col">
             <UserPic
@@ -23,7 +23,7 @@ const PersonRow = props => {
             {team_tags.map(tag => tag.label).join(', ')}
         </div>
         <div className="col" style={{ justifyContent: 'flex-end' }}>
-            <FeedbackIcon/>
+            <FeedbackIcon onClick={onClick}/>
         </div>
     </div>)
 }

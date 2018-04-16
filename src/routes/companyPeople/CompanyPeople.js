@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import setModuleView from 'actions/setModuleView'
 import { MODULE_VIEW_COMPANY_PEOPLE } from 'routes/feedback/feedbackTypes'
 import Page from 'components/Content/Page'
-import FeedbackPage from 'routes/feedback/components/Page/FeedbackPage'
+import FeedbackPage, { feedbackViews } from 'routes/feedback/components/Page/FeedbackPage'
 import PageHeader from 'components/Shared/PageHeader'
 import { PageTitle } from 'components/Shared/PageTitle'
 import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
@@ -26,6 +26,10 @@ import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import updateCompanyPeopleValue from 'routes/companyPeople/actions/updateCompanyPeopleValue'
 import CompanyInfo from 'routes/companyPeople/components/Company/CompanyInfo'
 import ValuesBlock from 'routes/companyPeople/components/Company/ValuesBlock'
+import { CLOSE_MODAL } from 'routes/feedback/feedbackReducer'
+import toggleModal from 'routes/feedback/actions/toggleModal'
+import feedbackType from 'routes/feedback/actions/feedbackType'
+import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
 
 
 class CompanyPeople extends Component {
@@ -70,6 +74,10 @@ class CompanyPeople extends Component {
         const {
             getTagsData, loadingTeams, showValues, updateCompanyPeopleValue, company,
             companyValues,
+            modalWindow,
+            toggleModal,
+            feedbackType,
+            feedback
         } = this.props
 
         return <Page flex className={'company-people'}>
@@ -141,6 +149,40 @@ class CompanyPeople extends Component {
                     Pagination
                 </div>}
             </React.Fragment>}
+
+            {modalWindow && <Modal closeForm={() => toggleModal(CLOSE_MODAL)}>
+                <FeedbackForm
+                    feedBack={feedback}
+                    onClose={toggleModal}
+                    onChangeType={feedbackType}
+                >
+                    <div className="feedback-form__actions">
+                        <FeedbackType
+                            items={[
+                                {
+                                    id: 0,
+                                    title: 'Give feedback',
+                                },
+                                {
+                                    id: 1,
+                                    title: 'Request feedback',
+                                },
+                                {
+                                    id: 2,
+                                    title: 'Note to Self',
+                                },
+                            ]}
+                            activeItem={{ id: feedback.type }}
+                            onChange={feedbackType}
+                        />
+                    </div>
+                    <div className="feedback-form__view">
+                        <ScrollBlock style={{ height: 500 }}>
+                            {feedbackViews[feedback.type]}
+                        </ScrollBlock>
+                    </div>
+                </FeedbackForm>
+            </Modal>}
         </Page>
     }
 }
@@ -150,10 +192,15 @@ const rForm = reduxForm({
     form: 'companyPeople',
 })(CompanyPeople)
 
-export default connect(({ companyPeople }) => ({ ...companyPeople }),
+export default connect(({ companyPeople, feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading } }) => ({
+        ...companyPeople,
+        feedbacks, modalWindow, feedback, filter, feedbackLoading,
+    }),
     {
         setModuleView, getTeams, getTagsData,
         updateTeamValue,
         getCompanyValues,
         updateCompanyPeopleValue,
+        toggleModal,
+        feedbackType
     })(rForm)

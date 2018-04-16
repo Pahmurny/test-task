@@ -587,23 +587,6 @@
   ],
   "pending": [
     {
-      "id": 6,
-      "locked": true,
-      "date": "2018-03-03T07:30:58.325Z",
-      "user": {
-        "name": "Rosario Bartoletti",
-        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/tur8le/128.jpg"
-      },
-      "content": "Illo ut eos repellat omnis assumenda.",
-      "tags": [
-        "inventore",
-        "consequatur",
-        "error",
-        "qui",
-        "nulla"
-      ]
-    },
-    {
       "id": 7,
       "locked": true,
       "date": "2018-03-28T06:36:53.055Z",

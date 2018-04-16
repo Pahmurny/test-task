@@ -4,7 +4,12 @@ import { GET } from 'helpers/request'
 import { endpoint } from 'helpers/url'
 import { Notify } from 'components/Notification/NotificationComponent'
 
-
+/**
+ * Get People from the API
+ * @param dispatch
+ * @param form
+ * @returns {Promise<void>}
+ */
 const getPeople = async (dispatch, form) => {
 
     try {

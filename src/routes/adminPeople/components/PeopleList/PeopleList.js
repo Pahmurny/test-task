@@ -157,9 +157,14 @@ class PeopleList extends Component {
 }
 
 
+/**
+ * Create Redux Form
+ */
 const formedList = reduxForm({
     form: 'peoplelist',
 })(PeopleList)
 
-
+/**
+ * Connect with store and actions
+ */
 export default connect(({ people }) => ({ ...people }), { handleChangeAction, updatePeopleValue, getUser })(formedList)
