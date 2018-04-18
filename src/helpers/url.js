@@ -7,6 +7,7 @@ export const url = {
     main: () => '/',
     team: () => '/team',
     company: () => '/company',
+    companyPeople: () => '/company/people',
     admin: () => '/admin',
     adminSettings: () => '/admin/settings',
     adminPeople: () => '/admin/people'
@@ -20,5 +21,7 @@ export const endpoint = {
     peoples: () => `${ENDPOINT_URL}/peoples`,
     admin: () => `${ENDPOINT_URL}/admin`,
     tags: () => `${ENDPOINT_URL}/tags`,
-    managers: () => `${ENDPOINT_URL}/managers`
+    teams: () => `${ENDPOINT_URL}/teams`,
+    managers: () => `${ENDPOINT_URL}/managers`,
+    companies: () =>`${ENDPOINT_URL}/companies`
 }

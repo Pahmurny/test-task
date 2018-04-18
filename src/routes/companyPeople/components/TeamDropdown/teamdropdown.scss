@@ -1,0 +1,42 @@
+.team-dropdown {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 72px;
+    background: #fcfcfc;
+    border-bottom: 2px solid #e6e4e7;
+    font-family: LatoBold, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+    box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
+    cursor: pointer;
+
+    span {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+
+      &:first-child{
+        justify-content: flex-start;
+      }
+
+      &:last-child{
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__members-count {
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    color: #4a4a4a;
+    text-align: left;
+  }
+
+  &__drop-icon {
+
+  }
+}

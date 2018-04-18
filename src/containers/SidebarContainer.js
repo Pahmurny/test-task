@@ -5,6 +5,7 @@ import SidebarNavigation from 'components/Sidebar/SidebarNavigation'
 import { url } from 'helpers/url'
 import {
     MODULE_VIEW_ADMIN, MODULE_VIEW_ADMIN_PEOPLE, MODULE_VIEW_ADMIN_SETTINGS, MODULE_VIEW_COMPANY,
+    MODULE_VIEW_COMPANY_PEOPLE,
     MODULE_VIEW_FEEDBACK,
 } from 'routes/feedback/feedbackTypes'
 import CompanySidebar from 'containers/CompanySidebar'
@@ -69,10 +70,13 @@ const sidebarView = {
         <SidebarNavigation items={sidebarNavigation2}/>
     </React.Fragment>,
     [MODULE_VIEW_COMPANY]: CompanySidebar,
+    [MODULE_VIEW_COMPANY_PEOPLE]: CompanySidebar,
     [MODULE_VIEW_ADMIN]: AdminSidebar,
     [MODULE_VIEW_ADMIN_SETTINGS]: AdminSidebar,
     [MODULE_VIEW_ADMIN_PEOPLE]: AdminSidebar,
 }
+
+const Empty = () => <div/>
 
 
 class SidebarContainer extends Component {
@@ -81,9 +85,11 @@ class SidebarContainer extends Component {
     getSideBar = () => {
         const { moduleView } = this.props
         if (!moduleView) {
-            return null
+            return <Empty/>
         }
-        return sidebarView[moduleView] ? sidebarView[moduleView](this.props) : null
+        const SidebarView = sidebarView[moduleView] ? sidebarView[moduleView] : Empty
+
+        return <SidebarView {...this.props}/>
     }
 
     render() {

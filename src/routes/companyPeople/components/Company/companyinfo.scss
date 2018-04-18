@@ -1,0 +1,32 @@
+.company-info {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bbb9bd;
+  padding: 23px 24px;
+  box-sizing: border-box;
+  height: 118px;
+
+  &__logo {
+    width: 72px;
+    height: 72px;
+    margin-right: 12px;
+  }
+
+  &__address {
+    display: block;
+
+    &-name {
+      font-family: LatoRegular, sans-serif;
+      font-size: 20px;
+      color: #23182d;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    &-venue {
+      font-family: LatoRegular, sans-serif;
+      color: #9b9b9b;
+      font-size: 16px;
+    }
+  }
+}

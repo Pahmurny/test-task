@@ -3,9 +3,16 @@ import { endpoint } from 'helpers/url'
 import updatePeopleValue from 'routes/adminPeople/actions/updatePeopleValue'
 import { Notify } from 'components/Notification/NotificationComponent'
 
+/**
+ * Get specific person by the person's ID
+ * @param id
+ * @param dispatch
+ * @param loadingPerson
+ * @returns {Promise<void>}
+ */
 const getUser = async (id, dispatch, { people: { loadingPerson } }) => {
 
-    const url = `${endpoint.peoples()}/${id}`
+    const url = `${endpoint.people()}/${id}`
 
     if (loadingPerson) {
         return

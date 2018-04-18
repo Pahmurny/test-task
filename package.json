@@ -5,6 +5,7 @@
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -44,7 +45,8 @@
     "prop-types": "^15.6.0",
     "query-string": "^6.0.0",
     "raf": "3.4.0",
-    "react": "^16.3.1",
+    "rambda": "^1.1.0",
+    "react": "16.3",
     "react-custom-scrollbars": "^4.2.1",
     "react-datepicker": "^1.4.1",
     "react-dev-utils": "^5.0.0",
@@ -85,7 +87,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "NODE_PATH=src start-storybook -p 6006",
     "static": "rm -rf storybook.zip && NODE_PATH=src build-storybook -c .storybook -o storybook && zip storybook.zip storybook/ -r && rm -rf storybook/",
-    "fake": "./node_modules/.bin/json-server --watch fake/db.json --port 3004"
+    "fake": "./node_modules/.bin/json-server --watch fake/db.json --routes fake/routes.json --port 3004 --delay 1000"
   },
   "jest": {
     "collectCoverageFrom": [

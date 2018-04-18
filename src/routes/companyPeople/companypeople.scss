@@ -1,0 +1,78 @@
+.company-people {
+
+  padding-left: 35px;
+  padding-right: 35px;
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 50px;
+    padding-left: 30px;
+  }
+
+  &__pagination-block {
+    display: flex;
+    align-items: center;
+    font-family: LatoBold, sans-serif;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 30px;
+
+    &-btn {
+      cursor: pointer;
+
+      &:first-child {
+        margin: 0 12px;
+      }
+    }
+  }
+
+  &__tabs-btns {
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-bottom: 96px;
+  }
+
+  &__search-tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  &__search-name {
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    border-radius: 3px;
+    line-height: 30px;
+    width: 384px;
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+    text-align: left;
+    outline: none;
+    padding: 0 5px;
+
+    &:active, &:focus {
+      box-shadow: 0 0 0 2px #417505;
+      border-color: transparent;
+    }
+  }
+
+  &__btn-tab {
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+
+  &__content {
+    padding-top: 42px;
+    flex: 1;
+  }
+}

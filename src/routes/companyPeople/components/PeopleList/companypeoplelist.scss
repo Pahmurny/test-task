@@ -1,0 +1,17 @@
+.company-people-list {
+
+  &__col {
+    flex: 1;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #23182d;
+    font-family: LatoBold, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+    padding-bottom: 10px;
+  }
+
+}

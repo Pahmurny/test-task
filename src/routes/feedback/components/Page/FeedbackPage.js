@@ -29,7 +29,7 @@ const DateFilterItems = [
     { id: 3, title: 'Quarterly' },
 ]
 
-const views = {
+export const feedbackViews = {
   0: <FeedbackGive/>,
   1: <FeedbackRequest/>,
   2: <Note/>,
@@ -132,7 +132,7 @@ const FeedbackPage = (props) => {
               </div>
               <div className="feedback-form__view">
                 <ScrollBlock style={{ height: 500 }}>
-                  {views[feedback.type]}
+                  {feedbackViews[feedback.type]}
                 </ScrollBlock>
               </div>
             </FeedbackForm>

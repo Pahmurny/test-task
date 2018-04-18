@@ -15,6 +15,13 @@ const AdminSidebar = () => <div>
             url: url.adminSettings(),
         },
     ]}/>
+
+    <SidebarNavigation items={[
+        {
+            title: 'Feedback',
+            url: url.admin(),
+        }
+    ]}/>
 </div>
 
 

@@ -1,0 +1,9 @@
+{
+  "/people": "/people/?_expand=company&_expand=manager",
+  "/people/:id": "/people/:id/?_expand=company&_expand=manager",
+  "/companies/:id/teams": "/companies/:id/?_embed=teams",
+  "/companies/:id/people": "/ppeople",
+  "/companies/:id/people?page=:page": "/ppeople",
+  "/companies/:id/values": "/values?companyId=:id&_expand=company",
+  "/tags/:id/data":"/teams-tags?teamId=:id&_expand=team"
+}

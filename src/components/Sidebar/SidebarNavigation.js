@@ -5,7 +5,7 @@ import './sidebarNavigation.scss'
 import Badge from 'components/Shared/Badge'
 
 
-const SidebarNavigation = ({ items, activeClass}) => <ul className={'sidebar-navigation'}>
+const SidebarNavigation = ({ items, activeClass = 'active'}) => <ul className={'sidebar-navigation'}>
     {
         items.map((item, key) => <li key={key} className="sidebar-navigation__item">
             <Link
@@ -29,10 +29,6 @@ SidebarNavigation.propTypes = {
     )
 }
 
-
-SidebarNavigation.defaultProps = {
-    activeClass: 'active'
-}
 
 
 export default SidebarNavigation

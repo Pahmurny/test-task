@@ -18,6 +18,8 @@ export const REQUEST_FEEDBACK_TYPE = 'request'
 export default (person, feedbackType = NOTE_FEEDBACK_TYPE)=> (dispatch, getState) =>{
     const { feedbacks: { [feedbackType]: { people } } } = getState()
 
+    delete person.component
+
     const updatedPeople = [...people, person]
     dispatch(setActions[feedbackType](updatedPeople))
 }

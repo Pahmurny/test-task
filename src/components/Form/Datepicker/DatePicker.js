@@ -24,7 +24,7 @@ const DatePicker = ({ input: { value, onChange }, label, className }) => {
         {label}
         <SDp
             selected={val}
-            onChange={(value) => onChange(value)}
+            onChange={(value) => onChange(value.unix())}
             className={className}
             shouldCloseOnSelect
         />

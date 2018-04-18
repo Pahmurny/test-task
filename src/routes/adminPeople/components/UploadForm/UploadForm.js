@@ -6,6 +6,9 @@ import DropDownLine from 'components/Icons/DropDownLine'
 import Dz from 'react-dropzone'
 
 
+/**
+ * Form to download data or upload csv
+ */
 class UploadForm extends Component {
 
     state = {
