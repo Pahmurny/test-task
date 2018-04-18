@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { pathOr } from 'rambda'
 import './companypeoplelist.scss'
 import getCompanyPeople from 'routes/companyPeople/actions/getCompanyPeople'
 import PeopleListRow from 'routes/companyPeople/components/PeopleList/PeopleListRow'
@@ -29,8 +30,7 @@ class PeopleList extends Component {
     }
 
     getPeople = () => {
-        const { people } = this.props
-        return people || []
+        return pathOr([], ['people', 'people'], this.props)
     }
 
     onPersonClick = (person) => {

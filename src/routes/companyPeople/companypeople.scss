@@ -3,6 +3,35 @@
   padding-left: 35px;
   padding-right: 35px;
 
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 50px;
+    padding-left: 30px;
+  }
+
+  &__pagination-block {
+    display: flex;
+    align-items: center;
+    font-family: LatoBold, sans-serif;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 30px;
+
+    &-btn {
+      cursor: pointer;
+
+      &:first-child {
+        margin: 0 12px;
+      }
+    }
+  }
+
+  &__tabs-btns {
+    margin-left: auto;
+  }
+
   &__title {
     margin-bottom: 96px;
   }
@@ -26,23 +55,23 @@
     outline: none;
     padding: 0 5px;
 
-    &:active, &:focus{
+    &:active, &:focus {
       box-shadow: 0 0 0 2px #417505;
       border-color: transparent;
     }
   }
 
-  &__btn-tab{
-    &:first-child{
+  &__btn-tab {
+    &:first-child {
       border-radius: 3px 0 0 3px;
     }
 
-    &:last-child{
+    &:last-child {
       border-radius: 0 3px 3px 0;
     }
   }
 
-  &__content{
+  &__content {
     padding-top: 42px;
     flex: 1;
   }

@@ -7,7 +7,6 @@ import setModuleView from 'actions/setModuleView'
 import { MODULE_VIEW_COMPANY_PEOPLE } from 'routes/feedback/feedbackTypes'
 import Page from 'components/Content/Page'
 import FeedbackPage, { feedbackViews } from 'routes/feedback/components/Page/FeedbackPage'
-import PageHeader from 'components/Shared/PageHeader'
 import { PageTitle } from 'components/Shared/PageTitle'
 import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
 import getTeams from 'routes/companyPeople/actions/getTeams'
@@ -30,6 +29,9 @@ import { CLOSE_MODAL } from 'routes/feedback/feedbackReducer'
 import toggleModal from 'routes/feedback/actions/toggleModal'
 import feedbackType from 'routes/feedback/actions/feedbackType'
 import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
+import PerPage from 'components/PerPage/PerPage'
+import { PageArrowLeft, PageArrowRight } from 'components/Icons/PageArrow'
+import getCompanyPeople from 'routes/companyPeople/actions/getCompanyPeople'
 
 
 class CompanyPeople extends Component {
@@ -39,6 +41,7 @@ class CompanyPeople extends Component {
         getTeams: PropTypes.func,
         updateTeamValue: PropTypes.func,
         getCompanyValues: PropTypes.func,
+        getCompanyPeople: PropTypes.func,
     }
 
 
@@ -69,6 +72,16 @@ class CompanyPeople extends Component {
         updateCompanyPeopleValue('showValues', false)
     }
 
+    getPagination = () => {
+        const pageCount = pathOr(0, ['people', 'pageCount'], this.props)
+        const totalCount = pathOr(0, ['people', 'totalCount'], this.props)
+        const currentPage = pathOr(0, ['people', 'currentPage'], this.props)
+        const perPage = pathOr(0, ['people', 'perPage'], this.props)
+
+        return { totalCount, pageCount, currentPage, perPage }
+    }
+
+
     render() {
         const { viewTab } = this.state
         const {
@@ -77,8 +90,12 @@ class CompanyPeople extends Component {
             modalWindow,
             toggleModal,
             feedbackType,
-            feedback
+            feedback,
+            getCompanyPeople,
         } = this.props
+
+
+        const { totalCount, pageCount, currentPage, perPage } = this.getPagination()
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
@@ -87,15 +104,16 @@ class CompanyPeople extends Component {
             </PageTitle>
 
             <div className="company-people__search-tabs">
-                <Field
+                {viewTab === 1 && <Field
                     className={'company-people__search-name'}
                     component={'input'}
                     type={'text'}
                     name={'person-name'}
                     placeholder={'Type a team member’s name…'}
-                />
+                    onChange={getCompanyPeople}
+                />}
 
-                <div className={'tabs-btns'}>
+                <div className={'company-people__tabs-btns'}>
                     <ToggleButton
                         active={viewTab === 0}
                         onClick={() => this.setState({ viewTab: 0 })}
@@ -145,8 +163,26 @@ class CompanyPeople extends Component {
                     </ScrollBlock>
 
                 </div>
-                {(viewTab === 1) && <div style={{ height: 50, flex: '0 0 50px' }}>
-                    Pagination
+                {(viewTab === 1) && <div className="company-people__pagination">
+                    <Field
+                        component={PerPage}
+                        name={'perpage'}
+                        options={[10, 20, 50, 100]}
+                        onChange={getCompanyPeople}
+                    />
+                    <div className="company-people__pagination-block">
+                        {(currentPage - 1) * perPage + 1} - {(currentPage - 1) * perPage + perPage} of {totalCount}
+                        <PageArrowLeft
+                            active={currentPage > 1}
+                            className="company-people__pagination-block-btn"
+                            onClick={() => (currentPage > 1) && getCompanyPeople(currentPage - 1)}
+                        />
+                        <PageArrowRight
+                            active={currentPage < pageCount}
+                            onClick={() => (currentPage < pageCount) && getCompanyPeople(currentPage + 1)}
+                            className="company-people__pagination-block-btn"
+                        />
+                    </div>
                 </div>}
             </React.Fragment>}
 
@@ -202,5 +238,6 @@ export default connect(({ companyPeople, feedbacks: { feedbacks, modalWindow, fe
         getCompanyValues,
         updateCompanyPeopleValue,
         toggleModal,
-        feedbackType
+        feedbackType,
+        getCompanyPeople,
     })(rForm)
