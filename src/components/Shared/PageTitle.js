@@ -8,6 +8,7 @@ export const PageTitle = styled.h3`
     justify-content: center;
     align-items: center;
     display: flex;
+    padding-bottom: 96px;
 `
 
 
