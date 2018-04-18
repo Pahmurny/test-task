@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 96px 48px 24px 48px;
+  padding: 0px 48px 24px 48px;
 
   &__filter {
     display: flex;
@@ -46,14 +46,34 @@
     border-radius: 3px;
     outline: none;
     font-size: 14px;
-    color: #9f9ba2;
+    color: #23182D;
     text-align: left;
-    text-indent: 10px;
+    text-indent: 6px;
     font-family: $fontLatoRegular, sans-serif;
 
     &:focus {
-      box-shadow: 0 0 0 2px #417505;
+      box-shadow: 0 0 0 2px #207D94;
       border-color: transparent;
+    }
+
+    ::-webkit-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::-moz-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    :-ms-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
     }
   }
 
@@ -71,7 +91,6 @@
     display: block;
     table-layout: auto;
     width: 100%;
-    min-width: 960px;
     margin: 0 auto;
     white-space: nowrap;
   }

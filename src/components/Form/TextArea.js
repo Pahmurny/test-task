@@ -10,7 +10,8 @@ const TextArea = styled.textarea`
     outline: none;
     font-family: ${fontLatoRegular}, sans-serif;
     font-size: 14px;
-    color: #9F9BA2;
+    color: #23182D;
+    padding: 6px;
 `
 
 export default TextArea

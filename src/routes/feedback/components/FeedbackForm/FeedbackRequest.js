@@ -64,7 +64,7 @@ class FeedbackRequest extends Component {
                 <FieldTitle>
                     Who do you want request from?
                 </FieldTitle>
-                <RoundedFocused style={{ marginTop: 17, marginBottom: 17 }}>
+                <RoundedFocused style={{ marginTop: 12, marginBottom: 24 }}>
                     <TagsField
                         tags={people}
                         suggestions={allPeople}
@@ -72,7 +72,7 @@ class FeedbackRequest extends Component {
                         onDelete={this.onDeletePeople}
                     />
                 </RoundedFocused>
-                <FieldTitle style={{ marginBottom: 17 }}>
+                <FieldTitle style={{ marginTop: 30 }}>
                     What do you want to ask them?
                 </FieldTitle>
                 {
@@ -81,8 +81,9 @@ class FeedbackRequest extends Component {
                         onClick={() => setWhatRequest(key)}
                     >{w}</Radio>)
                 }
-                <RoundedFocused>
+                <RoundedFocused style={{ marginTop: 18 }}>
                     <TextArea
+                        placeholder={'Optional, write your question here.'}
                         style={{ height: 160 }}
                         value={content}
                         onChange={this.onChangeText}

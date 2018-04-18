@@ -66,9 +66,9 @@ class FeedbackGive extends Component {
         const { give: { replyTo, people, isPublic } } = this.props
         if (replyTo) {
             const { user: { name } } = replyTo
-            return isPublic ? 'Everyone at [x] can read this.' : `Only you and ${name} can view this`
+            return isPublic ? 'Everyone at [x] can read this.' : `Only you and ${name} can view this.`
         }
-        return isPublic ? '' : `Only you and ${people.length} people can view this`
+        return isPublic ? '' : `Only you and ${people.length} other person can view this.`
     }
 
 
@@ -78,7 +78,7 @@ class FeedbackGive extends Component {
             return <PageLoader/>
         }
         return <React.Fragment>
-            <FieldTitle style={{ marginTop: 25, marginBottom: 10 }}>
+            <FieldTitle style={{ marginTop: 30, marginBottom: 12 }}>
                 Pending requests ({pendingFeedbacks.length})
             </FieldTitle>
             <PendingFeedbacks style={{ height: 300 }}>
@@ -110,7 +110,7 @@ class FeedbackGive extends Component {
                 <FieldTitle>
                     Who are you giving feedback to?
                 </FieldTitle>
-                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused style={{ marginTop: 17 }}>
+                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused style={{ marginTop: 12 }}>
                     <TagsField
                         tags={people}
                         suggestions={allPeople.map(person => ({

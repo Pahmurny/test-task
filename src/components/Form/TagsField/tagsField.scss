@@ -3,7 +3,7 @@
 .tags-field {
   display: flex;
   justify-content: flex-start;
-  margin-left: 24px;
+  padding-left: 6px;
 
   &__search {
     flex: 1;
@@ -35,6 +35,8 @@
       background-color: #e6e4e7;
       font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
+      text-align: center;
+      padding-left: 12px;
       cursor: pointer;
 
       &:after {

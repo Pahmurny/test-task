@@ -9,7 +9,6 @@ const HashButton = DefaultButton.extend`
         height: 24px;
         line-height: 24px;
         box-shadow: none;
-        cursor: pointer;
 `
 
 export default HashButton

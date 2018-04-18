@@ -44,14 +44,14 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                 <div className="member-form__content--col">
                     <div className="member-form__content--userpic">
                         <h3>Personal:</h3>
-                        <UserPic image={image} width={'72px'}/>
+                        <UserPic image={image} width={'108px'}/>
                     </div>
                     <div className="member-form__content--companylogo">
-                        <h3>{name}</h3>
+                        <h3>{name}:</h3>
                         <img
                             src={logo}
                             alt={name}
-                            style={{ width: 72, height: 72 }}
+                            style={{ width: 108, height: 108 }}
                         />
                     </div>
                 </div>

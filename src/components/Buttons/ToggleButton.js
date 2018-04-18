@@ -7,10 +7,10 @@ const ToggleButton = RequestButton.extend`
     position: relative;
     width: 96px;
     line-height: 24px;
-    background: ${props => props.active ? '#A9C18E' : '#d0cfd2'};
+    background: ${props => props.active ? '#A6CBD4' : '#d0cfd2'};
     border-radius: 0;
-    color: ${props => props.active ? '#417505' : '#9f9ba2'};
-    box-shadow: 0 0 0 1px ${props => props.active ? '#417505' : '#9F9BA2'};
+    color: ${props => props.active ? '#207D94' : '#9f9ba2'};
+    box-shadow: 0 0 0 1px ${props => props.active ? '#207D94' : '#9F9BA2'};
     z-index: ${props => props.active ? 999999 : 0};
 `
 

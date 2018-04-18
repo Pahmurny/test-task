@@ -2,10 +2,11 @@
 
 .feedback-type {
   display: flex;
+  padding-bottom: 12px;
 
   &__item {
     display: block;
-    width: 216px;
+    width: 272px;
     line-height: 36px;
     height: 36px;
     text-align: center;

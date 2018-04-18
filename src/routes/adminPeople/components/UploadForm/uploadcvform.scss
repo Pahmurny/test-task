@@ -22,8 +22,8 @@
     border-radius: 5px;
     position: relative;
     align-items: center;
-    padding-right: 5px;
-    min-width: 163px;
+    padding: 0 12px;
+    min-width: 192px;
 
     .icon {
       margin-left: auto;
@@ -61,6 +61,7 @@
   }
 
   &__upload-btn {
+    width: 84px;
     border-radius: 5px;
   }
 

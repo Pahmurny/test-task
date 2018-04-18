@@ -9,11 +9,12 @@
   &__item {
     padding-bottom: 1em;
     a {
-      color: #23182d;
-      text-decoration: none;
+    color: #23182d;
+    padding-right: 12px;
+    text-decoration: none;
 
       &.active {
-        color: #417505;
+        color: #207D94;
         font-family: $fontLatoBold;
       }
     }

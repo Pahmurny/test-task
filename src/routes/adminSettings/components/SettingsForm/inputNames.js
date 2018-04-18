@@ -3,6 +3,8 @@ export const COMPANY_NICK = 'companyNick'
 export const COMPANY_URL = 'companyUrl'
 export const COMPANY_EMAIL = 'companyEmail'
 export const COMPANY_PHONE = 'companyPhone'
+export const COMPANY_ADDRESS_LINE_1 = 'companyAddressLine1'
+export const COMPANY_ADDRESS_LINE_2 = 'companyAddressLine2'
 
 export const NON_ADMINS = 'non-admins'
 export const SELF_REGISTRATION = 'self-registration'

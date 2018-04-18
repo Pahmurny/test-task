@@ -2,7 +2,7 @@
 
 .admin__search-block {
   display: flex;
-  padding: 83px 48px 24px;
+  padding: 0px 48px 24px;
 
   &-fulltext {
     margin-right: auto;
@@ -20,7 +20,7 @@
     text-indent: 6px;
 
     &:focus {
-      box-shadow: 0 0 0 2px #417505;
+      box-shadow: 0 0 0 2px #207D94;
       border-color: transparent;
     }
   }
@@ -33,13 +33,18 @@
     border-radius: 3px;
     height: 30px;
 
+    &:focus {
+      box-shadow: 0 0 0 2px #207D94;
+      border-color: transparent;
+    }
+
     &__search-input {
       input {
         height: 30px;
         font-family: $fontLatoRegular, sans-serif;
         font-size: 14px;
         font-color: #23182D;
-        padding: 0px 6px;
+        padding: 0px;
       }
     }
 

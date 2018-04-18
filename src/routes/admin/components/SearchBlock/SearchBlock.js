@@ -7,7 +7,6 @@ import TagsField from 'components/Form/TagsField/TagsField'
 import updateFilter from 'routes/feedback/actions/updateFilter'
 import PersonalEmail from 'components/Form/PersonalEmail'
 
-
 class SearchBlock extends Component {
 
     static propTypes = {

@@ -7,8 +7,8 @@ import './tagline.scss'
 import ToggleExField from 'components/Form/ToggleExField'
 import Modal from 'components/Shared/Modal'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
-import { PageTitle } from 'components/Shared/PageTitle'
-
+import { PopupTitle } from 'components/Shared/PopupTitle'
+import NegativeButton from 'components/Buttons/NegativeButton'
 
 class TagLine extends Component {
 
@@ -144,7 +144,7 @@ class TagLine extends Component {
                 {onDelete !== false && <Modal closeForm={() => this.setState({ onDelete: false })}>
                     <FeedbackForm
                         onClose={() => this.setState({ onDelete: false })}
-                        title={<PageTitle className={'tag-line__delete--title'}>Delete this tag?</PageTitle>}
+                        title={<PopupTitle className={'tag-line__delete--title'}>Delete this tag?</PopupTitle>}
                         style={{
                             minHeight: 50,
                             width: 576,
@@ -152,8 +152,7 @@ class TagLine extends Component {
                     >
                         <div className="tag-line__delete--confirm">
                             Removing this tag will disassociate it from any element to which you have applied it.
-                            You will not be able to recover this tag;
-                            you will have to re-create it if you want to re-apply it.
+                            You will not be able to recover this tag; you will have to re-create it if you want to re-apply it.
                         </div>
                         <div className="tag-line__delete--actions">
                             <div
@@ -162,9 +161,12 @@ class TagLine extends Component {
                             >Cancel
                             </div>
                             <div
-                                className="tag-line__delete--action"
-                                onClick={this.onRemove}
+                                className="tag-line__delete--action">
+                                <NegativeButton
+                                    round={'5px'}
+                                    onClick={this.onRemove}
                             >Delete
+                            </NegativeButton>
                             </div>
                         </div>
                     </FeedbackForm>

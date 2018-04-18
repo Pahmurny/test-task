@@ -38,15 +38,15 @@ class NewFeedback extends Component {
 
     render() {
         const { replyTo, clearFeedback, content, embodyValues, embodyValue, setEmbodyValue } = this.props
-        return <div className="newfeedback-container" style={{ paddingTop: 20 }}>
+        return <div className="newfeedback-container" style={{ paddingTop: 30 }}>
             {replyTo && <PendingFeedback onClose={clearFeedback} feedback={replyTo}/>}
-            <FieldTitle style={{ marginTop: 20, marginBottom: 20 }}>
+            <FieldTitle style={{ marginBottom: 12 }}>
                 What is your feedback?
             </FieldTitle>
             <RoundedFocused>
-                <TextArea onChange={this.onChangeText} value={content} style={{ height: 170 }}/>
+                <TextArea placeholder={'Write your feedback here.'} onChange={this.onChangeText} value={content} style={{ height: 170 }}/>
             </RoundedFocused>
-            <FieldTitle style={{ marginTop: 20 }} className="field-title">
+            <FieldTitle style={{ marginTop: 30 }} className="field-title">
                 Which values did they embody? <span>View descriptions</span>
             </FieldTitle>
             <div className="embody-values">

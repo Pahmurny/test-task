@@ -5,7 +5,7 @@ import TextField from 'components/Form/TextField'
 import {
     COMPANY_EMAIL,
     COMPANY_NAME, COMPANY_NICK, COMPANY_PHONE, COMPANY_URL, DEFAULT_TIME_ZONE, LIMIT_INVITES,
-    MISSION_STATEMENTS, NON_ADMINS, SELF_REGISTRATION,
+    MISSION_STATEMENTS, NON_ADMINS, SELF_REGISTRATION, COMPANY_ADDRESS_LINE_1, COMPANY_ADDRESS_LINE_2
 } from 'routes/adminSettings/components/SettingsForm/inputNames'
 import CheckboxField from 'components/Form/Checkbox/CheckboxField'
 import Dropzone from 'react-dropzone'
@@ -71,11 +71,16 @@ class ProfileTab extends Component {
                                 className={'text-f-container'}
                                 tabIndex={1}
                             />
-                            <TextField
+                             <TextField
                                 tabIndex={4}
-                                label={'Company email'}
-                                name={COMPANY_EMAIL}
-                                className={'text-f-container company-email'}
+                                label={'Company address'}
+                                name={COMPANY_ADDRESS_LINE_1}
+                                className={'text-f-container company-address-1'}
+                            />
+                            <TextField
+                                tabIndex={7}
+                                name={COMPANY_ADDRESS_LINE_2}
+                                className={'text-f-container company-address-2'}
                             />
                         </div>
                         <div className="col col1">
@@ -106,6 +111,12 @@ class ProfileTab extends Component {
                                 label={'Company URL'}
                                 name={COMPANY_URL}
                                 className={'text-f-container'}
+                            />
+                            <TextField
+                                tabIndex={6}
+                                label={'Company email'}
+                                name={COMPANY_EMAIL}
+                                className={'text-f-container company-email'}
                             />
                         </div>
                     </div>
