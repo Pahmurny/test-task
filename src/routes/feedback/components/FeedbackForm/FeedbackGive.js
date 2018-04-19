@@ -23,6 +23,8 @@ import RoundedBlock from 'components/Shared/RoundedBlock'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
+import './feedbackgive.scss'
+import LockIcon from 'components/Icons/LockIcon'
 
 const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
@@ -123,24 +125,21 @@ class FeedbackGive extends Component {
                 </RoundedFocused>}
                 {(feedbackType !== FEEDBACK_NEW_TYPE && feedbackType !== FEEDBACK_REPLY_TYPE) && this.renderPending()}
                 {(feedbackType === FEEDBACK_NEW_TYPE || feedbackType === FEEDBACK_REPLY_TYPE) && <NewFeedback/>}
-                {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock style={{
-                    justifyContent: 'space-between',
-                    margin: '0 -24px',
-                    alignItems: 'center',
-                    padding: '24px',
-                    background: '#E6E4E7',
-                }}>
+                {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock className="give-export__actions">
                     <div className="private-block">
                         <ToggleField
                             onClick={togglePublic}
-                            leftLabel={'Public'} rightLabel={'Private'}
+                            leftLabel={'Public'}
+                            rightLabel={<React.Fragment><LockIcon style={{ marginRight: 5 }}/> Private</React.Fragment>}
                             label={this.getReceiverName()}
                             toggle={isPublic}
+                            className={'give-export__action-toggle'}
                         />
                         {!isPublic && <ToggleField
                             onClick={toggleAnonymous}
                             leftLabel={'With Name'}
                             rightLabel={'Anonymous'}
+                            className={'give-export__action-toggle below'}
                             label={!isAnonymous ? ANONYMOUS_TEXT
                                 : PUBLIC_TEXT
                             }

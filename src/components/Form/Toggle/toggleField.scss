@@ -6,6 +6,13 @@
   margin-bottom: 27px;
   $tf: &;
 
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &.left {
     #{$tf}__label {
       margin-left: 0;

@@ -8,7 +8,7 @@ const ToggleField = ({ leftLabel, rightLabel, toggle, label, onClick, left = fal
     className={cn(className, 'toggle-field', { left })}>
   {left && <span className={'toggle-field__label'}>{label}</span>}
   <ToggleButton
-      className={'toggle-field__left'}
+      className={'toggle-field__button toggle-field__left'}
       active={toggle === true}
       onClick={() => {
         if (onClick) {
@@ -17,7 +17,7 @@ const ToggleField = ({ leftLabel, rightLabel, toggle, label, onClick, left = fal
       }}
   >{leftLabel}</ToggleButton>
   <ToggleButton
-      className={'toggle-field__right'}
+      className={'toggle-field__button toggle-field__right'}
       active={toggle === false}
       onClick={() => {
         if (onClick) {
