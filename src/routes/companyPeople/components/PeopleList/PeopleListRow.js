@@ -14,7 +14,7 @@ const PeopleListRow = ({ first_name, last_name, job_title, team_tags, image, onC
     </div>
     <div className="people-list-row__col">{job_title}</div>
     <div className="people-list-row__col">{team_tags.map(tag => tag.label).join(', ')}</div>
-    <div className="people-list-row__col"><FeedbackIcon/></div>
+    <div className="people-list-row__col" style={{ paddingRight: 12 }}><FeedbackIcon/></div>
 </div>
 
 export default PeopleListRow

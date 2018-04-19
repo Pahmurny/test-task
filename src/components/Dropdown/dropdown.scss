@@ -2,12 +2,20 @@
 
 @mixin border() {
   border: 1px solid #9F9BA2;
+  border-radius: 3px;
 }
 
-@mixin border-dropdown() {
+@mixin border-dropdown-top() {
+  border: 1px solid #9F9BA2;
+  border-radius: 3px 3px 0 0;
+}
+// The border-dropdown-top mixin has not been applied yet because we have not created this style.
+
+@mixin border-dropdown-bottom() {
   border-bottom: 1px solid #9F9BA2;
   border-left: 1px solid #9F9BA2;
   border-right: 1px solid #9F9BA2;
+  border-radius: 0 0 3px 3px;
 }
 
 @mixin shadow(){
@@ -39,6 +47,7 @@
       content: '';
       display: block;
       background-image: url("~assets/images/svg/dropdown_shevron.svg");
+      align-items: center;
       position: absolute;
       width: 10px;
       height: 6px;
@@ -54,7 +63,7 @@
     top: 30px;
     right: 0;
     background-color: #fcfcfc;
-    @include border-dropdown;
+    @include border-dropdown-bottom;
     @include shadow;
 
     .dropdown-items {
