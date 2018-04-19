@@ -53,7 +53,7 @@ class UploadForm extends Component {
                         <DefaultButton className="upload-cv-form__upload-btn">Upload CSV</DefaultButton>
                     </Dz>
                 </div>
-                <div className="upload-cv-form__text">
+                <div className="upload-cv-form__text2">
                     We’ll import and update employees from your CSV. New employees that are added to CareerLark will not
                     be sent invites. You can invite them afterwards from the Directory page.
                 </div>

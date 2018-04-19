@@ -1,7 +1,7 @@
 .tag-line {
   display: flex;
   border-bottom: 1px solid #9f9ba2;
-  height: 49px;
+  height: 48px;
   align-items: center;
 
   &__delete {
@@ -14,10 +14,10 @@
 
     &--confirm {
       font-family: Lato-Regular, sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       color: #23182D;
-      padding: 24px;
-      line-height: 30px;
+      padding: 18px 24px;
+      line-height: 24px;
     }
 
     &--actions {
@@ -28,7 +28,7 @@
       color: #5F5864;
       text-align: center;
       align-items: center;
-      height: 50px;
+      height: 24px;
       padding-right: 24px;
       padding-bottom: 20px;
     }
@@ -37,7 +37,7 @@
       cursor: pointer;
 
       &:last-child{
-        margin-left: 24px;
+        margin-left: 18px;
         color: #C37A83;
       }
     }
@@ -49,6 +49,12 @@
     font-size: 14px;
     color: #23182d;
     display: flex;
+  }
+
+  .toggle {
+    flex: 1;
+    display: flex;
+    margin-left: 44px;
   }
 
   .edit-block {

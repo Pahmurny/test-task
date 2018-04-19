@@ -23,7 +23,7 @@ const Radio = styled(R)`
     justify-content: flex-start;
     color: #4a4a4a;
     font-family: ${fontLatoRegular}, sans-serif;
-    margin-bottom: 10px;
+    margin-top: 12px;
     cursor: pointer;
 `
 

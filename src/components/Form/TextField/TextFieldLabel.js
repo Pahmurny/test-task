@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 export const STextInput = styled.input`
-        margin-left: 10px;
+        margin-left: 12px;
         background: #FCFCFC;
         border: 1px solid #9F9BA2;
         border-radius: 3px;
@@ -14,7 +14,7 @@ export const STextInput = styled.input`
         font-size: 14px;
         color: #23182D;
         width: 168px;
-        padding-left: 10px; 
+        padding: 0 6px; 
 `
 
 export const FormLabel = styled.label`

@@ -21,6 +21,9 @@ const StyledField = styled(Field)`
     width: 240px;
     outline: none;
     box-sizing: border-box;
+    font-size: 14px;
+    font-family: $fontLatoRegular, sans-serif;
+    padding: 0px 6px;
     
 `
 
@@ -39,7 +42,7 @@ const styledField = styled(TextField)`
   width: 240px;
   
   ${StyledField} {
-      margin-top: 18px;
+      margin-top: 12px;
   }
 `
 

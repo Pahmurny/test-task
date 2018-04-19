@@ -23,7 +23,7 @@ const renderValues = ({ fields }) => {
             name={`${value}.name`}
             className={'values-tab__field-group--textfield'}
             component={'input'}
-            placeholder={'Input Tag name...'}
+            placeholder={'Required, what is the tag name?'}
         />
         <Label>
             Description
@@ -31,6 +31,8 @@ const renderValues = ({ fields }) => {
         <TextAreaField
             name={`${value}.description`}
             className={'values-tab__field-group--textarea'}
+            placeholder={'Optional, write your description.'}
+
         />
     </YellowRounded>)}
         <div className="values-tab__actions">

@@ -2,7 +2,7 @@
 
 .values-tab {
   display: block;
-  padding: 0px 48px 48px;
+  padding: 0px 48px 24px;
 
   &__header {
     font-family: $fontLatoRegular, sans-serif;
@@ -35,6 +35,9 @@
       box-sizing: border-box;
       min-height: 72px;
       margin-bottom: 24px;
+      font-family: $fontLatoRegular, sans-serif;
+      font-size: 14px;
+      padding: 6px;
     }
 
     &--textfield {
@@ -54,13 +57,32 @@
       color: #23182d;
     }
 
+    ::-webkit-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::-moz-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    :-ms-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
   }
 
   &__actions {
     display: flex;
     font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
-    color: #5f5864;
+    color: #207D94;
 
     .btn {
       margin-right: 12px;

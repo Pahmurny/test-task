@@ -72,7 +72,7 @@ class TagLines extends Component {
                             className="new-field-name"
                             value={name}
                             onChange={e => this.setState({ name: e.target.value })}
-                            placeholder={'Type your tag name here'}
+                            placeholder={'Type your tag name here...'}
                             onKeyDown={this.onKeyDown}
                         />
                         <PlusButton

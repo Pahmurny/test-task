@@ -20,7 +20,7 @@ const HeaderMenu = () => <div className="header-menu">
         activeClassName={'active'}
         className={'header-menu__link'}
         to={url.team()}
-    >Your team</Link>
+    >Your Team</Link>
     <Link
         activeClassName={'active'}
         className={'header-menu__link'}

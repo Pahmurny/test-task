@@ -48,9 +48,9 @@ class Note extends Component {
         return (
             <Content className="note__view">
                 <FieldTitle>
-                    Who's the note about
+                    Who's the note about?
                 </FieldTitle>
-                <RoundedFocused style={{ marginTop: 17 }}>
+                <RoundedFocused style={{ marginTop: 12 }}>
                     <TagsField
                         tags={people}
                         onAdd={addPeople}
@@ -59,11 +59,11 @@ class Note extends Component {
                     />
                 </RoundedFocused>
 
-                <FieldTitle style={{ marginTop: 26 }}>
+                <FieldTitle style={{ marginTop: 30 }}>
                     What do you want to remember for later?
                 </FieldTitle>
-                <RoundedFocused style={{ marginTop: 17 }}>
-                    <TextArea value={text} onChange={this.onChangeText}/>
+                <RoundedFocused style={{ marginTop: 12 }}>
+                    <TextArea placeholder={'Write your note here.'} onChange={this.onChangeText}/>
                 </RoundedFocused>
 
                 <ActionsBlock>

@@ -7,7 +7,6 @@ import TagsField from 'components/Form/TagsField/TagsField'
 import updateFilter from 'routes/feedback/actions/updateFilter'
 import PersonalEmail from 'components/Form/PersonalEmail'
 
-
 class SearchBlock extends Component {
 
     static propTypes = {
@@ -48,7 +47,7 @@ class SearchBlock extends Component {
             <div className="admin__search-block">
                 <input
                     type="text" className="admin__search-block-fulltext"
-                    placeholder={'Search feedback'}
+                    placeholder={'Search for feedback...'}
                     value={fulltextSearch}
                     onChange={this.handleChangeFullText}
                 />

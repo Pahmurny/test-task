@@ -27,7 +27,7 @@ const Feedback = (props) => {
                 {children || content}
             </div>
             <div className="feedback-block__tags">
-                {tags.map((tag, key) => <HashButton className={'hash-item'} key={key}>#{tag}</HashButton>)}
+                {tags.map((tag, key) => <HashButton className={'hash-item'} key={key}>{tag}</HashButton>)}
             </div>
         </GreyBlock>
     )

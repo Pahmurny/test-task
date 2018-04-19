@@ -15,7 +15,7 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 import updatePeopleValue from 'routes/adminPeople/actions/updatePeopleValue'
 import Modal from 'components/Shared/Modal'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
-import { PageTitle } from 'components/Shared/PageTitle'
+import { PopupTitle } from 'components/Shared/PopupTitle'
 import getUser from 'routes/adminPeople/actions/getUser'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import MemberForm from 'routes/adminPeople/components/MemberForm/MemberForm'
@@ -54,7 +54,7 @@ class PeopleList extends Component {
                         <span style={{ marginLeft: 10 }}>{person.manager.name}</span>
                     </React.Fragment> : 'N/A'
                 }</div>
-                <div className="people-list__col">
+                <div className="people-list__col-team">
                     <span
                         style={{ flex: 1 }}>{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
                     <span style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
@@ -132,7 +132,7 @@ class PeopleList extends Component {
                 {this.renderPeopleGrid()}
                 {uploadForm && <Modal closeForm={() => updatePeopleValue('uploadForm', false)}>
                     <FeedbackForm
-                        title={<PageTitle>Upload your employees</PageTitle>}
+                        title={<PopupTitle>Upload your employees</PopupTitle>}
                         onClose={() => updatePeopleValue('uploadForm', false)}
                         style={{ minHeight: 0, width: 577 }}
                     >
@@ -143,7 +143,7 @@ class PeopleList extends Component {
                 {memberData && <Modal closeForm={() => updatePeopleValue('memberData', undefined)}>
                     <FeedbackForm
                         onClose={() => updatePeopleValue('memberData', undefined)}
-                        title={<PageTitle>{memberData.name}</PageTitle>}
+                        title={<PopupTitle>{memberData.name}</PopupTitle>}
                         style={{
                             minHeight: 0,
                         }}

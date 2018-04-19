@@ -7,7 +7,7 @@
     align-items: center;
     font-family: Lato-Regular, sans-serif;
     font-size: 14px;
-    color: #5f5864;
+    color: #207D94;
     padding: 17px 0;
 
     &__handler {
@@ -32,7 +32,28 @@
       width: 288px;
       font-family: Lato-Regular, sans-serif;
       font-size: 14px;
-      color: #9F9BA2;
+      color: #23182d;
+      padding: 0px 6px;
+    }
+
+    ::-webkit-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::-moz-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    :-ms-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
     }
   }
 }

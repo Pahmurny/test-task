@@ -4,17 +4,17 @@
 
   &__title-block {
     display: flex;
-    margin-top: 23px;
-    margin-bottom: 10px;
+    margin-top: 24px;
+    margin-bottom: 12px;
     align-items: center;
     padding-left: 24px;
   }
 
   &__title {
     font-family: LatoRegular, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #23182d;
-    margin-right: 17px;
+    margin-right: 12px;
   }
 
   &__download-btn {
@@ -22,8 +22,8 @@
     border-radius: 5px;
     position: relative;
     align-items: center;
-    padding-right: 5px;
-    min-width: 163px;
+    padding: 0 12px;
+    min-width: 192px;
 
     .icon {
       margin-left: auto;
@@ -41,6 +41,7 @@
     left: 0;
     right: 0;
     top: 26px;
+    height: 200%;
 
   }
 
@@ -52,6 +53,7 @@
     line-height: 30px;
     cursor: pointer;
     text-decoration: none;
+    padding-left: 6px;
 
     &:hover {
       background: rgba(187, 185, 189, 0.50);
@@ -59,6 +61,7 @@
   }
 
   &__upload-btn {
+    width: 84px;
     border-radius: 5px;
   }
 
@@ -69,7 +72,17 @@
     display: block;
     padding-left: 24px;
     padding-right: 24px;
-    margin-bottom: 15px;
+    line-height: 15px;
+  }
+
+  &__text2 {
+    font-family: LatoRegular, sans-serif;
+    font-size: 12px;
+    color: #9f9ba2;
+    display: block;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
     line-height: 15px;
   }
 }
