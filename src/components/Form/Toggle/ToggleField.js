@@ -30,8 +30,8 @@ const ToggleField = ({ leftLabel, rightLabel, toggle, label, onClick, left = fal
 
 
 ToggleField.propTypes = {
-  leftLabel: PropTypes.string.isRequired,
-  rightLabel: PropTypes.string.isRequired,
+  leftLabel: PropTypes.any.isRequired,
+  rightLabel: PropTypes.any.isRequired,
   toggle: PropTypes.bool,
   left: PropTypes.bool,
   label: PropTypes.string,

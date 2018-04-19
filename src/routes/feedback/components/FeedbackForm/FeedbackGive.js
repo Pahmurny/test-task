@@ -130,7 +130,7 @@ class FeedbackGive extends Component {
                         <ToggleField
                             onClick={togglePublic}
                             leftLabel={'Public'}
-                            rightLabel={<React.Fragment><LockIcon style={{ marginRight: 5 }}/> Private</React.Fragment>}
+                            rightLabel={<React.Fragment><LockIcon fillColor={'#417505'} style={{ marginRight: 5 }}/> Private</React.Fragment>}
                             label={this.getReceiverName()}
                             toggle={isPublic}
                             className={'give-export__action-toggle'}
