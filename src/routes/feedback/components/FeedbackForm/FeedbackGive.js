@@ -30,6 +30,7 @@ const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
 const PUBLIC_TEXT = 'This feedback will be sent with your name as the giver.'
 
+
 class FeedbackGive extends Component {
 
     static propTypes = {
@@ -130,7 +131,12 @@ class FeedbackGive extends Component {
                         <ToggleField
                             onClick={togglePublic}
                             leftLabel={'Public'}
-                            rightLabel={<React.Fragment><LockIcon fillColor={'#417505'} style={{ marginRight: 5 }}/> Private</React.Fragment>}
+                            rightLabel={<React.Fragment>
+                                <LockIcon
+                                    fillColor={isPublic ? '#9F9BA2' : '#277D93'}
+                                    style={{ marginRight: 5 }}
+                                />
+                                Private</React.Fragment>}
                             label={this.getReceiverName()}
                             toggle={isPublic}
                             className={'give-export__action-toggle'}
@@ -164,5 +170,5 @@ export default connect(({ feedbacks: { give, allPeople } }) => ({ give, allPeopl
     selectFeedback,
     togglePublic,
     toggleAnonymous,
-    deleteFeedback
+    deleteFeedback,
 })(FeedbackGive)
