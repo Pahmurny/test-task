@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import setModuleView from 'actions/setModuleView'
 import { MODULE_VIEW_COMPANY_PEOPLE } from 'routes/feedback/feedbackTypes'
 import Page from 'components/Content/Page'
-import FeedbackPage, { feedbackViews } from 'routes/feedback/components/Page/FeedbackPage'
+import { feedbackViews } from 'routes/feedback/components/Page/FeedbackPage'
 import { PageTitle } from 'components/Shared/PageTitle'
 import { PopupTitle } from 'components/Shared/PopupTitle'
 import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
@@ -33,8 +33,13 @@ import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
 import PerPage from 'components/PerPage/PerPage'
 import { PageArrowLeft, PageArrowRight } from 'components/Icons/PageArrow'
 import getCompanyPeople from 'routes/companyPeople/actions/getCompanyPeople'
+import clearFeedback from 'routes/feedback/actions/clearFeedback'
 
 
+/**
+ *  Company People container
+ *  Shows information about people of a company
+ */
 class CompanyPeople extends Component {
 
     static propTypes = {
@@ -43,13 +48,22 @@ class CompanyPeople extends Component {
         updateTeamValue: PropTypes.func,
         getCompanyValues: PropTypes.func,
         getCompanyPeople: PropTypes.func,
+        updateCompanyPeopleValue: PropTypes.func,
+        clearFeedback: PropTypes.func,
+
     }
 
-
+    /**
+     * Initial component state
+     * @type {{viewTab: number}}
+     */
     state = {
         viewTab: 0,
     }
 
+    /**
+     * Will be invoked when component has been rendered
+     */
     componentDidMount() {
         const { setModuleView, getTeams, getCompanyValues } = this.props
         setModuleView(MODULE_VIEW_COMPANY_PEOPLE)
@@ -57,22 +71,41 @@ class CompanyPeople extends Component {
         getCompanyValues()
     }
 
-
+    /**
+     * Gets title and fills it by the Company Name if exists
+     * @returns string
+     */
     companyTitle = () => {
         return pathOr('--', ['company', 'name'], this.props)
     }
 
-
+    /**
+     * Updates store by putting false for id/block value
+     * @param id
+     */
     onCloseTag = (id) => {
         const { updateTeamValue } = this.props
         updateTeamValue(id, 'blocks', false)
     }
 
+    /**
+     *  Updating store by setting false for showValues (means closes popup with company values)
+     */
     onCloseValues = () => {
         const { updateCompanyPeopleValue } = this.props
         updateCompanyPeopleValue('showValues', false)
     }
 
+    onCloseModal = () => {
+        const { toggleModal, clearFeedback } = this.props
+        toggleModal(CLOSE_MODAL)
+        clearFeedback()
+    }
+
+    /**
+     * Selector for pagination values
+     * @returns {{totalCount: string, pageCount: string, currentPage: string, perPage: string}}
+     */
     getPagination = () => {
         const pageCount = pathOr(0, ['people', 'pageCount'], this.props)
         const totalCount = pathOr(0, ['people', 'totalCount'], this.props)
@@ -83,6 +116,10 @@ class CompanyPeople extends Component {
     }
 
 
+    /**
+     * Render the component
+     * @returns {any}
+     */
     render() {
         const { viewTab } = this.state
         const {
@@ -187,10 +224,10 @@ class CompanyPeople extends Component {
                 </div>}
             </React.Fragment>}
 
-            {modalWindow && <Modal closeForm={() => toggleModal(CLOSE_MODAL)}>
+            {modalWindow && <Modal closeForm={this.onCloseModal}>
                 <FeedbackForm
                     feedBack={feedback}
-                    onClose={toggleModal}
+                    onClose={this.onCloseModal}
                     onChangeType={feedbackType}
                 >
                     <div className="feedback-form__actions">
@@ -225,20 +262,29 @@ class CompanyPeople extends Component {
 }
 
 
+/**
+ * Creation of a Redux form
+ */
 const rForm = reduxForm({
     form: 'companyPeople',
 })(CompanyPeople)
 
+/**
+ * Connection with Redux store
+ */
 export default connect(({ companyPeople, feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading } }) => ({
         ...companyPeople,
         feedbacks, modalWindow, feedback, filter, feedbackLoading,
     }),
     {
-        setModuleView, getTeams, getTagsData,
+        setModuleView,
+        getTeams,
+        getTagsData,
         updateTeamValue,
         getCompanyValues,
         updateCompanyPeopleValue,
         toggleModal,
         feedbackType,
         getCompanyPeople,
+        clearFeedback
     })(rForm)
