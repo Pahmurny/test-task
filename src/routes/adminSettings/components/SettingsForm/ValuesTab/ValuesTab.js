@@ -8,6 +8,7 @@ import { VALUES_FIELD } from 'routes/adminSettings/components/SettingsForm/input
 import { Field, FieldArray } from 'redux-form'
 import TextAreaField from 'components/Form/TextAreaField/TextAreaField'
 import PlusButton from 'components/Buttons/PlusButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 
 
 const renderValues = ({ fields }) => {
@@ -44,13 +45,19 @@ const renderValues = ({ fields }) => {
             ><PlusButton className={'btn'}/> New Value
             </div>
         </div>
+        {fields.length > 0 && <div className="values-tab__save">
+            <DefaultButton round={'3px'}>Save Values</DefaultButton>
+        </div>}
     </React.Fragment>
 }
 
 
-const ValuesTab = ({ addValue, deleteValue }) => <div className="values-tab">
+const ValuesTab = () => <div className="values-tab">
     <div className="values-tab__header">Employees can tag feedback with these values.</div>
-    <FieldArray name={VALUES_FIELD} component={renderValues} deleteValue={deleteValue}/>
+    <FieldArray
+        name={VALUES_FIELD}
+        component={renderValues}
+    />
 </div>
 
 
