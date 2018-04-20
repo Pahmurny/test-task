@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { Portal } from 'react-portal'
 import Fade from 'components/Shared/Fade'
 
-
-
- export default class Modal extends Component {
+/**
+ * Template for Modal Content
+ * closeForm {func} Callback to closed modal content
+ */
+export default class Modal extends Component {
 
 
     static propTypes = {
@@ -28,12 +30,12 @@ import Fade from 'components/Shared/Fade'
         }
     }
 
-     closeModal = () => {
-         const { closeForm } = this.props
-         if (closeForm) {
-             closeForm()
-         }
-     }
+    closeModal = () => {
+        const { closeForm } = this.props
+        if (closeForm) {
+            closeForm()
+        }
+    }
 
     render() {
         const { children } = this.props
