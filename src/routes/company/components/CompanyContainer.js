@@ -23,7 +23,7 @@ import setModuleView from 'actions/setModuleView'
 class CompanyContainer extends Component {
 
 
-    componentDidMount(){
+    componentDidMount() {
         const { setModuleView } = this.props
         setModuleView(MODULE_VIEW_COMPANY)
         this.initializeFeedback()
@@ -41,12 +41,13 @@ class CompanyContainer extends Component {
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading } }) => ({
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading }, common: { moduleView } }) => ({
     feedbacks,
     modalWindow,
     feedback,
     filter,
     feedbackLoading,
+    moduleView,
 }), {
     toggleModal,
     feedbackType,
@@ -59,5 +60,5 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     setTeamView,
     setTeamFeedbackType,
     setFilterFeedbackTo,
-    setModuleView
+    setModuleView,
 })(CompanyContainer)
