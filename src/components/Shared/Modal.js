@@ -22,18 +22,24 @@ import Fade from 'components/Shared/Fade'
     }
 
     onKeyPress = (e) => {
-        const { closeForm } = this.props
         const { keyCode } = e
-        if (keyCode === 27 && closeForm) {
-            closeForm()
+        if (keyCode === 27) {
+            this.closeModal()
         }
     }
+
+     closeModal = () => {
+         const { closeForm } = this.props
+         if (closeForm) {
+             closeForm()
+         }
+     }
 
     render() {
         const { children } = this.props
 
         return <Portal>
-            <Fade/>
+            <Fade onClick={this.closeModal}/>
             {children}
         </Portal>
     }
