@@ -10,7 +10,11 @@ import TextAreaField from 'components/Form/TextAreaField/TextAreaField'
 import PlusButton from 'components/Buttons/PlusButton'
 import DefaultButton from 'components/Buttons/DefaultButton'
 
-
+/**
+ * Renders Array of values
+ * @param fields
+ * @returns {*}
+ */
 const renderValues = ({ fields }) => {
     return <React.Fragment>{fields.map((value, key) => <YellowRounded key={key} className={'values-tab__field-group'}>
         <SmallCloseIcon
