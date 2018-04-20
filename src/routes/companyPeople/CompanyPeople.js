@@ -64,10 +64,11 @@ class CompanyPeople extends Component {
      * Will be invoked when component has been rendered
      */
     componentDidMount() {
-        const { setModuleView, getTeams, getCompanyValues } = this.props
+        const { setModuleView, getTeams, getCompanyValues, clearFeedback } = this.props
         setModuleView(MODULE_VIEW_COMPANY_PEOPLE)
         getTeams()
         getCompanyValues()
+        clearFeedback()
     }
 
     /**

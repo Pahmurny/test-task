@@ -24,7 +24,7 @@ import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
 import './feedbackgive.scss'
-import LockIcon from 'components/Icons/LockIcon'
+import LockIcon2 from 'components/Icons/LockIcon2'
 
 const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
@@ -132,7 +132,7 @@ class FeedbackGive extends Component {
                             onClick={togglePublic}
                             leftLabel={'Public'}
                             rightLabel={<React.Fragment>
-                                <LockIcon
+                                <LockIcon2
                                     fillColor={isPublic ? '#9F9BA2' : '#277D93'}
                                     style={{ marginRight: 5 }}
                                 />
