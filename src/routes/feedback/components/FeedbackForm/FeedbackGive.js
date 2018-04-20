@@ -107,7 +107,6 @@ class FeedbackGive extends Component {
             togglePublic,
             toggleAnonymous,
         } = this.props
-        console.log(feedbackType)
         return (
             <Content className="give-export__view" style={{ paddingBottom: 0 }}>
                 <FieldTitle>

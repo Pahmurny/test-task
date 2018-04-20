@@ -12,4 +12,16 @@
     justify-content: space-between;
     padding-bottom: 40px;
   }
+
+  &__view {
+    .tags-field {
+      &__suggestions {
+        width: calc(100% + 7px)
+      }
+
+      &__selected-tag{
+        height: 38px;
+      }
+    }
+  }
 }
