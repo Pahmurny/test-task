@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Svg from 'components/Shared/Html/Svg'
 
 /**
- * Component
+ * Component to show dropdown icon
  * @param className
  * @param active
  * @param props
