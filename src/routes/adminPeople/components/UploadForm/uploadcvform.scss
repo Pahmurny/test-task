@@ -22,11 +22,17 @@
     border-radius: 5px;
     position: relative;
     align-items: center;
-    padding: 0 12px;
+    padding: 0 12px 0 0;
     min-width: 192px;
 
+    &--text {
+      display: block;
+      flex: 1;
+    }
+
     .icon {
-      margin-left: auto;
+      right: 9px;
+      top: 7px;
     }
   }
 

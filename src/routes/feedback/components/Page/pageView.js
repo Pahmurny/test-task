@@ -7,6 +7,7 @@ import Dropdown from 'components/Dropdown/Dropdown'
 import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
 import store from 'store'
 import showAdminSettingsAction from 'routes/feedback/actions/showAdminSettingsAction'
+import MembersForm from 'routes/company/components/MembersForm/MembersForm'
 
 export const dropdownViews = {
   [MODULE_VIEW_FEEDBACK]: ({ setFilterFeedbackType, filter }) => {
@@ -34,7 +35,7 @@ export const dropdownViews = {
       />
     </React.Fragment>
   },
-  [MODULE_VIEW_COMPANY]: () => null,
+  [MODULE_VIEW_COMPANY]: () => <MembersForm/>,
 }
 
 

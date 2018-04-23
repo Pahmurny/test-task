@@ -1,0 +1,29 @@
+.members-form{
+  .tags-field {
+    width: 384px;
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    margin-right: 18px;
+    border-radius: 3px;
+    height: 30px;
+
+    &:focus {
+      box-shadow: 0 0 0 2px #207D94;
+      border-color: transparent;
+    }
+
+    &__search-input {
+      input {
+        height: 30px;
+        font-family: LatoRegular, sans-serif;
+        font-size: 14px;
+        color: #23182D;
+        padding: 0;
+      }
+    }
+
+    &__selected-tag {
+      height: 30px;
+    }
+  }
+}

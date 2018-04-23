@@ -6,18 +6,22 @@ import DropDownLine from 'components/Icons/DropDownLine'
 import Dz from 'react-dropzone'
 
 
+const DownloadExiting = 'Download existing data'
+const DownloadTemplate = 'Download template'
+
+
 /**
  * Form to download data or upload csv
  */
 class UploadForm extends Component {
 
     state = {
-        donwload: false,
+        download: false,
     }
 
 
     render() {
-        const { download } = this.state
+        const { download, text } = this.state
 
         return (
             <div className="upload-cv-form">
@@ -28,14 +32,22 @@ class UploadForm extends Component {
                         {download && <div
                             className="upload-cv-form__download-options"
                             onClick={() => this.setState({ download: false })}>
-                            <a href="#existing" className="upload-cv-form__download-option">Download existing data</a>
-                            <a href="#template" className="upload-cv-form__download-option">Download template</a>
+                            <a
+                                href="#existing"
+                                className="upload-cv-form__download-option"
+                                onClick={() => this.setState({ text: DownloadExiting })}
+                            >{DownloadExiting}</a>
+                            <a
+                                onClick={() => this.setState({ text: DownloadTemplate })}
+                                href="#template"
+                                className="upload-cv-form__download-option"
+                            >{DownloadTemplate}</a>
                         </div>}
                         <DefaultButton
                             className="upload-cv-form__download-btn"
                             onClick={() => this.setState({ download: true })}>
-                            Download template
-                            <DropDownLine className={'icon'}/>
+                            <div className="upload-cv-form__download-btn--text">{text || 'Download template'}</div>
+                            <DropDownLine active={download} className={'icon'}/>
                         </DefaultButton>
                     </div>
                 </div>

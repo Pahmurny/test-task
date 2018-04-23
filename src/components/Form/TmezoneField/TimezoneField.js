@@ -1,8 +1,8 @@
-import React  from 'react'
+import React from 'react'
 import TimezonePicker from 'react-timezone'
 
 
-const TimezoneField = ({input:{value, onChange}}) => {
+const TimezoneField = ({ input: { value, onChange } }) => {
     return (
         <TimezonePicker
             value={value}
@@ -10,7 +10,6 @@ const TimezoneField = ({input:{value, onChange}}) => {
         />
     )
 }
-
 
 
 export default TimezoneField
