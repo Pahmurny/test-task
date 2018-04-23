@@ -53,9 +53,10 @@ const FeedbackPage = (props) => {
         setDateType,
         setDate,
         feedbackLoading,
-        beforeBody
+        beforeBody,
+        moduleView
     } = props
-    const { dates, selectedDate, dateType, moduleView } = filter
+    const { dates, selectedDate, dateType } = filter
 
     const ListComponent = ListView[moduleView] || FeedbacksList
 

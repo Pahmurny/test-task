@@ -1,0 +1,23 @@
+.give-export {
+  &__action-toggle {
+    margin-bottom: 0;
+
+    &.below {
+      margin-top: 24px;
+    }
+  }
+
+  &__actions {
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+  }
+
+  &__view {
+    .tags-field {
+      &__selected-tag{
+        height: 38px;
+      }
+    }
+  }
+}

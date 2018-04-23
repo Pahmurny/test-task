@@ -5,7 +5,7 @@ const RoundedTopBlock = styled.div`
         border: 1px solid #9F9BA2;
         border-radius: 3px 3px 0 0;
         display: block;
-        min-height: 36px;
+        /*min-height: 36px;*/
 `
 
 RoundedTopBlock.propTypes = {
