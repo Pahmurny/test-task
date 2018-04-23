@@ -94,4 +94,9 @@
       align-items: center;
     }
   }
+
+  &__save{
+    display: flex;
+    justify-content: flex-end;
+  }
 }
