@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { CircleLoader } from 'react-spinners'
-import './peoplelist.scss'
 import PeopleRow from 'routes/adminPeople/components/PeopleList/PeopleRow'
 import PageLoader from 'components/Shared/PageLoader'
 import UserPic from 'components/Shared/UserPic'
@@ -16,14 +15,19 @@ import Modal from 'components/Shared/Modal'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import { PopupTitle } from 'components/Shared/PopupTitle'
 import getUser from 'routes/adminPeople/actions/getUser'
-import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import MemberForm from 'routes/adminPeople/components/MemberForm/MemberForm'
 import UploadForm from 'routes/adminPeople/components/UploadForm/UploadForm'
 import DeactivateWindow from 'routes/adminPeople/components/DeactivateWindow/DeactivateWindow'
+import './peoplelist.scss'
+
 
 const formName = 'peoplelist'
 
 
+/**
+ *  List of people for admin module
+ *
+ */
 class PeopleList extends Component {
 
 
@@ -33,6 +37,10 @@ class PeopleList extends Component {
         getUser: PropTypes.func.isRequired,
     }
 
+    /**
+     * Render list
+     * @returns {*}
+     */
     renderPeopleGrid = () => {
         const { people, loadingPeople, getUser, userForm, loadingPerson } = this.props
 
@@ -71,6 +79,10 @@ class PeopleList extends Component {
         </div>)
     }
 
+    /**
+     * Disbale form submit by pressing Enter Key
+     * @param e
+     */
     formKeyPress = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault()
