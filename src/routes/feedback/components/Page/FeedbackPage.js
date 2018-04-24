@@ -24,7 +24,7 @@ import FeedbackGive from 'routes/feedback/components/FeedbackForm/FeedbackGive'
 
 const DateFilterItems = [
     { id: 0, title: 'Weekly' },
-    { id: 1, title: 'Every Two weeks' },
+    { id: 1, title: 'Every two weeks' },
     { id: 2, title: 'Monthly' },
     { id: 3, title: 'Quarterly' },
 ]

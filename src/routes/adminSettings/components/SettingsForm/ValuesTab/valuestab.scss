@@ -12,8 +12,8 @@
   }
 
   &__field-group {
-    min-height: 228px;
-    padding: 12px 24px;
+    min-height: 216px;
+    padding: 12px 24px 0 24px;
     margin-bottom: 24px;
 
     &--close {
@@ -34,7 +34,7 @@
       width: 100%;
       box-sizing: border-box;
       min-height: 72px;
-      margin-bottom: 24px;
+      // margin-bottom: 24px;
       font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
       padding: 6px;
