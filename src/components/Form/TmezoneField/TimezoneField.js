@@ -1,14 +1,35 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TimezonePicker from 'react-timezone'
+import cn from 'classnames'
+import './timezone.scss'
 
 
-const TimezoneField = ({ input: { value, onChange } }) => {
-    return (
-        <TimezonePicker
-            value={value}
-            onChange={timezone => onChange(timezone)}
-        />
-    )
+class TimezoneField extends Component {
+
+    state = {
+        isActive: false,
+    }
+
+    componentDidMount(){
+
+       // document.addEventListener('click')
+
+    }
+
+
+
+    render() {
+        const { isActive } = this.state
+        const { input: { value, onChange } } = this.props
+        return (
+            <div className={cn('select-timezone', { isActive })}>
+                <TimezonePicker
+                    value={value}
+                    onChange={timezone => onChange(timezone)}
+                />
+            </div>
+        )
+    }
 }
 
 
