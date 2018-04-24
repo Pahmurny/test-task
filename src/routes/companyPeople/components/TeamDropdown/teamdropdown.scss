@@ -6,6 +6,7 @@
     padding-left: 24px;
     padding-right: 24px;
     height: 72px;
+    min-width: 600px;
     background: #fcfcfc;
     border-bottom: 2px solid #e6e4e7;
     font-family: LatoBold, sans-serif;
@@ -32,7 +33,7 @@
   &__members-count {
     font-family: LatoRegular, sans-serif;
     font-size: 14px;
-    color: #4a4a4a;
+    color: #23182D;
     text-align: left;
   }
 

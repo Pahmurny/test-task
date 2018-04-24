@@ -16,7 +16,7 @@
     align-items: center;
     font-family: LatoBold, sans-serif;
     font-size: 14px;
-    color: #4a4a4a;
+    color: #23182D;
     line-height: 30px;
 
     &-btn {
@@ -30,10 +30,13 @@
 
   &__tabs-btns {
     margin-left: auto;
+    margin-right: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   &__title {
-    margin-bottom: 96px;
+    margin-bottom: 0px;
   }
 
   &__search-tabs {
@@ -50,14 +53,34 @@
     width: 384px;
     font-family: LatoRegular, sans-serif;
     font-size: 14px;
-    color: #9f9ba2;
+    color: #23182D;
     text-align: left;
     outline: none;
-    padding: 0 5px;
+    padding: 0 6px;
 
     &:active, &:focus {
-      box-shadow: 0 0 0 2px #417505;
+      box-shadow: 0 0 0 2px #207D94;
       border-color: transparent;
+    }
+
+    ::-webkit-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::-moz-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    :-ms-input-placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
+    }
+
+    ::placeholder {
+    color: #9f9ba2;
+    font-size: 14px;
     }
   }
 
