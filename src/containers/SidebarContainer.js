@@ -42,7 +42,7 @@ const sidebarNavigation1 = [
     {
         title: 'Dashboard',
         url: '#1:1',
-        badge: 4,
+        // badge: 4,
     },
     {
         title: 'Feedback',
