@@ -7,6 +7,9 @@ import initializeFilters from 'routes/feedback/actions/initializeFilters'
 import updateFilter from 'routes/feedback/actions/updateFilter'
 import './memebersform.scss'
 
+
+const PLACEHOLDER = 'Type team member\'s name...'
+
 class MembersForm extends Component {
 
 
@@ -46,7 +49,7 @@ class MembersForm extends Component {
                     }))}
                     onAdd={this.onAddPeople}
                     onDelete={this.onDeletePeople}
-                    placeholder={'Type team member\'s name...'}
+                    placeholder={PLACEHOLDER}
                 />
             </div>
         )

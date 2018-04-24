@@ -1,0 +1,22 @@
+.deactivate-window {
+
+  &__text {
+    font-family: LatoRegular, sans-serif;
+    font-size: 18px;
+    color: #23182d;
+    margin: 20px 24px 21px 24px;
+    line-height: 22px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 21px 25px;
+
+    .btn {
+      &:last-child {
+        margin-left: 18px;
+      }
+    }
+  }
+}
