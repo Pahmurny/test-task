@@ -96,11 +96,11 @@ const initialState = {
         feedbackTypes: [
             {
                 id: FEEDBACK_TO_ME,
-                title: `You've received`,
+                title: `I've received`,
             },
             {
                 id: FEEDBACK_FROM_ME,
-                title: `You've given`,
+                title: `I've given`,
             },
             {
                 id: FEEDBACK_NOTE,

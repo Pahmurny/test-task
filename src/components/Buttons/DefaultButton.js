@@ -8,7 +8,7 @@ const DefaultButton = styled.div`
   color: #fcfcfc;
   font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
-  min-width: 10px;
+  min-width: 72px;
   height: 30px;
   line-height: 30px;
   display: inline-block;

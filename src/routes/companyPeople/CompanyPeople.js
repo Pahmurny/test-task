@@ -8,6 +8,7 @@ import { MODULE_VIEW_COMPANY_PEOPLE } from 'routes/feedback/feedbackTypes'
 import Page from 'components/Content/Page'
 import { feedbackViews } from 'routes/feedback/components/Page/FeedbackPage'
 import { PageTitle } from 'components/Shared/PageTitle'
+import { PopupTitle } from 'components/Shared/PopupTitle'
 import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
 import getTeams from 'routes/companyPeople/actions/getTeams'
 import './companypeople.scss'
@@ -137,7 +138,7 @@ class CompanyPeople extends Component {
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
-                People at {this.companyTitle()} <ThreeDotsIcon
+                People at {this.companyTitle()} <ThreeDotsIcon style={{ paddingLeft: 12 }}
                 onClick={() => updateCompanyPeopleValue('showValues', true)}/>
             </PageTitle>
 
@@ -168,7 +169,7 @@ class CompanyPeople extends Component {
             {showValues && <Modal closeForm={this.onCloseValues}>
                 <FeedbackForm
                     onClose={this.onCloseValues}
-                    title={<PageTitle>Company Profile</PageTitle>}
+                    title={<PopupTitle>Company Profile</PopupTitle>}
                     style={{
                         width: 672,
                         display: 'flex',

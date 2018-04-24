@@ -63,7 +63,9 @@ class Note extends Component {
                     What do you want to remember for later?
                 </FieldTitle>
                 <RoundedFocused style={{ marginTop: 12 }}>
-                    <TextArea placeholder={'Write your note here.'} onChange={this.onChangeText}/>
+                    <TextArea placeholder={'Write your note here.'} 
+                        onChange={this.onChangeText}
+                        style={{ height: 250 }}/>
                 </RoundedFocused>
 
                 <ActionsBlock>

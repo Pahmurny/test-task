@@ -17,7 +17,7 @@ import PeopleModule from 'routes/adminPeople/PeopleModule'
 import PeopleContainer from 'routes/adminPeople/components/PeopleContainer'
 import NotificationComponent from 'components/Notification/NotificationComponent'
 import CompanyPeople from 'routes/companyPeople/CompanyPeople'
-
+import LogoTitle from 'components/Shared/LogoTitle'
 
 class App extends Component {
     render() {
@@ -25,7 +25,8 @@ class App extends Component {
             <Router>
                 <div className="application">
                     <PageHeader>
-                        <LogoIcon style={{ marginTop: 5 }}/>
+                        <LogoIcon style={{ marginTop: 6 }}/>
+                        <LogoTitle className="logotitle">CareerLark</LogoTitle>
                         <HeaderMenu/>
                     </PageHeader>
                     <div className="bottom">

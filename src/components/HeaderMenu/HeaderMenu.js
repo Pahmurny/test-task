@@ -14,13 +14,13 @@ const HeaderMenu = () => <div className="header-menu">
         activeClassName={'active'}
         className={'header-menu__link'}
         to={url.main()}
-    >You</Link>
+    >Me</Link>
     <Link
         exact
         activeClassName={'active'}
         className={'header-menu__link'}
         to={url.team()}
-    >Your Team</Link>
+    >My Team</Link>
     <Link
         activeClassName={'active'}
         className={'header-menu__link'}
