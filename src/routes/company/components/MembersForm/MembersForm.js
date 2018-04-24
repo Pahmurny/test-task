@@ -46,6 +46,7 @@ class MembersForm extends Component {
                     }))}
                     onAdd={this.onAddPeople}
                     onDelete={this.onDeletePeople}
+                    placeholder={'Type team member\'s name...'}
                 />
             </div>
         )
