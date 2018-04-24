@@ -7,12 +7,38 @@
     position: absolute;
     width: 10px;
     height: 6px;
+    right: 10px;
+    top: 31px;
   }
 
   &.isActive {
-
     &:after {
       transform: rotate(180deg);
+    }
+  }
+
+  .timezone-picker {
+    width: 100%;
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    border: 1px solid #9f9ba2;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    margin-top: 18px;
+
+    .timezone-picker-list-item {
+      &.timezone-picker-list-item-active {
+        background-color: #d2e5ea;
+      }
+    }
+
+    .timezone-picker-textfield {
+      input {
+        padding: 6px 12px;
+        border: none;
+        font-family: LatoRegular, sans-serif;
+        font-size: 14px;
+      }
     }
   }
 }

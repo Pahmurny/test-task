@@ -216,7 +216,7 @@
     border: 1px solid #9f9ba2;
     border-radius: 3px;
     font-size: 14px;
-    font-family: $fontLatoRegular, sans-serif;
+    font-family: LatoRegular, sans-serif;
     outline: none;
     display: block;
     resize: none;
@@ -230,28 +230,5 @@
 
   .actions {
     text-align: right;
-  }
-
-  .timezone-picker {
-    width: 100%;
-    font-family: $fontLatoRegular, sans-serif;
-    font-size: 14px;
-    border: 1px solid #9f9ba2;
-    border-radius: 3px;
-    margin-bottom: 24px;
-    margin-top: 18px;
-
-    .timezone-picker-list-item {
-      &.timezone-picker-list-item-active {
-        background-color: #d2e5ea;
-      }
-    }
-
-    .timezone-picker-textfield {
-      input {
-        padding: 6px 12px;
-        border: none;
-      }
-    }
   }
 }
