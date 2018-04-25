@@ -59,12 +59,13 @@ class FeedbackContainer extends Component {
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading } }) => ({
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading }, common: { moduleView } }) => ({
     feedbacks,
     modalWindow,
     feedback,
     filter,
     feedbackLoading,
+    moduleView
 }), {
     toggleModal,
     feedbackType,
