@@ -63,12 +63,12 @@ const defaultGiveFeedBack = {
     isPublic: true,
     isAnonymous: false,
     embodyValues: [
-        'Go to extra mile',
+        'Go the extra mile',
         'Team player',
         'Be an owner',
         'Some other value',
     ],
-    embodyValue: 0,
+    embodyValue: [0],
 }
 
 const initialState = {

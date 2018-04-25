@@ -57,7 +57,6 @@ const FeedbackPage = (props) => {
         moduleView
     } = props
     const { dates, selectedDate, dateType } = filter
-    debugger
     const ListComponent = ListView[moduleView] || FeedbacksList
 
     return <React.Fragment>

@@ -17,6 +17,10 @@ import setEmbodyValue from 'routes/feedback/actions/setEmbodyValue'
 const RoundedFocused = withFocus(RoundedBlock)
 
 
+/**
+ *  Component which is shown when new feedback should be wrote
+ *
+ */
 class NewFeedback extends Component {
 
     static propTypes = {
@@ -53,7 +57,7 @@ class NewFeedback extends Component {
                 {
                     embodyValues.map((embody, key) => <EmbodyButton
                         className={'embody-values__button'}
-                        active={key === embodyValue}
+                        active={embodyValue.includes(key)}
                         key={key}
                         onClick={() => setEmbodyValue(key)}
                     >{embody}</EmbodyButton>)
