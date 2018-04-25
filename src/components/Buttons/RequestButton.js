@@ -1,8 +1,10 @@
 import WhiteButton from 'components/Buttons/WhiteButton'
+import { mainButton } from 'styles/colors.scss'
+import { buttonText } from 'styles/colors.scss'
 
 export default WhiteButton.extend`
-  background-color: #207D94;
-  color: #FCFCFC;
+  background-color: ${mainButton};
+  color: ${buttonText};
   font-size: 14px;
   padding-left: 18px;
   padding-right: 18px;

@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
-
+import { mainButton } from 'styles/colors.scss'
+import { buttonText } from 'styles/colors.scss'
 
 const DefaultButton = styled.div`
-  background-color: #207D94;
-  color: #fcfcfc;
+  background-color: ${mainButton};
+  color: ${buttonText};
   font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
   min-width: 72px;
@@ -16,7 +17,7 @@ const DefaultButton = styled.div`
   text-align: center;
   padding: 0 24px;
   cursor: pointer;
-  border-radius: ${props => props.round? props.round : 0};
+  border-radius: 3px;
 `
 
 DefaultButton.propTypes = {

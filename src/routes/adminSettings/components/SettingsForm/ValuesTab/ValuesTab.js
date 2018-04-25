@@ -50,7 +50,7 @@ const renderValues = ({ fields }) => {
             </div>
         </div>
         {fields.length > 0 && <div className="values-tab__save">
-            <DefaultButton round={'3px'}>Save Values</DefaultButton>
+            <DefaultButton>Save Values</DefaultButton>
         </div>}
     </React.Fragment>
 }

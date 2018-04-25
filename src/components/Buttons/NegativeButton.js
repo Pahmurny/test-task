@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
+import { negativeButton } from 'styles/colors.scss'
+import { buttonText } from 'styles/colors.scss'
 
 
 const NegativeButton = styled.div`
-  background-color: #C37A83;
-  color: #fcfcfc;
+  background-color: ${negativeButton};
+  color: ${buttonText};
   font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
   min-width: 72px;
@@ -17,7 +19,7 @@ const NegativeButton = styled.div`
   text-align: center;
   padding: 0 24px;
   cursor: pointer;
-  border-radius: ${props => props.round? props.round : 0};
+  border-radius: 3px;
 `
 
 NegativeButton.propTypes = {

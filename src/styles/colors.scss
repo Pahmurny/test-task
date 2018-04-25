@@ -1,0 +1,93 @@
+$white: #FCFCFC;
+$purple-black: #23182D;
+$purple-secondary: #5F5864;
+$light-yellow: #FEFCE8;
+$dark-yellow: #F8E71C;
+$grey-primary: #9F9BA2; // for outlines
+$grey-secondary: #E6E4E7;
+$grey-lightest: #F2F1F3; // 50% of grey-secondary (for grey backgrounds)
+$grey-inactive: #CFCDD0; // 50% of grey-primary (for toggle fills)
+$grey-dark: #4A4A4A; // for text
+$teal-primary: #207D94;
+$teal-secondary: #A6CBD4;
+$pink: #C37A83;
+
+// MAIN COMPONENTS
+$sidebar: $light-yellow;
+$header-bg: $purple-black;
+$header-menu: $purple-secondary;
+$main-background: $grey-lightest;
+$sub-background: $white;
+
+:export {
+	sidebar: $sidebar;
+	headerBG: $header-bg;
+	headerMenu: $header-menu;
+	mainBG: $main-background;
+	subBG: $sub-background;
+}
+
+// BUTTONS
+$main-button: $teal-primary;
+$button-text: $white;
+$negative-button: $pink;
+$hash-button: $grey-secondary;
+
+:export {
+	mainButton: $main-button;
+	buttonText: $button-text;
+	negativeButton: $negative-button;
+	hashButton: $hash-button;
+}
+
+// TOGGLES
+$active-outline: $teal-primary;
+$active-bg: $teal-secondary;
+$inactive-outline: $grey-primary;
+$inactive-bg: $grey-inactive;
+
+:export {
+	activeOutline: $active-outline;
+	activeBG: $active-bg;
+	inactiveOutline: $inactive-outline;
+	inactiveBG: $inactive-bg;
+}
+
+// TEXT COLORS
+$header: $purple-black;
+$text-input: $purple-black;
+$subheader: $grey-dark;
+$text-placeholder: $grey-primary;
+$dates-secondary: $grey-primary;
+$text-hyperlink: $teal-primary;
+
+:export {
+	header: $header;
+	textInput: $text-input;
+	subheader: $subheader;
+	textPlaceholder: $text-placeholder;
+	datesSecondary: $dates-secondary;
+	textHyperlink: $text-hyperlink;
+}
+
+// DROPDOWNS
+$dropdown-border: $grey-primary;
+$dropdown-items: $grey-dark;
+$hover: $grey-lightest;
+$hover-selected: $teal-secondary;
+
+:export {
+	dropdownBorder: $dropdown-border;
+	dropdownItems: $dropdown-items;
+	hover: $hover;
+	hoverSelected: $hover-selected;
+}
+
+// misc
+$info-panel: $grey-lightest;
+$shadow: $grey-primary;
+
+:export {
+	infoPanel: $info-panel;
+	shadow: $shadow;
+}

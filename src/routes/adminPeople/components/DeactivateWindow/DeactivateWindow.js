@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './deactivatewindow.scss'
-import RedButton from 'components/Buttons/Redbutton'
+import NegativeButton from 'components/Buttons/NegativeButton'
 import TransparentButton from 'components/Buttons/TransparentButton'
 
 const DeactivateWindow = ({ onCancel, manager, onDeactivate }) => <div className={'deactivate-window'}>
@@ -14,10 +14,10 @@ const DeactivateWindow = ({ onCancel, manager, onDeactivate }) => <div className
             className={'btn'}
             onClick={onCancel && onCancel}
         >Cancel</TransparentButton>
-        <RedButton
+        <NegativeButton
             className={'btn'}
             onClick={onDeactivate && onDeactivate}
-        >Deactivate</RedButton>
+        >Deactivate</NegativeButton>
     </div>
 </div>
 

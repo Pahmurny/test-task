@@ -146,7 +146,6 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                 <div className="member-form__actions--btns">
                     <Field component={ActivateField} name={'active'}/>
                     <DefaultButton
-                        round={3}
                         onClick={() => submit()}
                     >Save</DefaultButton>
 
