@@ -1,0 +1,8 @@
+input {
+  &[type=text] {
+    &.error {
+      box-shadow: 0 0 0px 2px #C37A83;
+      border-color: transparent;
+    }
+  }
+}
