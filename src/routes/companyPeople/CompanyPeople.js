@@ -127,7 +127,6 @@ class CompanyPeople extends Component {
             getTagsData, loadingTeams, showValues, updateCompanyPeopleValue, company,
             companyValues,
             modalWindow,
-            toggleModal,
             feedbackType,
             feedback,
             getCompanyPeople,
