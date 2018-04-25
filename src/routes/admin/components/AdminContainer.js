@@ -85,6 +85,7 @@ export default connect(({
                                 feedbackInfo, showAdminSettings, adminSettings,
                                 savingAdminSettings,
                             },
+                            common: { moduleView },
                         }) => ({
     feedbacks,
     modalWindow,
@@ -96,6 +97,7 @@ export default connect(({
     showAdminSettings,
     adminSettings,
     savingAdminSettings,
+    moduleView,
 }), {
     toggleModal,
     feedbackType,
@@ -109,5 +111,5 @@ export default connect(({
     setTeamFeedbackType,
     setFilterFeedbackTo,
     setValue,
-    setModuleView
+    setModuleView,
 })(AdminContainer)
