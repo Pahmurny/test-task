@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import store from 'store'
 import cn from 'classnames'
 import { Field, reduxForm, getFormValues, getFormInitialValues, Form } from 'redux-form'
 import { connect } from 'react-redux'
-import './mamberform.scss'
 import ToggleFormField from 'components/Form/Toggle/ToggleFormField'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import UserPic from 'components/Shared/UserPic'
@@ -12,17 +12,18 @@ import DatePicker from 'components/Form/Datepicker/DatePicker'
 import TagsFormField from 'components/Form/TagsField/TagsFormField'
 import TagsFormFieldOption from 'components/Form/TagsField/TagsFormFieldOption'
 import updatePerson from 'routes/adminPeople/actions/updatePerson'
+import FormTagsField from 'components/Form/TagsField/FormTagsField'
+import updatePeopleValue from 'routes/adminPeople/actions/updatePeopleValue'
+import './mamberform.scss'
 
 
-const ActivateField = ({ input: { value, onChange } }) => {
+const ActivateField = ({ input: { value, onChange }, meta: { dispatch, form } }) => {
     const isTrue = !!value
-
+    const manager = getFormValues(form)(store.getState())
     return (<div
         onClick={() => {
             if (isTrue) {
-                if (window.confirm('Deactivate?') === true) {
-                    onChange(!value)
-                }
+                dispatch(updatePeopleValue('deactivateMember', manager))
             } else {
                 onChange(!value)
             }
@@ -35,7 +36,7 @@ const ActivateField = ({ input: { value, onChange } }) => {
 
 const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submit, updatePerson, initialValues: { company } }) => {
 
-    const { isAdmin, active, image } = formValues
+    const { isAdmin, image } = formValues
     const { name, logo } = company
 
     return (
@@ -118,14 +119,14 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                     />
 
                     <Field
-                        component={TagsFormField}
+                        component={FormTagsField}
                         label={'Manager'}
-                        name={'managerId'}
+                        name={'manager'}
                         className={'member-form__tags-field'}
                         style={{ marginTop: 50 }}
-                        options={managers.map(manager => ({ label: manager.name, value: manager.id }))}
-                        optionComponent={TagsFormFieldOption}
-                        valueUnmapper={v => v.value}
+                        allPeople={managers}
+                        placeholder={''}
+                        one
                     />
 
                 </div>
@@ -162,7 +163,7 @@ const form = reduxForm({
 
 /** @namespace state.memberData */
 export default connect(state => ({
-    initialValues: state.people.memberData,
+    initialValues: { ...state.people.memberData },
     formValues: { ...getFormInitialValues('memberForm')(state), ...getFormValues('memberForm')(state) },
     iniValues: getFormInitialValues('memberForm')(state),
     tags: state.common.tags || [],

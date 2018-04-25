@@ -5,19 +5,20 @@ import FeedbackModule from 'routes/feedback/FeedbackModule'
 import TeamModule from 'routes/team/TeamModule'
 import PageHeader from 'components/Shared/PageHeader'
 import LogoIcon from 'components/Icons/LogoIcon'
-import 'reset-css/_reset.scss'
 import HeaderMenu from 'components/HeaderMenu/HeaderMenu'
 import { url } from 'helpers/url'
 import CompanyModule from 'routes/company/CompanyModule'
 import AdminModule from 'routes/admin/AdminModule'
 import SettingsModule from 'routes/adminSettings/SettingsModule'
 import SidebarContainer from 'containers/SidebarContainer'
-import './App.scss'
-import PeopleModule from 'routes/adminPeople/PeopleModule'
 import PeopleContainer from 'routes/adminPeople/components/PeopleContainer'
 import NotificationComponent from 'components/Notification/NotificationComponent'
 import CompanyPeople from 'routes/companyPeople/CompanyPeople'
 import LogoTitle from 'components/Shared/LogoTitle'
+import 'reset-css/_reset.scss'
+import './App.scss'
+
+
 
 class App extends Component {
     render() {

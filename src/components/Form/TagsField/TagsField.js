@@ -32,6 +32,7 @@ export default class TagsField extends Component {
             name: PropTypes.string.isRequired,
             component: PropTypes.any
         })),
+        placeholder: PropTypes.string
     }
 
     handleDelete = (i) => {
@@ -59,7 +60,7 @@ export default class TagsField extends Component {
     }
 
     render() {
-        const { tags, suggestions } = this.props
+        const { tags, suggestions, placeholder } = this.props
         return (
             <ReactTags
                 classNames={classConfig}
@@ -67,7 +68,7 @@ export default class TagsField extends Component {
                 suggestions={suggestions}
                 handleDelete={this.handleDelete}
                 handleAddition={this.handleAddition}
-                placeholder={''}
+                placeholder={placeholder}
                 delimiters={[]}
             />
 

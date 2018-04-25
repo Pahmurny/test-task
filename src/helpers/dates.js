@@ -4,6 +4,20 @@ import chunk from 'lodash/chunk'
 const yearNumber = m().format('YYYY')
 const yearJan = year => `${year}-01-01`
 
+
+const sortDates = (date1, date2) => {
+    const seconds1 = m(date1.startDate).unix()
+    const seconds2 = m(date2.startDate).unix()
+
+    if (seconds1 < seconds2) {
+        return -1
+    }
+    if (seconds1 > seconds2) {
+        return 1
+    }
+    return 0
+}
+
 /**
  * Get weekly periods
  * @param year
@@ -23,7 +37,7 @@ export const WeeklyDates = (year = yearNumber) => {
     }
 
 
-    return dates
+    return dates.sort(sortDates)
 }
 
 
@@ -47,7 +61,7 @@ export const TwoWeeksDates = (year = yearNumber) => {
         })
     }
 
-    return dates
+    return dates.sort(sortDates)
 }
 
 
@@ -60,28 +74,30 @@ export const TwoWeeksDates = (year = yearNumber) => {
 export const MonthlyDates = (year = yearNumber) => {
     const dates = []
     const sFirstOfJanuary = yearJan(year)
-    for(let month = 0; month<=11;month++){
+    for (let month = 0; month <= 11; month++) {
         dates.push({
             startDate: m(sFirstOfJanuary).month(month).startOf('month').format('YYYY-MM-DD'),
-            endDate: m(sFirstOfJanuary).month(month).endOf('month').format('YYYY-MM-DD')
+            endDate: m(sFirstOfJanuary).month(month).endOf('month').format('YYYY-MM-DD'),
         })
     }
-    return dates
+    return dates.sort(sortDates)
 }
 
 /**
  * Get Quarters for a Year
  * @param year
- * @returns {any[]}
+ * @returns {Array}
  * @constructor
  */
-export const Quarters = (year = yearNumber)=> {
+export const Quarters = (year = yearNumber) => {
     const months = MonthlyDates(year)
     const quarters = chunk(months, 4)
-    return  quarters.map(q => {
+    const dates = quarters.map(q => {
         return {
             startDate: q[0].startDate,
-            endDate: q[3].endDate
+            endDate: q[3].endDate,
         }
     })
+
+    return dates.sort(sortDates)
 }
