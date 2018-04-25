@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { NotificationManager as Nm } from 'react-notifications'
 import { connect } from 'react-redux'
 import { CircleLoader } from 'react-spinners'
-import './peoplelist.scss'
 import PeopleRow from 'routes/adminPeople/components/PeopleList/PeopleRow'
 import PageLoader from 'components/Shared/PageLoader'
 import UserPic from 'components/Shared/UserPic'
 import EditIcon from 'components/Icons/EditIcon'
-import { Field, reduxForm, submit } from 'redux-form'
+import { Field, reduxForm, change } from 'redux-form'
 import handleChangeAction from 'routes/adminPeople/actions/handleChangeAction'
 import CheckboxField from 'components/Form/Checkbox/CheckboxField'
 import DefaultButton from 'components/Buttons/DefaultButton'
@@ -17,11 +15,19 @@ import Modal from 'components/Shared/Modal'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import { PopupTitle } from 'components/Shared/PopupTitle'
 import getUser from 'routes/adminPeople/actions/getUser'
-import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 import MemberForm from 'routes/adminPeople/components/MemberForm/MemberForm'
 import UploadForm from 'routes/adminPeople/components/UploadForm/UploadForm'
+import DeactivateWindow from 'routes/adminPeople/components/DeactivateWindow/DeactivateWindow'
+import './peoplelist.scss'
 
 
+const formName = 'peoplelist'
+
+
+/**
+ *  List of people for admin module
+ *
+ */
 class PeopleList extends Component {
 
 
@@ -31,6 +37,10 @@ class PeopleList extends Component {
         getUser: PropTypes.func.isRequired,
     }
 
+    /**
+     * Render list
+     * @returns {*}
+     */
     renderPeopleGrid = () => {
         const { people, loadingPeople, getUser, userForm, loadingPerson } = this.props
 
@@ -69,6 +79,10 @@ class PeopleList extends Component {
         </div>)
     }
 
+    /**
+     * Disbale form submit by pressing Enter Key
+     * @param e
+     */
     formKeyPress = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault()
@@ -81,7 +95,7 @@ class PeopleList extends Component {
     }
 
     render() {
-        const { memberData, updatePeopleValue, uploadForm } = this.props
+        const { memberData, updatePeopleValue, uploadForm, deactivateMember, changeField } = this.props
 
         return (
             <div className="people-list">
@@ -140,15 +154,39 @@ class PeopleList extends Component {
                     </FeedbackForm>
                 </Modal>}
 
-                {memberData && <Modal closeForm={() => updatePeopleValue('memberData', undefined)}>
+                {memberData &&
+                <Modal
+                    closeForm={() => !deactivateMember && updatePeopleValue('memberData', undefined)}>
+                    <div style={{ opacity: deactivateMember ? 0 : 1 }}>
+                        <FeedbackForm
+                            onClose={() => !deactivateMember && updatePeopleValue('memberData', undefined)}
+                            title={<PopupTitle>{memberData.name}</PopupTitle>}
+                            style={{
+                                minHeight: 0,
+                            }}
+                        >
+                            <MemberForm/>
+                        </FeedbackForm>
+                    </div>
+                </Modal>
+                }
+                {deactivateMember && <Modal closeForm={() => updatePeopleValue('deactivateMember', undefined)}>
                     <FeedbackForm
-                        onClose={() => updatePeopleValue('memberData', undefined)}
-                        title={<PopupTitle>{memberData.name}</PopupTitle>}
+                        onClose={() => updatePeopleValue('deactivateMember', undefined)}
+                        title={<PopupTitle>Deactivate {deactivateMember.name}</PopupTitle>}
                         style={{
                             minHeight: 0,
+                            width: 576,
                         }}
                     >
-                        <MemberForm/>
+                        <DeactivateWindow
+                            manager={deactivateMember}
+                            onCancel={() => updatePeopleValue('deactivateMember', undefined)}
+                            onDeactivate={() => {
+                                updatePeopleValue('deactivateMember', undefined)
+                                changeField('memberForm', 'active', false)
+                            }}
+                        />
                     </FeedbackForm>
                 </Modal>}
             </div>
@@ -161,10 +199,15 @@ class PeopleList extends Component {
  * Create Redux Form
  */
 const formedList = reduxForm({
-    form: 'peoplelist',
+    form: formName,
 })(PeopleList)
 
 /**
  * Connect with store and actions
  */
-export default connect(({ people }) => ({ ...people }), { handleChangeAction, updatePeopleValue, getUser })(formedList)
+export default connect(({ people }) => ({ ...people }), {
+    handleChangeAction,
+    updatePeopleValue,
+    getUser,
+    changeField: change,
+})(formedList)

@@ -13,7 +13,7 @@
     height: 192px;
     cursor: pointer;
     margin-right: 48px;
-    
+
     &--upload {
       display: block;
       width: 192px;
@@ -106,7 +106,7 @@
           &:before {
             content: '@';
             position: absolute;
-            border-right: 1px solid #9F9BA2;
+            border-right: 1px solid #9f9ba2;
             top: 30px;
             height: 36px;
             display: flex;
@@ -116,7 +116,7 @@
             border-radius: 0;
             font-family: $fontLatoBold, sans-serif;
             font-size: 14px;
-            color: #9F9BA2;
+            color: #9f9ba2;
             text-align: center;
           }
           input[type=text] {
@@ -132,7 +132,7 @@
           &:before {
             content: 'Line 1';
             position: absolute;
-            border-right: 1px solid #9F9BA2;
+            border-right: 1px solid #9f9ba2;
             top: 30px;
             height: 36px;
             display: flex;
@@ -142,7 +142,7 @@
             border-radius: 0;
             font-family: $fontLatoRegular, sans-serif;
             font-size: 14px;
-            color: #9F9BA2;
+            color: #9f9ba2;
             text-align: center;
           }
 
@@ -158,7 +158,7 @@
           &:before {
             content: 'Line 2';
             position: absolute;
-            border-right: 1px solid #9F9BA2;
+            border-right: 1px solid #9f9ba2;
             top: 12px;
             height: 36px;
             display: flex;
@@ -168,7 +168,7 @@
             border-radius: 0;
             font-family: $fontLatoRegular, sans-serif;
             font-size: 14px;
-            color: #9F9BA2;
+            color: #9f9ba2;
             text-align: center;
           }
 
@@ -193,7 +193,7 @@
     &__label {
       font-family: $fontLatoBold, sans-serif;
       font-size: 18px;
-      color: #23182D;
+      color: #23182d;
       text-align: left;
     }
 
@@ -206,7 +206,7 @@
       flex: 0 0 100%;
 
       .link {
-        color: #207D94;
+        color: #207d94;
       }
     }
   }
@@ -216,7 +216,7 @@
     border: 1px solid #9f9ba2;
     border-radius: 3px;
     font-size: 14px;
-    font-family: $fontLatoRegular, sans-serif;
+    font-family: LatoRegular, sans-serif;
     outline: none;
     display: block;
     resize: none;
@@ -225,21 +225,10 @@
     box-sizing: border-box;
     min-height: 72px;
     margin-bottom: 24px;
-    margin-top: 12px;
     padding: 6px;
-  } 
+  }
 
   .actions {
     text-align: right;
-  }
-
-  .timezone-picker {
-    width: 100%;
-    font-family: $fontLatoRegular, sans-serif;
-    font-size: 14px;
-    border: 1px solid #9f9ba2;
-    border-radius: 3px;
-    margin-bottom: 24px;
-    margin-top: 18px;
   }
 }

@@ -1,0 +1,41 @@
+$heightTag: 24px;
+
+.form-tags-field {
+  $formTagField: &;
+
+  .tags-field {
+    width: 168px;
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
+    margin-left: 12px;
+    border-radius: 3px;
+    height: $heightTag;
+
+    &:focus {
+      box-shadow: 0 0 0 2px #207d94;
+      border-color: transparent;
+    }
+
+    &__search-input {
+      input {
+        height: $heightTag;
+        font-family: LatoRegular, sans-serif;
+        font-size: 14px;
+        color: #23182d;
+        padding: 0;
+      }
+    }
+
+    &__selected-tag {
+      height: $heightTag;
+    }
+  }
+
+  &.one {
+    .tags-field {
+      &__selected + .tags-field__search {
+        display: none;
+      }
+    }
+  }
+}
