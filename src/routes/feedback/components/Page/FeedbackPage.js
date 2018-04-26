@@ -19,6 +19,9 @@ import FeedbackType from 'routes/feedback/components/FeedbackType/FeedbackType'
 import FeedbackRequest from 'routes/feedback/components/FeedbackForm/FeedbackRequest'
 import Note from 'routes/feedback/components/FeedbackForm/Note'
 import FeedbackGive from 'routes/feedback/components/FeedbackForm/FeedbackGive'
+import { PopupTitle } from 'components/Shared/PopupTitle'
+import CompanyInfo from 'routes/companyPeople/components/Company/CompanyInfo'
+import ValuesBlock from 'routes/companyPeople/components/Company/ValuesBlock'
 
 
 
@@ -54,7 +57,11 @@ const FeedbackPage = (props) => {
         setDate,
         feedbackLoading,
         beforeBody,
-        moduleView
+        moduleView,
+        company,
+        companyValues,
+        showValues,
+        updateCompanyPeopleValue
     } = props
     const { dates, selectedDate, dateType } = filter
     const ListComponent = ListView[moduleView] || FeedbacksList
@@ -104,7 +111,7 @@ const FeedbackPage = (props) => {
                 </div>
             </div>
         </div>
-        {modalWindow && <Modal closeForm={() => toggleModal(CLOSE_MODAL)}>
+        {(modalWindow && !showValues) && <Modal closeForm={() => toggleModal(CLOSE_MODAL)}>
             <FeedbackForm
                 feedBack={feedback}
                 onClose={toggleModal}
@@ -135,6 +142,20 @@ const FeedbackPage = (props) => {
                   {feedbackViews[feedback.type]}
                 </ScrollBlock>
               </div>
+            </FeedbackForm>
+        </Modal>}
+        {showValues && <Modal closeForm={() => updateCompanyPeopleValue('showValues', false)}>
+            <FeedbackForm
+                onClose={() => updateCompanyPeopleValue('showValues', false)}
+                title={<PopupTitle>Company Profile</PopupTitle>}
+                style={{
+                    width: 672,
+                    display: 'flex',
+                    flexDirection: 'column',
+                }}
+            >
+                <CompanyInfo {...company}/>
+                <ValuesBlock values={companyValues}/>
             </FeedbackForm>
         </Modal>}
     </React.Fragment>

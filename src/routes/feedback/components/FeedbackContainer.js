@@ -14,6 +14,7 @@ import { MODULE_VIEW_FEEDBACK } from 'routes/feedback/feedbackTypes'
 import setTeamView from 'routes/team/actions/setTeamView'
 import Page from 'components/Content/Page'
 import setModuleView from 'actions/setModuleView'
+import updateCompanyPeopleValue from 'routes/companyPeople/actions/updateCompanyPeopleValue'
 
 
 
@@ -59,13 +60,14 @@ class FeedbackContainer extends Component {
 }
 
 
-export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading }, common: { moduleView } }) => ({
+export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter, feedbackLoading }, common: { moduleView }, companyPeople }) => ({
     feedbacks,
     modalWindow,
     feedback,
     filter,
     feedbackLoading,
-    moduleView
+    moduleView,
+    ...companyPeople
 }), {
     toggleModal,
     feedbackType,
@@ -76,5 +78,6 @@ export default connect(({ feedbacks: { feedbacks, modalWindow, feedback, filter,
     setFilterFeedbackType,
     loadSuggestions,
     setTeamView,
-    setModuleView
+    setModuleView,
+    updateCompanyPeopleValue
 })(FeedbackContainer)

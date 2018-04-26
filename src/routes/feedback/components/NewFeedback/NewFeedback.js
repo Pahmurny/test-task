@@ -12,6 +12,9 @@ import withFocus from 'components/Shared/HOC/focused/withFocus'
 import EmbodyButton from 'components/Buttons/EmbodyButton'
 import './newfeedback.scss'
 import setEmbodyValue from 'routes/feedback/actions/setEmbodyValue'
+import getCompanyValues from 'routes/companyPeople/actions/getCompanyValues'
+import updateCompanyPeopleValue from 'routes/companyPeople/actions/updateCompanyPeopleValue'
+import getTeams from 'routes/companyPeople/actions/getTeams'
 
 
 const RoundedFocused = withFocus(RoundedBlock)
@@ -29,9 +32,21 @@ class NewFeedback extends Component {
         replyTo: PropTypes.object,
         clearFeedback: PropTypes.func.isRequired,
         setEmbodyValue: PropTypes.func.isRequired,
+        getCompanyValues: PropTypes.func.isRequired,
+        getTeams: PropTypes.func.isRequired,
         changeFeedbackContent: PropTypes.func.isRequired,
         embodyValues: PropTypes.array.isRequired,
         embodyValue: PropTypes.number.isRequired,
+    }
+
+
+    componentDidMount() {
+        const { companyValues, company, getCompanyValues, getTeams } = this.props
+        if (!companyValues || !company) {
+            getTeams()
+            getCompanyValues()
+        }
+
     }
 
     onChangeText = (e) => {
@@ -41,17 +56,24 @@ class NewFeedback extends Component {
     }
 
     render() {
-        const { replyTo, clearFeedback, content, embodyValues, embodyValue, setEmbodyValue } = this.props
+        const {
+            replyTo, clearFeedback, content, embodyValues, embodyValue, setEmbodyValue,
+            companyValues, company, updateCompanyPeopleValue,
+        } = this.props
         return <div className="newfeedback-container" style={{ paddingTop: 30 }}>
             {replyTo && <PendingFeedback onClose={clearFeedback} feedback={replyTo}/>}
             <FieldTitle style={{ marginBottom: 12 }}>
                 What is your feedback?
             </FieldTitle>
             <RoundedFocused>
-                <TextArea placeholder={'Write your feedback here.'} onChange={this.onChangeText} value={content} style={{ height: 170 }}/>
+                <TextArea placeholder={'Write your feedback here.'} onChange={this.onChangeText} value={content}
+                          style={{ height: 170 }}/>
             </RoundedFocused>
             <FieldTitle style={{ marginTop: 30 }} className="field-title">
-                Which values did they embody? <span>View descriptions</span>
+                Which values did they embody? {(companyValues && company) && <span
+                onClick={() => updateCompanyPeopleValue('showValues', true)}
+                className={'newfeedback-container__show-values'}
+            >View descriptions</span>}
             </FieldTitle>
             <div className="embody-values">
                 {
@@ -68,11 +90,15 @@ class NewFeedback extends Component {
 }
 
 
-export default connect(({ feedbacks: { give: { replyTo, feedbackType, content, embodyValues, embodyValue } } }) => ({
+export default connect(({ feedbacks: { give: { replyTo, feedbackType, content, embodyValues, embodyValue } }, companyPeople }) => ({
     replyTo,
     feedbackType,
     content,
     embodyValues,
     embodyValue,
-}), { clearFeedback, changeFeedbackContent, setEmbodyValue })(NewFeedback)
+    ...companyPeople,
+}), {
+    clearFeedback, changeFeedbackContent, setEmbodyValue, getCompanyValues, updateCompanyPeopleValue,
+    getTeams,
+})(NewFeedback)
 

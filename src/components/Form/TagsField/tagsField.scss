@@ -3,6 +3,11 @@
   justify-content: flex-start;
   padding-left: 6px;
 
+  &.is-focused {
+    box-shadow: 0 0 0 2px #207d94;
+    border-color: transparent;
+  }
+
   &__search {
     flex: 1;
     position: relative;
@@ -15,7 +20,7 @@
         background-color: transparent;
         font-size: 14px;
         font-family: LatoRegular, sans-serif;
-        color: #23182D;
+        color: #23182d;
       }
     }
   }
@@ -78,7 +83,7 @@
         cursor: pointer;
         padding: 6px 12px;
 
-        &:not(:first-child){
+        &:not(:first-child) {
           border-top: 0;
         }
 
