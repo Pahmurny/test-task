@@ -12,14 +12,16 @@
     padding: 0;
     overflow: auto;
     min-width: 168px;
+    text-align: right;
 
     &-item {
       cursor: pointer;
-       margin-bottom: 6px;
+      margin-bottom: 6px;
+      padding-right: 24px;
 
       &.active {
         font-family: $fontLatoBold;
-        color: #207D94;
+        color: #207d94;
       }
     }
   }
@@ -33,7 +35,7 @@
       cursor: pointer;
       font-family: $fontLatoBold;
       font-size: 12px;
-      color: #207D94;
+      color: #207d94;
       display: flex;
       align-items: center;
     }
