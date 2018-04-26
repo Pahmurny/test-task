@@ -10,6 +10,19 @@ import ValuesTab from 'routes/adminSettings/components/SettingsForm/ValuesTab/Va
 import TagsTab from 'routes/adminSettings/components/SettingsForm/TagsTab/TagsTab'
 import AccountTab from 'routes/adminSettings/components/SettingsForm/AccountTab/AccountTab'
 import IntegrationsTab from 'routes/adminSettings/components/SettingsForm/IntegrationsTab/IntegrationsTab'
+import { COMPANY_EMAIL } from 'routes/adminSettings/components/SettingsForm/inputNames'
+import emailValidator from 'email-validator'
+
+
+const Validation = (values) => {
+    const errors = {}
+
+    if (!emailValidator.validate(values[COMPANY_EMAIL])) {
+        errors[COMPANY_EMAIL] = 'Email is invalid'
+    }
+    return errors
+}
+
 
 const SettingsForm = () => {
     return (<Tabs className={'settings-container__tabs-container'}>
@@ -62,7 +75,9 @@ const SettingsForm = () => {
 
 const settingsForm = reduxForm({
     form: 'adminSettings',
-    onSubmit: formSubmit
+    //onSubmit: formSubmit,
+    validate: Validation,
+    asyncBlurFields: [COMPANY_EMAIL],
 })(SettingsForm)
 
 export default connect(({ feedbacks: { adminSettings } }) => ({

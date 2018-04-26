@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import TagsField from 'components/Form/TagsField/TagsField'
 import PersonalEmail from 'components/Form/PersonalEmail'

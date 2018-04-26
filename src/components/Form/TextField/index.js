@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import styled from 'styled-components'
 import { Field } from 'redux-form'
+import './inputstyles.scss'
 
 
 const Label = styled.div`
@@ -13,8 +15,8 @@ const Label = styled.div`
 
 
 const StyledField = styled(Field)`
-    background: #FCFCFC;
-    border: 1px solid #9F9BA2;
+    background: #fcfcfc;
+    border: 1px solid #9f9ba2;
     border-radius: 3px;
     height: 36px;
     line-height: 36px;
@@ -22,17 +24,47 @@ const StyledField = styled(Field)`
     outline: none;
     box-sizing: border-box;
     font-size: 14px;
-    font-family: $fontLatoRegular, sans-serif;
+    font-family: LatoRegular, sans-serif;
     padding: 0px 6px;
     
 `
+/**
+ * Input Component for Redux Form
+ * @param value
+ * @param asyncValidating
+ * @param touched
+ * @param error
+ * @param className
+ * @param tabIndex
+ * @param type
+ * @returns {*}
+ * @constructor
+ */
+const Input = ({ input, meta: { asyncValidating, touched, error }, className, tabIndex, type='text' }) => {
+    return <input
+        {...input}
+        type={type}
+        className={cn(className, { error: (touched && error) })}
+        tabIndex={tabIndex}
+    />
+}
 
-const TextField = ({ label, name, ...props }) => {
+
+/**
+ * Wrapped styled Field from redux form
+ * @param label
+ * @param name
+ * @param fieldProps
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
+const TextField = ({ label, name, fieldProps, ...props }) => {
     const { tabIndex } = props
     delete props.tabIndex
     return (<div {...props}>
         <Label>{label}</Label>
-        <StyledField name={name} component={'input'} type={'text'} tabIndex={tabIndex}/>
+        <StyledField name={name} component={Input} tabIndex={tabIndex} {...fieldProps}/>
     </div>)
 }
 
@@ -45,6 +77,12 @@ const styledField = styled(TextField)`
       margin-top: 12px;
   }
 `
+
+styledField.propTypes = {
+    fieldProps: PropTypes.object,
+    label: PropTypes.any,
+    name: PropTypes.string,
+}
 
 
 export default styledField

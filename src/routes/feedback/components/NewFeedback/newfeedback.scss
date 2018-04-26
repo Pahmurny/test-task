@@ -11,6 +11,14 @@
     }
   }
 
+  &__show-values {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   .embody-values {
     display: block;
     padding: 12px 0px 30px 0px;

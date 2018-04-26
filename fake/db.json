@@ -656,7 +656,7 @@
     }
   ],
   "admin": {
-    "allowManagers": true,
+    "allowManagers": false,
     "enableAnonymous": false,
     "aAnonymous": false
   },
@@ -795,12 +795,12 @@
       "isAdmin": true
     }
   ],
-  "ppeople":{
-    "pageCount":100,
-    "totalCount":1000,
-    "currentPage":2,
-    "perPage":10,
-    "people":[
+  "ppeople": {
+    "pageCount": 100,
+    "totalCount": 1000,
+    "currentPage": 2,
+    "perPage": 10,
+    "people": [
       {
         "id": 1,
         "name": "Nia Leuschke",

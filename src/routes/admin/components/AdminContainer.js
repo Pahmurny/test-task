@@ -65,7 +65,7 @@ class AdminContainer extends PureComponent {
                         <FeedbackForm
                             onClose={() => setValue('showAdminSettings', false)}
                             title={<PageTitle
-                                style={{ display: 'flex', alignItems: 'center' }}>Settings {savingAdminSettings &&
+                                style={{ display: 'flex', alignItems: 'center', marginBottom:0, paddingBottom:0 }}>Settings {savingAdminSettings &&
                             <ScaleLoader height={15}/>}</PageTitle>}
                             style={{ minHeight: 50 }}
                         >
@@ -85,6 +85,7 @@ export default connect(({
                                 feedbackInfo, showAdminSettings, adminSettings,
                                 savingAdminSettings,
                             },
+                            common: { moduleView },
                         }) => ({
     feedbacks,
     modalWindow,
@@ -96,6 +97,7 @@ export default connect(({
     showAdminSettings,
     adminSettings,
     savingAdminSettings,
+    moduleView,
 }), {
     toggleModal,
     feedbackType,
@@ -109,5 +111,5 @@ export default connect(({
     setTeamFeedbackType,
     setFilterFeedbackTo,
     setValue,
-    setModuleView
+    setModuleView,
 })(AdminContainer)
