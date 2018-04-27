@@ -26,7 +26,7 @@ class App extends Component {
             <Router>
                 <div className="application">
                     <PageHeader>
-                        <LogoIcon style={{ marginTop: 6 }}/>
+                        <LogoIcon className="application__logo"/>
                         <LogoTitle className="logotitle">CareerLark</LogoTitle>
                         <HeaderMenu/>
                     </PageHeader>
