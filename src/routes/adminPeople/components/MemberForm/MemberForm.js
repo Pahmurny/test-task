@@ -52,7 +52,6 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         <img
                             src={logo}
                             alt={name}
-                            style={{ width: 108, height: 108 }}
                         />
                     </div>
                 </div>
@@ -122,13 +121,12 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         component={FormTagsField}
                         label={'Manager'}
                         name={'manager'}
-                        className={'member-form__tags-field'}
-                        style={{ marginTop: 50 }}
+                        className={'member-form__tags-field__manager'}
+                        //style={{ marginTop: 50 }}
                         allPeople={managers}
                         placeholder={''}
                         one
                     />
-
                 </div>
             </div>
             <div className="member-form__actions">

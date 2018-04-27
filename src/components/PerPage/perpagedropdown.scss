@@ -1,8 +1,10 @@
+@import "~styles/colors";
+
 .perpage-dropdown {
   position: relative;
   font-family: LatoRegular, sans-serif;
   font-size: 14px;
-  color: #5f5864;
+  color: $purple-secondary;
 
   &__options {
     position: absolute;
@@ -10,8 +12,8 @@
     line-height: 30px;
     bottom: 100%;
     width: 48px;
-    background: #fcfcfc;
-    border: 1px solid #5f5864;
+    background: $white;
+    border: 1px solid $grey-primary;
     box-sizing: border-box;
     margin-bottom: -1px;
 
@@ -34,8 +36,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #5F5864;
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.50);
+    border: 1px solid $grey-primary;
+    box-shadow: 0 1px 4px 0 $shadow;
     width: 48px;
     height: 26px;
     line-height: 30px;

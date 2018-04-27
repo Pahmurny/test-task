@@ -29,7 +29,7 @@ export default class AdminFeedbackList extends PureComponent {
                 <div className={'admin-feedback-list__header-item last'}/>
             </div>
             <div className="admin-feedback-list__data">
-                <ScrollBlock style={{ minHeight: 0 }}>
+                <ScrollBlock className="admin-feedback-list__data__scroll-block">
                     {feedbacks.map((feedback, key) => <ShortFeedback
                         {...feedback} key={key}
                         last={key === feedbacks.length - 1}

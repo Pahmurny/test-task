@@ -16,6 +16,7 @@ $itemWidth: (100% - $lastItemWidth)/4;
       border-bottom: 2px solid #23182d;
       font-family: $fontLatoBold, sans-serif;
       font-size: 18px;
+      padding-bottom: 6px;
 
       &.last {
         flex: 0 0 $lastItemWidth;
@@ -25,5 +26,9 @@ $itemWidth: (100% - $lastItemWidth)/4;
 
   &__data {
     flex: 1;
+
+    &__scroll-block {
+      min-height: 0;
+    }
   }
 }

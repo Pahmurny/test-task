@@ -1,4 +1,5 @@
 @import "~styles/fonts";
+@import "~styles/placeholdertext";
 
 .people-list {
   display: flex;
@@ -56,26 +57,6 @@
       box-shadow: 0 0 0 2px #207D94;
       border-color: transparent;
     }
-
-    ::-webkit-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::-moz-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    :-ms-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
   }
 
   &__title {
@@ -86,6 +67,7 @@
     font-size: 18px;
     color: #23182d;
     min-height: 24px;
+    position: left;
   }
 
   &__grid {
@@ -101,6 +83,14 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+
+    &__full-name {
+      margin-left: 12px;
+    }
+
+    &__manager-name {
+      margin-left: 12px;
+    }
   }
 
    &__col-team {
@@ -108,6 +98,10 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+
+    &__tags {
+      flex: 1;
+    }
   }
 
   &__admin-badge{
@@ -125,10 +119,16 @@
     margin-right: 24px;
   }
 
-  &__edit-btn {
-    cursor: pointer;
-    display: block;
-    margin-right: 12px;
-    margin-left: 24px;
+  &__span {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    &__edit-btn {
+      cursor: pointer;
+      display: block;
+      margin-right: 12px;
+      margin-left: 24px;
+    }
   }
 }

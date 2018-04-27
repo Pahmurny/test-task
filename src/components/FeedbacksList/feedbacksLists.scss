@@ -1,5 +1,25 @@
+@import "~styles/colors";
+
 .feedback-list{
   .feedback-block{
     margin-bottom: 2em;
   }
+}
+
+.user-pic {
+	margin-right: 12px;
+}
+
+.from {
+	&__you {
+		color: $grey-primary;
+		margin: 0 6px;
+	}
+}
+
+.to {
+	&__arrow {
+		color: $purple-black;
+		margin-right: 12px;
+	}
 }

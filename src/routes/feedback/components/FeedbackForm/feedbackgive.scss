@@ -1,4 +1,18 @@
+@import "~styles/colors";
+
+.pending {
+  &__field-title {
+    margin-top: 30px;
+    margin-bottom: 12px;
+  }
+
+  &__block {
+    min-height: 300px;
+  }  
+}
+
 .give-export {
+
   &__action-toggle {
     margin-bottom: 0;
 
@@ -11,13 +25,28 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 40px;
+
+    &__lock-icon {
+      margin-right: 6px;
+      fill: $grey-primary;
+
+      &:active {
+        fill: $teal-secondary;
+      }
+    }
   }
 
   &__view {
+    padding-bottom: 0;
+
     .tags-field {
       &__selected-tag{
         height: 38px;
       }
     }
   }
+}
+
+.rounded-focused {
+  margin-top: 12px;
 }

@@ -52,7 +52,7 @@ class PeopleList extends Component {
             {people.map((person, key) => <PeopleRow key={key}>
                 <div className="people-list__col">
                     <UserPic image={person.image}/>
-                    <span style={{ marginLeft: 10 }}>{`${person.first_name} ${person.last_name}`}</span>
+                    <span className="people-list__col__full-name">{`${person.first_name} ${person.last_name}`}</span>
                     {person.isAdmin && <span className="people-list__admin-badge">Admin</span>}
                 </div>
                 <div className="people-list__col">
@@ -61,16 +61,17 @@ class PeopleList extends Component {
                 <div className="people-list__col">{
                     person.manager ? <React.Fragment>
                         <UserPic image={person.manager.image}/>
-                        <span style={{ marginLeft: 10 }}>{person.manager.name}</span>
+                        <span className="people-list__col__manager-name">{person.manager.name}</span>
                     </React.Fragment> : 'N/A'
                 }</div>
                 <div className="people-list__col-team">
-                    <span
-                        style={{ flex: 1 }}>{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
-                    <span style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                    <span className="people-list__col-team__tags">{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
+                </div>
+                <div>
+                 <span className="people-list__span">
                         {(person.id === userForm && loadingPerson) && <CircleLoader/>}
                         <EditIcon
-                            className={'people-list__edit-btn'}
+                            className={'people-list__span__edit-btn'}
                             onClick={() => getUser(person.id)}
                         />
                     </span>
@@ -108,7 +109,6 @@ class PeopleList extends Component {
                         <Field
                             component={'input'}
                             name={'name_like'}
-
                             className="people-list__full-text-search"
                             placeholder={'Type a team member’s name…'}
                         />
@@ -148,7 +148,7 @@ class PeopleList extends Component {
                     <FeedbackForm
                         title={<PopupTitle>Upload your employees</PopupTitle>}
                         onClose={() => updatePeopleValue('uploadForm', false)}
-                        style={{ minHeight: 0, width: 577 }}
+                        //style={{ minHeight: 0, width: 577 }}
                     >
                         <UploadForm/>
                     </FeedbackForm>
@@ -161,7 +161,7 @@ class PeopleList extends Component {
                         <FeedbackForm
                             onClose={() => !deactivateMember && updatePeopleValue('memberData', undefined)}
                             title={<PopupTitle>{memberData.name}</PopupTitle>}
-                            style={{
+                            //style={{
                                 minHeight: 0,
                             }}
                         >
@@ -174,7 +174,7 @@ class PeopleList extends Component {
                     <FeedbackForm
                         onClose={() => updatePeopleValue('deactivateMember', undefined)}
                         title={<PopupTitle>Deactivate {deactivateMember.name}</PopupTitle>}
-                        style={{
+                        //style={{
                             minHeight: 0,
                             width: 576,
                         }}

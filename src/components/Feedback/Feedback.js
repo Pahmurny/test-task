@@ -18,8 +18,8 @@ const Feedback = (props) => {
                     {render && render(props)}
                 </div>
                 <div className="feedback-block__date">
-                    {locked && <LockIcon style={{ marginRight: 6 }}/>}
-                    {locked && <span style={{ marginRight: 6 }}> Private | </span>}
+                    {locked && <LockIcon className="feedback-block__date__lock-icon"/>}
+                    {locked && <span className="feedback-block__date__span"> Private | </span>}
                     {m(date).format('MMM DD, YYYY')}
                 </div>
             </div>

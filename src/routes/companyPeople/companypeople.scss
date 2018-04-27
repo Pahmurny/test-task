@@ -1,3 +1,5 @@
+@import "~styles/placeholdertext";
+
 .company-people {
 
   padding-left: 35px;
@@ -37,6 +39,10 @@
 
   &__title {
     margin-bottom: 0px;
+
+    &__three-dots {
+      padding-left: 12px;
+    }
   }
 
   &__search-tabs {
@@ -61,26 +67,6 @@
     &:active, &:focus {
       box-shadow: 0 0 0 2px #207D94;
       border-color: transparent;
-    }
-
-    ::-webkit-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::-moz-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    :-ms-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
     }
   }
 

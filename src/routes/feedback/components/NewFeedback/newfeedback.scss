@@ -1,14 +1,24 @@
 @import "~styles/constants";
+@import "~styles/colors";
+@import "~styles/placeholdertext";
 
 .newfeedback-container {
   .field-title {
+    margin-top: 30px;
+    margin-bottom: 12px;
+
     span {
       font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
-      color: #9f9ba2;
+      color: $teal-primary;
       text-align: center;
       padding-left: 6px;
+      padding-top: 3px;
     }
+  }
+
+  .text-area {
+    height: 170px;
   }
 
   &__show-values {
@@ -21,7 +31,7 @@
 
   .embody-values {
     display: block;
-    padding: 12px 0px 30px 0px;
+    padding: 0 0 30px 0;
 
     &__button {
       margin-right: 24px;

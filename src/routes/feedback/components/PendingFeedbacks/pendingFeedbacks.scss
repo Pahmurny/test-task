@@ -1,4 +1,5 @@
 @import "~styles/constants";
+@import "~styles/colors";
 
 .pending-feedback {
   margin-bottom: 12px;
@@ -17,18 +18,19 @@
     &-name {
       font-family: $fontLatoBold, sans-serif;
       font-size: 14px;
-      color: #23182d;
+      color: $text-input;
     }
 
     &-date-text {
       font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
-      color: #9f9ba2;
+      color: $dates-secondary;
       margin-top: 3px;
     }
 
     &-close {
       margin-left: auto;
+      fill: $dates-secondary;
     }
   }
 
@@ -36,6 +38,6 @@
     padding-top: 12px;
     font-family: $fontLatoRegular;
     font-size: 16px;
-    color: #23182D;
+    color: $text-input;
   }
 }

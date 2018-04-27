@@ -10,7 +10,7 @@ import UserPic from 'components/Shared/UserPic'
 
 
 const defaultView = ({ user }) => <Fragment>
-    <UserPic image={user.image} style={{ marginRight: 10 }}/>
+    <UserPic className="user-pic" image={user.image}/>
     {user.name}
 </Fragment>
 
@@ -18,11 +18,11 @@ const feedbackHeader = {
     [MODULE_VIEW_COMPANY]: ({ user, to }) => {
         return (
             <Fragment>
-                <UserPic image={user.image} style={{ marginRight: 10 }}/>
+                <UserPic className="user-pic" image={user.image}/>
                 {user.name}
-                <span style={{ color: '#9B9B9B', margin: '0 5px' }}>(you)</span>
-                <span style={{ marginRight: 10, color: '#23182D' }}>►</span>
-                <UserPic image={to.user.image} style={{ marginRight: 10 }}/>
+                <span className="from__you">(you)</span>
+                <span className="to__arrow">►</span>
+                <UserPic className="user-pic" image={to.user.image}/>
                 {to.user.name}
             </Fragment>
         )

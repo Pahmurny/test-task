@@ -143,13 +143,13 @@ class TagLine extends Component {
 
                 {onDelete !== false && <Modal closeForm={() => this.setState({ onDelete: false })}>
                     <FeedbackForm
+                        className="tag-line__form"
                         onClose={() => this.setState({ onDelete: false })}
                         title={<PopupTitle className={'tag-line__delete--title'}>Delete this tag?</PopupTitle>}
-                        style={{
+                        /*style={{
                             minHeight: 50,
                             width: 576,
-                        }}
-                    >
+                        }}*/>
                         <div className="tag-line__delete--confirm">
                             Removing this tag will disassociate it from any element to which you have applied it.
                             You will not be able to recover this tag; you will have to re-create it if you want to re-apply it.
@@ -163,7 +163,6 @@ class TagLine extends Component {
                             <div
                                 className="tag-line__delete--action">
                                 <NegativeButton
-                                    round={'3px'}
                                     onClick={this.onRemove}
                             >Delete
                             </NegativeButton>

@@ -137,7 +137,7 @@ class CompanyPeople extends Component {
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
-                People at {this.companyTitle()} <ThreeDotsIcon style={{ paddingLeft: 12 }}
+                People at {this.companyTitle()} <ThreeDotsIcon className="company-people__title__three-dots"
                 onClick={() => updateCompanyPeopleValue('showValues', true)}/>
             </PageTitle>
 
@@ -199,7 +199,6 @@ class CompanyPeople extends Component {
                             {(viewTab === 1) && <PeopleList/>}
                         </div>
                     </ScrollBlock>
-
                 </div>
                 {(viewTab === 1) && <div className="company-people__pagination">
                     <Field

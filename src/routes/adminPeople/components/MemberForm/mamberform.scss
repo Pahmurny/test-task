@@ -33,6 +33,10 @@
     font-family: $fontLatoRegular, sans-serif;
     text-align: left;
 
+    &__manager {
+      padding-top: 50px;
+    }
+
     .Select-control {
       box-shadow: none !important;
       border-color: #9f9ba2 !important;
@@ -125,6 +129,11 @@
 
       h3 {
         margin-bottom: 24px;
+      }
+
+      img {
+        width: 108px;
+        height: 108px;
       }
     }
   }

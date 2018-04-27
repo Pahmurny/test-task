@@ -1,13 +1,19 @@
 @import "~styles/fonts";
 @import "~styles/common";
+@import "~styles/colors";
 
 .application {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 960px;
 
   .logotitle {
-    color: #fcfcfc;
+    color: $button-text;
+  }
+
+  .logoicon {
+    margin-top: 6px;
   }
 
   .sidebar{
