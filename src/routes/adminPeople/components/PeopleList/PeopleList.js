@@ -161,7 +161,7 @@ class PeopleList extends Component {
                         <FeedbackForm
                             onClose={() => !deactivateMember && updatePeopleValue('memberData', undefined)}
                             title={<PopupTitle>{memberData.name}</PopupTitle>}
-                            //style={{
+                            style={{
                                 minHeight: 0,
                             }}
                         >
@@ -174,7 +174,7 @@ class PeopleList extends Component {
                     <FeedbackForm
                         onClose={() => updatePeopleValue('deactivateMember', undefined)}
                         title={<PopupTitle>Deactivate {deactivateMember.name}</PopupTitle>}
-                        //style={{
+                        style={{
                             minHeight: 0,
                             width: 576,
                         }}
