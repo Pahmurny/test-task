@@ -5,5 +5,6 @@
   "/companies/:id/people": "/ppeople",
   "/companies/:id/people?page=:page": "/ppeople",
   "/companies/:id/values": "/values?companyId=:id&_expand=company",
-  "/tags/:id/data":"/teams-tags?teamId=:id&_expand=team"
+  "/tags/:id/data":"/teams-tags?teamId=:id&_expand=team",
+  "/search_people/:people":"/people?name_like=:people"
 }

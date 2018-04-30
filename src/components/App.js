@@ -17,6 +17,8 @@ import CompanyPeople from 'routes/companyPeople/CompanyPeople'
 import LogoTitle from 'components/Shared/LogoTitle'
 import 'reset-css/_reset.scss'
 import './App.scss'
+import RightMenu from 'components/RightMenu/RightMenu'
+import Search from 'components/Search/Search'
 
 
 
@@ -29,6 +31,9 @@ class App extends Component {
                         <LogoIcon className="application__logo"/>
                         <LogoTitle className="logotitle">CareerLark</LogoTitle>
                         <HeaderMenu/>
+                      <RightMenu>
+                        <Search/>
+                      </RightMenu>
                     </PageHeader>
                     <div className="bottom">
                         <SidebarContainer/>
