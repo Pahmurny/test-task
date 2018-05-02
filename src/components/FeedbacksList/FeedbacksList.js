@@ -8,12 +8,21 @@ import './feedbacksLists.scss'
 import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
 import UserPic from 'components/Shared/UserPic'
 
-
+/**
+ * Default Feedback header view
+ *
+ * @param user
+ * @returns {*}
+ */
 const defaultView = ({ user }) => <Fragment>
     <UserPic image={user.image} style={{ marginRight: 10 }}/>
     {user.name}
 </Fragment>
 
+/**
+ * Header of the Feedback item depends on Module view
+ * @type
+ */
 const feedbackHeader = {
     [MODULE_VIEW_COMPANY]: ({ user, to }) => {
         return (
@@ -30,6 +39,16 @@ const feedbackHeader = {
 }
 
 
+/**
+ * Feedback list
+ *
+ * @param feedbacks
+ * @param scrollOptions
+ * @param className
+ * @param moduleView
+ * @returns {*}
+ * @constructor
+ */
 const FeedbacksList = ({ feedbacks, scrollOptions, className, moduleView }) => <ScrollBlock
     className={cn('feedback-list', className)}
     style={scrollOptions}

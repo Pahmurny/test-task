@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-0.8%" y="-13.5%" width="101.6%" height="147.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.490913723 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Global-Features" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1272.000000, -15.000000)" fill="#FCFCFC" fill-rule="nonzero">
+            <g id="dashboard_1">
+                <g id="base-layout_NOTES">
+                    <g id="top_bar" transform="translate(3.000000, 0.000000)">
+                        <g filter="url(#filter-1)" id="button_search">
+                            <g transform="translate(1269.000000, 12.000000)">
+                                <path d="M9.99886015,4 C6.69526007,4 4,6.69524949 4,9.99885088 C4,13.3024463 6.69526007,15.9977058 9.99886015,15.9977058 C11.3632602,15.9977058 12.6258202,15.5391658 13.6356602,14.766706 L18.6284604,19.765745 C18.9408004,20.078065 19.45342,20.078105 19.76576,19.765745 C20.07808,19.4534051 20.07808,18.9408052 19.76576,18.6284653 L14.7667003,13.6356662 C15.5391603,12.6258064 15.9977203,11.3632506 15.9977203,9.99885088 C15.9977203,6.69524949 13.3024402,4 9.99886015,4 Z M9.99886015,5.5996937 C12.4379002,5.5996937 14.3980203,7.55979133 14.3980203,9.99885088 C14.3980203,12.4378864 12.4379002,14.3980261 9.99886015,14.3980261 C7.55982009,14.3980261 5.59970004,12.4378864 5.59970004,9.99885088 C5.59970004,7.55979133 7.55982009,5.5996937 9.99886015,5.5996937 Z" id="Shape" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

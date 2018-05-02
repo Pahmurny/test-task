@@ -15,7 +15,7 @@ const Fade = styled.div`
 `
 
 Fade.propTypes = {
-    backgroundColor: PropTypes.string
+  backgroundColor: PropTypes.string,
 }
 
 export default Fade

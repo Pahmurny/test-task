@@ -23,5 +23,6 @@ export const endpoint = {
     tags: () => `${ENDPOINT_URL}/tags`,
     teams: () => `${ENDPOINT_URL}/teams`,
     managers: () => `${ENDPOINT_URL}/managers`,
-    companies: () =>`${ENDPOINT_URL}/companies`
+    companies: () =>`${ENDPOINT_URL}/companies`,
+    searchPeople: () => `${ENDPOINT_URL}/search_people`
 }
