@@ -9,4 +9,6 @@ const YellowRounded = RoundedBlock.extend`
 
 `
 
+YellowRounded.displayName = 'YellowRounded'
+
 export default YellowRounded

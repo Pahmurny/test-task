@@ -11,6 +11,7 @@ import {
 import CompanySidebar from 'containers/CompanySidebar'
 import AdminSidebar from 'containers/AdminSidebar'
 import Sidebar from 'components/Sidebar/Sidebar'
+import MySidebar from 'containers/MySidebar'
 
  const sidebarNavigation2 = [
 /*    {
@@ -65,10 +66,7 @@ const sidebarNavigation1 = [
 
 
 const sidebarView = {
-    [MODULE_VIEW_FEEDBACK]: () => <React.Fragment>
-        <SidebarNavigation items={sidebarNavigation1}/>
-        <SidebarNavigation items={sidebarNavigation2}/>
-    </React.Fragment>,
+    [MODULE_VIEW_FEEDBACK]: () => <MySidebar/>,
     [MODULE_VIEW_COMPANY]: CompanySidebar,
     [MODULE_VIEW_COMPANY_PEOPLE]: CompanySidebar,
     [MODULE_VIEW_ADMIN]: AdminSidebar,
@@ -88,6 +86,11 @@ class SidebarContainer extends Component {
             return <Empty/>
         }
         const SidebarView = sidebarView[moduleView] ? sidebarView[moduleView] : Empty
+      /**
+       * Make Sidebar View available in debugger
+       * @type {string}
+       */
+        SidebarView.displayName = 'SidebarView'
 
         return <SidebarView {...this.props}/>
     }

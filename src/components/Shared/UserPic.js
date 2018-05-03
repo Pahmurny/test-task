@@ -16,8 +16,9 @@ const UserPic = styled.div`
 
 UserPic.propTypes = {
   image: PropTypes.string,
-  width: PropTypes.string
+  width: PropTypes.string,
 }
 
+UserPic.displayName = 'UserPic'
 
 export default UserPic
