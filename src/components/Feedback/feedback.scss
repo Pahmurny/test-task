@@ -1,7 +1,5 @@
-@import "~styles/fonts";
-
 .feedback-block {
-  font-family: $fontLatoRegular;
+  font-family: LatoRegular, sans-serif;
   font-size: 16px;
   color: #23182d;
 
@@ -20,17 +18,39 @@
     &-user {
       display: flex;
       align-items: center;
+
+      & > .grey {
+        margin-left: 5px;
+        color: #9f9ba2;
+      }
     }
   }
 
   &__content {
     padding: 20px 0;
     line-height: 20px;
+
+    & > &-question {
+      font-family: Lato, sans-serif;
+      color: #23182d;
+      font-size: 14px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
   }
 
   &__tags {
-    .hash-item {
+    & > .hash-item {
       margin: 0 6px 6px 0;
+      font-family: LatoBold, sans-serif;
+      font-size: 14px;
+      color: #23182D;
+      background: rgba(95,88,100,0.30);
+      border-radius: 3px;
+
+      &:before{
+        content: '#';
+      }
     }
   }
 }

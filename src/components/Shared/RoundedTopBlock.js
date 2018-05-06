@@ -12,4 +12,6 @@ RoundedTopBlock.propTypes = {
   children: PropTypes.any,
 }
 
+RoundedTopBlock.displayName = 'RoundedTopBlock'
+
 export default RoundedTopBlock

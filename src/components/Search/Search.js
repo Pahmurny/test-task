@@ -24,6 +24,8 @@ const validClasses = [
   'search-component__people-result-person-name',
 ]
 
+const form = 'search'
+
 
 /**
  *  Search component
@@ -77,11 +79,23 @@ class Search extends Component {
    * Activate search
    */
   onActivate = () => {
+    const { searchPeople } = this.props
     setTimeout(() => {
       this.setState({ active: true })
+      searchPeople('')
+      if (this.input) {
+        const renderedComponent = this.input.getRenderedComponent()
+        renderedComponent.focus()
+        renderedComponent.value = ''
+      }
     })
   }
 
+  /**
+   * Handle change value
+   * @param e
+   * @param value
+   */
   onChange = (e, value) => {
     const { searchPeople } = this.props
     searchPeople(value)
@@ -96,15 +110,16 @@ class Search extends Component {
     }
 
     return <div className="search-component">
-      <div className="search-component__search-container" ref={searchBlock => this.searchBlock = searchBlock}>
+      <div className="search-component__search-container">
         <Field
+          ref={input => this.input = input}
           component={'input'}
           type={'text'}
           name={'username'}
           className={'search-component__input-field'}
           autoComplete="off"
           onChange={this.onChange}
-          onClick={this.onActivate}
+          withRef
         />
         {foundPeople && <div className="search-component__results">
           <h1 className="search-component__section-title">People</h1>

@@ -1,0 +1,20 @@
+.my-sidebar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  flex-direction: column;
+
+  & > &__section {
+    flex-grow: 1;
+    flex-direction: column;
+    $section: &;
+
+    &.bottom {
+      justify-content: flex-end;
+
+      & > .sidebar-navigation {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

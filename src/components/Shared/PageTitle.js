@@ -11,5 +11,6 @@ export const PageTitle = styled.h3`
     padding-bottom: 96px;
 `
 
+PageTitle.displayName = 'PageTitle'
 
 export default PageTitle
