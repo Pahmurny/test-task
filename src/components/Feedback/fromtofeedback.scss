@@ -1,0 +1,65 @@
+.fromtofeedback {
+  padding: 12px 23px 23px 23px;
+
+  & > &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  &__users {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .feedback-username {
+      font-family: LatoRegular, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+      text-align: left;
+      line-height: 24px;
+      white-space: nowrap;
+    }
+
+    span{
+      @extend .feedback-username;
+    }
+  }
+
+  &__feedback-date {
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+    text-align: right;
+  }
+
+  & > &__content {
+    font-family: LatoRegular, sans-serif;
+    font-size: 16px;
+    color: #23182d;
+    text-align: left;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  & > &__tags {
+    display: flex;
+  }
+
+  & > &__hash-tags {
+    .hash-item {
+      margin-right: 5px;
+      margin-bottom: 5px;
+      font-family: LatoBold, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+      text-align: center;
+
+      &:before {
+        content: '#';
+      }
+    }
+  }
+
+}

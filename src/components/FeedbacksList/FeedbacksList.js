@@ -17,7 +17,7 @@ import { IsDev } from 'helpers/dev'
  */
 const defaultView = ({ user }) => <Fragment>
   <UserPic image={user.image} style={{ marginRight: 10 }}/>
-  {user.name}
+  <div className={'feedback-username'}>{user.name}</div>
   {(user.manager || IsDev()) && <div className="grey">(your manager)</div>}
 </Fragment>
 
@@ -25,16 +25,16 @@ const defaultView = ({ user }) => <Fragment>
  * Header of the Feedback item depends on Module view
  * @type
  */
-const feedbackHeader = {
+export const feedbackHeader = {
   [MODULE_VIEW_COMPANY]: ({ user, to }) => {
     return (
       <Fragment>
         <UserPic image={user.image} style={{ marginRight: 10 }}/>
-        {user.name}
+        <div className={'feedback-username'}>{user.name}</div>
         <span style={{ color: '#9B9B9B', margin: '0 5px' }}>(you)</span>
         <span style={{ marginRight: 10, color: '#23182D' }}>►</span>
         <UserPic image={to.user.image} style={{ marginRight: 10 }}/>
-        {to.user.name}
+        <div className={'feedback-username'}>{to.user.name}</div>
       </Fragment>
     )
   },
@@ -51,14 +51,14 @@ const feedbackHeader = {
  * @returns {*}
  * @constructor
  */
-const FeedbacksList = ({ feedbacks, scrollOptions, className, moduleView }) => <ScrollBlock
+const FeedbacksList = ({ feedbacks, scrollOptions, className, moduleView, manualView }) => <ScrollBlock
   className={cn('feedback-list', className)}
   style={scrollOptions}
 >
   {
     feedbacks.map((feedback, key) => <Feedback
       key={key} {...feedback}
-      render={feedbackHeader[moduleView] || defaultView}
+      render={feedbackHeader[manualView || moduleView] || defaultView}
     />)
   }
 </ScrollBlock>
@@ -82,6 +82,7 @@ FeedbacksList.propTypes = {
   scrollOptions: PropTypes.object,
   className: PropTypes.string,
   moduleView: PropTypes.string,
+  manualView: PropTypes.string,
 }
 
 
