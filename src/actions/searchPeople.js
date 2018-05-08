@@ -7,7 +7,6 @@ import setCommonValue from 'actions/setCommonValue'
 
 
 const searchValue = debounce(async (value = '', dispatch, { common }) => {
-  const { searching } = common
   dispatch(setCommonValue('foundPeople', undefined))
   if (value.trim().length < 1) {
     return null

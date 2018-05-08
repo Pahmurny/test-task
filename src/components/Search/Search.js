@@ -6,6 +6,7 @@ import SearchIcon from 'components/Icons/SearchIcon'
 import './searchcomponent.scss'
 import searchPeople from 'actions/searchPeople'
 import UserPic from 'components/Shared/UserPic'
+import showUserProfile from 'containers/ProfileContainer/actions/showUserProfile'
 
 /**
  * Classes to check click outside
@@ -24,7 +25,6 @@ const validClasses = [
   'search-component__people-result-person-name',
 ]
 
-const form = 'search'
 
 
 /**
@@ -101,6 +101,16 @@ class Search extends Component {
     searchPeople(value)
   }
 
+  /**
+   * Show User profile
+   * @param person
+   */
+  onShowUserProfile = (person) => {
+    const { showUserProfile } = this.props
+    showUserProfile(person)
+    this.setState({ active: false })
+  }
+
   render() {
     const { active } = this.state
     const { foundPeople } = this.props
@@ -124,7 +134,11 @@ class Search extends Component {
         {foundPeople && <div className="search-component__results">
           <h1 className="search-component__section-title">People</h1>
           <div className="search-component__people-result">
-            {foundPeople.map((person, key) => <div key={key} className="search-component__people-result-person">
+            {foundPeople.map((person, key) => <div
+              key={key}
+              className="search-component__people-result-person"
+              onClick={() => this.onShowUserProfile(person)}
+            >
               <UserPic
                 {...person}
                 width={'24px'}
@@ -146,4 +160,4 @@ const sForm = reduxForm({ form: 'search' })(Search)
 
 export default connect(({ common: { foundPeople } }) => ({
   foundPeople,
-}), { searchPeople })(sForm)
+}), { searchPeople, showUserProfile })(sForm)

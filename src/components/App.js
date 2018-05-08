@@ -21,6 +21,7 @@ import RightMenu from 'components/RightMenu/RightMenu'
 import Search from 'components/Search/Search'
 import PrivateRoute from 'components/Routing/PrivateRoute'
 import Login from 'containers/Login'
+import ProfileContainer from 'containers/ProfileContainer'
 
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
             </Content>
           </div>
           <NotificationComponent/>
+          <ProfileContainer/>
         </div>
       </Router>
     )

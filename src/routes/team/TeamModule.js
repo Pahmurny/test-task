@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PageLoader from 'components/Shared/PageLoader'
 import store, { injectAsyncReducer, injectSaga } from 'store'
 
 
