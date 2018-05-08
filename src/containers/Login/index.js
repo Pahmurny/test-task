@@ -6,6 +6,7 @@ import { Redirect } from 'react-router'
 
 
 const fakeUser = {
+  id: 1,
   userName: 'somename',
   userPassword: '1234567890',
 }

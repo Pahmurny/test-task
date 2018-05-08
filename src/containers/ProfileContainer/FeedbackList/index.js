@@ -136,10 +136,11 @@ class FeedbackList extends Component {
 
   static propTypes = {
     list: PropTypes.array,
+    shorter: PropTypes.bool
   }
 
   render() {
-    const { feedbacks } = this.props
+    const { feedbacks, shorter } = this.props
     return (
       <div className="profile-feedback-list">
         <div className="profile-feedback-list__header">
@@ -147,7 +148,7 @@ class FeedbackList extends Component {
           <div className="more">See more</div>
         </div>
         <ScrollBlock style={{
-          minHeight: 470
+          minHeight: shorter ? 470 - 72 : 470,
         }}>
           {feedbacks.map((feedback, key) => <FromToFeedback
             {...feedback}

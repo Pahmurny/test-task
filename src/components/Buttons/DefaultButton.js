@@ -16,7 +16,7 @@ const DefaultButton = styled.div`
   text-align: center;
   padding: 0 24px;
   cursor: pointer;
-  border-radius: ${props => props.round? props.round : 0};
+  border-radius: ${props => props.round? props.round : '3px'};
 `
 
 DefaultButton.propTypes = {
