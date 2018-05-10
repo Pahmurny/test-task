@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import { ConnectedRouter as Router } from 'react-router-redux'
 import Content from 'components/Content/Content'
 import FeedbackModule from 'routes/feedback/FeedbackModule'
 import TeamModule from 'routes/team/TeamModule'
@@ -22,12 +23,13 @@ import Search from 'components/Search/Search'
 import PrivateRoute from 'components/Routing/PrivateRoute'
 import Login from 'containers/Login'
 import ProfileContainer from 'containers/ProfileContainer'
+import { history } from 'store'
 
 
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router history={history}>
         <div className="application">
           <PageHeader>
             <LogoIcon className="application__logo"/>

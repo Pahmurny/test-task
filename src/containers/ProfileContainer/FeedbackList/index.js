@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './profilefeedbacklist.scss'
 import FromToFeedback from 'components/Feedback/FromToFeedback'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
+import { connect } from 'react-redux'
+import showMore from 'containers/ProfileContainer/actions/showMore'
+import './profilefeedbacklist.scss'
 
 
 const feedbackList = [
@@ -136,7 +138,13 @@ class FeedbackList extends Component {
 
   static propTypes = {
     list: PropTypes.array,
-    shorter: PropTypes.bool
+    shorter: PropTypes.bool,
+    showMore: PropTypes.func,
+  }
+
+  onSeeMore = () => {
+    const { showMore } = this.props
+    showMore()
   }
 
   render() {
@@ -145,7 +153,7 @@ class FeedbackList extends Component {
       <div className="profile-feedback-list">
         <div className="profile-feedback-list__header">
           <h3>Public feedback</h3>
-          <div className="more">See more</div>
+          <div className="more" onClick={this.onSeeMore}>See more</div>
         </div>
         <ScrollBlock style={{
           minHeight: shorter ? 470 - 72 : 470,
@@ -167,4 +175,4 @@ FeedbackList.defaultProps = {
 }
 
 
-export default FeedbackList
+export default connect(null, { showMore })(FeedbackList)
