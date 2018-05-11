@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Page from 'components/Content/Page'
-import { PageTitle } from 'components/Shared/PageTitle'
 import { user } from 'helpers/user'
 import { Redirect } from 'react-router'
 
@@ -33,12 +31,8 @@ class Login extends Component {
       return <Redirect to={from}/>
     }
 
-    return (
-      <Page>
-        <PageTitle>Login Page</PageTitle>
-        <button onClick={this.logIn}>login</button>
-      </Page>
-    )
+    return <button onClick={this.logIn}>login</button>
+
   }
 }
 

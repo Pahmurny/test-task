@@ -34,6 +34,18 @@ class User {
     return false
   }
 
+  /**
+   * Get User Name
+   * @returns {*}
+   */
+  getName = () => {
+    const user = this.isAuthenticated()
+    if (user) {
+      return user.userName
+    }
+    return false
+  }
+
 }
 
 
