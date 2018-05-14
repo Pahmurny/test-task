@@ -61,12 +61,14 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         label={'First Name'}
                         name={'first_name'}
                         className={'member-form__text-field'}
+                        width={'180px'}
                     />
                     <Field
                         component={TextFieldLabel}
                         label={'Last Name'}
                         name={'last_name'}
                         className={'member-form__text-field'}
+                        width={'180px'} 
                     />
 
                     <Field
@@ -74,6 +76,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         label={'Email Address'}
                         name={'email'}
                         className={'member-form__text-field'}
+                        width={'180px'}
                     />
 
                     <Field
@@ -81,6 +84,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         label={'Job Title'}
                         name={'job_title'}
                         className={'member-form__text-field job-title'}
+                        width={'180px'}                        
                     />
 
                     <Field
@@ -101,6 +105,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         label={'Preferred Name'}
                         name={'preferred_name'}
                         className={'member-form__text-field'}
+                        width={'180px'}                        
                     />
 
                     <Field
@@ -108,6 +113,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         label={'Start Date'}
                         name={'start_date'}
                         className={'member-form__date-field'}
+                        width={'180px'}                                                
                     />
 
                     <Field
@@ -115,6 +121,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                         label={'Phone'}
                         name={'phone_number'}
                         className={'member-form__text-field'}
+                        width={'180px'}                        
                     />
 
                     <Field
