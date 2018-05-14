@@ -4,7 +4,9 @@ import SearchIco from 'components/Icons/SearchIcon'
 import Shevron from 'components/Icons/Shevron'
 import { user } from 'helpers/user'
 import { url } from 'helpers/url'
+import store from 'store'
 import './usermenu.scss'
+import setCommonValue from 'actions/setCommonValue'
 
 
 class UserMenu extends Component {
@@ -16,6 +18,7 @@ class UserMenu extends Component {
   logOut = () => {
     const { history: { replace } } = this.props
     user.logOut()
+    store.dispatch(setCommonValue('isLogged', false))
     replace(url.main())
   }
 

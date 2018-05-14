@@ -13,6 +13,7 @@ import 'reset-css/_reset.scss'
 import PublicRoute from 'components/Routing/PublicRoute'
 import PrivateRoute from 'components/Routing/PrivateRoute'
 import Login from 'containers/Login'
+import Signup from 'containers/Signup'
 import { history } from 'store'
 
 
@@ -29,6 +30,7 @@ class App extends Component {
           <PrivateRoute exact path={url.adminSettings()} component={SettingsModule}/>
           <PrivateRoute exact path={url.adminPeople()} component={PeopleContainer}/>
           <PublicRoute exact path={url.login()} component={Login}/>
+          <PublicRoute exact path={url.signup()} component={Signup}/>
         </Switch>
       </Router>
     )
