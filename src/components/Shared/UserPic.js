@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React  from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -15,8 +15,10 @@ const UserPic = styled.div`
 `
 
 UserPic.propTypes = {
-    image: PropTypes.string
+  image: PropTypes.string,
+  width: PropTypes.string,
 }
 
+UserPic.displayName = 'UserPic'
 
 export default UserPic

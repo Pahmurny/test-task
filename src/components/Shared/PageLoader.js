@@ -3,15 +3,15 @@ import { ScaleLoader } from 'react-spinners'
 import Page from 'components/Content/Page'
 
 const PageLoader = ({ loader }) => <Page flex style={{
-    alignItems: 'center',
-    justifyContent: 'center',
+  alignItems: 'center',
+  justifyContent: 'center',
 }}>
-    {loader}
+  {loader}
 </Page>
 
 
 PageLoader.defaultProps = {
-    loader: <ScaleLoader/>,
+  loader: <ScaleLoader/>,
 }
 
 

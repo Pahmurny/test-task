@@ -9,7 +9,9 @@ const RoundedTopBlock = styled.div`
 `
 
 RoundedTopBlock.propTypes = {
-    children: PropTypes.any
+  children: PropTypes.any,
 }
+
+RoundedTopBlock.displayName = 'RoundedTopBlock'
 
 export default RoundedTopBlock

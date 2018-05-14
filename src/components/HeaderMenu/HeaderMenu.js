@@ -9,28 +9,28 @@ import './headerMenu.scss'
  * @constructor
  */
 const HeaderMenu = () => <div className="header-menu">
-    <Link
-        exact
-        activeClassName={'active'}
-        className={'header-menu__link'}
-        to={url.main()}
-    >Me</Link>
-    <Link
-        exact
-        activeClassName={'active'}
-        className={'header-menu__link'}
-        to={url.team()}
-    >My Team</Link>
-    <Link
-        activeClassName={'active'}
-        className={'header-menu__link'}
-        to={url.company()}
-    >Company</Link>
-    <Link
-        activeClassName={'active'}
-        className={'header-menu__link'}
-        to={url.admin()}
-    >Admin</Link>
+  <Link
+    exact
+    activeClassName={'active'}
+    className={'header-menu__link'}
+    to={url.main()}
+  >Me</Link>
+  <Link
+    exact
+    activeClassName={'active'}
+    className={'header-menu__link'}
+    to={url.team()}
+  >My Team</Link>
+  <Link
+    activeClassName={'active'}
+    className={'header-menu__link'}
+    to={url.company()}
+  >Company</Link>
+  <Link
+    activeClassName={'active'}
+    className={'header-menu__link'}
+    to={url.admin()}
+  >Admin</Link>
 </div>
 
 export default HeaderMenu

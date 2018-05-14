@@ -1,0 +1,36 @@
+.profile-feedback-list {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    font-family: LatoBold, sans-serif;
+    font-size: 18px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+
+    .more {
+      font-family: LatoBold, sans-serif;
+      font-size: 14px;
+      color: #207d94;
+      text-align: right;
+    }
+  }
+
+  &__top-title {
+    font-family: LatoBold, sans-serif;
+    font-size: 18px;
+    color: #4a4a4a;
+  }
+
+  &__more-btn {
+    font-family: LatoBold, sans-serif;
+    font-size: 14px;
+    color: #207d94;
+    text-align: right;
+  }
+
+  &__feedback {
+    margin-bottom: 24px;
+  }
+}

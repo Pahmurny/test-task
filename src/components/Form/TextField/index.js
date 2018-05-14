@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import styled from 'styled-components'
@@ -40,13 +40,13 @@ const StyledField = styled(Field)`
  * @returns {*}
  * @constructor
  */
-const Input = ({ input, meta: { asyncValidating, touched, error }, className, tabIndex, type='text' }) => {
-    return <input
-        {...input}
-        type={type}
-        className={cn(className, { error: (touched && error) })}
-        tabIndex={tabIndex}
-    />
+const Input = ({ input, meta: { asyncValidating, touched, error }, className, tabIndex, type = 'text' }) => {
+  return <input
+    {...input}
+    type={type}
+    className={cn(className, { error: (touched && error) })}
+    tabIndex={tabIndex}
+  />
 }
 
 
@@ -60,12 +60,12 @@ const Input = ({ input, meta: { asyncValidating, touched, error }, className, ta
  * @constructor
  */
 const TextField = ({ label, name, fieldProps, ...props }) => {
-    const { tabIndex } = props
-    delete props.tabIndex
-    return (<div {...props}>
-        <Label>{label}</Label>
-        <StyledField name={name} component={Input} tabIndex={tabIndex} {...fieldProps}/>
-    </div>)
+  const { tabIndex } = props
+  delete props.tabIndex
+  return (<div {...props}>
+    <Label>{label}</Label>
+    <StyledField name={name} component={Input} tabIndex={tabIndex} {...fieldProps}/>
+  </div>)
 }
 
 
@@ -79,9 +79,9 @@ const styledField = styled(TextField)`
 `
 
 styledField.propTypes = {
-    fieldProps: PropTypes.object,
-    label: PropTypes.any,
-    name: PropTypes.string,
+  fieldProps: PropTypes.object,
+  label: PropTypes.any,
+  name: PropTypes.string,
 }
 
 

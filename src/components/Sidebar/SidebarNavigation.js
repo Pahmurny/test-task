@@ -12,8 +12,7 @@ const SidebarNavigation = ({ items, activeClass = 'active'}) => <ul className={'
                 to={item.url}
                 exact
                 activeClassName={activeClass}
-            >{item.title}</Link>
-            {item.badge && <Badge>{item.badge}</Badge>}
+            >{item.title}{item.badge && <Badge className="sidebar-navigation__item-badge">{item.badge}</Badge>}</Link>
             </li>)
     }
 </ul>

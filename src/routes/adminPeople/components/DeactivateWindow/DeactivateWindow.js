@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import './deactivatewindow.scss'
 import NegativeButton from 'components/Buttons/NegativeButton'
@@ -22,9 +22,9 @@ const DeactivateWindow = ({ onCancel, manager, onDeactivate }) => <div className
 </div>
 
 DeactivateWindow.propTypes = {
-    onCancel: PropTypes.func,
-    onDeactivate: PropTypes.func,
-    manager: PropTypes.object
+  onCancel: PropTypes.func,
+  onDeactivate: PropTypes.func,
+  manager: PropTypes.object,
 }
 
 export default DeactivateWindow

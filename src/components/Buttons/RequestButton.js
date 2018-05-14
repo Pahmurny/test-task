@@ -1,6 +1,5 @@
 import WhiteButton from 'components/Buttons/WhiteButton'
-import { mainButton } from 'styles/colors.scss'
-import { buttonText } from 'styles/colors.scss'
+import { mainButton, buttonText } from 'styles/colors.scss'
 
 export default WhiteButton.extend`
   background-color: ${mainButton};

@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
-import { negativeButton } from 'styles/colors.scss'
-import { buttonText } from 'styles/colors.scss'
-
+import { negativeButton, buttonText } from 'styles/colors.scss'
 
 const NegativeButton = styled.div`
   background-color: ${negativeButton};

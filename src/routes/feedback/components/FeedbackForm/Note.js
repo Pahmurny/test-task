@@ -43,7 +43,7 @@ class Note extends Component {
     }
 
     render() {
-        const { note: { people, text }, addPeople, deletePeople, allPeople } = this.props
+        const { note: { people }, addPeople, deletePeople, allPeople } = this.props
 
         return (
             <Content className="note__view">

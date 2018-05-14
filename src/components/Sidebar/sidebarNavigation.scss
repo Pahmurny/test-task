@@ -1,21 +1,30 @@
-@import "~styles/fonts";
 
 .sidebar-navigation {
-  font-family: $fontLatoRegular, sans-serif;
+  font-family: LatoRegular, sans-serif;
   font-size: 16px;
   padding-bottom: 4em;
   padding-right: 24px;
 
   &__item {
     padding-bottom: 1em;
+    $item: &;
+
     a {
-    color: #23182d;
-    padding-right: 12px;
-    text-decoration: none;
+      color: #23182d;
+      padding-right: 12px;
+      text-decoration: none;
+      position: relative;
 
       &.active {
-        color: #207D94;
-        font-family: $fontLatoBold;
+        color: #207d94;
+        font-family: LatoBold, sans-serif;
+      }
+
+      #{$item}-badge {
+        position: absolute;
+        left: calc(100% - 12px);
+        top: 0;
+        transform: translateY(-70%);
       }
     }
   }

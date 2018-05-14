@@ -1,4 +1,4 @@
-import { submit, getFormValues } from 'redux-form'
+import { getFormValues } from 'redux-form'
 import d from 'lodash/debounce'
 import getPeople from 'routes/adminPeople/actions/getPeople'
 
@@ -7,8 +7,8 @@ import getPeople from 'routes/adminPeople/actions/getPeople'
  * @type {Function}
  */
 const handleChangeAction = d((dispatch, state) => {
-    const form = getFormValues('peoplelist')(state)
-    dispatch(getPeople(form))
+  const form = getFormValues('peoplelist')(state)
+  dispatch(getPeople(form))
 
 }, 500)
 
