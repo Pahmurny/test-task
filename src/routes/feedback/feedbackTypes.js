@@ -6,6 +6,8 @@ export const FEEDBACK_REPLY_TYPE = 2
 export const FEEDBACK_TO_ME = 0
 export const FEEDBACK_FROM_ME = 1
 export const FEEDBACK_NOTE = 2
+export const FEEDBACK_RECEIVED_GIVEN = 3
+export const FEEDBACK_REQUESTED = 4
 
 
 export const TEAM_TYPE_RECEIVED = 0

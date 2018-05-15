@@ -6,30 +6,39 @@ import GreyBlock from 'components/Shared/GreyBlock'
 import { feedbackHeader } from 'components/FeedbacksList/FeedbacksList'
 import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
 import HashButton from 'components/Buttons/HashButton'
+import isFunction from 'lodash/isFunction'
 import './fromtofeedback.scss'
+import LockIcon2 from 'components/Icons/LockIcon2'
 
 
-const FromToFeedback = ({ user, to, date, content, tags, className }) => <GreyBlock className={cn('fromtofeedback', className)}>
-  <div className="fromtofeedback__header">
-    <div className="fromtofeedback__users">
-      {feedbackHeader[MODULE_VIEW_COMPANY]({ user, to })}
+const FromToFeedback = (props) => {
+  const { user, to, date, content, tags, className, render, children, headerView = MODULE_VIEW_COMPANY } = props
+
+  return <GreyBlock className={cn('fromtofeedback', className)}>
+    <div className="fromtofeedback__header">
+      <div className="fromtofeedback__users">
+        {render ? render(props) : feedbackHeader[headerView]({ user, to })}
+      </div>
+      <div className="fromtofeedback__feedback-date">
+        <LockIcon2 fillColor={'#9F9BA2'} style={{ marginRight: 6 }}/>
+        <span style={{ marginRight: 6 }}> Private | </span>
+        {m(date).format('MM/DD/YYYY')}
+      </div>
     </div>
-    <div className="fromtofeedback__feedback-date">
-      {m(date).format('MM/DD/YYYY')}
+    <div className="fromtofeedback__content">
+      {children ? (isFunction(children) ? children(props) : children) : content}
     </div>
-  </div>
-  <div className="fromtofeedback__content">
-    {content}
-  </div>
-  <div className="fromtofeedback__hash-tags">{tags.map((tag, key) => <HashButton className={'hash-item'} key={key}>{tag}</HashButton>)}</div>
-</GreyBlock>
+    <div className="fromtofeedback__hash-tags">{tags.map((tag, key) => <HashButton className={'hash-item'}
+                                                                                   key={key}>{tag}</HashButton>)}</div>
+  </GreyBlock>
+}
 
 
 FromToFeedback.displayName = 'FromToFeedback'
 FromToFeedback.propTypes = {
   from: PropTypes.object,
   to: PropTypes.object,
-  className: PropTypes.string
+  className: PropTypes.string,
 }
 
 

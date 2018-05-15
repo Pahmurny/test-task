@@ -1,0 +1,19 @@
+.about-block {
+  font-family: LatoItalic, sans-serif;
+  font-size: 14px;
+  color: #23182d;
+  text-align: left;
+  background: #e6e4e7;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 5px;
+
+  &__user-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-size: 20px 20px;
+    margin: 0 5px;
+  }
+}
