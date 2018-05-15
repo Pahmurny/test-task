@@ -9,7 +9,7 @@ import Page from 'components/Content/Page'
 import { feedbackViews } from 'routes/feedback/components/Page/FeedbackPage'
 import { PageTitle } from 'components/Shared/PageTitle'
 import { PopupTitle } from 'components/Shared/PopupTitle'
-import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
+import EditIcon from 'components/Icons/EditIcon'
 import getTeams from 'routes/companyPeople/actions/getTeams'
 import './companypeople.scss'
 import ToggleButton from 'components/Buttons/ToggleButton'
@@ -137,7 +137,7 @@ class CompanyPeople extends Component {
 
         return <Page flex className={'company-people'}>
             <PageTitle className={'company-people__title'}>
-                People at {this.companyTitle()} <ThreeDotsIcon className="company-people__title__three-dots"
+                People at {this.companyTitle()} <EditIcon className="company-people__title__three-dots"
                 onClick={() => updateCompanyPeopleValue('showValues', true)}/>
             </PageTitle>
 

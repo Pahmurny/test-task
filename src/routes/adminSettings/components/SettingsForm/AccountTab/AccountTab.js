@@ -14,8 +14,7 @@ const AccountTab = () => <div className="account-tab">
     Please reach out to <a href="mailto:letstalk@careerlark.com">letstalk@careerlark.com</a> for upgrading to our
     premium product.
   </div>
->>>>>>> origin/dev
-
+  
   <FieldTitle className={'account-tab__title'}>Status</FieldTitle>
   <div className="account-tab__text">
     Please reach out to <a href="mailto:support@careerlark.com">support@careerlark.com</a> for assistance with changing
