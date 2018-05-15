@@ -1,0 +1,54 @@
+.user-menu {
+  position: relative;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+
+  &__action {
+    background-image: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &-ico {
+      width: 25px;
+      height: 25px;
+      background-size: 25px 25px;
+    }
+  }
+
+  &__username {
+    font-family: LatoRegular, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  &__actions {
+    display: block;
+    position: absolute;
+    top: 100%;
+    background: #FCFCFC;
+    border: 1px solid #9F9BA2;
+    box-shadow: 0 1px 4px 0 rgba(159,155,162,0.50);
+    border-radius: 3px;
+    padding: 12px;
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    color: #23182D;
+    text-align: left;
+    line-height: 30px;
+    min-width: 104px;
+    min-height: 90px;
+    right: 0;
+
+
+  }
+
+  &__action-item{
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}

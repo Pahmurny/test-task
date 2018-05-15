@@ -15,13 +15,15 @@ export default class FeedbackForm extends Component {
     feedBack: PropTypes.object,
     title: PropTypes.any,
     style: PropTypes.object,
+    classNameHeader: PropTypes.string,
+    className: PropTypes.string
   }
 
   render() {
-    const { onClose, children, title, style } = this.props
+    const { onClose, children, title, style, className, classNameHeader } = this.props
 
-    return <div className={cn('feedback-form')} style={style}>
-      <div className="feedback-form__header">
+    return <div className={cn('feedback-form', className)} style={style}>
+      <div className={cn('feedback-form__header', classNameHeader)}>
         {title || <PopupTitle>Feedback</PopupTitle>}
         <CloseIcon onClick={() => onClose && onClose(CLOSE_MODAL)}/>
       </div>

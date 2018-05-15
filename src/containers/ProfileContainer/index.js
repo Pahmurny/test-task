@@ -5,37 +5,48 @@ import closeUserProfile from 'containers/ProfileContainer/actions/closeUserProfi
 import Modal from 'components/Shared/Modal'
 import PopUp from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import { PopupTitle } from 'components/Shared/PopupTitle'
-import './profileContainer.scss'
 import ProfileData from 'containers/ProfileContainer/ProfileData'
+import PencilIcon from 'components/Icons/PencilIcon'
+import './profileContainer.scss'
+import { user } from 'helpers/user'
+import editProfile from 'containers/ProfileContainer/actions/editProfile'
 
 
 class ProfileContainer extends Component {
 
   static propTypes = {
     closeUserProfile: PropTypes.func,
+    editProfile: PropTypes.func,
     showUserProfile: PropTypes.object,
-    profileFeedbackList: PropTypes.array
+    profileFeedbackList: PropTypes.array,
+    profileEdit: PropTypes.bool,
   }
 
   render() {
-    const { showUserProfile, closeUserProfile } = this.props
+    const { showUserProfile, closeUserProfile, profileEdit, editProfile } = this.props
 
     if (!showUserProfile) {
       return null
     }
 
+    const { id: userId } = showUserProfile
+
     return (
       <Modal closeForm={() => closeUserProfile()}>
         <PopUp
           onClose={() => closeUserProfile()}
-          title={<PopupTitle>{showUserProfile.name}</PopupTitle>}
+          title={<PopupTitle>{showUserProfile.name} {userId === user.getId() && <PencilIcon
+            className={'edit-profile-ico'}
+            onClick={() => editProfile(!profileEdit)}
+          />}</PopupTitle>}
           style={{
             width: 864,
-            height: 576,
+            minHeight: 576,
           }}
         >
           <ProfileData
-            {...showUserProfile}
+            initialValues={showUserProfile}
+            editMode={profileEdit}
           />
         </PopUp>
       </Modal>
@@ -44,4 +55,4 @@ class ProfileContainer extends Component {
 }
 
 
-export default connect(({ common }) => ({ ...common }), { closeUserProfile })(ProfileContainer)
+export default connect(({ common }) => ({ ...common }), { closeUserProfile, editProfile })(ProfileContainer)

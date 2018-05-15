@@ -1,15 +1,17 @@
 import { createStore, compose, applyMiddleware } from 'redux'
+import { routerMiddleware } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 import createSagaMiddleware from 'redux-saga'
 import createReducer from '../reducers'
 
-
+export const history = createHistory()
 const saga = createSagaMiddleware()
 const asyncSagas = {}
 
 
 const store = createStore(createReducer(), compose(
-    applyMiddleware(...[thunk, saga]),
+    applyMiddleware(...[thunk, saga, routerMiddleware(history)]),
     window.devToolsExtension ? window.devToolsExtension() : f => f,
 ))
 

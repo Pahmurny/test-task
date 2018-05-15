@@ -6,21 +6,19 @@ import { Redirect } from 'react-router'
 import LoginForm from 'components/Login'
 import { Google, Slack } from 'components/Buttons/SignButtons'
 import Divider from 'components/Shared/Divider'
+import ResetPassword from 'components/ResetPassword'
 import DefaultButton from 'components/Buttons/DefaultButton'
 import TransparentButton from 'components/Buttons/TransparentButton'
 import { connect } from 'react-redux'
-import login from 'containers/Login/actions/login'
-import goToSignUp from 'containers/Login/actions/goToSignUp'
+import goToLogin from 'containers/Signup/actions/goToLogin'
 import './login.scss'
-import ResetPassword from 'components/ResetPassword'
 import resetPassword from 'components/ResetPassword/actions/resetPassword'
 
 
-class Login extends Component {
+class Signup extends Component {
 
   static propTypes = {
-    goToSignUp: PropTypes.func,
-    login: PropTypes.func,
+    goToLogin: PropTypes.func,
     resetPassword: PropTypes.func,
   }
 
@@ -28,20 +26,15 @@ class Login extends Component {
     reset: false,
   }
 
-  onLogIn = () => {
-    const { login } = this.props
-    login()
-  }
-
-  onSignClick = () => {
-    const { goToSignUp } = this.props
-    goToSignUp()
+  onLoginClick = () => {
+    const { goToLogin } = this.props
+    goToLogin()
   }
 
   onResetPassword = () => {
     const { resetPassword } = this.props
     this.setState({ reset: false })
-    resetPassword()
+    resetPassword(true)
   }
 
   render() {
@@ -53,6 +46,7 @@ class Login extends Component {
       return <Redirect to={from}/>
     }
 
+
     if (reset) {
       return <div className="login-page"><ResetPassword
         onClose={() => this.setState({ reset: false })}
@@ -60,27 +54,34 @@ class Login extends Component {
       </div>
     }
 
-    return <div className="login-page">
-      <LoginForm footer={<div onClick={this.onSignClick} className="login-page__footer">Don’t have an account? Sign up
-        for <br/> one</div>}>
-        <Slack className={'login-btn'}>Log in with Slack</Slack>
-        <Google className={'login-btn'}>Log in with Google</Google>
+    return <div className="signup-page">
+      <LoginForm title={'Sign up for free'}
+                 footer={<div onClick={this.onLoginClick} className="signup-page__footer">Already have an account? Log
+                   in <br/> here</div>}>
+        <Slack className={'login-btn'}>Sign up with Slack</Slack>
+        <Google className={'login-btn'}>Sign up with Google</Google>
         <Divider className="divider-block"><span>or</span></Divider>
         <input style={{ opacity: 0, position: 'absolute', top: '-9999px' }}/>
         <input type="password" style={{ opacity: 0, position: 'absolute', top: '-9999px' }}/>
         <Field name={'username'}
                component={'input'} type={'text'}
-               className={'login-page__field login-page__username'}
+               className={'signup-page__field signup-page__username'}
                autoComplete={'nope'}
                placeholder={'email'}
         />
         <Field name={'password'}
                component={'input'} type={'password'}
-               className={'login-page__field login-page__password'}
+               className={'signup-page__field signup-page__password'}
                autoComplete={'nope'}
                placeholder={'password'}
         />
-        <DefaultButton onClick={this.onLogIn} className={'login-btn'}>Log In</DefaultButton>
+        <Field name={'repassword'}
+               component={'input'} type={'password'}
+               className={'signup-page__field signup-page__password'}
+               autoComplete={'nope'}
+               placeholder={'verify password'}
+        />
+        <DefaultButton className={'login-btn'}>Sign Up</DefaultButton>
         <TransparentButton onClick={() => this.setState({ reset: true })} className={'reset-btn'}>Reset
           password</TransparentButton>
       </LoginForm>
@@ -90,6 +91,6 @@ class Login extends Component {
 }
 
 
-export default connect(({ common }) => ({ ...common }), { login, goToSignUp, resetPassword })(reduxForm({
-  form: 'loginForm',
-})(Login))
+export default connect(null, { goToLogin, resetPassword })(reduxForm({
+  form: 'sighUpForm',
+})(Signup))

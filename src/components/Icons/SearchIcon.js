@@ -14,4 +14,6 @@ const SearchIco = styled.div`
     border-radius: 38px;
 `
 
+SearchIco.displayName = 'SearchIco'
+
 export default SearchIco
