@@ -4,6 +4,7 @@
       "locked": true,
       "date": "2018-12-05T10:19:11.076Z",
       "user": {
+        "id": 1,
         "name": "Samara Stoltenberg",
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
       },
@@ -33,7 +34,8 @@
       "to": {
         "user": {
           "name": "Samara Stoltenberg to",
-          "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
+          "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg",
+          "id": 1
         }
       },
       "requester": {
@@ -656,7 +658,7 @@
     }
   ],
   "admin": {
-    "allowManagers": true,
+    "allowManagers": false,
     "enableAnonymous": false,
     "aAnonymous": false
   },
@@ -669,7 +671,7 @@
       "job_title": "Head of Biz Dev",
       "start_date": 1517773110,
       "phone_number": "650-555-8014",
-      "last_name": "LeuschkeTTT",
+      "last_name": "Leuschke",
       "email": "nia@fake.com",
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/taybenlor/128.jpg",
       "title": "CEO",
@@ -795,12 +797,12 @@
       "isAdmin": true
     }
   ],
-  "ppeople":{
-    "pageCount":100,
-    "totalCount":1000,
-    "currentPage":2,
-    "perPage":10,
-    "people":[
+  "ppeople": {
+    "pageCount": 100,
+    "totalCount": 1000,
+    "currentPage": 2,
+    "perPage": 10,
+    "people": [
       {
         "id": 1,
         "name": "Nia Leuschke",

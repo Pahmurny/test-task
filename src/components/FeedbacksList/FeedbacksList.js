@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import cn from 'classnames'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
-import Feedback from 'components/Feedback/Feedback'
-import './feedbacksLists.scss'
 import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
 import UserPic from 'components/Shared/UserPic'
 import { IsDev } from 'helpers/dev'
+import FeedbackListHandler from 'components/Feedback/FeedbackListHandler'
+import './feedbacksLists.scss'
+import FeedbackHeader from 'components/Feedback/FeedbackHeader'
+
 
 /**
  * Default Feedback header view
@@ -26,18 +28,7 @@ const defaultView = ({ user }) => <Fragment>
  * @type
  */
 export const feedbackHeader = {
-  [MODULE_VIEW_COMPANY]: ({ user, to }) => {
-    return (
-      <Fragment>
-        <UserPic image={user.image} style={{ marginRight: 10 }}/>
-        <div className={'feedback-username'}>{user.name}</div>
-        <span style={{ color: '#9B9B9B', margin: '0 5px' }}>(you)</span>
-        <span style={{ marginRight: 10, color: '#23182D' }}>►</span>
-        <UserPic image={to.user.image} style={{ marginRight: 10 }}/>
-        <div className={'feedback-username'}>{to.user.name}</div>
-      </Fragment>
-    )
-  },
+  [MODULE_VIEW_COMPANY]: FeedbackHeader,
 }
 
 
@@ -48,6 +39,7 @@ export const feedbackHeader = {
  * @param scrollOptions
  * @param className
  * @param moduleView
+ * @param manualView
  * @returns {*}
  * @constructor
  */
@@ -56,7 +48,7 @@ const FeedbacksList = ({ feedbacks, scrollOptions, className, moduleView, manual
   style={scrollOptions}
 >
   {
-    feedbacks.map((feedback, key) => <Feedback
+    feedbacks.map((feedback, key) => <FeedbackListHandler
       key={key} {...feedback}
       render={feedbackHeader[manualView || moduleView] || defaultView}
     />)

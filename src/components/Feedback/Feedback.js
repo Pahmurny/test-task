@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import m from 'moment'
 import GreyBlock from 'components/Shared/GreyBlock'
-import LockIcon from 'components/Icons/LockIcon'
 import HashButton from 'components/Buttons/HashButton'
 import './feedback.scss'
 import { IsDev } from 'helpers/dev'
-
+import LockIcon from 'components/Icons/LockIcon'
 
 
 const Feedback = (props) => {
@@ -25,7 +24,8 @@ const Feedback = (props) => {
         </div>
       </div>
       <div className="feedback-block__content">
-        {(question || IsDev()) && <div className="feedback-block__content-question">{question || 'Request: How’s my transition as a part-time advisor?'}</div>}
+        {(question || IsDev()) && <div
+          className="feedback-block__content-question">{question || 'Request: How’s my transition as a part-time advisor?'}</div>}
         {children || content}
       </div>
       <div className="feedback-block__tags">

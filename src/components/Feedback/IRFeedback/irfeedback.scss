@@ -1,0 +1,21 @@
+.received-feedback {
+  margin-bottom: 24px;
+
+  &__question-about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+
+    &-question {
+      font-family: LatoItalic, sans-serif;
+      font-size: 14px;
+      color: #23182d;
+      text-align: left;
+      line-height: 18px;
+    }
+  }
+
+  &__about {
+    margin-right: 5px;
+  }
+}

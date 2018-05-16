@@ -56,7 +56,10 @@ Drop.propTypes = {
     items: PropTypes.array,
     onClick: PropTypes.func,
     activeItem: PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ]),
         title: PropTypes.string,
     }),
 }
