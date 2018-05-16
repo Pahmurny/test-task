@@ -11,13 +11,14 @@
     line-height: 36px;
     height: 36px;
     text-align: center;
-    background-color: $inactive-bg;
+    background-color: $inactive-secondary;
     box-shadow: 0 0 0 1px $shadow;
     cursor: pointer;
     position: relative;
     font-family: $fontLatoBold, sans-serif;
     font-size: 14px;
-    color: $inactive-outline;
+    color: $inactive-primary;
+    box-shadow: 0 0 0 1px $inactive-primary;
 
     &:first-child {
       border-radius: 3px 0 0 3px;
@@ -28,10 +29,10 @@
     }
 
     &.active {
-      box-shadow: 0 0 0 1px $active-outline;
+      box-shadow: 0 0 0 1px $active-primary;
       z-index: 100;
-      background-color: $active-bg;
-      color: $active-outline;
+      background-color: $active-secondary;
+      color: $active-primary;
     }
   }
 }

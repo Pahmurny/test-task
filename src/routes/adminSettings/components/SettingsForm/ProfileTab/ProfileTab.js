@@ -10,7 +10,7 @@ import {
 import CheckboxField from 'components/Form/Checkbox/CheckboxField'
 import Dropzone from 'react-dropzone'
 import { Field, submit } from 'redux-form'
-import RequestButton from 'components/Buttons/RequestButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 import TimezoneField from 'components/Form/TmezoneField/TimezoneField'
 import './profileTab.scss'
 import InfoIcon from 'components/Icons/InfoIcon'
@@ -186,7 +186,7 @@ class ProfileTab extends Component {
                 />
 
                 <div className="actions">
-                    <RequestButton onClick={() => submit('adminSettings')}>Save profile</RequestButton>
+                    <DefaultButton onClick={() => submit('adminSettings')}>Save profile</DefaultButton>
                 </div>
             </div>
         </div>)

@@ -10,7 +10,7 @@ import TagsField from 'components/Form/TagsField/TagsField'
 import addPeople from 'routes/feedback/actions/addPeople'
 import deletePeople from 'routes/feedback/actions/deletePeople'
 import changeNoteText from 'routes/feedback/actions/changeNoteText'
-import RequestButton from 'components/Buttons/RequestButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 
@@ -69,9 +69,9 @@ class Note extends Component {
                 </RoundedFocused>
 
                 <ActionsBlock>
-                    <RequestButton>
+                    <DefaultButton>
                         Save Note
-                    </RequestButton>
+                    </DefaultButton>
                 </ActionsBlock>
             </Content>
         )

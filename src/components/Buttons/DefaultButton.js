@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
-import { mainButton, buttonText } from 'styles/colors.scss'
+import { activePrimary, textButton } from 'styles/colors.scss'
 
 const DefaultButton = styled.div`
-  background-color: ${mainButton};
-  color: ${buttonText};
+  background-color: ${activePrimary};
+  color: ${textButton};
   font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
   min-width: 72px;

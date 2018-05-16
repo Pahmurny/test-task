@@ -15,7 +15,7 @@ import PendingFeedback from 'routes/feedback/components/PendingFeedbacks/Pending
 import NewFeedback from 'routes/feedback/components/NewFeedback/NewFeedback'
 import selectFeedback from 'routes/feedback/actions/selectFeedback'
 import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
-import RequestButton from 'components/Buttons/RequestButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 import ToggleField from 'components/Form/Toggle/ToggleField'
 import togglePublic from 'routes/feedback/actions/togglePublic'
 import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
@@ -151,9 +151,9 @@ class FeedbackGive extends Component {
                             toggle={isAnonymous}
                         />}
                     </div>
-                    <RequestButton>
+                    <DefaultButton>
                         Give feedback
-                    </RequestButton>
+                    </DefaultButton>
                 </ActionsBlock>}
             </Content>
         )

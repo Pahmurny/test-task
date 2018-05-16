@@ -18,19 +18,19 @@
     &-name {
       font-family: $fontLatoBold, sans-serif;
       font-size: 14px;
-      color: $text-input;
+      color: $text-primary;
     }
 
     &-date-text {
       font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
-      color: $dates-secondary;
+      color: $text-secondary;
       margin-top: 3px;
     }
 
     &-close {
       margin-left: auto;
-      fill: $dates-secondary;
+      fill: $text-secondary;
     }
   }
 
@@ -38,6 +38,6 @@
     padding-top: 12px;
     font-family: $fontLatoRegular;
     font-size: 16px;
-    color: $text-input;
+    color: $text-primary;
   }
 }

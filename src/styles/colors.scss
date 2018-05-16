@@ -1,3 +1,6 @@
+// toggle, dropdown, button, hyperlink text, 
+
+// HEX COLORS
 $white: #FCFCFC;
 $purple-black: #23182D;
 $purple-secondary: #5F5864;
@@ -5,7 +8,7 @@ $light-yellow: #FEFCE8;
 $dark-yellow: #F8E71C;
 $grey-primary: #9F9BA2; // for outlines
 $grey-secondary: #E6E4E7;
-$grey-lightest: #F2F1F3; // 50% of grey-secondary (for grey backgrounds)
+$grey-lightest: #F0EFF1; // 50% of grey-secondary (for grey backgrounds)
 $grey-inactive: #CFCDD0; // 50% of grey-primary (for toggle fills)
 $grey-dark: #4A4A4A; // for text
 $teal-primary: #207D94;
@@ -27,67 +30,70 @@ $sub-background: $white;
 	subBG: $sub-background;
 }
 
-// BUTTONS
-$main-button: $teal-primary;
-$button-text: $white;
-$negative-button: $pink;
-$hash-button: $grey-secondary;
+// GENERAL
+$active-primary: $teal-primary; 
+	// any clickable action, hyperlink text, etc OR outline+text colour for clickable action if there is a fill
 
-:export {
-	mainButton: $main-button;
-	buttonText: $button-text;
-	negativeButton: $negative-button;
-	hashButton: $hash-button;
-}
+$active-secondary: $teal-secondary;
+	// fill for clickable actions, if applicable (e.g. toggles, secondary buttons)
 
-// TOGGLES
-$active-outline: $teal-primary;
-$active-bg: $teal-secondary;
-$inactive-outline: $grey-primary;
-$inactive-bg: $grey-inactive;
+$negative-primary: $pink;
+	// for all negative actions
 
-:export {
-	activeOutline: $active-outline;
-	activeBG: $active-bg;
-	inactiveOutline: $inactive-outline;
-	inactiveBG: $inactive-bg;
-}
+$inactive-primary: $grey-primary;
+	// inactive toggle outline
+
+$inactive-secondary: $grey-inactive;
+	// inactive toggle fill (all toggles)
+
+$bg-passive: $grey-lightest;
+	// non-clickable information
+
+$bg-active: $light-yellow;
+	// any clickable/dynamic information
+
+$tag-primary: $grey-secondary;
+	// block on passive bg (values tags, "about" tags)
+
+$tag-secondary: $grey-lightest;
+	// block on active bg
+
+$border-primary: $grey-primary;
+	// for all dropdown & text fields
+
+$border-secondary: $grey-secondary;
+	//for accordion dropdown tables
+
+$hover: $grey-lightest;
+	// for dropdowns
+
+$shadow: $grey-inactive;
 
 // TEXT
-$header: $purple-black;
-$text-input: $purple-black;
-$subheader: $grey-dark;
-$text-placeholder: $grey-primary;
-$dates-secondary: $grey-primary;
-$text-hyperlink: $teal-primary;
+
+$text-primary: $purple-black;
+$text-secondary: $grey-primary;
+$text-subheader: $grey-dark;
+$text-button: $white;
+$text-dropdown: $purple-secondary;
 
 :export {
-	header: $header;
-	textInput: $text-input;
-	subheader: $subheader;
-	textPlaceholder: $text-placeholder;
-	datesSecondary: $dates-secondary;
-	textHyperlink: $text-hyperlink;
-}
-
-// DROPDOWNS
-$dropdown-border: $grey-primary;
-$dropdown-items: $grey-dark;
-$hover: $grey-lightest;
-$hover-selected: $teal-secondary;
-
-:export {
-	dropdownBorder: $dropdown-border;
-	dropdownItems: $dropdown-items;
+	activePrimary: $active-primary;
+	activeSecondary: $active-secondary;
+	negativePrimary: $negative-primary;
+	inactivePrimary: $inactive-primary;
+	inactiveSecondary: $inactive-secondary;
+	bgPassive: $bg-passive;
+	bgActive: $bg-active;
+	tagPrimary: $tag-primary;
+	tagSecondary: $tag-secondary;
+	borderPrimary: $border-primary;
+	borderSecondary: $border-secondary;
 	hover: $hover;
-	hoverSelected: $hover-selected;
-}
-
-// misc
-$info-panel: $grey-lightest;
-$shadow: $grey-primary;
-
-:export {
-	infoPanel: $info-panel;
 	shadow: $shadow;
+	textPrimary: $text-primary;
+	textSecondary: $text-secondary;
+	textSubheader: $text-subheader;
+	textButton: $text-button;
+	textDropdown: $text-dropdown;
 }

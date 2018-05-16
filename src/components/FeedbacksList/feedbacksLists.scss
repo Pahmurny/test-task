@@ -12,14 +12,14 @@
 
 .from {
 	&__you {
-		color: $grey-primary;
+		color: $text-secondary;
 		margin: 0 6px;
 	}
 }
 
 .to {
 	&__arrow {
-		color: $purple-black;
+		color: $text-primary;
 		margin-right: 12px;
 	}
 }

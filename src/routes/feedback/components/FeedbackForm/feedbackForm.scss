@@ -9,7 +9,7 @@
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  background: #fcfcfc;
+  background: $sub-background;
   box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
   border-radius: 5px;
 
@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
     height: 48px;
-    border-bottom: 1px solid #c9c7cb;
+    border-bottom: 1px solid $border-primary;
     padding: 0px 24px;
   }
 

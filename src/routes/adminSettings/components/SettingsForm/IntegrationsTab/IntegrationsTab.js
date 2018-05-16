@@ -1,14 +1,14 @@
 import React  from 'react'
-import RequestButton from 'components/Buttons/RequestButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 import SlackIcon from 'components/Icons/SlackIcon'
 import './integrationstab.scss'
 
 const IntegrationsTab = () => <div className="integrations-tab">
     <h2 className="integrations-tab__title">Slack</h2>
-        <RequestButton className="integrations-tab__request-button">
+        <DefaultButton className="integrations-tab__request-button">
             <SlackIcon className="integrations-tab__request-button__slack-icon"/>
             Update
-        </RequestButton>
+        </DefaultButton>
         <div className="integrations-tab__text">
             Send updates posted in CareerLark to your preferred Slack channel.
             Your team doesn’t have to leave Slack to make sure they’re getting the latest info.
