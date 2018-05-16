@@ -1,4 +1,4 @@
-import { MonthlyDates, Quarters, TwoWeeksDates, WeeklyDates } from 'helpers/dates'
+import { MonthlyDates, Quarters, SemiYear, TwoWeeksDates, WeeklyDates } from 'helpers/dates'
 import getFeedbacks from 'routes/feedback/actions/getFeedbacks'
 import setFilter from 'routes/feedback/actions/setFilter'
 
@@ -7,6 +7,7 @@ const DatesHelpers = [
     TwoWeeksDates,
     MonthlyDates,
     Quarters,
+    SemiYear
 ]
 
 const setDateType = (dateType, dispatch) => {
