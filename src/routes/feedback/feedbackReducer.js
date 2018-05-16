@@ -3,12 +3,12 @@ import {
   FEEDBACK_ANY_TYPE,
   FEEDBACK_FROM_ME,
   FEEDBACK_NOTE,
-  FEEDBACK_REPLY_TYPE,
+  FEEDBACK_REPLY_TYPE, FEEDBACK_RECEIVED_GIVEN,
   FEEDBACK_TO_ME,
   MODULE_VIEW_FEEDBACK,
   TEAM_TYPE_GIVEN,
   TEAM_TYPE_NOTE,
-  TEAM_TYPE_RECEIVED,
+  TEAM_TYPE_RECEIVED, FEEDBACK_REQUESTED,
 } from 'routes/feedback/feedbackTypes'
 import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 import {
@@ -105,7 +105,7 @@ const initialState = {
     feedbackType: { id: FEEDBACK_TO_ME },
     feedbackTypes: [
       {
-        id: 'rq',
+        id: FEEDBACK_RECEIVED_GIVEN,
         title: 'All received & given',
       },
       {
@@ -121,7 +121,7 @@ const initialState = {
         title: `Note to self`,
       },
       {
-        id: 'r',
+        id: FEEDBACK_REQUESTED,
         title: `I've requested`,
       },
     ],

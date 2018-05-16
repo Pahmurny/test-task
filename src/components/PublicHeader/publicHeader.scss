@@ -1,0 +1,41 @@
+.public-header {
+  background: #fcfcfc;
+  box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
+  height: 72px;
+  display: flex;
+  padding: 0 24px;
+  overflow: hidden;
+
+  &__side {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    margin-left: auto;
+  }
+
+  &__title {
+    font-family: LatoBold, sans-serif;
+    font-size: 24px;
+    color: #23182d;
+    margin-left: 10px;
+    margin-right: 51px;
+  }
+
+  &__menu {
+    display: flex;
+
+    &-item {
+      font-family: LatoRegular, sans-serif;
+      font-size: 18px;
+      color: #4a4a4a;
+      text-decoration: none;
+      margin-right: 24px;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

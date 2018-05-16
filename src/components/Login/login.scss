@@ -1,0 +1,23 @@
+.login-form {
+  $loginForm: &;
+  width: 264px;
+  min-height: 396px;
+  overflow: hidden;
+  position: relative;
+  top: initial;
+  left: initial;
+  transform: none;
+
+  &__header {
+    & > #{$loginForm}__title {
+      padding: 0;
+      font-family: LatoBold, sans-serif;
+      font-size: 24px;
+      color: #23182d;
+    }
+  }
+
+  &__content {
+    padding: 24px 24px 0;
+  }
+}

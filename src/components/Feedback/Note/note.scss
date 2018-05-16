@@ -1,0 +1,34 @@
+.note-feedback {
+  background: #f0eff1;
+  border-radius: 5px;
+  padding: 24px;
+  font-family: LatoRegular, sans-serif;
+  font-size: 16px;
+  color: #23182d;
+  text-align: left;
+  margin-bottom: 24px;
+
+  &__header {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  &__about {
+    margin-right: 12px;
+  }
+
+  &__date-action {
+    margin-left: auto;
+    font-size: 14px;
+    color: #9f9ba2;
+    display: flex;
+    align-items: center;
+
+    & > .lock-icon {
+      margin-right: 10px;
+    }
+  }
+
+  &__content {
+    line-height: 18px;
+  }
+}

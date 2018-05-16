@@ -4,6 +4,7 @@
       "locked": true,
       "date": "2018-12-05T10:19:11.076Z",
       "user": {
+        "id": 1,
         "name": "Samara Stoltenberg",
         "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
       },
@@ -33,7 +34,8 @@
       "to": {
         "user": {
           "name": "Samara Stoltenberg to",
-          "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg"
+          "image": "https://s3.amazonaws.com/uifaces/faces/twitter/longlivemyword/128.jpg",
+          "id": 1
         }
       },
       "requester": {

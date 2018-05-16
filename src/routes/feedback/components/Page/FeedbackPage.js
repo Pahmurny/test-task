@@ -30,6 +30,7 @@ const DateFilterItems = [
     { id: 1, title: 'Every two weeks' },
     { id: 2, title: 'Monthly' },
     { id: 3, title: 'Quarterly' },
+    { id: 4, title: 'Semi-annual' },
 ]
 
 export const feedbackViews = {

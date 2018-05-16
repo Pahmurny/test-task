@@ -25,9 +25,11 @@ const LockIcon2 = ({ className, fillColor = '#545454', ...props }) => <Svg width
     </g>
 </Svg>
 
+LockIcon2.displayName  = 'LockIcon2'
 
 LockIcon2.propTypes = {
-    fillColor: PropTypes.string
+    fillColor: PropTypes.string,
+    className: PropTypes.string,
 }
 
 export default styled(LockIcon2)``

@@ -1,0 +1,66 @@
+.ivr-feedback {
+  display: block;
+  background: #fefce8;
+  border-radius: 3px;
+  padding: 18px;
+  margin-bottom: 24px;
+  font-family: LatoRegular, sans-serif;
+  font-size: 14px;
+  color: #23182d;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-user {
+      display: flex;
+      align-items: center;
+
+      & > .user-image {
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        background-size: 24px 24px;
+      }
+
+      & > .user-name {
+        font-size: 14px;
+        color: #23182d;
+        margin-left: 12px;
+      }
+    }
+
+    &-actions {
+      margin-left: auto;
+      font-size: 14px;
+      color: #9f9ba2;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-close {
+      margin-left: 24px;
+    }
+  }
+
+  &__content {
+    line-height: 17px;
+  }
+
+  &__request {
+    display: flex;
+    margin-bottom: 24px;
+    font-family: LatoItalic, sans-serif;
+    font-size: 14px;
+    color: #23182d;
+    line-height: 18px;
+
+    & > .about-block {
+      margin-right: 12px;
+    }
+  }
+}
