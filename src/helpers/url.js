@@ -11,6 +11,7 @@ export const url = {
   admin: () => '/admin',
   adminSettings: () => '/admin/settings',
   adminPeople: () => '/admin/people',
+  adminReviews: () => '/admin/reviews',
   login: () => '/login',
   signup: () => '/sign-up'
 }

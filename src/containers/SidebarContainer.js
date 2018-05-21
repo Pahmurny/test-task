@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {
   MODULE_VIEW_ADMIN,
   MODULE_VIEW_ADMIN_PEOPLE,
+  MODULE_VIEW_ADMIN_REVIEWS,
   MODULE_VIEW_ADMIN_SETTINGS,
   MODULE_VIEW_COMPANY,
   MODULE_VIEW_COMPANY_PEOPLE,
@@ -21,6 +22,7 @@ const sidebarView = {
   [MODULE_VIEW_ADMIN]: AdminSidebar,
   [MODULE_VIEW_ADMIN_SETTINGS]: AdminSidebar,
   [MODULE_VIEW_ADMIN_PEOPLE]: AdminSidebar,
+  [MODULE_VIEW_ADMIN_REVIEWS]: AdminSidebar,
 }
 
 const Empty = () => <div/>
@@ -34,7 +36,9 @@ class SidebarContainer extends Component {
     if (!moduleView) {
       return <Empty/>
     }
+
     const SidebarView = sidebarView[moduleView] ? sidebarView[moduleView] : Empty
+
     /**
      * Make Sidebar View available in debugger
      * @type {string}

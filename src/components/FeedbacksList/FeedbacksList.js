@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import cn from 'classnames'
 import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
-import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
+import { MODULE_VIEW_COMPANY, MODULE_VIEW_TEAM } from 'routes/feedback/feedbackTypes'
 import UserPic from 'components/Shared/UserPic'
 import { IsDev } from 'helpers/dev'
 import FeedbackListHandler from 'components/Feedback/FeedbackListHandler'
 import './feedbacksLists.scss'
 import FeedbackHeader from 'components/Feedback/FeedbackHeader'
+import TeamListHandler from 'components/Feedback/TeamListHandler'
+import { pathOr } from 'rambda'
 
 
 /**
@@ -25,12 +27,21 @@ const defaultView = ({ user }) => <Fragment>
 
 /**
  * Header of the Feedback item depends on Module view
- * @type
+ * @type {*}
  */
 export const feedbackHeader = {
   [MODULE_VIEW_COMPANY]: FeedbackHeader,
+  [MODULE_VIEW_TEAM]: FeedbackHeader
 }
 
+
+/**
+ * Different List view for each module
+ * @type {*}
+ */
+const feedbackLists = {
+  [MODULE_VIEW_TEAM]: TeamListHandler
+}
 
 /**
  * Feedback list
@@ -43,17 +54,22 @@ export const feedbackHeader = {
  * @returns {*}
  * @constructor
  */
-const FeedbacksList = ({ feedbacks, scrollOptions, className, moduleView, manualView }) => <ScrollBlock
-  className={cn('feedback-list', className)}
-  style={scrollOptions}
->
-  {
-    feedbacks.map((feedback, key) => <FeedbackListHandler
-      key={key} {...feedback}
-      render={feedbackHeader[manualView || moduleView] || defaultView}
-    />)
-  }
-</ScrollBlock>
+const FeedbacksList = ({ feedbacks, scrollOptions, className, moduleView, manualView }) => {
+
+  const ListContainer = pathOr(FeedbackListHandler,[moduleView], feedbackLists)
+
+  return <ScrollBlock
+    className={cn('feedback-list', className)}
+    style={scrollOptions}
+  >
+    {
+      feedbacks.map((feedback, key) => <ListContainer
+        key={key} {...feedback}
+        render={feedbackHeader[manualView || moduleView] || defaultView}
+      />)
+    }
+  </ScrollBlock>
+}
 
 
 FeedbacksList.propTypes = {
