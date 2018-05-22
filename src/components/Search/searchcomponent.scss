@@ -31,13 +31,14 @@ $size: 38px;
     display: flex;
     align-items: center;
     height: 30px;
-    border: 2px solid #bbb9bd;
+    border: 2px solid #9f9ba2;
     border-radius: 16px;
     width: 192px;
-    background-image: url("~assets/images/svg/search_field_icon.svg");
-    background-repeat: no-repeat;
-    background-position: left 5px;
     justify-content: flex-end;
+
+    &::before {
+    content: url("~assets/images/svg/search_field_icon.svg");
+    }
   }
 
   &__results {
@@ -45,12 +46,13 @@ $size: 38px;
     position: absolute;
     background: #fcfcfc;
     border: 1px solid #5f5864;
+    border-radius: 3px;
     box-shadow: 0 2px 4px 0 #9b9b9b;
     width: 244px;
     max-height: 222px;
     top: 100%;
     right: 0;
-    padding-bottom: 20px;
+    padding-bottom: 6px;
 
   }
 
@@ -75,7 +77,7 @@ $size: 38px;
 
 
       &:hover {
-        background: rgba(95, 88, 100, 0.30);
+        color: #207d94;
       }
     }
 

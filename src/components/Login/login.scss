@@ -1,3 +1,6 @@
+@import "~styles/colors";
+@import "~styles/fonts";
+
 .login-form {
   $loginForm: &;
   width: 264px;
@@ -11,9 +14,9 @@
   &__header {
     & > #{$loginForm}__title {
       padding: 0;
-      font-family: LatoBold, sans-serif;
+      font-family: $fontLatoBold, sans-serif;
       font-size: 24px;
-      color: #23182d;
+      color: $text-primary;
     }
   }
 

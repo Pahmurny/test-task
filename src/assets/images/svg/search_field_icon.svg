@@ -1,35 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>search_field_icon</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <filter x="-0.8%" y="-13.5%" width="101.6%" height="147.9%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.490913723 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-    </defs>
-    <g id="Global-Features" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-1110.000000, -1165.000000)">
-            <g id="global:_expanded_search_bar" transform="translate(0.000000, 1152.000000)">
-                <g id="base-layout_NOTES">
-                    <g id="top_bar">
-                        <g filter="url(#filter-1)" id="search-box">
-                            <g transform="translate(1106.000000, 9.000000)">
-                                <g id="Group" transform="translate(8.000000, 5.000000)">
-                                    <path d="M5.99886015,2 C2.69526007,2 0,4.69524949 0,7.99885088 C0,11.3024463 2.69526007,13.9977058 5.99886015,13.9977058 C7.36326018,13.9977058 8.62582022,13.5391658 9.63566024,12.766706 L14.6284604,17.765745 C14.9408004,18.078065 15.45342,18.078105 15.76576,17.765745 C16.07808,17.4534051 16.07808,16.9408052 15.76576,16.6284653 L10.7667003,11.6356662 C11.5391603,10.6258064 11.9977203,9.36325062 11.9977203,7.99885088 C11.9977203,4.69524949 9.30244023,2 5.99886015,2 Z M5.99886015,3.5996937 C8.43790021,3.5996937 10.3980203,5.55979133 10.3980203,7.99885088 C10.3980203,10.4378864 8.43790021,12.3980261 5.99886015,12.3980261 C3.55982009,12.3980261 1.59970004,10.4378864 1.59970004,7.99885088 C1.59970004,5.55979133 3.55982009,3.5996937 5.99886015,3.5996937 Z" id="Shape" fill="#BBB9BD" fill-rule="nonzero" transform="translate(8.000000, 10.000000) scale(-1, 1) translate(-8.000000, -10.000000) "></path>
-                                    <path d="M23.5,0.5 L23.5,19.5" id="Line" stroke="#BBB9BD" stroke-linecap="square"></path>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="search_field_icon" fill="#9F9BA2" fill-rule="nonzero">
+            <path d="M5.99886015,0 C2.69526007,0 0,2.69524949 0,5.99885088 C0,9.3024463 2.69526007,11.9977058 5.99886015,11.9977058 C7.36326018,11.9977058 8.62582022,11.5391658 9.63566024,10.766706 L14.6284604,15.765745 C14.9408004,16.078065 15.45342,16.078105 15.76576,15.765745 C16.07808,15.4534051 16.07808,14.9408052 15.76576,14.6284653 L10.7667003,9.6356662 C11.5391603,8.6258064 11.9977203,7.36325062 11.9977203,5.99885088 C11.9977203,2.69524949 9.30244023,0 5.99886015,0 Z M5.99886015,1.5996937 C8.43790021,1.5996937 10.3980203,3.55979133 10.3980203,5.99885088 C10.3980203,8.4378864 8.43790021,10.3980261 5.99886015,10.3980261 C3.55982009,10.3980261 1.59970004,8.4378864 1.59970004,5.99885088 C1.59970004,3.55979133 3.55982009,1.5996937 5.99886015,1.5996937 Z" id="Shape" transform="translate(8.000000, 8.000000) scale(-1, 1) translate(-8.000000, -8.000000) "></path>
         </g>
     </g>
 </svg>
