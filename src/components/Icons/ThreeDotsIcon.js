@@ -7,4 +7,6 @@ const ThreeDotIcon = EditIcon.extend`
   background-position: center center;
 `
 
+ThreeDotIcon.displayName = 'ThreeDotIcon'
+
 export default ThreeDotIcon

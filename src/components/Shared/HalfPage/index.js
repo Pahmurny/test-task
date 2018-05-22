@@ -21,7 +21,7 @@ const HalfPage = ({ children, title = 'Settings', className, ...rest }) => <div
 
 HalfPage.propTypes = {
   children: PropTypes.any,
-  title: PropTypes.string
+  title: PropTypes.any
 }
 
 export default HalfPage
