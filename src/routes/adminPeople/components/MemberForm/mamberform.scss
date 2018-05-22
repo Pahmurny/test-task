@@ -22,12 +22,12 @@
     font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
     color: #23182d;
-    width: 168px;
+    width: 180px;
     padding-left: 12px;
   }
 
   &__tags-field {
-    width: 180px;
+    width: 200px;
     margin-left: 12px;
     font-size: 14px;
     font-family: $fontLatoRegular, sans-serif;
@@ -50,7 +50,7 @@
     }
 
     .Select-placeholder{
-      line-height: 30px !important;
+      line-height: 28px !important;
     }
 
     .Select-value {
@@ -175,6 +175,5 @@
 
   &__admin-state {
     margin-bottom: 0 !important;
-    font-family: $fontLatoRegular, sans-serif;
   }
 }
