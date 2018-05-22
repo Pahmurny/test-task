@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { mainButton } from 'styles/colors.scss'
+import { fontLatoRegular } from 'styles/constants.scss'
 
 
 const ToggleButton = styled.div`
+    display: inline-block;
     height: 24px;
     position: relative;
     width: 96px;
@@ -14,7 +16,9 @@ const ToggleButton = styled.div`
     box-shadow: 0 0 0 1px ${props => props.active ? '#207D94' : '#9F9BA2'};
     z-index: ${props => props.active ? 999999 : 0};
     //background-color: ${mainButton};
+    font-family: ${fontLatoRegular};
     font-size: 14px;
+    text-align: center;
     padding-left: 18px;
     padding-right: 18px;
     border: none;

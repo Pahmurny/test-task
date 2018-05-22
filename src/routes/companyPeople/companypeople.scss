@@ -1,4 +1,5 @@
 @import "~styles/placeholdertext";
+@import "~styles/fonts";
 
 .company-people {
 
@@ -31,17 +32,14 @@
   }
 
   &__tabs-btns {
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin: 1px 0 1px auto;
   }
 
   &__title {
     margin-bottom: 0px;
 
     &__three-dots {
-      padding-left: 12px;
+      margin-left: 12px;
     }
   }
 
@@ -71,6 +69,9 @@
   }
 
   &__btn-tab {
+    height: 30px;
+    line-height: 30px;
+    
     &:first-child {
       border-radius: 3px 0 0 3px;
     }
