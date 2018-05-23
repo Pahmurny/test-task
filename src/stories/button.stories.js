@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text } from '@storybook/addon-knobs/react'
 import DefaultButton from 'components/Buttons/DefaultButton'
+import NegativeButton from 'components/Buttons/NegativeButton'
 import PlusButton from 'components/Buttons/PlusButton'
 import HashButton from 'components/Buttons/HashButton'
 import LogoIcon from 'components/Icons/LogoIcon'
@@ -16,6 +17,10 @@ stories.addDecorator(withKnobs)
 stories.add('Default Button', () => <DefaultButton
     onClick={action('Button Clicked')}
 >{text('Button Title', 'Some Title')}</DefaultButton>)
+
+stories.add('Negative Button', () => <NegativeButton
+    onClick={action('Button Clicked')}
+>{text('Button Title', 'Some Title')}</NegativeButton>)
 
 stories.add('Hash Button', () => <HashButton
     onClick={action('Button Clicked')}

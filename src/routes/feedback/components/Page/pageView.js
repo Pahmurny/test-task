@@ -6,7 +6,7 @@ import {
   MODULE_VIEW_TEAM,
 } from 'routes/feedback/feedbackTypes'
 import Dropdown from 'components/Dropdown/Dropdown'
-import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
+import EditIcon from 'components/Icons/EditIcon'
 import store from 'store'
 import showAdminSettingsAction from 'routes/feedback/actions/showAdminSettingsAction'
 import MembersForm from 'routes/company/components/MembersForm/MembersForm'
@@ -47,7 +47,8 @@ export const titles = {
   [MODULE_VIEW_TEAM]: 'Feedback',
   [MODULE_VIEW_COMPANY]: 'Public Feedback',
   [MODULE_VIEW_ADMIN]: <div
-    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}> Feedback <ThreeDotsIcon
+    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}> Feedback <EditIcon
+    style={{ marginLeft: 12 }}
     onClick={() => store.dispatch(showAdminSettingsAction())}
   />
   </div>,

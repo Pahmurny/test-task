@@ -23,9 +23,6 @@ const PendingFeedback = ({ feedback, onClose, onSelect }) => <YellowBlock
             <div className="pending-feedback__header-date-text">{m(feedback.date).format('MMM DD, YYYY')}</div>
         </div>
         <CloseGreyIcon
-            style={{
-                fill: '#ccc',
-            }}
             className={'pending-feedback__header-close'}
             onClick={(e) => {
                 e.stopPropagation()

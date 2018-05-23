@@ -27,7 +27,7 @@ import ValuesBlock from 'routes/companyPeople/components/Company/ValuesBlock'
 
 const DateFilterItems = [
     { id: 0, title: 'Weekly' },
-    { id: 1, title: 'Every Two weeks' },
+    { id: 1, title: 'Every two weeks' },
     { id: 2, title: 'Monthly' },
     { id: 3, title: 'Quarterly' },
     { id: 4, title: 'Semi-annual' },
@@ -93,7 +93,6 @@ const FeedbackPage = (props) => {
                 <div className="feedback-body__actions">
                     {dropdownViews[moduleView] && dropdownViews[moduleView]({ ...props, filter })}
                     <DefaultButton
-                        round={'3px'}
                         style={{
                             marginLeft: 'auto',
                         }}

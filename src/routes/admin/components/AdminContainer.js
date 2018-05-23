@@ -20,7 +20,7 @@ import setValue from 'routes/feedback/actions/setValue'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import FromToTitle from 'routes/admin/components/FromToTitle/FromToTitle'
 import FeedbackData from 'routes/admin/components/FeedbackData/FeedbackData'
-import { PageTitle } from 'components/Shared/PageTitle'
+import { PopupTitle } from 'components/Shared/PopupTitle'
 import { ScaleLoader } from 'react-spinners'
 import AdminSettings from 'routes/admin/components/AdminSettings/AdminSettings'
 import Page from 'components/Content/Page'
@@ -64,9 +64,9 @@ class AdminContainer extends PureComponent {
                     {showAdminSettings && <Modal closeForm={() => setValue('showAdminSettings', false)}>
                         <FeedbackForm
                             onClose={() => setValue('showAdminSettings', false)}
-                            title={<PageTitle
+                            title={<PopupTitle
                                 style={{ display: 'flex', alignItems: 'center', marginBottom:0, paddingBottom:0 }}>Settings {savingAdminSettings &&
-                            <ScaleLoader height={15}/>}</PageTitle>}
+                            <ScaleLoader height={12}/>}</PopupTitle>}
                             style={{ minHeight: 50 }}
                         >
                             <AdminSettings/>

@@ -9,7 +9,6 @@ const Content = styled.div`
       padding-top: 50px;
       padding-left: 50px;
       padding-right: 50px;
-      min-width: 960px;
 `
 
 

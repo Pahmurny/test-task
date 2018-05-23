@@ -1,0 +1,99 @@
+// toggle, dropdown, button, hyperlink text, 
+
+// HEX COLORS
+$white: #FCFCFC;
+$purple-black: #23182D;
+$purple-secondary: #5F5864;
+$light-yellow: #FEFCE8;
+$dark-yellow: #F8E71C;
+$grey-primary: #9F9BA2; // for outlines
+$grey-secondary: #E6E4E7;
+$grey-lightest: #F0EFF1; // 50% of grey-secondary (for grey backgrounds)
+$grey-inactive: #CFCDD0; // 50% of grey-primary (for toggle fills)
+$grey-dark: #4A4A4A; // for text
+$teal-primary: #207D94;
+$teal-secondary: #A6CBD4;
+$pink: #C37A83;
+
+// MAIN COMPONENTS
+$sidebar: $light-yellow;
+$header-bg: $purple-black;
+$header-menu: $purple-secondary;
+$main-background: $grey-lightest;
+$sub-background: $white;
+
+:export {
+	sidebar: $sidebar;
+	headerBG: $header-bg;
+	headerMenu: $header-menu;
+	mainBG: $main-background;
+	subBG: $sub-background;
+}
+
+// GENERAL
+$active-primary: $teal-primary; 
+	// any clickable action, hyperlink text, etc OR outline+text colour for clickable action if there is a fill
+
+$active-secondary: $teal-secondary;
+	// fill for clickable actions, if applicable (e.g. toggles, secondary buttons)
+
+$negative-primary: $pink;
+	// for all negative actions
+
+$inactive-primary: $grey-primary;
+	// inactive toggle outline
+
+$inactive-secondary: $grey-inactive;
+	// inactive toggle fill (all toggles)
+
+$bg-passive: $grey-lightest;
+	// non-clickable information
+
+$bg-active: $light-yellow;
+	// any clickable/dynamic information
+
+$tag-primary: $grey-secondary;
+	// block on passive bg (values tags, "about" tags)
+
+$tag-secondary: $grey-lightest;
+	// block on active bg
+
+$border-primary: $grey-primary;
+	// for all dropdown & text fields
+
+$border-secondary: $grey-secondary;
+	//for accordion dropdown tables
+
+$hover: $grey-lightest;
+	// for dropdowns
+
+$shadow: $grey-inactive;
+
+// TEXT
+
+$text-primary: $purple-black;
+$text-secondary: $grey-primary;
+$text-subheader: $grey-dark;
+$text-button: $white;
+$text-dropdown: $purple-secondary;
+
+:export {
+	activePrimary: $active-primary;
+	activeSecondary: $active-secondary;
+	negativePrimary: $negative-primary;
+	inactivePrimary: $inactive-primary;
+	inactiveSecondary: $inactive-secondary;
+	bgPassive: $bg-passive;
+	bgActive: $bg-active;
+	tagPrimary: $tag-primary;
+	tagSecondary: $tag-secondary;
+	borderPrimary: $border-primary;
+	borderSecondary: $border-secondary;
+	hover: $hover;
+	shadow: $shadow;
+	textPrimary: $text-primary;
+	textSecondary: $text-secondary;
+	textSubheader: $text-subheader;
+	textButton: $text-button;
+	textDropdown: $text-dropdown;
+}

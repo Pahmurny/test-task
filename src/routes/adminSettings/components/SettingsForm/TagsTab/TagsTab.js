@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { FieldArray, formValueSelector } from 'redux-form'
 import { TAGS_FIELD } from 'routes/adminSettings/components/SettingsForm/inputNames'
 import TagLines from 'routes/adminSettings/components/SettingsForm/TagsTab/TagLines'
-import InfoIcon from 'components/Icons/InfoIcon'
 import './tagstab.scss'
 
 
@@ -12,8 +11,7 @@ const selector = formValueSelector('adminSettings')
 
 const TagsTab = ({ tags }) => <div className="tags-tab">
   <div className="tags-tab__tags-title">
-    <div className="tags-tab__tags-title--column">Tag</div>
-    <div className="tags-tab__tags-title--column">Apply to teams? <InfoIcon className={'info-icon'}/></div>
+    <div className="tags-tab__tags-title--column">Team</div>
     <div className="tags-tab__tags-title--column"/>
 
   </div>

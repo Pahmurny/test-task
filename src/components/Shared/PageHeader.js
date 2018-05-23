@@ -8,7 +8,6 @@ const PageHeader = styled.div`
         display: flex;
         align-items: center;
         padding: 0 24px;
-        min-width: 1156px;
 `
 
 export default PageHeader

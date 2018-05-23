@@ -20,8 +20,7 @@ const AdminSettings = (adminSettings) => {
       <Checkbox
         checked={allowManagers}
         onClick={() => storeAdminSettings('adminSettings', { ...adminSettings, allowManagers: !allowManagers })}
-      >Allow managers to view private feedback that is given to their direct
-        reports.</Checkbox>
+      >Allow managers to view private feedback given to and by their direct reports.</Checkbox>
       <Checkbox
         checked={enableAnonymous}
         onClick={() => storeAdminSettings('adminSettings', { ...adminSettings, enableAnonymous: !enableAnonymous })}

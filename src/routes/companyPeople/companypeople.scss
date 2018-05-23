@@ -1,3 +1,6 @@
+@import "~styles/placeholdertext";
+@import "~styles/fonts";
+
 .company-people {
 
   padding-left: 35px;
@@ -29,14 +32,15 @@
   }
 
   &__tabs-btns {
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin: 1px 0 1px auto;
   }
 
   &__title {
     margin-bottom: 0px;
+
+    &__three-dots {
+      margin-left: 12px;
+    }
   }
 
   &__search-tabs {
@@ -62,29 +66,12 @@
       box-shadow: 0 0 0 2px #207D94;
       border-color: transparent;
     }
-
-    ::-webkit-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::-moz-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    :-ms-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
   }
 
   &__btn-tab {
+    height: 30px;
+    line-height: 30px;
+    
     &:first-child {
       border-radius: 3px 0 0 3px;
     }

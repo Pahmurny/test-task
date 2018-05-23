@@ -36,7 +36,6 @@ const renderValues = ({ fields }) => {
       name={`${value}.description`}
       className={'values-tab__field-group--textarea'}
       placeholder={'Optional, write your description.'}
-
     />
   </YellowRounded>)}
     <div className="values-tab__actions">

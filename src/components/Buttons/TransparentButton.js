@@ -1,7 +1,7 @@
-import RedButton from 'components/Buttons/Redbutton'
+import NegativeButton from 'components/Buttons/NegativeButton'
 
 
-const TransparentButton = RedButton.extend`
+const TransparentButton = NegativeButton.extend`
     background: transparent;
     box-shadow: none;
     color: #5F5864;
