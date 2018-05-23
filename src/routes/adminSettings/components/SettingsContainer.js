@@ -7,6 +7,7 @@ import {
 import './settingsContainer.scss'
 import SettingsForm from 'routes/adminSettings/components/SettingsForm'
 import setModuleView from 'actions/setModuleView'
+import HalfPage from 'components/Shared/HalfPage'
 
 
 
@@ -20,10 +21,9 @@ class SettingsContainer extends Component {
 
 
     render() {
-        return <div className="settings-container">
-            <h2 className="settings-container__header">Settings</h2>
+        return <HalfPage className="settings-container">
             <SettingsForm/>
-        </div>
+          </HalfPage>
     }
 }
 

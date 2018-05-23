@@ -22,7 +22,7 @@ export default class AdminFeedbackList extends PureComponent {
           Giver
         </div>
         <div className="admin-feedback-list__header-item">
-          Receiver
+          About
         </div>
         <div className={'admin-feedback-list__header-item last'}/>
       </div>
