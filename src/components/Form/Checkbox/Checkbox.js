@@ -4,9 +4,10 @@ import cn from 'classnames'
 import CheckMarkIcon from 'components/Icons/CheckMarkIcon'
 import './checkbox.scss'
 
-const Checkbox = ({checked, children, className, onClick }) => <div
+const Checkbox = ({checked, children, className, onClick, ...rest }) => <div
     className={cn('checkbox', className)}
     onClick={onClick && onClick}
+    {...rest}
 >
   <div className="checkbox__mark">
     {checked && <CheckMarkIcon className={'ischecked'}/>}
