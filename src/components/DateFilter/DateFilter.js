@@ -78,7 +78,7 @@ export default class DateFilter extends PureComponent {
             text = SHOW_ALL_TEXT
         }
         return <div className="show-more" onClick={() => this.setState(state => ({ page: state.page + 1 }))}>
-            <PlusButton style={{ marginRight: 6 }}/>
+            <PlusButton className="plus-button"/>
             {text}
         </div>
     }

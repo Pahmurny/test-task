@@ -1,6 +1,8 @@
 .upload-cv-form {
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  width: 576;
 
   &__title-block {
     display: flex;

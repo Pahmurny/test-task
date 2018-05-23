@@ -4,6 +4,11 @@
   height: 48px;
   align-items: center;
 
+  &__form {
+    width: 576px !important;
+    height: 50px !important;
+  }
+
   &__delete {
     &--title {
       font-family: Lato-Bold, sans-serif;

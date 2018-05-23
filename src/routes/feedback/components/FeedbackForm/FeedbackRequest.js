@@ -12,7 +12,7 @@ import TextArea from 'components/Form/TextArea'
 import RoundedBlock from 'components/Shared/RoundedBlock'
 import changeFeedbackContent from 'routes/feedback/actions/changeFeedbackContent'
 import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
-import RequestButton from 'components/Buttons/RequestButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
 
 
@@ -89,9 +89,9 @@ class FeedbackRequest extends Component {
                     />
         </RoundedFocused>
         <ActionsBlock>
-          <RequestButton>
+          <DefaultButton>
             Request Feedback
-          </RequestButton>
+          </DefaultButton>
         </ActionsBlock>
       </Content>
     )

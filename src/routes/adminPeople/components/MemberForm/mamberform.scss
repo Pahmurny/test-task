@@ -22,16 +22,20 @@
     font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
     color: #23182d;
-    width: 168px;
+    width: 180px;
     padding-left: 12px;
   }
 
   &__tags-field {
-    width: 181px;
+    width: 200px;
     margin-left: 12px;
     font-size: 14px;
     font-family: $fontLatoRegular, sans-serif;
     text-align: left;
+
+    &__manager {
+      padding-top: 50px;
+    }
 
     .Select-control {
       box-shadow: none !important;
@@ -125,6 +129,11 @@
 
       h3 {
         margin-bottom: 24px;
+      }
+
+      img {
+        width: 108px;
+        height: 108px;
       }
     }
   }

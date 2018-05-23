@@ -15,7 +15,7 @@ import PendingFeedback from 'routes/feedback/components/PendingFeedbacks/Pending
 import NewFeedback from 'routes/feedback/components/NewFeedback/NewFeedback'
 import selectFeedback from 'routes/feedback/actions/selectFeedback'
 import ActionsBlock from 'routes/feedback/components/FeedbackForm/shared/ActionBlock'
-import RequestButton from 'components/Buttons/RequestButton'
+import DefaultButton from 'components/Buttons/DefaultButton'
 import ToggleField from 'components/Form/Toggle/ToggleField'
 import togglePublic from 'routes/feedback/actions/togglePublic'
 import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
@@ -69,7 +69,7 @@ class FeedbackGive extends Component {
         const { give: { replyTo, people, isPublic } } = this.props
         if (replyTo) {
             const { user: { name } } = replyTo
-            return isPublic ? 'Everyone at [x] can read this.' : `Only you and ${name} can view this.`
+            return isPublic ? 'Everyone at ${company} can read this.' : `Only you and ${name} can view this.`
         }
         return isPublic ? '' : `Only you and ${people.length} other person can view this.`
     }
@@ -81,13 +81,12 @@ class FeedbackGive extends Component {
             return <PageLoader/>
         }
         return <React.Fragment>
-            <FieldTitle style={{ marginTop: 30, marginBottom: 12 }}>
+            <FieldTitle className="pending__field-title">
                 Pending requests ({pendingFeedbacks.length})
             </FieldTitle>
-            <PendingFeedbacks style={{ height: 300 }}>
+            <PendingFeedbacks className="pending__block">
                 <PendingFeedbacks>
-                    {
-                        pendingFeedbacks.map((feedback, key) => <PendingFeedback
+                    {pendingFeedbacks.map((feedback, key) => <PendingFeedback
                             key={key}
                             feedback={feedback}
                             onSelect={selectFeedback}
@@ -108,11 +107,13 @@ class FeedbackGive extends Component {
             toggleAnonymous,
         } = this.props
         return (
-            <Content className="give-export__view" style={{ paddingBottom: 0 }}>
+            <Content className="give-export__view">
                 <FieldTitle>
                     Who are you giving feedback to?
                 </FieldTitle>
-                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused style={{ marginTop: 12 }}>
+                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused 
+                    //style={{ marginTop: 12 }}
+                    className="rounded-focused">
                     <TagsField
                         tags={people}
                         suggestions={allPeople.map(person => ({
@@ -131,9 +132,8 @@ class FeedbackGive extends Component {
                             onClick={togglePublic}
                             leftLabel={'Public'}
                             rightLabel={<React.Fragment>
-                                <LockIcon2
-                                    fillColor={isPublic ? '#9F9BA2' : '#277D93'}
-                                    style={{ marginRight: 5 }}
+                                <LockIcon2 className="give-export__actions__lock-icon"
+                                    /*fillColor={isPublic ? '#9F9BA2' : '#277D93'}*/
                                 />
                                 Private</React.Fragment>}
                             label={this.getReceiverName()}
@@ -151,9 +151,9 @@ class FeedbackGive extends Component {
                             toggle={isAnonymous}
                         />}
                     </div>
-                    <RequestButton>
+                    <DefaultButton>
                         Give feedback
-                    </RequestButton>
+                    </DefaultButton>
                 </ActionsBlock>}
             </Content>
         )

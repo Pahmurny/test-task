@@ -1,4 +1,5 @@
 @import "~styles/constants";
+@import "~styles/colors";
 
 .feedback-type {
   display: flex;
@@ -10,13 +11,14 @@
     line-height: 36px;
     height: 36px;
     text-align: center;
-    background-color: #d0cfd2;
-    box-shadow: 0 0 0 1px #a7a5a9;
+    background-color: $inactive-secondary;
+    box-shadow: 0 0 0 1px $shadow;
     cursor: pointer;
     position: relative;
     font-family: $fontLatoBold, sans-serif;
     font-size: 14px;
-    color: #9f9ba2;
+    color: $inactive-primary;
+    box-shadow: 0 0 0 1px $inactive-primary;
 
     &:first-child {
       border-radius: 3px 0 0 3px;
@@ -27,10 +29,10 @@
     }
 
     &.active {
-      box-shadow: 0 0 0 1px #207D94;
+      box-shadow: 0 0 0 1px $active-primary;
       z-index: 100;
-      background-color: #A6CBD4;
-      color: #207D94;
+      background-color: $active-secondary;
+      color: $active-primary;
     }
   }
 }

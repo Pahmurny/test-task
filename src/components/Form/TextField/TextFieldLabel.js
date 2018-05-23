@@ -13,7 +13,7 @@ export const STextInput = styled.input`
         font-family: LatoRegular,sans-serif;
         font-size: 14px;
         color: #23182D;
-        width: 168px;
+        width: ${props => props.width? props.width : '168px'};
         padding: 0 6px; 
 `
 
@@ -27,15 +27,16 @@ export const FormLabel = styled.label`
     margin-bottom: 24px;
 `
 
-const TextFieldLabel = ({ input: { value, onChange }, className, label }) => <FormLabel className={className}>
+const TextFieldLabel = ({ input: { value, onChange }, className, label, width }) => <FormLabel className={className}>
     {label}
-    <STextInput type="text" value={value} onChange={(e) => onChange(e.target.value)}/>
+    <STextInput type="text" width={width} value={value} onChange={(e) => onChange(e.target.value)}/>
 </FormLabel>
 
 
 TextFieldLabel.propTypes= {
     label: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    width: PropTypes.string
 }
 
 export default TextFieldLabel

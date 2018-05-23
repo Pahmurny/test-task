@@ -37,7 +37,7 @@ const SettingsForm = () => {
       >Values</Tab>
       <Tab className={'settings-container__tab'}
            selectedClassName={'settings-container__tab--selected'}
-      >Tags</Tab>
+      >Teams</Tab>
       <Tab className={'settings-container__tab'}
            selectedClassName={'settings-container__tab--selected'}
       >Account</Tab>

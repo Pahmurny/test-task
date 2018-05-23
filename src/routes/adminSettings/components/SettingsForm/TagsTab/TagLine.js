@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Field } from 'redux-form'
-import ThreeDotsIcon from 'components/Icons/ThreeDotsIcon'
+import EditIcon from 'components/Icons/EditIcon'
 import { Portal } from 'react-portal'
 import './tagline.scss'
-import ToggleExField from 'components/Form/ToggleExField'
 import Modal from 'components/Shared/Modal'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import { PopupTitle } from 'components/Shared/PopupTitle'
@@ -111,13 +110,8 @@ class TagLine extends Component {
                         /></div>}
                 </div>
                 <div className="tag-line__col">
-                    <div className="toggle">
-                    <Field name={`${tag}.active`} component={ToggleExField} some={1}/>
-                    </div>
-                </div>
-                <div className="tag-line__col">
                     <div className="edit-block">
-                        <ThreeDotsIcon
+                        <EditIcon
                             onClick={this.openContext}/>
                     </div>
                 </div>
@@ -143,13 +137,13 @@ class TagLine extends Component {
 
                 {onDelete !== false && <Modal closeForm={() => this.setState({ onDelete: false })}>
                     <FeedbackForm
+                        className="tag-line__form"
                         onClose={() => this.setState({ onDelete: false })}
                         title={<PopupTitle className={'tag-line__delete--title'}>Delete this tag?</PopupTitle>}
-                        style={{
+                        /*style={{
                             minHeight: 50,
                             width: 576,
-                        }}
-                    >
+                        }}*/>
                         <div className="tag-line__delete--confirm">
                             Removing this tag will disassociate it from any element to which you have applied it.
                             You will not be able to recover this tag; you will have to re-create it if you want to re-apply it.
@@ -163,7 +157,6 @@ class TagLine extends Component {
                             <div
                                 className="tag-line__delete--action">
                                 <NegativeButton
-                                    round={'5px'}
                                     onClick={this.onRemove}
                             >Delete
                             </NegativeButton>

@@ -60,16 +60,16 @@ class NewFeedback extends Component {
             replyTo, clearFeedback, content, embodyValues, embodyValue, setEmbodyValue,
             companyValues, company, updateCompanyPeopleValue,
         } = this.props
-        return <div className="newfeedback-container" style={{ paddingTop: 30 }}>
+        return <div className="newfeedback-container">
             {replyTo && <PendingFeedback onClose={clearFeedback} feedback={replyTo}/>}
-            <FieldTitle style={{ marginBottom: 12 }}>
+            <FieldTitle className="field-title">
                 What is your feedback?
             </FieldTitle>
             <RoundedFocused>
                 <TextArea placeholder={'Write your feedback here.'} onChange={this.onChangeText} value={content}
-                          style={{ height: 170 }}/>
+                className="text-area"/>
             </RoundedFocused>
-            <FieldTitle style={{ marginTop: 30 }} className="field-title">
+            <FieldTitle className="field-title">
                 Which values did they embody? {(companyValues && company) && <span
                 onClick={() => updateCompanyPeopleValue('showValues', true)}
                 className={'newfeedback-container__show-values'}

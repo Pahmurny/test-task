@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { fontLatoBlack } from 'styles/constants.scss'
+import { fontLatoRegular } from 'styles/constants.scss'
+import { negativePrimary, textButton } from 'styles/colors.scss'
 
-
-const DefaultButton = styled.div`
-  background-color: #C37A83;
-  color: #fcfcfc;
-  font-family: ${fontLatoBlack}, sans-serif;
+const NegativeButton = styled.div`
+  background-color: ${negativePrimary};
+  color: ${textButton};
+  font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
-  min-width: 10px;
+  min-width: 72px;
   height: 30px;
   line-height: 30px;
   display: inline-block;
@@ -16,10 +16,10 @@ const DefaultButton = styled.div`
   text-align: center;
   padding: 0 24px;
   cursor: pointer;
-  border-radius: ${props => props.round? props.round : 0};
+  border-radius: 3px;
 `
 
-DefaultButton.propTypes = {
+NegativeButton.propTypes = {
     onClick: PropTypes.func,
     round: PropTypes.oneOfType([
         PropTypes.string,
@@ -27,4 +27,4 @@ DefaultButton.propTypes = {
     ])
 }
 
-export default DefaultButton
+export default NegativeButton

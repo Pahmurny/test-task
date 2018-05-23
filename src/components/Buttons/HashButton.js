@@ -1,11 +1,10 @@
 import DefaultButton from 'components/Buttons/DefaultButton'
-
+import { tagPrimary, textPrimary } from 'styles/colors.scss'
 
 const HashButton = DefaultButton.extend`
-        background: rgba(230,228,231,1.00);
-        border-radius: 3px;
+        background: ${tagPrimary};
         font-size: 14px;
-        color: #23182D;
+        color: ${textPrimary};
         height: 24px;
         line-height: 24px;
         box-shadow: none;
