@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-    <title>drop_down-2</title>
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>drop_dpwn_arrow_active_right</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Company" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(-1320.000000, -6576.000000)" id="company_2.1">
-            <g transform="translate(0.000000, 5760.000000)">
-                <g id="pagination" transform="translate(240.000000, 721.000000)">
-                    <g id="drop_down-2" transform="translate(1092.000000, 107.000000) rotate(90.000000) translate(-1092.000000, -107.000000) translate(1080.000000, 95.000000)">
-                        <g id="drop_dpwn_arrow" transform="translate(12.000000, 12.000000) scale(1, -1) translate(-12.000000, -12.000000) ">
-                            <ellipse id="Oval" fill="#5F5864" cx="12" cy="11.9875" rx="12" ry="11.9875"></ellipse>
-                            <path d="M12.0159616,16.8 C12.2684584,16.8 12.5209551,16.6969909 12.6977028,16.516725 L18.8838728,10.5937025 C19.2878676,10.2074184 19.3131172,9.56361161 18.9343721,9.12582299 C18.555627,8.71378664 17.9243852,8.68803437 17.4951408,9.07431844 L12.0159616,14.3535342 L6.51153285,9.10007071 C6.10753808,8.71378664 5.47629624,8.73953891 5.07230147,9.15157526 C4.69355637,9.56361161 4.71880604,10.2074184 5.12280082,10.6194548 L11.3089708,16.5424773 C11.5109682,16.6969909 11.7634649,16.8 12.0159616,16.8 Z" id="Shape" fill="#FCFCFC" fill-rule="nonzero"></path>
-                        </g>
-                    </g>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="drop_dpwn_arrow_active_right" fill-rule="nonzero">
+            <g id="drop_down-2" transform="translate(12.000000, 12.000000) rotate(90.000000) translate(-12.000000, -12.000000) ">
+                <g id="drop_dpwn_arrow" transform="translate(12.000000, 12.000000) scale(-1, 1) rotate(-180.000000) translate(-12.000000, -12.000000) ">
+                    <ellipse id="Oval" fill="#207D94" cx="12" cy="11.9875" rx="12" ry="11.9875"></ellipse>
+                    <path d="M12.0159616,16.8 C12.2684584,16.8 12.5209551,16.6969909 12.6977028,16.516725 L18.8838728,10.5937025 C19.2878676,10.2074184 19.3131172,9.56361161 18.9343721,9.12582299 C18.555627,8.71378664 17.9243852,8.68803437 17.4951408,9.07431844 L12.0159616,14.3535342 L6.51153285,9.10007071 C6.10753808,8.71378664 5.47629624,8.73953891 5.07230147,9.15157526 C4.69355637,9.56361161 4.71880604,10.2074184 5.12280082,10.6194548 L11.3089708,16.5424773 C11.5109682,16.6969909 11.7634649,16.8 12.0159616,16.8 Z" id="Shape" fill="#FCFCFC"></path>
                 </g>
             </g>
         </g>

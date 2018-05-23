@@ -139,6 +139,8 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
           className={'member-form__admin-state'}
         />
         {isAdmin && <div className="admin-state-info">This employee has full admin permissions.</div>}
+        {!isAdmin && <div className="admin-state-info">This employee does not have any admin permissions.</div>}
+
 
         <div className="member-form__actions--btns">
           <Field component={ActivateField} name={'active'}/>
