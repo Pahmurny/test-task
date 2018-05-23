@@ -5,6 +5,8 @@ import EditIcon from 'components/Icons/EditIcon'
 import Modal from 'components/Shared/Modal'
 import FeedbackForm from 'routes/feedback/components/FeedbackForm/FeedbackForm'
 import { PopupTitle } from 'components/Shared/PopupTitle'
+import TemplatesForm from 'routes/adminReviews/components/TemplatesForm'
+import ScrollBlock from 'components/ScrollBlock/ScrollBlock'
 
 
 const fakeTemplates = [
@@ -123,7 +125,7 @@ class Templates extends Component {
 
 
   state = {
-    newTemplate: false,
+    newTemplate: true,
   }
 
   render() {
@@ -161,7 +163,11 @@ class Templates extends Component {
             display: 'flex',
             flexDirection: 'column',
           }}>
-
+          <div style={{ flex: 1 }}>
+            <ScrollBlock style={{ minHeight: 550 }}>
+              <TemplatesForm/>
+            </ScrollBlock>
+          </div>
         </FeedbackForm>
       </Modal>}
     </div>
