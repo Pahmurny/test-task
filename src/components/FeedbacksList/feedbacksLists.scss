@@ -1,4 +1,5 @@
 @import "~styles/colors";
+@import "~styles/constants";
 
 .feedback-list{
   .feedback-block{
@@ -22,4 +23,11 @@
 		color: $text-primary;
 		margin-right: 12px;
 	}
+}
+
+.grey {
+	font-family: $fontLatoRegular;
+	font-size: 14px;
+	color: $text-secondary;
+	padding-left: 3px;
 }
