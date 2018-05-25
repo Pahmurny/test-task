@@ -1,8 +1,9 @@
 @import "~styles/colors";
+@import "~styles/constants";
 
 .perpage-dropdown {
   position: relative;
-  font-family: LatoRegular, sans-serif;
+  font-family: $fontLatoRegular, sans-serif;
   font-size: 14px;
   color: $text-dropdown;
 
@@ -27,11 +28,12 @@
     padding: 0 8px;
 
     &.current {
-      background: $active-secondary;
+      font-family: $fontLatoBold, sans-serif;
+      color: $active-primary;
     }
 
     &:hover {
-      background-color: $hover;
+      color: $active-primary;
     }
   }
 

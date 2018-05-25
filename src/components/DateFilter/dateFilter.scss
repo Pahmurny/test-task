@@ -1,11 +1,12 @@
 @import "~styles/fonts";
+@import "~styles/colors";
 
 .date-filter {
   display: block;
 
   &__container {
     font-family: $fontLatoRegular;
-    color: #23182d;
+    color: $text-primary;
     font-size: 16px;
     list-style: none;
     margin: 0;
@@ -21,7 +22,7 @@
 
       &.active {
         font-family: $fontLatoBold;
-        color: #207d94;
+        color: $active-primary;
       }
     }
   }
@@ -39,7 +40,7 @@
       cursor: pointer;
       font-family: $fontLatoBold;
       font-size: 12px;
-      color: #207d94;
+      color: $active-primary;
       display: flex;
       align-items: center;
     }

@@ -1,3 +1,6 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 $size: 38px;
 
 .search-component {
@@ -15,7 +18,7 @@ $size: 38px;
     border: 0;
     background: transparent;
     outline: none;
-    color: #9f9ba2;
+    color: $border-primary;
 
     &[type=text] {
       &:focus {
@@ -31,7 +34,7 @@ $size: 38px;
     display: flex;
     align-items: center;
     height: 30px;
-    border: 2px solid #bbb9bd;
+    border: 2px solid $border-primary;
     border-radius: 16px;
     width: 192px;
     background-image: url("~assets/images/svg/search_field_icon.svg");
@@ -43,9 +46,9 @@ $size: 38px;
   &__results {
     display: block;
     position: absolute;
-    background: #fcfcfc;
-    border: 1px solid #5f5864;
-    box-shadow: 0 2px 4px 0 #9b9b9b;
+    background: $white;
+    border: 1px solid $border-primary;
+    box-shadow: 0 2px 4px 0 $shadow;
     width: 244px;
     max-height: 222px;
     top: 100%;
@@ -55,9 +58,9 @@ $size: 38px;
   }
 
   &__section-title {
-    font-family: LatoBold, sans-serif;
+    font-family: $fontLatoBold, sans-serif;
     font-size: 14px;
-    color: #4a4a4a;
+    color: $text-subheader;
     line-height: 30px;
     padding-left: 12px;
   }
@@ -69,13 +72,13 @@ $size: 38px;
       align-items: center;
       padding-left: 12px;
       cursor: pointer;
-      font-family: LatoRegular, sans-serif;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 12px;
-      color: #23182D;
+      color: $text-primary;
 
 
       &:hover {
-        background: rgba(95, 88, 100, 0.30);
+        color: $active-primary;
       }
     }
 

@@ -4,19 +4,21 @@ import cn from 'classnames'
 import styled from 'styled-components'
 import { Field } from 'redux-form'
 import './inputstyles.scss'
+import {textPrimary, subBG, borderPrimary} from 'styles/colors.scss'
+import { fontLatoRegular } from 'styles/constants.scss'
 
 
 const Label = styled.div`
     display: block;
     font-family: Lato-Bold, sans-serif;
     font-size: 18px;
-    color: #23182d;
+    color: ${textPrimary};
 `
 
 
 const StyledField = styled(Field)`
-    background: #fcfcfc;
-    border: 1px solid #9f9ba2;
+    background: ${subBG};
+    border: 1px solid ${borderPrimary};
     border-radius: 3px;
     height: 36px;
     line-height: 36px;
@@ -24,7 +26,7 @@ const StyledField = styled(Field)`
     outline: none;
     box-sizing: border-box;
     font-size: 14px;
-    font-family: LatoRegular, sans-serif;
+    font-family: ${fontLatoRegular}, sans-serif;
     padding: 0px 6px;
     
 `

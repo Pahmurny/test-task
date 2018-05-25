@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Chosen from 'components/Icons/Chosen'
 import UnChosen from 'components/Icons/UnChosen'
 import { fontLatoRegular } from 'styles/constants.scss'
+import { greyDark } from 'styles/colors.scss'
 
 
 const icons = [
@@ -21,7 +22,7 @@ const R = ({ className, children, selected = false, onClick }) => <div onClick={
 const Radio = styled(R)`
     display: flex;
     justify-content: flex-start;
-    color: #4a4a4a;
+    color: ${greyDark};
     font-family: ${fontLatoRegular}, sans-serif;
     margin-top: 12px;
     cursor: pointer;

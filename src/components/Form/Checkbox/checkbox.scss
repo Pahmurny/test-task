@@ -1,11 +1,12 @@
-@import "~styles/fonts";
+@import "~styles/constants";
+@import "~styles/colors";
 
 .checkbox {
   display: flex;
   align-items: center;
   font-family: $fontLatoRegular, sans-serif;
   font-size: 14px;
-  color: #545454;
+  color: $text-subheader;
   text-align: left;
   margin-bottom: 20px;
   padding-top: 0px;

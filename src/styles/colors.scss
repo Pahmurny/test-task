@@ -15,8 +15,13 @@ $teal-primary: #207D94;
 $teal-secondary: #A6CBD4;
 $pink: #C37A83;
 $grey-semitransparent: rgba(216, 216, 216, 0.50);
-$grey-shadow: rgba(159,155,162,0.50); // for dropdowns, textfields
+$grey-shadow: rgba(159,155,162,0.50);
 $grey-shadow-dark: 0 1px 4px 0 rgba(0, 0, 0, 0.5); // for buttons
+
+:export {
+	white: $white;
+	greyDark: $grey-dark; //for misc components that occur too rarely to need definition
+}
 
 // MAIN COMPONENTS
 $sidebar: $light-yellow;
@@ -34,46 +39,27 @@ $sub-background: $white;
 }
 
 // GENERAL
-$active-primary: $teal-primary; 
-	// any clickable action, hyperlink text, etc OR outline+text colour for clickable action if there is a fill
+$active-primary: $teal-primary;  // any clickable action, hyperlink text, etc OR outline+text colour for clickable action if there is a fill
+$active-secondary: $teal-secondary; // fill for clickable actions, if applicable (e.g. toggles, secondary buttons)
 
-$active-secondary: $teal-secondary;
-	// fill for clickable actions, if applicable (e.g. toggles, secondary buttons)
+$negative-primary: $pink; // for all negative actions
 
-$negative-primary: $pink;
-	// for all negative actions
+$inactive-primary: $grey-primary; // inactive toggle outline; 'x' button on active bg
+$inactive-secondary: $grey-inactive; // inactive toggle fill (all toggles)
 
-$inactive-primary: $grey-primary;
-	// inactive toggle outline
+$bg-passive: $grey-lightest; // non-clickable information
+$bg-active: $light-yellow; // any clickable/dynamic information
 
-$inactive-secondary: $grey-inactive;
-	// inactive toggle fill (all toggles)
+$tag-primary: $grey-secondary; // block on passive bg (values tags, "about" tags)
+$tag-secondary: $grey-lightest; // block on active bg
 
-$bg-passive: $grey-lightest;
-	// non-clickable information
+$border-primary: $grey-primary; // for all dropdown & text fields
+$border-secondary: $grey-secondary; //for accordion dropdown tables
 
-$bg-active: $light-yellow;
-	// any clickable/dynamic information
+$hover: $active-secondary; // for dropdowns
+$hover-bg: $grey-semitransparent; // for hoverable backgrounds such as uploading an img
 
-$tag-primary: $grey-secondary;
-	// block on passive bg (values tags, "about" tags)
-
-$tag-secondary: $grey-lightest;
-	// block on active bg
-
-$border-primary: $grey-primary;
-	// for all dropdown & text fields
-
-$border-secondary: $grey-secondary;
-	//for accordion dropdown tables
-
-$hover: $active-secondary;
-	// for dropdowns
-
-$hover-bg: $grey-semitransparent;
-
-$shadow: $grey-shadow;
-
+$shadow: $grey-shadow; // for dropdowns, textfields
 $button-shadow: $grey-shadow-dark;
 
 // TEXT
@@ -85,7 +71,6 @@ $text-button: $white;
 $text-dropdown: $purple-secondary;
 
 :export {
-	white: $white;
 	activePrimary: $active-primary;
 	activeSecondary: $active-secondary;
 	negativePrimary: $negative-primary;

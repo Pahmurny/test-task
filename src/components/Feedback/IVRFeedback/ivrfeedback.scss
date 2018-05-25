@@ -1,12 +1,15 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .ivr-feedback {
   display: block;
-  background: #fefce8;
+  background: $bg-active;
   border-radius: 3px;
   padding: 18px;
   margin-bottom: 24px;
-  font-family: LatoRegular, sans-serif;
+  font-family: $fontLatoRegular, sans-serif;
   font-size: 14px;
-  color: #23182d;
+  color: $text-primary;
 
   &__header {
     display: flex;
@@ -26,7 +29,7 @@
 
       & > .user-name {
         font-size: 14px;
-        color: #23182d;
+        color: $text-primary;
         margin-left: 12px;
       }
     }
@@ -34,7 +37,7 @@
     &-actions {
       margin-left: auto;
       font-size: 14px;
-      color: #9f9ba2;
+      color: $inactive-primary;
       letter-spacing: 0;
       text-align: center;
       line-height: 18px;
@@ -55,9 +58,9 @@
   &__request {
     display: inline-block;
     margin-bottom: 24px;
-    font-family: LatoItalic, sans-serif;
+    font-family: $fontLatoItalic, sans-serif;
     font-size: 14px;
-    color: #23182d;
+    color: $text-primary;
     line-height: 24px;
 
     & > .about-block {

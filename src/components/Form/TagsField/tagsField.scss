@@ -1,13 +1,16 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .tags-field {
   display: flex;
   justify-content: flex-start;
   padding-left: 6px;
   padding-right: 6px;
-  border: 1px solid #9f9ba2;
+  border: 1px solid $border-primary;
   border-radius: 3px;
 
   &.is-focused {
-    box-shadow: 0 0 0 2px #207d94;
+    box-shadow: 0 0 0 2px $active-primary;
     border-color: transparent;
   }
 
@@ -22,8 +25,8 @@
         outline: none;
         background-color: transparent;
         font-size: 14px;
-        font-family: LatoRegular, sans-serif;
-        color: #23182d;
+        font-family: $fontLatoRegular, sans-serif;
+        color: $text-primary;
       }
     }
   }
@@ -35,11 +38,11 @@
     &-tag {
       border-radius: 18px;
       border: none;
-      height: 24px;
+      max-height: 24px;
       margin-top: 6px;
       outline: none;
-      background-color: #e6e4e7;
-      font-family: LatoRegular, sans-serif;
+      background-color: $tag-primary;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
       text-align: center;
       padding-left: 12px;
@@ -78,11 +81,11 @@
       margin: 0;
       list-style: none;
       background: white;
-      font-family: LatoRegular, sans-serif;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
 
       li {
-        border: 1px solid #9f9ba2;
+        border: 1px solid $border-primary;
         border-radius: 0 0 1px 1px;
         cursor: pointer;
         padding: 6px 12px;
@@ -96,7 +99,7 @@
         }
 
         &:hover {
-          background: #e6e4e7;
+          background-color: $active-secondary;
 
           mark {
             background-color: transparent;
@@ -104,7 +107,7 @@
         }
 
         mark {
-          background-color: #ffe9b6
+          background-color: $active-secondary;
         }
       }
     }

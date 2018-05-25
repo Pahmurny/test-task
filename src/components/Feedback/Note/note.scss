@@ -1,10 +1,13 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .note-feedback {
-  background: #f0eff1;
+  background: $bg-passive;
   border-radius: 5px;
   padding: 24px;
-  font-family: LatoRegular, sans-serif;
+  font-family: $fontLatoRegular, sans-serif;
   font-size: 16px;
-  color: #23182d;
+  color: $text-primary;
   text-align: left;
   margin-bottom: 24px;
 
@@ -19,7 +22,7 @@
   &__date-action {
     margin-left: auto;
     font-size: 14px;
-    color: #9f9ba2;
+    color: $text-secondary;
     display: flex;
     align-items: center;
 

@@ -1,18 +1,20 @@
 import React  from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { subBG, borderPrimary, textPrimary, greyDark } from 'styles/colors.scss'
+import { fontLatoRegular, fontLatoBold } from 'styles/constants.scss'
 
 
 export const STextInput = styled.input`
         margin-left: 12px;
-        background: #FCFCFC;
-        border: 1px solid #9F9BA2;
+        background: ${subBG};
+        border: 1px solid ${borderPrimary};
         border-radius: 3px;
         outline: none;
         line-height: 24px;
-        font-family: LatoRegular,sans-serif;
+        font-family: ${fontLatoRegular},sans-serif;
         font-size: 14px;
-        color: #23182D;
+        color: ${textPrimary};
         width: ${props => props.width? props.width : '180px'};
         padding: 0 6px; 
 `
@@ -21,9 +23,9 @@ export const FormLabel = styled.label`
     display: flex;
     align-items: center;  
     justify-content: flex-end;
-    font-family: LatoBold,sans-serif;
+    font-family: ${fontLatoBold},sans-serif;
     font-size: 16px;
-    color: #4A4A4A;
+    color: ${greyDark};
     margin-bottom: 24px;
 `
 

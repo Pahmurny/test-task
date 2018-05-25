@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
+import { textPrimary } from 'styles/colors.scss'
 
 const TextArea = styled.textarea`
     width: 100%;
@@ -10,7 +11,7 @@ const TextArea = styled.textarea`
     outline: none;
     font-family: ${fontLatoRegular}, sans-serif;
     font-size: 14px;
-    color: #23182D;
+    color: ${textPrimary};
     padding: 6px;
 `
 

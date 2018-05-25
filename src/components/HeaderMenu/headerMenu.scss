@@ -1,9 +1,10 @@
-@import "~styles/fonts";
+@import "~styles/constants";
+@import "~styles/colors";
 
 .header-menu {
-  background-color: #23182d;
+  background-color: $purple-black;
   display: flex;
-  height: 33px;
+  height: 32px;
   justify-content: space-between;
   min-width: 374px;
   align-items: center;
@@ -16,18 +17,18 @@
   &__link {
     display: block;
     text-decoration: none;
-    color: #908b93;
+    color: $grey-primary;
     height: 33px;
     line-height: 33px;
     text-align: center;
     flex: 1;
-    border-top: 1px solid #5f5864;
-    border-bottom: 1px solid #5f5864;
-    border-right: 1px solid #5f5864;
+    border-top: 1px solid $purple-secondary;
+    border-bottom: 1px solid $purple-secondary;
+    border-right: 1px solid $purple-secondary;
 
     &:first-child {
       border-radius: 3px 0 0 3px;
-      border: 1px solid #5f5864;
+      border: 1px solid $purple-secondary;
     }
 
     &:last-child {
@@ -35,8 +36,8 @@
     }
 
     &.active {
-      background: #5f5864;
-      color: #fff;
+      background: $purple-secondary;
+      color: $white;
     }
   }
 }

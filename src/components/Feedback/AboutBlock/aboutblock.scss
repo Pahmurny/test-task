@@ -1,9 +1,12 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .about-block {
-  font-family: LatoItalic, sans-serif;
+  font-family: $fontLatoItalic, sans-serif;
   font-size: 14px;
-  color: #23182d;
+  color: $text-primary;
   text-align: left;
-  background: #e6e4e7;
+  background: $tag-primary;
   border-radius: 5px;
   display: inline-flex;
   align-items: center;
