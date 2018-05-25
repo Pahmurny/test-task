@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { fontLatoRegular } from 'styles/constants.scss'
-import { activePrimary, textButton } from 'styles/colors.scss'
+import { activePrimary, textButton, buttonShadow } from 'styles/colors.scss'
 
 const DefaultButton = styled.div`
   background-color: ${activePrimary};
@@ -12,7 +12,7 @@ const DefaultButton = styled.div`
   height: 30px;
   line-height: 30px;
   display: inline-block;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: ${buttonShadow};
   text-align: center;
   padding: 0 24px;
   cursor: pointer;
