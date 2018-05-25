@@ -1,5 +1,5 @@
 .fromtofeedback {
-  padding: 12px 23px 23px 23px;
+  padding: 12px 24px 24px 24px;
 
   & > &__header {
     display: flex;
@@ -38,10 +38,11 @@
   & > &__content {
     font-family: LatoRegular, sans-serif;
     font-size: 16px;
+    line-height: 18px;
     color: #23182d;
     text-align: left;
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 
   & > &__tags {
@@ -56,11 +57,6 @@
       font-size: 14px;
       color: #23182d;
       text-align: center;
-
-      &:before {
-        content: '#';
-      }
     }
   }
-
 }

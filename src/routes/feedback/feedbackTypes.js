@@ -10,9 +10,9 @@ export const FEEDBACK_RECEIVED_GIVEN = 3 // All received and given
 export const FEEDBACK_REQUESTED = 4 // I've requested
 
 
-export const TEAM_TYPE_RECEIVED = 0
-export const TEAM_TYPE_GIVEN = 1
-export const TEAM_TYPE_NOTE = 2
+export const TEAM_TYPE_RECEIVED = 0 // Team member received
+export const TEAM_TYPE_GIVEN = 1 // Team member given
+export const TEAM_TYPE_NOTE = 2 // Note to self
 
 export const MODULE_VIEW_FEEDBACK = 'feedback'
 export const MODULE_VIEW_TEAM = 'team'
@@ -21,3 +21,5 @@ export const MODULE_VIEW_COMPANY_PEOPLE = 'companyPeople'
 export const MODULE_VIEW_ADMIN = 'admin'
 export const MODULE_VIEW_ADMIN_SETTINGS = 'adminSettings'
 export const MODULE_VIEW_ADMIN_PEOPLE = 'adminPeople'
+export const MODULE_VIEW_ADMIN_REVIEWS = 'adminReviews'
+

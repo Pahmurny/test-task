@@ -4,11 +4,6 @@
   height: 48px;
   align-items: center;
 
-  &__form {
-    width: 576px !important;
-    height: 50px !important;
-  }
-
   &__delete {
     &--title {
       font-family: Lato-Bold, sans-serif;
@@ -30,7 +25,7 @@
       justify-content: flex-end;
       font-family: Lato-Bold, sans-serif;
       font-size: 14px;
-      color: #5F5864;
+      color: #207d94;
       text-align: center;
       align-items: center;
       height: 24px;
@@ -63,14 +58,11 @@
   }
 
   .edit-block {
-    border: 1px solid #5f5864;
     height: 24px;
-    width: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 24px;
     margin-left: auto;
     margin-right: 24px;
     position: relative;
@@ -105,7 +97,7 @@
     padding: 10px;
     font-family: Lato-Bold, sans-serif;
     font-size: 14px;
-    color: #5f5864;
+    color: #207d94;
     text-align: left;
 
     &--action {

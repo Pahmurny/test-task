@@ -60,17 +60,16 @@ class FeedbackRequest extends Component {
 
     return (
       <Content className="request-export__view">
-        <FieldTitle>
+        <FieldTitle style={{ marginBottom: 12}} >
           Who do you want request from?
         </FieldTitle>
-        <RoundedFocused style={{ marginTop: 12, marginBottom: 24 }}>
           <TagsField
+            placeholder={'Type their name...'}
             tags={people}
             suggestions={allPeople}
             onAdd={this.onAddPeople}
             onDelete={this.onDeletePeople}
           />
-        </RoundedFocused>
         <FieldTitle style={{ marginTop: 30 }}>
           What do you want to ask them?
         </FieldTitle>

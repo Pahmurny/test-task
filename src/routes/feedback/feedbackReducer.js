@@ -3,12 +3,11 @@ import {
   FEEDBACK_ANY_TYPE,
   FEEDBACK_FROM_ME,
   FEEDBACK_NOTE,
-  FEEDBACK_REPLY_TYPE, FEEDBACK_RECEIVED_GIVEN,
+  FEEDBACK_RECEIVED_GIVEN,
+  FEEDBACK_REPLY_TYPE,
+  FEEDBACK_REQUESTED,
   FEEDBACK_TO_ME,
   MODULE_VIEW_FEEDBACK,
-  TEAM_TYPE_GIVEN,
-  TEAM_TYPE_NOTE,
-  TEAM_TYPE_RECEIVED, FEEDBACK_REQUESTED,
 } from 'routes/feedback/feedbackTypes'
 import { GIVE_FEEDBACK_TYPE } from 'routes/feedback/actions/addPeople'
 import {
@@ -87,18 +86,26 @@ const initialState = {
   filter: {
     dateType: 0,
     dates: [],
-    teamType: { id: TEAM_TYPE_RECEIVED },
+    teamType: { id: FEEDBACK_TO_ME },
     teamTypes: [
       {
-        id: TEAM_TYPE_RECEIVED,
-        title: `Team member received`,
+        id: FEEDBACK_RECEIVED_GIVEN,
+        title: 'All received & given',
       },
       {
-        id: TEAM_TYPE_GIVEN,
-        title: `Team member given`,
+        id: FEEDBACK_TO_ME,
+        title: `Received`,
       },
       {
-        id: TEAM_TYPE_NOTE,
+        id: FEEDBACK_FROM_ME,
+        title: `Given`,
+      },
+      {
+        id: FEEDBACK_REQUESTED,
+        title: `Requested`,
+      },
+      {
+        id: FEEDBACK_NOTE,
         title: `Note to self`,
       },
     ],

@@ -1,0 +1,47 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &__edit {
+    margin-left: 10px;
+  }
+
+  &__content {
+    flex: 1;
+    background-color: #fcfcfc;
+    border-radius: 8px 8px 0 0;
+    padding: 28px 48px;
+  }
+
+  &__tabs {
+    display: flex;
+    padding-left: 24px;
+  }
+
+  &__tab {
+    display: block;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    font-family: LatoBold, sans-serif;
+    font-size: 24px;
+    color: #9f9ba2;
+    background: #e6e4e7;
+    border-radius: 8px 8px 0 0;
+    padding: 0 49px;
+    margin-right: 12px;
+    cursor: pointer;
+    outline: none;
+
+    &.selected {
+      background-color: #fcfcfc;
+      color: #23182d;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+
+}

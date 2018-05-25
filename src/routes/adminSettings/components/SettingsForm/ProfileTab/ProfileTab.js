@@ -4,10 +4,9 @@ import { Portal } from 'react-portal'
 import TextField from 'components/Form/TextField'
 import {
     COMPANY_EMAIL,
-    COMPANY_NAME, COMPANY_NICK, COMPANY_PHONE, COMPANY_URL, DEFAULT_TIME_ZONE, LIMIT_INVITES,
-    MISSION_STATEMENTS, NON_ADMINS, SELF_REGISTRATION, COMPANY_ADDRESS_LINE_1, COMPANY_ADDRESS_LINE_2
+    COMPANY_NAME, COMPANY_NICK, COMPANY_PHONE, COMPANY_URL, DEFAULT_TIME_ZONE,
+    MISSION_STATEMENTS, COMPANY_ADDRESS_LINE_1, COMPANY_ADDRESS_LINE_2
 } from 'routes/adminSettings/components/SettingsForm/inputNames'
-import CheckboxField from 'components/Form/Checkbox/CheckboxField'
 import Dropzone from 'react-dropzone'
 import { Field, submit } from 'redux-form'
 import DefaultButton from 'components/Buttons/DefaultButton'
@@ -120,53 +119,11 @@ class ProfileTab extends Component {
                             />
                         </div>
                     </div>
-
-
-                    <div className="checkbox-block">
-                        <Field
-                            component={CheckboxField}
-                            name={NON_ADMINS}
-                            className={'checkbox-block__mark'}
-                        />
-                        <div className="checkbox-block__label">Allow non-admins to change the org structure?</div>
-                        <div className="checkbox-block__description">Allow non-admins to send invites to new users as
-                            well as
-                            change their own managers.
-                        </div>
-                    </div>
-
-                    <div className="checkbox-block">
-                        <Field component={CheckboxField}
-                               name={SELF_REGISTRATION} className={'checkbox-block__mark'}
-                        />
-                        <div
-                            className="checkbox-block__label"
-                        >Allow self-registration?
-                        </div>
-                        <div
-                            className="checkbox-block__description"
-                        >Allow new team members to sign up using their company email.
-                            You can invite them by sharing <a className={'link'} href="#">[link]</a>
-                        </div>
-                    </div>
-                    <div className="checkbox-block">
-                        <Field component={CheckboxField}
-                               name={LIMIT_INVITES} className={'checkbox-block__mark'}
-                        />
-                        <div
-                            className="checkbox-block__label"
-                        >Limit invites to your company email domain?
-                        </div>
-                        <div
-                            className="checkbox-block__description"
-                        >Disallow invites going to emails outside your company domain.
-                        </div>
-                    </div>
                 </div>
             </div>
             <div className="profile-tab tab-bottom">
                 <div
-                    className="checkbox-block__label"
+                    className="label"
                 >Company mission statement
                 </div>
                 <Field
@@ -176,7 +133,7 @@ class ProfileTab extends Component {
                 />
 
                 <div
-                    className="checkbox-block__label"
+                    className="label"
                 >Default time-zone
                 </div>
                 <Field

@@ -15,6 +15,7 @@ import PrivateRoute from 'components/Routing/PrivateRoute'
 import Login from 'containers/Login'
 import Signup from 'containers/Signup'
 import { history } from 'store'
+import AdminReviews from 'routes/adminReviews'
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
           <PrivateRoute exact path={url.admin()} component={AdminModule}/>
           <PrivateRoute exact path={url.adminSettings()} component={SettingsModule}/>
           <PrivateRoute exact path={url.adminPeople()} component={PeopleContainer}/>
+          <PrivateRoute exact path={url.adminReviews()} component={AdminReviews}/>
           <PublicRoute exact path={url.login()} component={Login}/>
           <PublicRoute exact path={url.signup()} component={Signup}/>
         </Switch>

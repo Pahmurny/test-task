@@ -3,18 +3,18 @@
 .from-title {
   display: flex;
   align-items: center;
-  font-family: $fontLatoBold, sans-serif;
+  font-family: $fontLatoRegular, sans-serif;
   font-size: 18px;
   color: #23182D;
   text-align: left;
   line-height: 24px;
 
   &__user-name {
-    margin: 0 10px;
+    margin: 0 12px 0 6px;
   }
 
   &__to {
-    margin-right: 10px;
+    margin-right: 12px;
 
   }
 }

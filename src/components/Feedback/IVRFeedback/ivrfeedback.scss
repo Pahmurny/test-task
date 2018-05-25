@@ -43,21 +43,22 @@
     }
 
     &-close {
-      margin-left: 24px;
+      margin-left: 12px;
     }
   }
 
   &__content {
-    line-height: 17px;
+    line-height: 18px;
+    font-size: 16px;
   }
 
   &__request {
-    display: flex;
+    display: inline-block;
     margin-bottom: 24px;
     font-family: LatoItalic, sans-serif;
     font-size: 14px;
     color: #23182d;
-    line-height: 18px;
+    line-height: 24px;
 
     & > .about-block {
       margin-right: 12px;
