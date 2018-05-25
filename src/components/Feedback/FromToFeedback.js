@@ -8,7 +8,7 @@ import { MODULE_VIEW_COMPANY } from 'routes/feedback/feedbackTypes'
 import HashButton from 'components/Buttons/HashButton'
 import isFunction from 'lodash/isFunction'
 import './fromtofeedback.scss'
-import LockIcon2 from 'components/Icons/LockIcon2'
+import LockIcon from 'components/Icons/LockIcon'
 
 
 const FromToFeedback = (props) => {
@@ -20,9 +20,9 @@ const FromToFeedback = (props) => {
         {render ? render(props) : feedbackHeader[headerView]({ user, to })}
       </div>
       <div className="fromtofeedback__feedback-date">
-        <LockIcon2 fillColor={'#9F9BA2'} style={{ marginRight: 6 }}/>
+        <LockIcon style={{ marginRight: 6 }}/>
         <span style={{ marginRight: 6 }}> Private | </span>
-        {m(date).format('MM/DD/YYYY')}
+        {m(date).format('MMM DD, YYYY')}
       </div>
     </div>
     <div className="fromtofeedback__content">

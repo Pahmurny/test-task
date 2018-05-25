@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Svg from 'components/Shared/Html/Svg'
 
 /**
- *  Lock Icon
+ *  Lock Icon - used for when color of lock icon is dynamic (e.g. within a toggle)
  */
 const LockIcon2 = ({ className, fillColor = '#545454', ...props }) => <Svg width={'10px'} height={'12px'}
                                                                           className={className}
