@@ -40,7 +40,7 @@ class ProfileContainer extends Component {
             onClick={() => editProfile(!profileEdit)}
           />}</PopupTitle>}
           style={{
-            width: 864,
+            width: 960,
             minHeight: 576,
           }}
         >
