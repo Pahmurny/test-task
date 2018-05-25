@@ -13,7 +13,7 @@ export const STextInput = styled.input`
         font-family: LatoRegular,sans-serif;
         font-size: 14px;
         color: #23182D;
-        width: ${props => props.width? props.width : '168px'};
+        width: ${props => props.width? props.width : '180px'};
         padding: 0 6px; 
 `
 
