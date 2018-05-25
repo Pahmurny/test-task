@@ -35,101 +35,124 @@ const ActivateField = ({ input: { value, onChange }, meta: { dispatch, form } })
 
 const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submit, updatePerson, initialValues: { company } }) => {
 
-  const { isAdmin, image } = formValues
-  const { name, logo } = company
+   const { isAdmin, image } = formValues
+   const { name, logo } = company
 
   return (
     <Form onSubmit={handleSubmit(updatePerson)} className={'member-form'}>
       <div className="member-form__content">
-        <div className="member-form__content--col">
-          <div className="member-form__content--userpic">
-            <h3>Personal:</h3>
-            <UserPic image={image} width={'108px'}/>
+        <div className="member-form__content--entity">
+          <h3>Personal:</h3>
+            <div className="member-form__content--row">
+
+              <div className="member-form__content--pic">
+                <UserPic image={image} width={'114px'}/>
+              </div>
+              
+              <div className="member-form__content--col">
+                <Field
+                  component={TextFieldLabel}
+                  label={'First Name'}
+                  name={'first_name'}
+                  className={'member-form__text-field'}
+                />
+                <Field
+                  component={TextFieldLabel}
+                  label={'Last Name'}
+                  name={'last_name'}
+                  className={'member-form__text-field'}
+                />
+                <Field
+                  component={TextFieldLabel}
+                  label={'Email Address'}
+                  name={'email'}
+                  className={'member-form__text-field'}
+                />
+              </div>
+
+              <div className="member-form__content--col">
+                <Field
+                  component={TextFieldLabel}
+                  label={'Preferred Name'}
+                  name={'preferred_name'}
+                  className={'member-form__text-field'}
+                />
+                <Field
+                  component={DatePicker}
+                  label={'Start Date'}
+                  name={'start_date'}
+                  className={'member-form__date-field'}
+                />
+                <Field
+                  component={TextFieldLabel}
+                  label={'Phone'}
+                  name={'phone_number'}
+                  className={'member-form__text-field'}
+                />
+             </div>
           </div>
-          <div className="member-form__content--companylogo">
-            <h3>{name}:</h3>
-            <img
-              src={logo}
-              alt={name}
-              style={{ width: 108, height: 108 }}
-            />
+        </div>
+
+        <div className="member-form__content--entity">
+          <h3>{name}:</h3>
+
+          <div className="member-form__content--row">
+              <div className="member-form__content--pic">
+                <img
+                    src={logo}
+                    alt={name}
+                    style={{ width: 108, height: 108 }}
+                />
+              </div>
+
+            <div className="member-form__content--col">
+              <div className="member-form__content--row">
+
+              <div className="member-form__content--col">
+                <Field
+                  component={TextFieldLabel}
+                  label={'Job Title'}
+                  name={'job_title'}
+                  className={'member-form__text-field'}
+                />
+              </div>
+
+              <div className="member-form__content--col">
+                <Field
+                  component={FormTagsField}
+                  label={'Manager'}
+                  name={'manager'}
+                  className={'member-form__tags-field'}
+                  allPeople={managers}
+                  placeholder={''}
+                  one
+                />
+              </div>                
+            </div>
+
+              <div className="member-form__content--row">
+                <Field
+                  component={TagsFormField}
+                  label={'Team Tags'}
+                  name={'team_tags'}
+                  className={'member-form__tags-field'}
+                  options={tags}
+                  optionComponent={TagsFormFieldOption}
+                  multi
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="member-form__content--col">
-          <Field
-            component={TextFieldLabel}
-            label={'First Name'}
-            name={'first_name'}
-            className={'member-form__text-field'}
-          />
-          <Field
-            component={TextFieldLabel}
-            label={'Last Name'}
-            name={'last_name'}
-            className={'member-form__text-field'}
-          />
 
-          <Field
-            component={TextFieldLabel}
-            label={'Email Address'}
-            name={'email'}
-            className={'member-form__text-field'}
-          />
-
-          <Field
-            component={TextFieldLabel}
-            label={'Job Title'}
-            name={'job_title'}
-            className={'member-form__text-field job-title'}
-          />
-
-          <Field
-            component={TagsFormField}
-            label={'Team Tags'}
-            name={'team_tags'}
-            className={'member-form__tags-field'}
-            options={tags}
-            optionComponent={TagsFormFieldOption}
-            multi
-          />
-
-
+        <div className="member-form__content--entity">
+          <h3></h3>
         </div>
-        <div className="member-form__content--col">
-          <Field
-            component={TextFieldLabel}
-            label={'Preferred Name'}
-            name={'preferred_name'}
-            className={'member-form__text-field'}
-          />
 
-          <Field
-            component={DatePicker}
-            label={'Start Date'}
-            name={'start_date'}
-            className={'member-form__date-field'}
-          />
 
-          <Field
-            component={TextFieldLabel}
-            label={'Phone'}
-            name={'phone_number'}
-            className={'member-form__text-field'}
-          />
 
-          <Field
-            component={FormTagsField}
-            label={'Manager'}
-            name={'manager'}
-            className={'member-form__tags-field'}
-            style={{ marginTop: 50 }}
-            allPeople={managers}
-            placeholder={''}
-            one
-          />
-
-        </div>
       </div>
+
       <div className="member-form__actions">
         <Field
           component={ToggleFormField}
@@ -139,6 +162,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
           className={'member-form__admin-state'}
         />
         {isAdmin && <div className="admin-state-info">This employee has full admin permissions.</div>}
+        {!isAdmin && <div className="admin-state-info">This employee does not have any admin permissions.</div>}
 
         <div className="member-form__actions--btns">
           <Field component={ActivateField} name={'active'}/>
