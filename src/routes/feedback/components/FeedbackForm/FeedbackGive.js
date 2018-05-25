@@ -19,14 +19,14 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 import ToggleField from 'components/Form/Toggle/ToggleField'
 import togglePublic from 'routes/feedback/actions/togglePublic'
 import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
-import RoundedBlock from 'components/Shared/RoundedBlock'
-import withFocus from 'components/Shared/HOC/focused/withFocus'
+//import RoundedBlock from 'components/Shared/RoundedBlock'
+//import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
 import './feedbackgive.scss'
 import LockIcon2 from 'components/Icons/LockIcon2'
 
-const RoundedFocused = withFocus(RoundedBlock)
+//const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
 const PUBLIC_TEXT = 'This feedback will be sent with your name as the giver.'
 
@@ -108,22 +108,21 @@ class FeedbackGive extends Component {
         } = this.props
         return (
             <Content className="give-export__view">
-                <FieldTitle>
+                <FieldTitle
+                    style={{ marginBottom: 12 }}>
                     Who are you giving feedback to?
                 </FieldTitle>
-                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused 
-                    //style={{ marginTop: 12 }}
-                    className="rounded-focused">
+                {feedbackType !== FEEDBACK_REPLY_TYPE &&
                     <TagsField
                         tags={people}
+                        placeholder={'Type their name...'}
                         suggestions={allPeople.map(person => ({
                             ...person, name: `${person.name}`,
                             component: <PersonalEmail>{person.email}</PersonalEmail>,
                         }))}
                         onAdd={this.onAddPeople}
                         onDelete={this.onDeletePeople}
-                    />
-                </RoundedFocused>}
+                    />}
                 {(feedbackType !== FEEDBACK_NEW_TYPE && feedbackType !== FEEDBACK_REPLY_TYPE) && this.renderPending()}
                 {(feedbackType === FEEDBACK_NEW_TYPE || feedbackType === FEEDBACK_REPLY_TYPE) && <NewFeedback/>}
                 {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock className="give-export__actions">
@@ -133,7 +132,7 @@ class FeedbackGive extends Component {
                             leftLabel={'Public'}
                             rightLabel={<React.Fragment>
                                 <LockIcon2 className="give-export__actions__lock-icon"
-                                    /*fillColor={isPublic ? '#9F9BA2' : '#277D93'}*/
+                                    fillColor={isPublic ? '#9F9BA2' : '#207d94'}
                                 />
                                 Private</React.Fragment>}
                             label={this.getReceiverName()}
