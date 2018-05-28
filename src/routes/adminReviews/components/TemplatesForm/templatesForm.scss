@@ -31,6 +31,7 @@
     text-align: left;
     padding: 6px 12px;
     outline: none;
+    margin-bottom: 10px;
   }
 
   &__label {
@@ -102,5 +103,32 @@
     .dropdown__trigger {
       background-color: #fff;
     }
+  }
+
+  &__type-section {
+    display: flex;
+  }
+
+  &__optional {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    font-family: LatoBold, sans-serif;
+    font-size: 12px;
+    color: #4a4a4a;
+    text-align: left;
+
+    & > .checkbox {
+      margin-bottom: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__optional-comment {
+    padding-top: 10px;
   }
 }

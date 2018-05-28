@@ -14,6 +14,10 @@ $border: #d0cfd2;
     & > .field-container__block {
       margin-left: 24px;
     }
+
+    & > .add-more{
+      margin-left: 24px;
+    }
   }
 
   &__field {
@@ -46,4 +50,22 @@ $border: #d0cfd2;
     height: 8px;
     background-size: 8px 8px;
   }
+}
+
+.add-more {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background: #d0cfd2;
+  border: 1px solid #bbb9bd;
+  border-radius: 5px;
+  height: 24px;
+  font-family: LatoBold, sans-serif;
+  font-size: 14px;
+  color: #4f4657;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 15px;
+  cursor: pointer;
 }

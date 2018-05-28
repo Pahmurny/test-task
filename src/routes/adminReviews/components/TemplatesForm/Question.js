@@ -18,6 +18,8 @@ import TextArray from 'routes/adminReviews/components/TemplatesForm/FieldsArray/
 import { MakeFakeQuestion } from 'routes/adminReviews/components/TemplatesForm/index'
 import TextAreaField from 'components/Form/TextAreaField/TextAreaField'
 import TypeDropdown from 'routes/adminReviews/components/TemplatesForm/TypeDropdown'
+import CheckboxFieldLabel from 'components/Form/Checkbox/withLabel/CheckboxFieldLabel'
+import DefaultButton from 'components/Buttons/DefaultButton'
 
 
 const FieldArrays = {
@@ -31,7 +33,7 @@ const FieldArrays = {
  * Get Question Type by key
  * @param key
  * @param questionTemplates
- * @returns {bool | string}
+ * @returns {boolean | string}
  */
 const getType = (key, questionTemplates) => {
   if (!questionTemplates || !Array.isArray(questionTemplates)) {
@@ -80,12 +82,21 @@ const Question = ({ fields, formTypes, questionTemplates }) => {
         />
       </label>
 
-      <Field
-        component={TypeDropdown}
-        name={`${field}.${TEMPLATE_QUESTION_TYPE}`}
-      />
+      <div className="templates-form__type-section">
+        <Field
+          component={TypeDropdown}
+          name={`${field}.${TEMPLATE_QUESTION_TYPE}`}
+        />
+        {getType(key, questionTemplates) && <CheckboxFieldLabel
+          name={`${field}.optional`}
+          label={'Answer optional?'}
+          className="templates-form__optional"
+        />}
+      </div>
 
-      <div className="templates-form__fields-array">{(getType(key, questionTemplates) && getType(key, questionTemplates) !== QUESTION_TYPE_WRITE) && <FieldArray
+      <div
+        className="templates-form__fields-array">{(getType(key, questionTemplates) && getType(key, questionTemplates) !== QUESTION_TYPE_WRITE) &&
+      <FieldArray
         name={`${field}.${getType(key, questionTemplates)}`}
         component={FieldArrays[getType(key, questionTemplates)]}
       />}</div>
@@ -95,6 +106,17 @@ const Question = ({ fields, formTypes, questionTemplates }) => {
         className={'templates-form__write-field'}
         placeholder={'Required, what is your response?'}
       />}
+      {(getType(key, questionTemplates) && getType(key, questionTemplates) !== QUESTION_TYPE_WRITE) &&
+      <div className="templates-form__optional-comment">
+        <CheckboxFieldLabel
+          name={`${field}.optionalComment`}
+          label={'Optional comment?'}
+          className="templates-form__optional"
+        />
+      </div>}
+      <div className="templates-form__actions">
+        <DefaultButton>Complete</DefaultButton>
+      </div>
     </div>)}
     <div className="templates-form__more-question"
          onClick={() => fields.push(MakeFakeQuestion())}>

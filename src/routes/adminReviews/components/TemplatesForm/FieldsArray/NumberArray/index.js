@@ -1,6 +1,7 @@
 import React from 'react'
 import FieldBlock from 'routes/adminReviews/components/TemplatesForm/FieldsArray/FieldBlock'
 import './numberArray.scss'
+import { MAX_VARIANTS } from 'routes/adminReviews/components/TemplatesForm/index'
 
 
 const NumberArray = ({ fields }) => {
@@ -19,6 +20,9 @@ const NumberArray = ({ fields }) => {
         field={`${field}.value`}
       />,
     )}
+    {fields.length < MAX_VARIANTS && <div className="field-container">
+      <div onClick={() => fields.push({})} className="add-more">+ Rating</div>
+    </div>}
   </div>
 }
 
