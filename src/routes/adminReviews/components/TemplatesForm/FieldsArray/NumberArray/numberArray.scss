@@ -1,0 +1,12 @@
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+
+  &__count {
+    font-family: LatoRegular, sans-serif;
+    font-size: 14px;
+    color: #9f9ba2;
+    text-align: center;
+  }
+}

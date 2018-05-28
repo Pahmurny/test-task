@@ -16,6 +16,23 @@
     }
   }
 
+  &__write-field {
+    background: #fcfcfc;
+    border: 1px solid #e6e4e7;
+    box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 72px;
+    resize: none;
+    font-family: LatoRegular, sans-serif;
+    font-size: 16px;
+    color: #9f9ba2;
+    text-align: left;
+    padding: 6px 12px;
+    outline: none;
+  }
+
   &__label {
     font-family: LatoBold, sans-serif;
     font-size: 18px;
@@ -33,7 +50,7 @@
       display: flex;
       align-items: center;
 
-      .checkbox{
+      .checkbox {
         margin-bottom: 0;
       }
     }
@@ -76,6 +93,14 @@
       height: 24px;
       background-size: 24px 24px;
       background-repeat: no-repeat;
+    }
+  }
+
+  .type-dropdown {
+    width: 180px;
+
+    .dropdown__trigger {
+      background-color: #fff;
     }
   }
 }
