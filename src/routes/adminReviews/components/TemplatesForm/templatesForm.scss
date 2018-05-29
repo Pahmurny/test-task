@@ -131,4 +131,28 @@
   &__optional-comment {
     padding-top: 10px;
   }
+
+  &__read-only{
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    font-family: LatoRegular, sans-serif;
+    font-size: 16px;
+    color: #4A4A4A;
+    margin-bottom: 8px;
+  }
+
+  &__edit-icon{
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    margin-left: 14px;
+  }
+
+  &__remove-icon{
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+  }
 }
