@@ -157,6 +157,7 @@ class TagLine extends Component {
                             <div
                                 className="tag-line__delete--action">
                                 <NegativeButton
+                                    width={'48'}
                                     onClick={this.onRemove}
                             >Delete
                             </NegativeButton>

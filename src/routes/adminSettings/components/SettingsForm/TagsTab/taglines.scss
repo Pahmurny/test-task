@@ -1,6 +1,6 @@
+@import "~styles/placeholdertext";
+
 .tag-lines{
-
-
 
   .actions {
     display: flex;
@@ -8,7 +8,7 @@
     font-family: Lato-Regular, sans-serif;
     font-size: 14px;
     color: #207D94;
-    padding: 17px 0;
+    padding: 18px 0;
 
     &__handler {
       display: flex;
@@ -16,7 +16,7 @@
       cursor: pointer;
 
       .plusbtn{
-        margin-right: 12px;
+        margin-right: 6px;
       }
     }
 
@@ -34,26 +34,10 @@
       font-size: 14px;
       color: #23182d;
       padding: 0px 6px;
-    }
 
-    ::-webkit-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::-moz-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    :-ms-input-placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
-    }
-
-    ::placeholder {
-    color: #9f9ba2;
-    font-size: 14px;
+      &:focus {
+        border: 2px solid #207d94;
+      }
     }
   }
 }

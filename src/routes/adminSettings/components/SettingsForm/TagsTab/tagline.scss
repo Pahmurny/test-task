@@ -71,18 +71,26 @@
 
   &__edit-field {
     background: #fcfcfc;
-    border: 1px solid #9f9ba2;
-    border-radius: 3px;
     padding: 1px;
     box-sizing: border-box;
 
+    &:focus {
+      border: transparent;
+    }
+
     &--input {
-      line-height: 36px;
+      line-height: 30px;
       font-family: Lato-Regular, sans-serif;
       font-size: 14px;
       color: #23182d;
       outline: none;
-      border: 0;
+      border: 1px solid #9f9ba2;
+      border-radius: 3px;
+      padding: 0 6px;
+
+      &:focus {
+        border: 2px solid #207d94;
+      }
     }
   }
 
