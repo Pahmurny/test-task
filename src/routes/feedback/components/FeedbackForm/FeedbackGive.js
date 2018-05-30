@@ -118,7 +118,7 @@ class FeedbackGive extends Component {
     return (
       <Fragment>
         <Content className="give-export__view">
-          <FieldTitle>
+          <FieldTitle className={'give-export__title'}>
             Who are you giving feedback to?
           </FieldTitle>
           {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused
