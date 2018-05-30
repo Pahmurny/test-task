@@ -1,5 +1,6 @@
 @import "~styles/fonts";
 @import "~styles/colors";
+@import "~styles/common";
 
 $hw: 192px;
 
@@ -131,11 +132,6 @@ $hw: 192px;
           position: relative;
           margin-bottom: 0px;
 
-          &:focus {
-            box-shadow: 0 0 0 2px $active-primary;
-            border-color: transparent;
-          }
-
           &:before {
             content: 'Line 1';
             position: absolute;
@@ -209,6 +205,10 @@ $hw: 192px;
     min-height: 72px;
     margin-bottom: 24px;
     padding: 6px;
+
+    &:focus {
+      border: 2px solid $active-primary;
+    }
   }
 
   .actions {
