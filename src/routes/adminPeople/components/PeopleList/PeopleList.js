@@ -121,6 +121,7 @@ class PeopleList extends Component {
                             />
                             Active only
                             <DefaultButton
+                                width={'96px'}
                                 className="download-btn"
                                 onClick={() => updatePeopleValue('uploadForm', true)}
                             >Upload CSV</DefaultButton>
@@ -148,7 +149,7 @@ class PeopleList extends Component {
                     <FeedbackForm
                         title={<PopupTitle>Upload your employees</PopupTitle>}
                         onClose={() => updatePeopleValue('uploadForm', false)}
-                        //style={{ minHeight: 0, width: 577 }}
+                        style={{ minHeight: 216, width: 576 }}
                     >
                         <UploadForm/>
                     </FeedbackForm>
