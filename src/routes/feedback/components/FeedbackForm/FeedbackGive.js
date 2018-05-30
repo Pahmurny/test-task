@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
 import { connect } from 'react-redux'
+import cn from 'classnames'
 import Content from 'routes/feedback/components/FeedbackForm/shared/Content'
 import { FieldTitle } from 'routes/feedback/components/FeedbackForm/shared/FieldTitle'
 import TagsField from 'components/Form/TagsField/TagsField'
@@ -24,8 +25,9 @@ import RoundedBlock from 'components/Shared/RoundedBlock'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
-import LockIcon2 from 'components/Icons/LockIcon2'
 import './feedbackgive.scss'
+import LockIcon2 from 'components/Icons/LockIcon2'
+import { pathOr } from 'rambda'
 
 const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
@@ -84,6 +86,25 @@ class FeedbackGive extends Component {
     return label
   }
 
+  renderPublic = () => {
+    const { give: { feedbackType, isPublic, ...giveUser }, togglePublic } = this.props
+
+    const { name } = pathOr({ name: 'John Doe' }, ['replyTo', 'user'], giveUser)
+
+    if (feedbackType === FEEDBACK_REPLY_TYPE) {
+      return <div className="give-export__only-you">Only you and {name} can read this.</div>
+    }
+    return <ToggleField
+      onClick={togglePublic}
+      leftLabel={'Public'}
+      rightLabel={<React.Fragment>
+        <LockIcon2 className={cn('give-export__actions__lock-icon', { active: !isPublic })}/>
+        Private</React.Fragment>}
+      label={this.getReceiverName()}
+      toggle={isPublic}
+      className={'give-export__action-toggle'}
+    />
+  }
 
   renderPending = () => {
     const { give: { pendingLoading, pendingFeedbacks }, selectFeedback, deleteFeedback } = this.props
@@ -111,9 +132,9 @@ class FeedbackGive extends Component {
   render() {
 
     const {
-      give: { people, feedbackType, isPublic, isAnonymous },
+      give: { people, feedbackType, isAnonymous },
       allPeople,
-      togglePublic,
+      isPublic,
       toggleAnonymous,
     } = this.props
     return (
@@ -123,7 +144,6 @@ class FeedbackGive extends Component {
             Who are you giving feedback to?
           </FieldTitle>
           {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused
-            //style={{ marginTop: 12 }}
             className="rounded-focused">
             <TagsField
               tags={people}
@@ -141,18 +161,7 @@ class FeedbackGive extends Component {
         </Content>
         {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock className="give-export__actions">
           <div className="private-block">
-            <ToggleField
-              onClick={togglePublic}
-              leftLabel={'Public'}
-              rightLabel={<React.Fragment>
-                <LockIcon2 className={cn('give-export__actions__lock-icon', { active: !isPublic })}
-                  /*fillColor={isPublic ? '#9F9BA2' : '#277D93'}*/
-                />
-                Private</React.Fragment>}
-              label={this.getReceiverName()}
-              toggle={isPublic}
-              className={'give-export__action-toggle'}
-            />
+            {this.renderPublic()}
             {!isPublic && <ToggleField
               onClick={toggleAnonymous}
               leftLabel={'With Name'}
