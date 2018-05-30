@@ -8,7 +8,7 @@ const DefaultButton = styled.div`
   color: ${textButton};
   font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
-  min-width: 72px;
+  width: ${props => props.width? props.width : '72px'};
   height: 30px;
   line-height: 30px;
   display: inline-block;
@@ -16,12 +16,12 @@ const DefaultButton = styled.div`
   text-align: center;
   padding: 0 24px;
   cursor: pointer;
-  border-radius: ${props => props.round? props.round : '3px'};
+  border-radius: 3px;
 `
 
 DefaultButton.propTypes = {
     onClick: PropTypes.func,
-    round: PropTypes.oneOfType([
+    width: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
     ])
