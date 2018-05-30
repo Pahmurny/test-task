@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import { connect } from 'react-redux'
 import Content from 'routes/feedback/components/FeedbackForm/shared/Content'
 import { FieldTitle } from 'routes/feedback/components/FeedbackForm/shared/FieldTitle'
@@ -23,8 +24,8 @@ import RoundedBlock from 'components/Shared/RoundedBlock'
 import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
-import './feedbackgive.scss'
 import LockIcon2 from 'components/Icons/LockIcon2'
+import './feedbackgive.scss'
 
 const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
@@ -144,7 +145,7 @@ class FeedbackGive extends Component {
               onClick={togglePublic}
               leftLabel={'Public'}
               rightLabel={<React.Fragment>
-                <LockIcon2 className="give-export__actions__lock-icon"
+                <LockIcon2 className={cn('give-export__actions__lock-icon', { active: !isPublic })}
                   /*fillColor={isPublic ? '#9F9BA2' : '#277D93'}*/
                 />
                 Private</React.Fragment>}

@@ -8,7 +8,7 @@
 
   &__block {
     min-height: 300px;
-  }  
+  }
 }
 
 .give-export {
@@ -30,10 +30,19 @@
 
     &__lock-icon {
       margin-right: 6px;
-      fill: $grey-primary;
 
-      &:active {
-        fill: $active-primary;
+      g {
+        &:first-child {
+          fill: $grey-primary;
+        }
+      }
+
+      &.active {
+        g {
+          &:first-child {
+            fill: $active-primary;
+          }
+        }
       }
     }
   }
@@ -46,7 +55,7 @@
     padding-bottom: 0;
 
     .tags-field {
-      &__selected-tag{
+      &__selected-tag {
         height: 38px;
       }
     }
