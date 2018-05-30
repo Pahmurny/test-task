@@ -7,7 +7,7 @@
   color: $text-primary;
 
   &__date {
-    color: $text-subheader;
+    color: $text-secondary;
     display: flex;
     align-items: center;
 
@@ -39,14 +39,15 @@
 
   &__content {
     padding: 20px 0;
-    line-height: 20px;
+    line-height: 18px;
 
     & > &-question {
       font-family: Lato, sans-serif;
       color: $text-primary;
       font-size: 14px;
       font-style: italic;
-      margin-bottom: 10px;
+      line-height: 24px;
+      margin-bottom: 18px;
     }
   }
 
@@ -58,10 +59,6 @@
       color: $text-primary;
       background: $tag-primary;
       border-radius: 3px;
-
-      &:before{
-        content: '#';
-      }
     }
   }
 }

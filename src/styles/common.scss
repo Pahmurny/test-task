@@ -1,8 +1,10 @@
+@import "~styles/colors";
+
 input {
   &[type=text] {
     &:focus {
-      box-shadow: 0 0 0 2px #207d94;
-      border-color: transparent;
+      box-shadow: 0 0 0 2px $active-primary;
+      border-color: transparent; 
     }
   }
 }

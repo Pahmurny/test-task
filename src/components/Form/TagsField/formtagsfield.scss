@@ -1,33 +1,32 @@
-$heightTag: 24px;
+@import "~styles/colors";
+@import "~styles/constants";
+
+$heightTag: 20px;
 
 .form-tags-field {
   $formTagField: &;
 
   .tags-field {
-    width: 168px;
-    background: #fcfcfc;
-    border: 1px solid #9f9ba2;
+    width: 180px;
+    background: $white;
+    border: 1px solid $border-primary;
     margin-left: 12px;
     border-radius: 3px;
-    height: $heightTag;
-
-    &:focus {
-      box-shadow: 0 0 0 2px #207d94;
-      border-color: transparent;
-    }
+    height: 24px;
 
     &__search-input {
       input {
         height: $heightTag;
-        font-family: LatoRegular, sans-serif;
+        font-family: $fontLatoRegular, sans-serif;
         font-size: 14px;
-        color: #23182d;
-        padding: 0;
+        color: $text-primary;
       }
     }
 
     &__selected-tag {
-      height: $heightTag;
+      max-height: $heightTag;
+      width: 100%;
+      margin: 2px auto;
     }
   }
 

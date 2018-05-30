@@ -33,13 +33,14 @@ class ProfileData extends Component {
         </div>
         <div className="profile-data__username">{name}</div>
         <div className="profile-data__position">{job_title}</div>
-        <ProfileROField label={'Manager'} value={IsDev() ? 'Richard Hendricks' : managerName}/>
-        <ProfileROField label={'Team Tags'} value={team_tags.map(tag => tag.label).join(', ')}/>
-        <ProfileROField label={'Email'} value={email}/>
-        <ProfileROField label={'Start Date'} value={IsDev() ? '08/07/2014' : start_date}/>
+        <ProfileROField className="profile-data__info" label={'Manager'} value={IsDev() ? 'Richard Hendricks' : managerName}/>
+        <ProfileROField className="profile-data__info" label={'Team Tags'} value={team_tags.map(tag => tag.label).join(', ')}/>
+        <ProfileROField className="profile-data__info" label={'Email'} value={email}/>
+        <ProfileROField className="profile-data__info" label={'Start Date'} value={IsDev() ? '08/07/2014' : start_date}/>
         <ProfileROField
-          label={'Phone'}
-          value={!editMode ? phone_number : <Field
+            className="profile-data__info"
+            label={'Phone'}
+            value={!editMode ? phone_number : <Field
             component={'input'}
             name={'phone_number'}
             className={'profile-data__text-input'}

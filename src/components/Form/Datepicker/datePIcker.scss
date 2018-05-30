@@ -79,7 +79,7 @@
   border-radius: 0 0 0.3rem 0.3rem;
   display: inline-block;
   position: relative;
-  width: 179px;
+  width: 180px;
   overflow: hidden;
 }
 
@@ -564,7 +564,8 @@
 }
 
 .react-datepicker__day--outside-month {
-  background-color: #bbb9bd;
+  color: #9f9ba2;
+  text-align: center;
 }
 
 .react-datepicker__close-icon::after {

@@ -59,7 +59,7 @@ class TagLines extends Component {
                         onClick={this.showNewInput}
           >
             <PlusButton className={'plusbtn'}/>
-            New Tag
+            New Team
           </div>}
           {add &&
           <React.Fragment>
@@ -69,7 +69,7 @@ class TagLines extends Component {
               className="new-field-name"
               value={name}
               onChange={e => this.setState({ name: e.target.value })}
-              placeholder={'Type your tag name here...'}
+              placeholder={'Type your team name here...'}
               onKeyDown={this.onKeyDown}
             />
             <PlusButton

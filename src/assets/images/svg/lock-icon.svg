@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(-1096 -366)" fill="none" fill-rule="evenodd">
-        <g fill="#545454" fill-rule="nonzero">
-            <g transform="translate(576 288)">
-                <g transform="translate(1 48)">
-                    <g transform="translate(519 24)">
-                        <g transform="translate(0 6)">
-                            <path d="m5 0c-1.7752 0-3.2143 1.511-3.2143 3.375v1.875h-0.35714c-0.78898 0-1.4286 0.67157-1.4286 1.5v3.75c0 0.82843 0.63959 1.5 1.4286 1.5h7.1429c0.78898 0 1.4286-0.67157 1.4286-1.5v-3.75c0-0.82843-0.63959-1.5-1.4286-1.5h-0.35714v-1.875c0-1.864-1.4391-3.375-3.2143-3.375zm1.5 5h-3v-1.6667c0-0.73638 0.67157-1.3333 1.5-1.3333s1.5 0.59695 1.5 1.3333v1.6667z"/>
-                        </g>
-                    </g>
-                </g>
-            </g>
+<svg width="10px" height="12px" viewBox="0 0 10 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>lock-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="lock-icon" fill="#9F9BA2" fill-rule="nonzero">
+            <path d="M5,0 C3.2248,0 1.7857,1.511 1.7857,3.375 L1.7857,5.25 L1.42856,5.25 C0.63958,5.25 -4e-05,5.92157 -4e-05,6.75 L-4e-05,10.5 C-4e-05,11.32843 0.63955,12 1.42856,12 L8.57146,12 C9.36044,12 10.00006,11.32843 10.00006,10.5 L10.00006,6.75 C10.00006,5.92157 9.36047,5.25 8.57146,5.25 L8.21432,5.25 L8.21432,3.375 C8.21432,1.511 6.77522,0 5.00002,0 L5,0 Z M6.5,5 L3.5,5 L3.5,3.3333 C3.5,2.59692 4.17157,2 5,2 C5.82843,2 6.5,2.59695 6.5,3.3333 L6.5,5 Z" id="Shape"></path>
         </g>
     </g>
 </svg>

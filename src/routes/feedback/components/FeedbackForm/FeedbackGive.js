@@ -21,15 +21,15 @@ import DefaultButton from 'components/Buttons/DefaultButton'
 import ToggleField from 'components/Form/Toggle/ToggleField'
 import togglePublic from 'routes/feedback/actions/togglePublic'
 import toggleAnonymous from 'routes/feedback/actions/toggleAnonymous'
-import RoundedBlock from 'components/Shared/RoundedBlock'
-import withFocus from 'components/Shared/HOC/focused/withFocus'
+//import RoundedBlock from 'components/Shared/RoundedBlock'
+//import withFocus from 'components/Shared/HOC/focused/withFocus'
 import PersonalEmail from 'components/Form/PersonalEmail'
 import deleteFeedback from 'routes/feedback/actions/deleteFeedback'
 import './feedbackgive.scss'
 import LockIcon2 from 'components/Icons/LockIcon2'
 import { pathOr } from 'rambda'
 
-const RoundedFocused = withFocus(RoundedBlock)
+//const RoundedFocused = withFocus(RoundedBlock)
 const ANONYMOUS_TEXT = 'This feedback will be sent with “Anonymous” as the giver.'
 const PUBLIC_TEXT = 'This feedback will be sent with your name as the giver.'
 

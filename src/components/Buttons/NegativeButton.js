@@ -8,7 +8,7 @@ const NegativeButton = styled.div`
   color: ${textButton};
   font-family: ${fontLatoRegular}, sans-serif;
   font-size: 14px;
-  min-width: 72px;
+  width: ${props => props.width? props.width : '72px'};
   height: 30px;
   line-height: 30px;
   display: inline-block;
@@ -21,7 +21,7 @@ const NegativeButton = styled.div`
 
 NegativeButton.propTypes = {
     onClick: PropTypes.func,
-    round: PropTypes.oneOfType([
+    width: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
     ])

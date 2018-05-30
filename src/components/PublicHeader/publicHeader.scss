@@ -1,6 +1,9 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .public-header {
-  background: #fcfcfc;
-  box-shadow: 0 2px 4px 0 rgba(230, 228, 231, 0.50);
+  background: $white;
+  box-shadow: 0 2px 4px 0 $shadow;
   height: 72px;
   display: flex;
   padding: 0 24px;
@@ -16,9 +19,9 @@
   }
 
   &__title {
-    font-family: LatoBold, sans-serif;
+    font-family: $fontLatoBold, sans-serif;
     font-size: 24px;
-    color: #23182d;
+    color: $text-primary;
     margin-left: 10px;
     margin-right: 51px;
   }
@@ -27,9 +30,9 @@
     display: flex;
 
     &-item {
-      font-family: LatoRegular, sans-serif;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 18px;
-      color: #4a4a4a;
+      color: $text-subheader;
       text-decoration: none;
       margin-right: 24px;
 

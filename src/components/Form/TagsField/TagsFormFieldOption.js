@@ -33,8 +33,8 @@ class TagsFormFieldOption extends Component {
 export default styled(TagsFormFieldOption)`
     display: flex;
     align-items: center;
-    height: 35px;
-    
+    height: 30px;
+
     ${StyledCheckBox} {
         margin-left: 6px;
         margin-right: 4px;

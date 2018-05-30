@@ -1,3 +1,6 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .received-feedback {
   margin-bottom: 24px;
 
@@ -7,15 +10,15 @@
     margin-bottom: 18px;
 
     &-question {
-      font-family: LatoItalic, sans-serif;
+      font-family: $fontLatoItalic, sans-serif;
       font-size: 14px;
-      color: #23182d;
+      color: $text-primary;
       text-align: left;
       line-height: 18px;
     }
   }
 
   &__about {
-    margin-right: 5px;
+    margin-right: 12px;
   }
 }

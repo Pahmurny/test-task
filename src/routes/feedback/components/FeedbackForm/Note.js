@@ -47,17 +47,17 @@ class Note extends Component {
 
         return (
             <Content className="note__view">
-                <FieldTitle>
+                <FieldTitle style={{ marginBottom: 12 }}>
                     Who's the note about?
                 </FieldTitle>
-                <RoundedFocused style={{ marginTop: 12 }}>
                     <TagsField
+                        placeholder={'Type their name...'}
+                        style={{ marginTop: 12 }}
                         tags={people}
                         onAdd={addPeople}
                         onDelete={deletePeople}
                         suggestions={allPeople.map(person => ({...person, name:`${person.name}`, component: <PersonalEmail>{person.email}</PersonalEmail>}))}
                     />
-                </RoundedFocused>
 
                 <FieldTitle style={{ marginTop: 30 }}>
                     What do you want to remember for later?

@@ -1,4 +1,8 @@
 @import "~styles/fonts";
+@import "~styles/colors";
+@import "~styles/common";
+
+$hw: 192px;
 
 .profile-tab {
   display: block;
@@ -9,15 +13,15 @@
 
   &__logo {
     display: block;
-    width: 192px;
-    height: 192px;
+    width: $hw;
+    height: $hw;
     cursor: pointer;
     margin-right: 48px;
 
     &--upload {
       display: block;
-      width: 192px;
-      height: 192px;
+      width: $hw;
+      height: $hw;
       margin: 0 auto;
       position: relative;
 
@@ -35,10 +39,10 @@
         display: none;
         justify-content: center;
         align-items: center;
-        background: rgba(216, 216, 216, 0.75);
+        background: $grey-semitransparent;
         font-family: $fontLatoBold, sans-serif;
         font-size: 24px;
-        color: #5f5864;
+        color: $active-primary;
         text-align: center;
         text-transform: capitalize;
       }
@@ -51,8 +55,8 @@
         position: absolute;
         font-family: $fontLatoBold, sans-serif;
         font-size: 24px;
-        color: #4f4657;
-        background: rgba(159, 155, 162, 0.10);
+        color: $active-primary;
+        background: $grey-semitransparent;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -75,9 +79,8 @@
         }
 
         .empty-block-info {
-          background: rgba(169, 193, 142, 0.75);
-          border: 4px solid #417505;
-          border-style: dashed;
+          background: $active-secondary;
+          border: 4px dashed $active-primary;
           display: flex;
         }
       }
@@ -106,7 +109,7 @@
           &:before {
             content: '@';
             position: absolute;
-            border-right: 1px solid #9f9ba2;
+            border-right: 1px solid $border-primary;
             top: 30px;
             height: 36px;
             display: flex;
@@ -116,7 +119,7 @@
             border-radius: 0;
             font-family: $fontLatoBold, sans-serif;
             font-size: 14px;
-            color: #9f9ba2;
+            color: $border-primary;
             text-align: center;
           }
           input[type=text] {
@@ -129,15 +132,10 @@
           position: relative;
           margin-bottom: 0px;
 
-          &:focus {
-            box-shadow: 0 0 0 2px #207D94;
-            border-color: transparent;
-          }
-
           &:before {
             content: 'Line 1';
             position: absolute;
-            border-right: 1px solid #9f9ba2;
+            border-right: 1px solid $text-secondary;
             top: 30px;
             height: 36px;
             display: flex;
@@ -147,7 +145,7 @@
             border-radius: 0;
             font-family: $fontLatoRegular, sans-serif;
             font-size: 14px;
-            color: #9f9ba2;
+            color: $text-secondary;
             text-align: center;
           }
 
@@ -163,7 +161,7 @@
           &:before {
             content: 'Line 2';
             position: absolute;
-            border-right: 1px solid #9f9ba2;
+            border-right: 1px solid $text-secondary;
             top: 12px;
             height: 36px;
             display: flex;
@@ -173,7 +171,7 @@
             border-radius: 0;
             font-family: $fontLatoRegular, sans-serif;
             font-size: 14px;
-            color: #9f9ba2;
+            color: $text-secondary;
             text-align: center;
           }
 
@@ -185,40 +183,16 @@
     }
   }
 
-  .checkbox-block {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-
-    &__mark {
-      margin-bottom: 18px;
-      margin-top: 2px;
-    }
-
-    &__label {
+  .label {
       font-family: $fontLatoBold, sans-serif;
       font-size: 18px;
-      color: #23182d;
+      color: $text-primary;
       text-align: left;
     }
-
-    &__description {
-      font-family: $fontLatoRegular, sans-serif;
-      font-size: 14px;
-      color: #9f9ba2;
-      text-align: left;
-      margin-bottom: 6px;
-      flex: 0 0 100%;
-
-      .link {
-        color: #207d94;
-      }
-    }
-  }
 
   .textarea-field {
-    background: #fcfcfc;
-    border: 1px solid #9f9ba2;
+    background: $white;
+    border: 1px solid $border-primary;
     border-radius: 3px;
     font-size: 14px;
     font-family: LatoRegular, sans-serif;
@@ -231,6 +205,10 @@
     min-height: 72px;
     margin-bottom: 24px;
     padding: 6px;
+
+    &:focus {
+      border: 2px solid $active-primary;
+    }
   }
 
   .actions {

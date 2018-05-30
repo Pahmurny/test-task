@@ -1,10 +1,13 @@
+@import "~styles/colors";
+@import "~styles/constants";
+
 .fromtofeedback {
-  padding: 12px 23px 23px 23px;
+  padding: 12px 24px 24px 24px;
 
   & > &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     align-items: center;
   }
 
@@ -14,9 +17,9 @@
     justify-content: flex-start;
 
     .feedback-username {
-      font-family: LatoRegular, sans-serif;
+      font-family: $fontLatoRegular, sans-serif;
       font-size: 14px;
-      color: #23182d;
+      color: $text-primary;
       text-align: left;
       line-height: 24px;
       white-space: nowrap;
@@ -28,20 +31,21 @@
   }
 
   &__feedback-date {
-    font-family: LatoRegular, sans-serif;
+    font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
-    color: #9f9ba2;
+    color: $text-secondary;
     text-align: right;
     display: flex;
   }
 
   & > &__content {
-    font-family: LatoRegular, sans-serif;
+    font-family: $fontLatoRegular, sans-serif;
     font-size: 16px;
-    color: #23182d;
+    line-height: 18px;
+    color: $text-primary;
     text-align: left;
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 
   & > &__tags {
@@ -52,15 +56,10 @@
     .hash-item {
       margin-right: 5px;
       margin-bottom: 5px;
-      font-family: LatoBold, sans-serif;
+      font-family: $fontLatoBold, sans-serif;
       font-size: 14px;
-      color: #23182d;
+      color: $text-primary;
       text-align: center;
-
-      &:before {
-        content: '#';
-      }
     }
   }
-
 }

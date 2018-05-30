@@ -2,7 +2,6 @@
 
 .feedback-data {
   display: block;
-  /*padding: 1em;*/
 
   &__content {
     display: block;
@@ -15,7 +14,6 @@
 
   &__data {
     display: block;
-    padding-top: 30px;
     font-family: $fontLatoRegular, sans-serif;
     font-size: 14px;
     color: #9f9ba2;
@@ -25,13 +23,10 @@
   }
 
   &__response {
-    margin-top: 30px;
-
     &-title {
       padding: 1em 1em 1em 24px;
       border-bottom: 1px solid #9f9ba2;
       border-top: 1px solid #9f9ba2;
-      margin-bottom: 30px;
     }
   }
 }
