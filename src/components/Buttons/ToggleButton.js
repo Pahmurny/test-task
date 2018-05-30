@@ -8,7 +8,7 @@ const ToggleButton = styled.div`
     display: inline-block;
     height: 24px;
     position: relative;
-    width: 96px;
+    width: 72px;
     line-height: 24px;
     background: ${props => props.active ? '#A6CBD4' : '#d0cfd2'};
     border-radius: 0;

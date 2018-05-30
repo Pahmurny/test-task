@@ -1,23 +1,18 @@
 @import "~styles/colors";
 @import "~styles/constants";
 
-$heightTag: 24px;
+$heightTag: 20px;
 
 .form-tags-field {
   $formTagField: &;
 
   .tags-field {
-    width: 188px;
+    width: 180px;
     background: $white;
     border: 1px solid $border-primary;
     margin-left: 12px;
     border-radius: 3px;
-    height: $heightTag;
-
-    &:focus {
-      box-shadow: 0 0 0 2px $active-primary;
-      border-color: transparent;
-    }
+    height: 24px;
 
     &__search-input {
       input {
@@ -25,12 +20,13 @@ $heightTag: 24px;
         font-family: $fontLatoRegular, sans-serif;
         font-size: 14px;
         color: $text-primary;
-        padding: 0;
       }
     }
 
     &__selected-tag {
-      height: $heightTag;
+      max-height: $heightTag;
+      width: 100%;
+      margin: 2px auto;
     }
   }
 

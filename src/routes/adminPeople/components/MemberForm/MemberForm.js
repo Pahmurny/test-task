@@ -133,7 +133,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
               <div className="member-form__content--row">
                 <Field
                   component={TagsFormField}
-                  label={'Team Tags'}
+                  label={'Team(s)'}
                   name={'team_tags'}
                   className={'member-form__tags-field'}
                   options={tags}
@@ -141,6 +141,7 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
                   multi
                 />
               </div>
+              <div className="member-form__content--col__descriptor">Select up to two teams.</div>
             </div>
           </div>
         </div>
@@ -166,10 +167,9 @@ const MemberForm = ({ formValues, iniValues, tags, managers, handleSubmit, submi
         <div className="member-form__actions--btns">
           <Field component={ActivateField} name={'active'}/>
           <DefaultButton
-            round={3}
+            width={'36px'}
             onClick={() => submit()}
           >Save</DefaultButton>
-
         </div>
       </div>
     </Form>
