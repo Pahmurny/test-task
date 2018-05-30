@@ -5,6 +5,7 @@ import common from './common'
 import people from 'routes/adminPeople/reducer/peopleReducer'
 import companyPeople from 'routes/companyPeople/companyPeopleReducer'
 import feedbacks from 'routes/feedback/feedbackReducer'
+import reviewReducer from 'routes/adminReviews/reviewReducer'
 
 /**
  * Creates combined reducer
@@ -16,6 +17,7 @@ const createReducer = (asyncReducers = {}) => combineReducers({
   common,
   people,
   companyPeople,
+  reviews:reviewReducer,
   feedbacks, ...asyncReducers,
   form: formReducer,
 })

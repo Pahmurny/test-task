@@ -13,8 +13,8 @@ const RGFeedback = (props) => <FromToFeedback
   render={props=> feedbackHeader[MODULE_VIEW_COMPANY](props)}
 >
   {props => <div className={'received-given__content'}>
-    {(props.question || IsDev()) && <div className="received-given__question">{props.question || 'Request: How’s my transition as a part-time advisor?'}</div>}
-    <div style={{marginBottom: 10}}><AboutBlock image={props.user.image} name={props.user.name}/></div>
+    {(props.question || IsDev()) && <div className="received-given__question">{props.question || 'Request: How’s my transition as a part-time advisor?'}<AboutBlock className={'about'} image={props.user.image} name={props.user.name}/></div>}
+    {/*<div style={{marginBottom: 10}}><AboutBlock image={props.user.image} name={props.user.name}/></div>*/}
     {props.content}
   </div>}
 </FromToFeedback>
