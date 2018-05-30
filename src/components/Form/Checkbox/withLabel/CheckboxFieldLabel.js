@@ -8,6 +8,9 @@ const CheckboxFieldLabel = ({label, name, ...props}) => <div {...props}>
      <span>{label}</span>
 </div>
 
-CheckboxFieldLabel
+CheckboxFieldLabel.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+}
 
 export default CheckboxFieldLabel

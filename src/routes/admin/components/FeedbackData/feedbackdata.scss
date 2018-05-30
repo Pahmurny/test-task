@@ -9,7 +9,7 @@
     font-size: 18px;
     color: #23182d;
     text-align: left;
-    padding: 24px;
+    padding: 1em 1em 1em 24px;
   }
 
   &__data {
@@ -24,7 +24,7 @@
 
   &__response {
     &-title {
-      padding: 1em;
+      padding: 1em 1em 1em 24px;
       border-bottom: 1px solid #9f9ba2;
       border-top: 1px solid #9f9ba2;
     }

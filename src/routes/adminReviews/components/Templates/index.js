@@ -125,7 +125,7 @@ class Templates extends Component {
 
 
   state = {
-    newTemplate: true,
+    newTemplate: false,
   }
 
   render() {

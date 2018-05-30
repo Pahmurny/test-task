@@ -1,0 +1,12 @@
+$border: #d0cfd2;
+
+.emojis {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+
+  .emoji {
+    font-size: 24px;
+    margin-top: 3px;
+  }
+}
