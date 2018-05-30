@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Content from 'routes/feedback/components/FeedbackForm/shared/Content'
@@ -33,141 +33,153 @@ const PUBLIC_TEXT = 'This feedback will be sent with your name as the giver.'
 
 class FeedbackGive extends Component {
 
-    static propTypes = {
-        give: PropTypes.object,
-        allPeople: PropTypes.array,
-        addPeople: PropTypes.func.isRequired,
-        deletePeople: PropTypes.func.isRequired,
-        giveType: PropTypes.func.isRequired,
-        getPendingRequests: PropTypes.func.isRequired,
-        selectFeedback: PropTypes.func.isRequired,
-        togglePublic: PropTypes.func.isRequired,
-        toggleAnonymous: PropTypes.func.isRequired,
-        deleteFeedback: PropTypes.func.isRequired,
+  static propTypes = {
+    give: PropTypes.object,
+    allPeople: PropTypes.array,
+    addPeople: PropTypes.func.isRequired,
+    deletePeople: PropTypes.func.isRequired,
+    giveType: PropTypes.func.isRequired,
+    getPendingRequests: PropTypes.func.isRequired,
+    selectFeedback: PropTypes.func.isRequired,
+    togglePublic: PropTypes.func.isRequired,
+    toggleAnonymous: PropTypes.func.isRequired,
+    deleteFeedback: PropTypes.func.isRequired,
+  }
+
+  componentDidMount() {
+    const { getPendingRequests } = this.props
+    getPendingRequests()
+  }
+
+
+  onAddPeople = (person) => {
+    const { addPeople, giveType } = this.props
+    addPeople(person, GIVE_FEEDBACK_TYPE)
+    giveType(FEEDBACK_NEW_TYPE)
+  }
+
+  onDeletePeople = (idx) => {
+    const { deletePeople } = this.props
+    if (deletePeople) {
+      deletePeople(idx, GIVE_FEEDBACK_TYPE)
+    }
+  }
+
+  getReceiverName = () => {
+    const { give: { replyTo, people, isPublic } } = this.props
+    let label = ''
+
+    if (isPublic) {
+      if (replyTo) {
+        const { user: { name } } = replyTo
+        label = `Only you and ${name} can view this.`
+      } else {
+        label = 'Everyone at ${company} can read this.'
+      }
+    } else {
+      label = `Only you and ${people.length} other person can view this.`
     }
 
-    componentDidMount() {
-        const { getPendingRequests } = this.props
-        getPendingRequests()
+    return label
+  }
+
+
+  renderPending = () => {
+    const { give: { pendingLoading, pendingFeedbacks }, selectFeedback, deleteFeedback } = this.props
+    if (pendingLoading) {
+      return <PageLoader/>
     }
+    return <React.Fragment>
+      <FieldTitle className="pending__field-title">
+        Pending requests ({pendingFeedbacks.length})
+      </FieldTitle>
+      <PendingFeedbacks className="pending__block">
+        <PendingFeedbacks>
+          {pendingFeedbacks.map((feedback, key) => <PendingFeedback
+            key={key}
+            feedback={feedback}
+            onSelect={selectFeedback}
+            onClose={deleteFeedback}
+          />)
+          }
+        </PendingFeedbacks>
+      </PendingFeedbacks>
+    </React.Fragment>
+  }
 
+  render() {
 
-    onAddPeople = (person) => {
-        const { addPeople, giveType } = this.props
-        addPeople(person, GIVE_FEEDBACK_TYPE)
-        giveType(FEEDBACK_NEW_TYPE)
-    }
+    const {
+      give: { people, feedbackType, isPublic, isAnonymous },
+      allPeople,
+      togglePublic,
+      toggleAnonymous,
+    } = this.props
+    return (
+      <Fragment>
+        <Content className="give-export__view">
+          <FieldTitle>
+            Who are you giving feedback to?
+          </FieldTitle>
+          {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused
+            //style={{ marginTop: 12 }}
+            className="rounded-focused">
+            <TagsField
+              tags={people}
+              suggestions={allPeople.map(person => ({
+                ...person, name: `${person.name}`,
+                component: <PersonalEmail>{person.email}</PersonalEmail>,
+              }))}
+              onAdd={this.onAddPeople}
+              onDelete={this.onDeletePeople}
+            />
+          </RoundedFocused>}
+          {(feedbackType !== FEEDBACK_NEW_TYPE && feedbackType !== FEEDBACK_REPLY_TYPE) && this.renderPending()}
+          {(feedbackType === FEEDBACK_NEW_TYPE || feedbackType === FEEDBACK_REPLY_TYPE) && <NewFeedback/>}
 
-    onDeletePeople = (idx) => {
-        const { deletePeople } = this.props
-        if (deletePeople) {
-            deletePeople(idx, GIVE_FEEDBACK_TYPE)
-        }
-    }
-
-    getReceiverName = () => {
-        const { give: { replyTo, people, isPublic } } = this.props
-        if (replyTo) {
-            const { user: { name } } = replyTo
-            return isPublic ? 'Everyone at ${company} can read this.' : `Only you and ${name} can view this.`
-        }
-        return isPublic ? '' : `Only you and ${people.length} other person can view this.`
-    }
-
-
-    renderPending = () => {
-        const { give: { pendingLoading, pendingFeedbacks }, selectFeedback, deleteFeedback } = this.props
-        if (pendingLoading) {
-            return <PageLoader/>
-        }
-        return <React.Fragment>
-            <FieldTitle className="pending__field-title">
-                Pending requests ({pendingFeedbacks.length})
-            </FieldTitle>
-            <PendingFeedbacks className="pending__block">
-                <PendingFeedbacks>
-                    {pendingFeedbacks.map((feedback, key) => <PendingFeedback
-                            key={key}
-                            feedback={feedback}
-                            onSelect={selectFeedback}
-                            onClose={deleteFeedback}
-                        />)
-                    }
-                </PendingFeedbacks>
-            </PendingFeedbacks>
-        </React.Fragment>
-    }
-
-    render() {
-
-        const {
-            give: { people, feedbackType, isPublic, isAnonymous },
-            allPeople,
-            togglePublic,
-            toggleAnonymous,
-        } = this.props
-        return (
-            <Content className="give-export__view">
-                <FieldTitle>
-                    Who are you giving feedback to?
-                </FieldTitle>
-                {feedbackType !== FEEDBACK_REPLY_TYPE && <RoundedFocused 
-                    //style={{ marginTop: 12 }}
-                    className="rounded-focused">
-                    <TagsField
-                        tags={people}
-                        suggestions={allPeople.map(person => ({
-                            ...person, name: `${person.name}`,
-                            component: <PersonalEmail>{person.email}</PersonalEmail>,
-                        }))}
-                        onAdd={this.onAddPeople}
-                        onDelete={this.onDeletePeople}
-                    />
-                </RoundedFocused>}
-                {(feedbackType !== FEEDBACK_NEW_TYPE && feedbackType !== FEEDBACK_REPLY_TYPE) && this.renderPending()}
-                {(feedbackType === FEEDBACK_NEW_TYPE || feedbackType === FEEDBACK_REPLY_TYPE) && <NewFeedback/>}
-                {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock className="give-export__actions">
-                    <div className="private-block">
-                        <ToggleField
-                            onClick={togglePublic}
-                            leftLabel={'Public'}
-                            rightLabel={<React.Fragment>
-                                <LockIcon2 className="give-export__actions__lock-icon"
-                                    /*fillColor={isPublic ? '#9F9BA2' : '#277D93'}*/
-                                />
-                                Private</React.Fragment>}
-                            label={this.getReceiverName()}
-                            toggle={isPublic}
-                            className={'give-export__action-toggle'}
-                        />
-                        {!isPublic && <ToggleField
-                            onClick={toggleAnonymous}
-                            leftLabel={'With Name'}
-                            rightLabel={'Anonymous'}
-                            className={'give-export__action-toggle below'}
-                            label={!isAnonymous ? ANONYMOUS_TEXT
-                                : PUBLIC_TEXT
-                            }
-                            toggle={isAnonymous}
-                        />}
-                    </div>
-                    <DefaultButton>
-                        Give feedback
-                    </DefaultButton>
-                </ActionsBlock>}
-            </Content>
-        )
-    }
+        </Content>
+        {feedbackType !== FEEDBACK_ANY_TYPE && <ActionsBlock className="give-export__actions">
+          <div className="private-block">
+            <ToggleField
+              onClick={togglePublic}
+              leftLabel={'Public'}
+              rightLabel={<React.Fragment>
+                <LockIcon2 className="give-export__actions__lock-icon"
+                  /*fillColor={isPublic ? '#9F9BA2' : '#277D93'}*/
+                />
+                Private</React.Fragment>}
+              label={this.getReceiverName()}
+              toggle={isPublic}
+              className={'give-export__action-toggle'}
+            />
+            {!isPublic && <ToggleField
+              onClick={toggleAnonymous}
+              leftLabel={'With Name'}
+              rightLabel={'Anonymous'}
+              className={'give-export__action-toggle below'}
+              label={!isAnonymous ? ANONYMOUS_TEXT
+                : PUBLIC_TEXT
+              }
+              toggle={isAnonymous}
+            />}
+          </div>
+          <DefaultButton>
+            Give feedback
+          </DefaultButton>
+        </ActionsBlock>}
+      </Fragment>
+    )
+  }
 }
 
 
 export default connect(({ feedbacks: { give, allPeople } }) => ({ give, allPeople }), {
-    addPeople,
-    deletePeople,
-    giveType,
-    getPendingRequests,
-    selectFeedback,
-    togglePublic,
-    toggleAnonymous,
-    deleteFeedback,
+  addPeople,
+  deletePeople,
+  giveType,
+  getPendingRequests,
+  selectFeedback,
+  togglePublic,
+  toggleAnonymous,
+  deleteFeedback,
 })(FeedbackGive)

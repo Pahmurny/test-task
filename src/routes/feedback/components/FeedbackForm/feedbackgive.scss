@@ -22,9 +22,11 @@
   }
 
   &__actions {
-    align-items: center;
     justify-content: space-between;
-    padding-bottom: 40px;
+    padding: 24px 24px 24px;
+    background-color: #e6e4e7;
+    display: flex;
+    align-items: center;
 
     &__lock-icon {
       margin-right: 6px;
