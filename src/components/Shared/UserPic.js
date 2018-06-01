@@ -8,6 +8,7 @@ const UserPic = styled.div`
     background-image: url(${props => props.image});
     display: inline-block;
     width: ${props => props.width || '30px'};
+    min-width: ${props => props.width || '30px'};
     height: ${props => props.width || '30px'};
     background-repeat: no-repeat;
     background-size: ${props => props.width || '30px'} ${props => props.width || '30px'};

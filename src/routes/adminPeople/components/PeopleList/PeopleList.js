@@ -52,8 +52,10 @@ class PeopleList extends Component {
             {people.map((person, key) => <PeopleRow key={key}>
                 <div className="people-list__col">
                     <UserPic image={person.image}/>
+                    <span className="people-list__col-name-container">
                     <span className="people-list__col__full-name">{`${person.first_name} ${person.last_name}`}</span>
                     {person.isAdmin && <span className="people-list__admin-badge">Admin</span>}
+                    </span>
                 </div>
                 <div className="people-list__col">
                     {person.title}
@@ -67,8 +69,8 @@ class PeopleList extends Component {
                 <div className="people-list__col-team">
                     <span className="people-list__col-team__tags">{person.team_tags ? person.team_tags.map(t => t.label).join(', ') : 'N/A'}</span>
                 </div>
-                <div>
-                 <span className="people-list__span">
+                <div className="people-list__col-edit">
+                 <span>
                         {(person.id === userForm && loadingPerson) && <CircleLoader/>}
                         <EditIcon
                             className={'people-list__span__edit-btn'}
@@ -141,6 +143,9 @@ class PeopleList extends Component {
                     </div>
                     <div className="people-list__col">
                         Team
+                    </div>
+                    <div className="people-list__col-edit">
+                        
                     </div>
                 </div>
 
